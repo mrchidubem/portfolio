@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chidubem Okafor | Futuristic Portfolio</title>
+
+  <!-- Import futuristic and mono fonts for tech aesthetic -->
+  <!-- ✅ Local Font Awesome -->
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/everystyle.css">
+</head>
+<body>
+
+  <!-- Theme toggle checkbox (hidden) for light/dark mode switch -->
+  <input type="checkbox" id="theme-toggle" hidden />
+
+  <!-- =================== NAVIGATION =================== -->
+  <nav>
+    <!-- Brand logo with animated circular icon and gradient text -->
+    <div class="circle-logo">
+      <div class="circle">D</div>
+      <div class="circle-text">
+        <span class="gradient-name">Dubicventures</span>
+      </div>
+    </div>
+
+    <!-- Navigation links -->
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Theme toggle and resume download buttons -->
+    <div class="theme-controls">
+      <label for="theme-toggle" class="toggle-theme">Toggle Theme</label>
+      <!-- ✅ Resume download button -->
+      <a href="resume/lastOneResume.pdf" class="toggle-theme" download>Download Resume</a>
+    </div>
+  </nav>
+
+  <!-- =================== HERO SECTION =================== -->
+  <header class="hero">
+    <div class="hero-content">
+      <section class="hero">
+        <!-- Circular avatar image -->
+        <div class="avatar"></div>
+        <!-- Name and professional title -->
+        <h2>Joseph Chidubem Okafor</h2>
+        <p class="hero-subtitle">Software Engineer | Cloud Architect | Innovator</p>
+        <!-- CTA button -->
+        <a href="#projects" class="button">Explore Projects</a>
+      </section>
+    </div>
+  </header>
+
+  <!-- =================== ABOUT SECTION =================== -->
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m Joseph Chidubem Okafor, a Full Stack Software Engineer rooted in Electrical Engineering, passionate about transforming complex challenges into elegant, scalable solutions.
+      I've built high-impact web applications using Django, Python, and JavaScript, including a HIPAA-compliant hospital platform. 
+      I specialize in cloud-ready systems, leveraging Docker and GitHub Actions, and thrive on delivering secure, user-focused products.
+    </p>
+  </section>
+
+  <!-- =================== SKILLS SECTION =================== -->
+  <section class="skills" id="skills">
+    <h2>Skills</h2>
+    <div class="skill-grid">
+      <!-- Tech stack cards -->
+      <div class="skill-card">Python</div>
+      <div class="skill-card">C</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">Django</div>
+      <div class="skill-card">Responsive Design</div>
+    </div>
+  </section>
+
+  <!-- =================== PROJECTS SECTION =================== -->
+  <section class="projects" id="projects">
+    <h2>Featured Projects</h2>
+
+    <!-- Project: CareCycle -->
+    <div class="project-item">
+      <h3>CareCycle Hospital Management System</h3>
+      <p>Full-featured Django system with modular design, HIPAA-compliant architecture, and seamless UX.</p>
+      <a href="https://hospital-management-app-web.vercel.app/">View Project</a>
+    </div>
+
+    <!-- Project: Airbnb Clone -->
+    <div class="project-item">
+      <h3>Airbnb Clone (In Progress)</h3>
+      <p>Scalable and secure accommodation booking platform.</p>
+      <a href="#">View Project</a>
+    </div>
+
+    <!-- Project: Simple Shell -->
+    <div class="project-item">
+      <h3>Simple Shell</h3>
+      <p>A custom Unix command-line interpreter built from scratch as part of the ALX SE program.</p>
+      <a href="#">View Project</a>
+    </div>
+  </section>
+
+  <!-- =================== CONTACT SECTION =================== -->
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- =================== FOOTER =================== -->
+  <!-- <footer>
+    <div>
+      <!-Social media links -->
+      <!-- <a href="https://twitter.com/ChidubemOkafor17" target="_blank">🐦 Twitter</a>
+      <a href="https://instagram.com/dubicventures" target="_blank">📸 Instagram</a>
+      <a href="https://linkedin.com/in/dubicventures" target="_blank">💼 LinkedIn</a>
+      <a href="https://github.com/mrchidubem" target="_blank">🐙 GitHub</a>
+    </div>
+    <p style="margin-top: 15px;">&copy; 2025 Chidubem Okafor. All rights reserved.</p> -->
+  <!-- </footer> --> 
+
+<footer>
+  <div class="social-icons">
+    <a href="https://twitter.com/ChidubemOkafor17" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://instagram.com/dubicventures" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://linkedin.com/in/dubicventures" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/mrchidubem" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+  </div>
+  <p>&copy; 2025 Chidubem Okafor. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
