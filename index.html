@@ -15,25 +15,35 @@
 <body>
   <!-- Navigation -->
   <nav>
-    <a href="#" class="circle-logo">
-      <div class="circle">J</div>
-      <span class="circle-text gradient-name">Joseph Chidubem</span>
-    </a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <label for="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></label>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <!-- Logo -->
+  <a href="#" class="circle-logo">
+    <div class="circle">J</div>
+    <span class="circle-text gradient-name">Joseph Chidubem</span>
+  </a>
+
+  <!-- Mobile toggle checkbox -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+  <label for="nav-toggle" class="nav-toggle-label"><i class="fas fa-bars"></i></label>
+
+  <!-- Navigation links -->
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <!-- Theme buttons -->
+  <div class="theme-controls-wrapper">
     <div class="theme-controls">
       <button class="toggle-theme" onclick="document.body.classList.toggle('light-theme')">Toggle Theme</button>
       <a href="resume/lastOneResume.pdf" class="toggle-theme" download>Download Resume</a>
     </div>
-  </nav>
+  </div>
+</nav>
+
 
   <!-- Hero Section -->
   <section class="hero" id="home">
