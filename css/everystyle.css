@@ -314,6 +314,25 @@ section {
   font-size: 0.9rem;
 }
 
+@media (max-width: 768px) {
+  .theme-controls {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .toggle-theme {
+    width: auto;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+}
+
+
 }
 
 body, html {
