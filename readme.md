@@ -139,10 +139,10 @@ git push origin feature/your-feature-name
 
 Create a Pull Request: Submit a PR with a clear description of your changes.
 
-Please ensure your contributions align with the portfolio’s aesthetic and accessibility standards.LicenseThis project is licensed under the MIT License. You are free to use, modify, and distribute the code, provided you include the license and copyright notice. See LICENSE for details.ContactReach out to me for collaboration, opportunities, or feedback:Email: your-email@example.com (mailto:your-email@example.com)
-LinkedIn: linkedin.com/in/your-profile
-GitHub: github.com/your-username
-Twitter/X: twitter.com/your-handle
+Please ensure your contributions align with the portfolio’s aesthetic and accessibility standards.LicenseThis project is licensed under the MIT License. You are free to use, modify, and distribute the code, provided you include the license and copyright notice. See LICENSE for details.ContactReach out to me for collaboration, opportunities, or feedback:Email: mrchidubem8@example.com 
+LinkedIn: linkedin.com/in/dubicventures
+GitHub: github.com/mrchidubem
+Twitter/X: twitter.com/ChidubemOkafo17
 
 You can also use the Contact Form (#contact) on the portfolio to send a message directly.Thank you for exploring my portfolio! Let’s build something amazing together. 
 
