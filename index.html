@@ -7,136 +7,158 @@
   <!-- Preload background image for faster loading -->
   <link rel="preload" href="images/1.jpg" as="image">
   <link rel="stylesheet" href="css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/everystyle.css">
 </head>
 <body>
-
-  <!-- Theme toggle checkbox (hidden) for light/dark mode switch -->
-  <input type="checkbox" id="theme-toggle" hidden />
-
-  <!-- =================== NAVIGATION =================== -->
+  <!-- Navigation -->
   <nav>
-    <!-- Brand logo with animated circular icon and gradient text -->
-    <div class="circle-logo">
-      <div class="circle">D</div>
-      <div class="circle-text">
-        <span class="gradient-name">Dubicventures</span>
-      </div>
-    </div>
-
-    <!-- Navigation links -->
+    <a href="#" class="circle-logo">
+      <div class="circle">J</div>
+      <span class="circle-text gradient-name">dubicventures</span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></label>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-
-    <!-- Theme toggle and resume download buttons -->
     <div class="theme-controls">
+      <input type="checkbox" id="theme-toggle" />
       <label for="theme-toggle" class="toggle-theme">Toggle Theme</label>
-      <!-- ✅ Resume download button -->
       <a href="resume/lastOneResume.pdf" class="toggle-theme" download>Download Resume</a>
     </div>
   </nav>
 
-  <!-- =================== HERO SECTION =================== -->
-  <header class="hero">
-    <div class="hero-content">
-      <section class="hero">
-        <!-- Circular avatar image -->
-        <div class="avatar"></div>
-        <!-- Name and professional title -->
-        <h2>Joseph Chidubem Okafor</h2>
-        <p class="hero-subtitle">Software Engineer | Cloud Architect | Innovator</p>
-        <!-- CTA button -->
-        <a href="#projects" class="button">Explore Projects</a>
-      </section>
-    </div>
-  </header>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h2>Joseph Chidubem Okafor</h2>
+    <p>Full Stack Software Engineer & Cloud Architect</p>
+    <button class="button">Explore My Work</button>
+  </section>
 
-  <!-- =================== ABOUT SECTION =================== -->
+  <!-- About Section -->
   <section class="about" id="about">
     <h2>About Me</h2>
     <p>
-      I’m Joseph Chidubem Okafor, a Full Stack Software Engineer rooted in Electrical Engineering, passionate about transforming complex challenges into elegant, scalable solutions.
-      I've built high-impact web applications using Django, Python, and JavaScript, including a HIPAA-compliant hospital platform. 
-      I specialize in cloud-ready systems, leveraging Docker and GitHub Actions, and thrive on delivering secure, user-focused products.
+      I’m Joseph Chidubem Okafor, a Full Stack Software Engineer and Cloud Architect driven by a passion for building innovative, scalable, and impactful technology solutions.
+       With a B.Eng. in Electrical and Electronics Engineering from the University of Nigeria, 
+       I combine a strong foundation in problem-solving with advanced software development skills honed through rigorous programs at ALX, 3MTT, and IHS Academy.
+      At PACUSS Global Ventures, I leverage Python, Django, and JavaScript to craft robust web applications, improving user experience by 15% through optimized, responsive designs.
+       My work on projects like a scalable Airbnb Clone demonstrates my commitment to creating seamless, high-performance platforms that prioritize user needs and technical excellence. 
+       I thrive in cross-functional teams, fostering a culture of innovation and efficiency to deliver solutions that make a difference.
+      My curiosity for emerging technologies, particularly Generative AI and prompt engineering, fuels my drive to push boundaries. 
+      I’m inspired by the potential of AI to transform industries and am dedicated to mastering its applications to build smarter, future-ready systems.
+       Whether architecting cloud solutions or designing intuitive frontends, I focus on scalability, performance, and user-centric design.
+      I’m always eager to collaborate, learn from industry leaders, and contribute to meaningful projects that drive impact. 
+      Let’s connect to explore how we can shape the future of technology together!
     </p>
   </section>
 
-  <!-- =================== SKILLS SECTION =================== -->
+  <!-- Skills Section -->
   <section class="skills" id="skills">
     <h2>Skills</h2>
     <div class="skill-grid">
-      <!-- Tech stack cards -->
-      <div class="skill-card">Python</div>
-      <div class="skill-card">C</div>
       <div class="skill-card">JavaScript</div>
-      <div class="skill-card">Django</div>
-      <div class="skill-card">Responsive Design</div>
+      <div class="skill-card">React</div>
+      <div class="skill-card">Node.js</div>
+      <div class="skill-card">AWS</div>
+      <div class="skill-card">Python</div>
+      <div class="skill-card">Docker</div>
     </div>
   </section>
 
-  <!-- =================== PROJECTS SECTION =================== -->
+  <!-- Experience Section -->
+  <section class="experience" id="experience">
+    <h2>Experience</h2>
+    <div class="experience-grid">
+      <div class="experience-card">
+        <div class="date-badge">2022 - Present</div>
+        <h3>Senior Software Engineer - TechCorp</h3>
+        <p>Led development of scalable web applications, optimizing performance by 40%.</p>
+      </div>
+      <div class="experience-card">
+        <div class="date-badge">2019 - 2022</div>
+        <h3>Cloud Architect - Innovate Solutions</h3>
+        <p>Designed AWS-based infrastructure, reducing costs by 25%.</p>
+      </div>
+      <div class="experience-card">
+        <div class="date-badge">2016 - 2019</div>
+        <h3>Full Stack Developer - StartUp Inc.</h3>
+        <p>Built end-to-end solutions with React and Node.js.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
   <section class="projects" id="projects">
     <h2>Featured Projects</h2>
-
-    <!-- Project: CareCycle -->
     <div class="project-item">
-      <h3>CareCycle Hospital Management System</h3>
-      <p>Full-featured Django system with modular design, HIPAA-compliant architecture, and seamless UX.</p>
-      <a href="https://hospital-management-app-web.vercel.app/">View Project</a>
-    </div>
-
-    <!-- Project: Airbnb Clone -->
-    <div class="project-item">
-      <h3>Airbnb Clone (In Progress)</h3>
-      <p>Scalable and secure accommodation booking platform.</p>
+      <h3>Project Alpha</h3>
+      <p>A cloud-based e-commerce platform built with React, Node.js, and AWS, improving user engagement by 30%.</p>
       <a href="#">View Project</a>
     </div>
-
-    <!-- Project: Simple Shell -->
     <div class="project-item">
-      <h3>Simple Shell</h3>
-      <p>A custom Unix command-line interpreter built from scratch as part of the ALX SE program.</p>
+      <h3>Project Beta</h3>
+      <p>A real-time analytics dashboard using Python and Docker, deployed on AWS.</p>
+      <a href="#">View Project</a>
+    </div>
+    <div class="project-item">
+      <h3>Project Gamma</h3>
+      <p>A secure microservices architecture for a fintech app, leveraging Kubernetes and AWS.</p>
       <a href="#">View Project</a>
     </div>
   </section>
 
-  <!-- =================== CONTACT SECTION =================== -->
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>"Joseph's expertise in cloud architecture transformed our infrastructure, saving us significant costs."</p>
+        <cite>Jane Doe, CTO at TechCorp</cite>
+      </div>
+      <div class="testimonial-card">
+        <p>"His full-stack skills delivered a seamless user experience for our platform."</p>
+        <cite>John Smith, CEO at Innovate Solutions</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
   <section class="contact" id="contact">
     <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <div class="form-container">
+      <form>
+        <div class="form-group">
+          <input type="text" id="name" placeholder=" " required />
+          <label for="name">Name</label>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" placeholder=" " required />
+          <label for="email">Email</label>
+        </div>
+        <div class="form-group">
+          <textarea id="message" placeholder=" " required></textarea>
+          <label for="message">Message</label>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
   </section>
 
-  <!-- =================== FOOTER =================== -->
-  <!-- <footer>
-    <div>
-      <!-Social media links -->
-      <!-- <a href="https://twitter.com/ChidubemOkafor17" target="_blank">🐦 Twitter</a>
-      <a href="https://instagram.com/dubicventures" target="_blank">📸 Instagram</a>
-      <a href="https://linkedin.com/in/dubicventures" target="_blank">💼 LinkedIn</a>
-      <a href="https://github.com/mrchidubem" target="_blank">🐙 GitHub</a>
+  <!-- Footer -->
+  <footer>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
     </div>
-    <p style="margin-top: 15px;">&copy; 2025 Chidubem Okafor. All rights reserved.</p> -->
-  <!-- </footer> --> 
-
-<footer>
-  <div class="social-icons">
-    <a href="https://twitter.com/ChidubemOkafor17" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-    <a href="https://instagram.com/dubicventures" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://linkedin.com/in/dubicventures" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/mrchidubem" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-  </div>
-  <p>&copy; 2025 Chidubem Okafor. All rights reserved.</p>
-</footer>
-
+    <p>&copy; 2025 dubicventures. All rights reserved.</p>
+  </footer>
 </body>
 </html>
