@@ -1,7 +1,7 @@
 <!-- README.md -->
 # Joseph Chidubem Okafor Portfolio
 
-![Portfolio Preview](images/og-image.jpg)
+![Portfolio Preview] https://dubicventures.vercel.app/
 
 Welcome to the personal portfolio of **Joseph Chidubem Okafor**, a passionate **Full Stack Software Engineer** and **Cloud Architect** based in Nigeria. This portfolio showcases my expertise in building scalable web applications, cloud infrastructure, and innovative AI solutions, crafted with a sleek, luxurious design using only **HTML** and **CSS**.
 
