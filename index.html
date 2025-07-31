@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Character encoding and responsive viewport -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- SEO metadata -->
   <meta name="description" content="Portfolio of Joseph Chidubem Okafor, Full Stack Software Engineer and Cloud Architect.">
   <meta name="keywords" content="Joseph Chidubem Okafor, Full Stack Developer, Cloud Architect, Portfolio">
   <meta name="author" content="Joseph Chidubem Okafor">
   <title>Joseph Chidubem Okafor | Portfolio</title>
+  <!-- Preload hero background image for performance -->
   <link rel="preload" href="images/8.avif" as="image">
+  <!-- Google Fonts for typography -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="css/all.min.css">
+  <!-- Custom stylesheet -->
   <link rel="stylesheet" href="css/everystyle.css">
 </head>
 <body>
+  <!-- Navigation bar -->
   <nav>
+    <!-- Logo with gradient text -->
     <a href="#" class="circle-logo">
       <div class="circle">J</div>
       <span class="circle-text gradient-name">Joseph Chidubem</span>
     </a>
+    <!-- Mobile navigation toggle -->
     <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
     <label for="nav-toggle" class="nav-toggle-label"><i class="fas fa-bars"></i></label>
+    <!-- Navigation links -->
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -28,21 +38,25 @@
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <!-- Theme toggle and resume download -->
     <div class="theme-controls-wrapper">
       <div class="theme-controls">
-        <button class="toggle-theme">Toggle Theme</button>
+        <input type="checkbox" id="theme-toggle" class="theme-toggle" hidden>
+        <label for="theme-toggle" class="toggle-theme">Toggle Theme</label>
         <a href="resume/lastOneResume.pdf" class="toggle-theme" download>Download Resume</a>
       </div>
     </div>
   </nav>
 
+  <!-- Hero section with background image -->
   <section class="hero" id="home">
     <div class="avatar"></div>
     <h2>Joseph Chidubem Okafor</h2>
     <p>Full Stack Software Engineer | Cloud Architect</p>
-    <button class="button">Explore My Work</button>
+    <a href="#projects" class="button">Explore My Work</a>
   </section>
 
+  <!-- About section -->
   <section class="about" id="about">
     <h2>About Me</h2>
     <p>
@@ -50,6 +64,7 @@
     </p>
   </section>
 
+  <!-- Skills section -->
   <section class="skills" id="skills">
     <h2>Skills</h2>
     <div class="skill-grid">
@@ -66,6 +81,7 @@
     </div>
   </section>
 
+  <!-- Experience section -->
   <section class="experience" id="experience">
     <h2>Experience</h2>
     <div class="experience-grid">
@@ -82,6 +98,7 @@
     </div>
   </section>
 
+  <!-- Projects section -->
   <section class="projects" id="projects">
     <h2>Projects</h2>
     <div class="project-item">
@@ -101,6 +118,7 @@
     </div>
   </section>
 
+  <!-- Testimonials section -->
   <section class="testimonials" id="testimonials">
     <h2>Testimonials</h2>
     <div class="testimonial-grid">
@@ -115,6 +133,7 @@
     </div>
   </section>
 
+  <!-- Contact section -->
   <section class="contact" id="contact">
     <h2>Contact Me</h2>
     <form>
@@ -134,6 +153,7 @@
     </form>
   </section>
 
+  <!-- Footer with social links -->
   <footer>
     <div class="social-icons">
       <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -142,11 +162,5 @@
     </div>
     <p>&copy; 2025 Joseph Chidubem Okafor. All rights reserved.</p>
   </footer>
-
-  <script>
-    document.querySelector('.toggle-theme').addEventListener('click', () => {
-      document.body.classList.toggle('light-theme');
-    });
-  </script>
 </body>
 </html>

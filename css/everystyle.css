@@ -1,20 +1,21 @@
 /* Theme Variables */
 :root {
-  --primary: #2c2c2c; /* Charcoal gray */
+  --primary: #2c2c2c; /* Charcoal gray for depth */
   --secondary: #242424; /* Muted charcoal for cards */
-  --accent: #d4a373; /* Burnished bronze */
-  --bg: #0f0f0f; /* Near-black body */
+  --accent: #d4a373; /* Burnished bronze for luxury */
+  --bg: #0f0f0f; /* Near-black body background */
   --section-bg: #181818; /* Subtle black for sections */
-  --text: #f1f5f9; /* Soft ivory */
+  --text: #f1f5f9; /* Soft ivory for readability */
 }
 
-body.light-theme {
-  --primary: #3c3c3c;
-  --secondary: #ececec;
-  --accent: #b89778;
-  --bg: #ffffff;
-  --section-bg: #f5f5f5;
-  --text: #2c2c2c;
+/* Light theme variables */
+body:has(#theme-toggle:checked) {
+  --primary: #3c3c3c; /* Lighter charcoal */
+  --secondary: #ececec; /* Muted gray for cards */
+  --accent: #b89778; /* Darker bronze */
+  --bg: #ffffff; /* White body background */
+  --section-bg: #f5f5f5; /* Light gray for sections */
+  --text: #2c2c2c; /* Charcoal text */
 }
 
 /* Base Reset */
@@ -25,21 +26,21 @@ body.light-theme {
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif; /* Primary font */
   background: var(--bg);
   color: var(--text);
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 h1, h2, h3 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for headings */
   font-weight: 500;
   letter-spacing: 0.8px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle depth */
 }
 
 /* Navigation */
@@ -51,7 +52,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(15, 15, 15, 0.8);
+  background: rgba(15, 15, 15, 0.8); /* Semi-transparent background */
   border-bottom: 1px solid var(--accent);
   z-index: 999;
 }
@@ -78,7 +79,7 @@ nav {
 }
 
 .circle-logo:hover .circle {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Slight scale on hover */
 }
 
 .circle-text {
@@ -112,7 +113,7 @@ nav {
 }
 
 .nav-toggle {
-  display: none;
+  display: none; /* Hidden checkbox for mobile nav */
 }
 
 .nav-toggle-label {
@@ -136,6 +137,8 @@ nav {
   font-family: 'Orbitron', sans-serif;
   font-size: 0.8rem;
   font-weight: 400;
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
   transition: background 0.3s, color 0.3s, transform 0.2s;
 }
@@ -144,6 +147,10 @@ nav {
   background: var(--accent);
   color: var(--bg);
   transform: scale(1.05);
+}
+
+.theme-toggle {
+  display: none; /* Hidden checkbox for theme toggle */
 }
 
 /* Section Base */
@@ -168,7 +175,7 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6); /* Overlay for contrast */
   z-index: -1;
 }
 
@@ -195,7 +202,7 @@ section {
   border-radius: 6px;
   font-family: 'Orbitron', sans-serif;
   font-weight: 400;
-  cursor: pointer;
+  text-decoration: none;
   transition: transform 0.2s, box-shadow 0.3s;
 }
 
@@ -210,7 +217,9 @@ section {
   height: 90px;
   background: url('https://i.pravatar.cc/120') no-repeat center/cover;
   background-color: var(--secondary);
-  border-radius: 50%;
+  border-radius: 
+
+50%;
   border: 1px solid var(--accent);
   margin-bottom: 15px;
 }
@@ -613,15 +622,15 @@ footer {
     gap: 12px;
   }
 
-  #nav-toggle:checked ~ .nav-links,
-  #nav-toggle:checked ~ .theme-controls-wrapper {
-    display: flex;
-  }
-
   .theme-controls-wrapper {
     display: none;
     width: 100%;
     justify-content: center;
+  }
+
+  #nav-toggle:checked ~ .nav-links,
+  #nav-toggle:checked ~ .theme-controls-wrapper {
+    display: flex;
   }
 
   .theme-controls {
@@ -634,69 +643,7 @@ footer {
   .toggle-theme {
     width: 100%;
     padding: 6px 14px;
-    background: linear-gradient(45deg, var(--primary), var(--accent));
-    color: var(--bg);
-    border: none;
   }
 
   .circle {
-    width: 32px;
-    height: 32px;
-    font-size: 0.9rem;
-  }
-
-  .circle-text {
-    font-size: 0.9rem;
-  }
-
-  section {
-    padding: 60px 15px;
-  }
-
-  .hero h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero p {
-    font-size: 0.85rem;
-    padding: 0 15px;
-  }
-
-  .hero .button {
-    padding: 8px 20px;
-    font-size: 0.8rem;
-  }
-
-  .about h2, .skills h2, .projects h2, .testimonials h2, .experience h2, .contact h2 {
-    font-size: 1.6rem;
-  }
-
-  .about p, .project-item p, .testimonial-card p, .experience-card p {
-    font-size: 0.8rem;
-  }
-
-  .skill-card {
-    font-size: 0.8rem;
-  }
-
-  .project-item h3, .experience-card h3 {
-    font-size: 1rem;
-  }
-
-  .contact form {
-    max-width: 350px;
-  }
-
-  .contact button {
-    font-size: 0.8rem;
-  }
-
-  .testimonial-card:nth-child(odd), .testimonial-card:nth-child(even) {
-    transform: translateX(0);
-  }
-
-  .experience-card .date-badge {
-    position: relative;
-    margin: 10px 0 5px;
-  }
-}
+    width:
