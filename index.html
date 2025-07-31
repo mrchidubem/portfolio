@@ -7,7 +7,7 @@
   <meta name="keywords" content="Joseph Chidubem Okafor, Full Stack Developer, Cloud Architect, Portfolio">
   <meta name="author" content="Joseph Chidubem Okafor">
   <title>Joseph Chidubem Okafor | Portfolio</title>
-  <link rel="preload" href="images/1.jpg" as="image">
+  <link rel="preload" href="images/8.avif" as="image">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/all.min.css">
   <link rel="stylesheet" href="css/everystyle.css">
@@ -30,8 +30,7 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="theme-controls">
-      <button class="toggle-theme">Toggle Theme</button>
-      <input type="checkbox" id="theme-toggle">
+      <button class="toggle-theme" onclick="document.body.classList.toggle('light-theme')">Toggle Theme</button>
       <a href="resume/lastOneResume.pdf" class="toggle-theme" download>Download Resume</a>
     </div>
   </nav>
@@ -150,5 +149,12 @@
     </div>
     <p>&copy; 2025 Joseph Chidubem Okafor. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Minimal JavaScript for theme toggle
+    document.querySelector('.toggle-theme').addEventListener('click', () => {
+      document.body.classList.toggle('light-theme');
+    });
+  </script>
 </body>
 </html>
