@@ -1,24 +1,22 @@
 /* =================== THEME VARIABLES =================== */
-/* Define color variables for consistent theming across light and dark modes */
 :root {
-  --primary: #00ffcc; /* Vibrant cyan for primary elements */
-  --secondary: #00ccff; /* Bright blue for secondary elements */
-  --accent: #ff00cc; /* Bold pink for highlights */
-  --bg: #0f0f0f; /* Dark background for futuristic aesthetic */
-  --text: #ccc; /* Light text for contrast */
+  --primary: #00ffcc;
+  --secondary: #00ccff;
+  --accent: #ff00cc;
+  --bg: #0f0f0f;
+  --text: #ccc;
 }
 
 /* Light theme overrides when toggle is active */
 body:has(#theme-toggle:checked) {
-  --primary: #0f0f0f; /* Darker primary for light mode */
-  --secondary: #007acc; /* Softer blue for light mode */
-  --accent: #ff0066; /* Softer pink for light mode */
-  --bg: #ffffff; /* White background for light mode */
-  --text: #333; /* Dark text for readability */
+  --primary: #0f0f0f;
+  --secondary: #007acc;
+  --accent: #ff0066;
+  --bg: #ffffff;
+  --text: #333;
 }
 
 /* =================== BASE RESET =================== */
-/* Reset default styles for consistent rendering across browsers */
 * {
   margin: 0;
   padding: 0;
@@ -26,23 +24,22 @@ body:has(#theme-toggle:checked) {
 }
 
 html {
-  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Roboto', sans-serif; /* Clean, modern font */
-  background: var(--bg); /* Dynamic background color */
-  color: var(--primary); /* Dynamic text color */
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  font-family: 'Roboto', sans-serif;
+  background: var(--bg);
+  color: var(--primary);
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
-  text-transform: uppercase; /* Uppercase for bold headings */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font for headings */
+  text-transform: uppercase;
+  font-family: 'Orbitron', sans-serif;
 }
 
 /* =================== NAVIGATION =================== */
-/* Style the navigation bar with responsive design */
 nav {
   width: 100%;
   padding: 20px 40px;
@@ -53,42 +50,32 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
-  border-bottom: 1px solid var(--primary); /* Border with primary color */
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid var(--primary);
 }
 
-/* Hamburger menu for mobile */
-.nav-toggle {
-  display: none; /* Hidden by default on larger screens */
+.logo {
   font-size: 1.5rem;
+  font-weight: bold;
   color: var(--primary);
-  background: none;
-  border: none;
-  cursor: pointer;
 }
 
-/* Navigation links container */
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
-  margin: 0;
-  padding: 0;
 }
 
 nav ul li a {
   color: var(--primary);
   text-decoration: none;
-  font-family: 'Share Tech Mono', monospace; /* Monospace for tech aesthetic */
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: 0.3s;
 }
 
 nav ul li a:hover {
-  color: #fff; /* White on hover for contrast */
+  color: #fff;
 }
 
-/* Theme controls (toggle and resume button) */
 .theme-controls {
   display: flex;
   align-items: center;
@@ -103,21 +90,14 @@ nav ul li a:hover {
   color: var(--primary);
   border-radius: 6px;
   font-size: 0.9rem;
-  transition: background 0.3s, color 0.3s;
-}
-
-.toggle-theme:hover {
-  background: var(--primary);
-  color: #000;
 }
 
 /* =================== SECTION BASE STYLING =================== */
 section {
-  padding-top: 100px; /* Space for fixed nav */
+  padding-top: 100px;
 }
 
 /* =================== HERO SECTION =================== */
-/* Style the hero section with a full-screen background */
 .hero {
   height: 100vh;
   display: flex;
@@ -136,9 +116,14 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+  background: rgba(0, 0, 0, 0.5);
   z-index: -1;
 }
+
+/* .hero h2 {
+  font-size: 2rem;
+  animation: glow 2s ease-in-out infinite alternate;
+} */
 
 .hero p {
   font-size: 1.2rem;
@@ -274,8 +259,7 @@ section {
   color: #000;
   box-shadow: 0 0 10px var(--secondary);
 }
-
-/* =================== FOOTER =================== */
+/* ==== Modern Glowing Social Footer ==== */
 footer {
   padding: 40px 20px;
   background: #000;
@@ -327,6 +311,23 @@ footer {
 }
 
 /* =================== LOGO =================== */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00ffe5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.brand-symbol {
+  font-size: 1.7rem;
+  animation: pulse 2s infinite ease-in-out;
+}
+
 .circle-logo {
   display: flex;
   align-items: center;
@@ -368,95 +369,6 @@ footer {
 
 .circle-logo:hover .circle {
   transform: scale(1.1);
-}
-
-/* =================== RESPONSIVE DESIGN =================== */
-/* Mobile-first responsive styles for screens smaller than 768px */
-@media (max-width: 768px) {
-  /* Adjust navigation for mobile */
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-  }
-
-  /* Show hamburger menu and hide nav links by default */
-  .nav-toggle {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-
-  nav ul {
-    display: none; /* Hidden until toggle is checked */
-    flex-direction: column;
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  /* Show nav links when toggle is checked */
-  #nav-toggle:checked ~ ul {
-    display: flex;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
-  }
-
-  nav ul li a {
-    font-size: 1.1rem;
-    padding: 10px;
-    display: block;
-  }
-
-  /* Adjust theme controls for mobile */
-  .theme-controls {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    margin-top: 20px;
-    gap: 15px;
-  }
-
-  .toggle-theme {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-  }
-
-  /* Adjust logo for smaller screens */
-  .circle-logo {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .circle {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-
-  .circle-text {
-    font-size: 1.1rem;
-  }
-
-  /* Adjust hero section for mobile */
-  .hero h2 {
-    font-size: 1.8rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    padding: 0 20px;
-  }
-
-  .hero .button {
-    padding: 12px 30px;
-    font-size: 0.9rem;
-  }
 }
 
 /* =================== ANIMATIONS =================== */
