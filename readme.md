@@ -1,7 +1,9 @@
 <!-- README.md -->
 # Joseph Chidubem Okafor Portfolio
 
-![Portfolio Preview] https://dubicventures.vercel.app/
+!Portfolio Preview --->  https://dubicventures.vercel.app/
+*Discover a sleek, luxurious showcase of cutting-edge web development and cloud architecture, designed with elegance and precision.*
+
 
 Welcome to the personal portfolio of **Joseph Chidubem Okafor**, a passionate **Full Stack Software Engineer** and **Cloud Architect** based in Nigeria. This portfolio showcases my expertise in building scalable web applications, cloud infrastructure, and innovative AI solutions, crafted with a sleek, luxurious design using only **HTML** and **CSS**.
 
@@ -55,9 +57,9 @@ To run this portfolio locally or deploy it, follow these steps:
 ### Steps
 1. **Clone or Download the Repository**
    ```bash
-   git clone https://github.com/your-username/joseph-okafor-portfolio.git
+   git clone https://github.com/mrchidubem/dubic-portfolio
 
-    Or download the ZIP file and extract it.Ensure Required Files
+Or download the ZIP file and extract it.Ensure Required Files
 Verify the following files are in place:index.html: Main portfolio file.
 css/everystyle.css: Custom styles.
 css/all.min.css: Font Awesome icons (download from Font Awesome).
@@ -105,7 +107,7 @@ dubic-portfolio/
 CustomizationTo personalize the portfolio, update the following:Content:Replace placeholder links (href="#") in Projects, Blog, and Social Icons with real URLs (e.g., GitHub, live demos, LinkedIn, Twitter/X).
 Update Education, Certifications, and Articles with accurate dates and details.
 Add specific metrics or impacts in Projects (e.g., "Reduced load time by 20%") and Experience.
-Replace the avatar image (https://i.pravatar.cc/120) with your own in the .avatar CSS rule.
+Replace the avatar image (https://i.pravatar.cc/120) with your own in the .avatar CSS rule. ( I used my photo though)
 
 Images:Add real project and article images to images/ and update project-image or article-image background URLs in index.html.
 Create a custom favicon (images/favicon.ico) and Open Graph image (images/og-image.jpg).
