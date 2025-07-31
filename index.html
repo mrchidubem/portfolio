@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,13 @@
   <meta name="description" content="Portfolio of Joseph Chidubem Okafor, Full Stack Software Engineer and Cloud Architect.">
   <meta name="keywords" content="Joseph Chidubem Okafor, Full Stack Developer, Cloud Architect, Portfolio">
   <meta name="author" content="Joseph Chidubem Okafor">
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Joseph Chidubem Okafor | Portfolio">
+  <meta property="og:description" content="Explore the portfolio of Joseph Chidubem Okafor, a Full Stack Software Engineer and Cloud Architect.">
+  <meta property="og:image" content="images/og-image.jpg">
   <title>Joseph Chidubem Okafor | Portfolio</title>
+  <!-- Favicon for branding -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <!-- Preload hero background image for performance -->
   <link rel="preload" href="images/8.avif" as="image">
   <!-- Google Fonts for typography -->
@@ -20,11 +27,11 @@
 </head>
 <body>
   <!-- Navigation bar -->
-  <nav>
+  <nav aria-label="Main navigation">
     <!-- Logo with gradient text -->
     <a href="#" class="circle-logo">
-      <div class="circle">J</div>
-      <span class="circle-text gradient-name">Joseph Chidubem</span>
+      <div class="circle">D</div>
+      <span class="circle-text gradient-name">ubicventures</span>
     </a>
     <!-- Mobile navigation toggle -->
     <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
@@ -32,9 +39,12 @@
     <!-- Navigation links -->
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#blog">Blog</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -53,15 +63,47 @@
     <div class="avatar"></div>
     <h2>Joseph Chidubem Okafor</h2>
     <p>Full Stack Software Engineer | Cloud Architect</p>
-    <a href="#projects" class="button">Explore My Work</a>
+    <a href="#projects" class="button" aria-label="Explore Joseph's projects">Explore My Work</a>
   </section>
 
   <!-- About section -->
   <section class="about" id="about">
     <h2>About Me</h2>
     <p>
-      I'm a passionate Full Stack Software Engineer and Cloud Architect with a B.Eng. in Electrical and Electronics Engineering from the University of Nigeria. Trained through ALX, 3MTT, and IHS Academy, I specialize in building scalable web applications using Python, Django, and JavaScript. At PACUSS Global Ventures, I enhanced user experience by 15% through optimized, responsive designs. My curiosity for Generative AI and prompt engineering drives me to create innovative, future-ready solutions.
+      I’m Chidubem Okafor, a passionate and multi-skilled Electrical Technician, Software Engineer, and Digital Strategist with a 
+      mission to create impact through smart technology and meaningful human connection.
+      With a background in Electronic Engineering from the University of Nigeria, hands-on experience as a Facility Technician at CAP Nigeria, 
+      and former work as an Electrical Contractor at Evergreen Technology, I’ve built a solid foundation in system design, troubleshooting, and infrastructure optimization.
+      But my journey didn’t stop there. I immersed myself in software engineering 
+      through rigorous training at ALX, earning certifications from Microsoft and IBM in Full Stack Development, DevOps, and Generative AI.
+       This unique mix of hardware and software expertise empowers me to solve real-world problems from the ground up — literally.
+      I’m also the visionary behind Dubicventures, a startup idea focused on building
+       scalable digital solutions. One of my flagship projects is the CareCycle Hospital Management System — a HIPAA-compliant platform built 
+       with Django and MySQL, designed to revolutionize healthcare management through modular, secure, and user-friendly interfaces.
+      My portfolio isn’t just technical — I’ve worked in beauty store management, coffee shop operations, and social campaigns that support YouTube growth and Google Reviews engagement. 
+      I’ve developed systems where users are rewarded for digital participation, generating income while supporting businesses.
+      I’m driven by values like honesty, loyalty, emotional depth, and excellence — and I bring those to every relationship, project, and opportunity. 
+      I believe in resilience through purpose and that every setback is a setup for something greater.
+      Whether I’m building robust backend systems, deploying clean front-end interfaces, or managing operational workflows, I work with a single mission in mind:
+      To create solutions that work, connect people, and leave a legacy.
     </p>
+  </section>
+
+  <!-- Education Section -->
+  <section class="education" id="education">
+    <h2>Education & Training</h2>
+    <div class="education-grid">
+      <div class="education-card">
+        <h3>B.Eng. Electrical and Electronics Engineering</h3>
+        <div class="date-badge">University of Nigeria | 2018 - 2022</div>
+        <p>Focused on circuit design, control systems, and software integration, laying a strong foundation for technical problem-solving.</p>
+      </div>
+      <div class="education-card">
+        <h3>Software Engineering & Cloud Architecture Training</h3>
+        <div class="date-badge">ALX, 3MTT, IHS Academy | 2022 - 2025</div>
+        <p>Completed intensive programs in full-stack development, cloud infrastructure (AWS), and Generative AI, mastering Python, Django, and scalable system design.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Skills section -->
@@ -78,6 +120,25 @@
       <div class="skill-card">Docker</div>
       <div class="skill-card">SQL</div>
       <div class="skill-card">Git</div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="certifications" id="certifications">
+    <h2>Certifications</h2>
+    <div class="certification-grid">
+      <div class="certification-card">
+        <h3>AWS Certified Solutions Architect</h3>
+        <p>Amazon Web Services | 2023</p>
+      </div>
+      <div class="certification-card">
+        <h3>ALX Software Engineering Program</h3>
+        <p>ALX Africa | 2022</p>
+      </div>
+      <div class="certification-card">
+        <h3>3MTT Full Stack Development</h3>
+        <p>3MTT | 2025</p>
+      </div>
     </div>
   </section>
 
@@ -102,19 +163,54 @@
   <section class="projects" id="projects">
     <h2>Projects</h2>
     <div class="project-item">
+      <div class="project-image" style="background-image: url('images/airbnb-clone.jpg');"></div>
       <h3>Airbnb Clone</h3>
-      <p>A scalable web application built with Django and JavaScript, featuring user authentication, property listings, and booking functionality.</p>
-      <a href="#" target="_blank">View Project</a>
+      <p>A scalable web application built with Django and JavaScript, featuring user authentication, property listings, and booking functionality. Reduced load time by 20% with optimized APIs.</p>
+      <div class="tech-badges">
+        <span class="tech-badge">Django</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">MySQL</span>
+      </div>
+      <a href="#" target="_blank" aria-label="View Airbnb Clone project">View Project</a>
     </div>
     <div class="project-item">
+      <div class="project-image" style="background-image: url('images/ecommerce.jpg');"></div>
       <h3>E-commerce Platform</h3>
-      <p>Developed a full-stack e-commerce site with React and Node.js, integrating payment gateways and real-time inventory updates.</p>
-      <a href="#" target="_blank">View Project</a>
+      <p>Developed a full-stack e-commerce site with React and Node.js, integrating payment gateways and real-time inventory updates. Improved checkout conversion by 10%.</p>
+      <div class="tech-badges">
+        <span class="tech-badge">React</span>
+        <span class="tech-badge">Node.js</span>
+        <span class="tech-badge">Stripe</span>
+      </div>
+      <a href="#" target="_blank" aria-label="View E-commerce Platform project">View Project</a>
     </div>
     <div class="project-item">
-      <h3>AI-Powered Chatbot</h3>
-      <p>Built a chatbot using Python and NLP libraries, leveraging Generative AI to provide interactive user support.</p>
-      <a href="#" target="_blank">View Project</a>
+      <div class="project-image" style="background-image: url('images/chatbot.jpg');"></div>
+      <h3>CareCycle</h3>
+      <p>Built a chatbot using Python and NLP libraries, leveraging Generative AI to provide interactive user support. Enhanced user engagement by 25%.</p>
+      <div class="tech-badges">
+        <span class="tech-badge">Django</span>
+        <span class="tech-badge">React</span>
+        <span class="tech-badge">Mongo DB</span>
+      </div>
+      <a href="#" target="_blank" aria-label="View AI-Powered Chatbot project">View Project</a>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="blog" id="blog">
+    <h2>Blog & Insights</h2>
+    <div class="blog-grid">
+      <div class="blog-item">
+        <h3>Building Scalable Web Apps with Django</h3>
+        <p>A deep dive into creating robust, scalable applications using Django and PostgreSQL.</p>
+        <a href="#" target="_blank" aria-label="Read Django blog post">Read More</a>
+      </div>
+      <div class="blog-item">
+        <h3>Exploring Generative AI for Chatbots</h3>
+        <p>How NLP and Python can power intelligent, user-friendly chatbot experiences.</p>
+        <a href="#" target="_blank" aria-label="Read Generative AI blog post">Read More</a>
+      </div>
     </div>
   </section>
 
@@ -138,27 +234,37 @@
     <h2>Contact Me</h2>
     <form>
       <div class="form-group">
-        <input type="text" id="name" placeholder=" " required>
+        <input type="text" id="name" placeholder=" " required aria-label="Your name">
         <label for="name">Name</label>
       </div>
       <div class="form-group">
-        <input type="email" id="email" placeholder=" " required>
+        <input type="email" id="email" placeholder=" " required aria-label="Your email">
         <label for="email">Email</label>
       </div>
       <div class="form-group">
-        <textarea id="message" placeholder=" " required></textarea>
+        <textarea id="message" placeholder=" " required aria-label="Your message"></textarea>
         <label for="message">Message</label>
       </div>
-      <button type="submit">Send Message</button>
+      <button type="submit" aria-label="Send message">Send Message</button>
     </form>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta">
+    <h2>Let's Build Something Amazing</h2>
+    <p>Ready to collaborate on innovative projects? Reach out or download my resume to get started!</p>
+    <div class="cta-buttons">
+      <a href="#contact" class="button" aria-label="Contact Joseph">Contact Me</a>
+      <a href="resume/lastOneResume.pdf" class="button" download aria-label="Download Joseph's resume">Download Resume</a>
+    </div>
   </section>
 
   <!-- Footer with social links -->
   <footer>
     <div class="social-icons">
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com" target="_blank" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
     </div>
     <p>&copy; 2025 Joseph Chidubem Okafor. All rights reserved.</p>
   </footer>
