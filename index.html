@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>dubicventures | Futuristic Portfolio</title>
-
-  <!-- Import futuristic and mono fonts for tech aesthetic -->
-  <!-- ✅ Local Font Awesome -->
+  <!-- Preload background image for faster loading -->
+  <link rel="preload" href="images/1.jpg" as="image">
   <link rel="stylesheet" href="css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/everystyle.css">
@@ -17,30 +16,30 @@
   <input type="checkbox" id="theme-toggle" hidden />
 
   <!-- =================== NAVIGATION =================== -->
-<nav>
-  <!-- Hamburger menu toggle -->
-  <input type="checkbox" id="nav-toggle" hidden />
-  <label for="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></label>
-  <!-- Brand logo -->
-  <div class="circle-logo">
-    <div class="circle">D</div>
-    <div class="circle-text">
-      <span class="gradient-name">Dubicventures</span>
+  <nav>
+    <!-- Brand logo with animated circular icon and gradient text -->
+    <div class="circle-logo">
+      <div class="circle">D</div>
+      <div class="circle-text">
+        <span class="gradient-name">Dubicventures</span>
+      </div>
     </div>
-  </div>
-  <!-- Navigation links -->
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <!-- Theme toggle and resume download -->
-  <div class="theme-controls">
-    <label for="theme-toggle" class="toggle-theme">Toggle Theme</label>
-    <a href="resume/lastOneResume.pdf" class="toggle-theme" download>Download Resume</a>
-  </div>
-</nav>
+
+    <!-- Navigation links -->
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Theme toggle and resume download buttons -->
+    <div class="theme-controls">
+      <label for="theme-toggle" class="toggle-theme">Toggle Theme</label>
+      <!-- ✅ Resume download button -->
+      <a href="resume/lastOneResume.pdf" class="toggle-theme" download>Download Resume</a>
+    </div>
+  </nav>
 
   <!-- =================== HERO SECTION =================== -->
   <header class="hero">

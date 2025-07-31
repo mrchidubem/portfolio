@@ -117,7 +117,7 @@ section {
 }
 
 /* =================== HERO SECTION =================== */
-/* Style the hero section with a full-screen background */
+/* Style the hero section with optimized background image loading */
 .hero {
   height: 100vh;
   display: flex;
@@ -127,16 +127,20 @@ section {
   text-align: center;
   position: relative;
   z-index: 1;
+  /* Use a fallback gradient while the image loads */
   background: 
-    radial-gradient(circle at center, rgba(0, 0, 0, 0.6), #000),
-    url('../images/1.jpg') no-repeat center center / cover;
+    linear-gradient(rgba(0, 0, 0, 0.6), #000), /* Fallback gradient for instant display */
+    url('../images/1.jpg') no-repeat center center / cover; /* Use original image */
+  background-attachment: scroll; /* Faster rendering */
+  background-size: cover; /* Ensure image covers without distortion */
 }
 
+/* Overlay to maintain readability */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
   z-index: -1;
 }
 
