@@ -1,388 +1,357 @@
-/* Defining theme variables for consistent styling across the site */
+/* Theme variables for consistent styling */
 :root {
-  --primary: #2c2c2c; /* Charcoal gray for depth and contrast */
-  --secondary: #242424; /* Muted charcoal for card backgrounds */
-  --accent: #d4a373; /* Burnished bronze for luxurious highlights */
-  --bg: #0f0f0f; /* Near-black background for the body */
-  --section-bg: #181818; /* Subtle black for section backgrounds */
-  --text: #f1f5f9; /* Soft ivory for readable text */
+  --primary: #2c2c2c; /* Charcoal gray */
+  --secondary: #242424; /* Muted charcoal for cards */
+  --accent: #d4a373; /* Burnished bronze */
+  --bg: #0f0f0f; /* Near-black background */
+  --section-bg: #181818; /* Subtle black for sections */
+  --text: #f1f5f9; /* Soft ivory text */
 }
 
-/* Configuring light theme variables for alternate color scheme */
+/* Light theme variables */
 body:has(#theme-toggle:checked) {
-  --primary: #3c3c3c; /* Lighter charcoal for primary elements */
-  --secondary: #ececec; /* Muted gray for cards in light mode */
-  --accent: #b89778; /* Darker bronze for accents */
-  --bg: #ffffff; /* White background for body */
-  --section-bg: #f5f5f5; /* Light gray for section backgrounds */
-  --text: #2c2c2c; /* Charcoal text for readability */
+  --primary: #3c3c3c;
+  --secondary: #ececec;
+  --accent: #b89778;
+  --bg: #ffffff;
+  --section-bg: #f5f5f5;
+  --text: #2c2c2c;
 }
 
-/* Resetting default styles for consistent cross-browser rendering */
+/* Reset default styles */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Ensuring padding and borders are included in element sizes */
+  box-sizing: border-box;
 }
 
-/* Enabling smooth scrolling for anchor links */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Setting base styles for the body */
+/* Body styles */
 body {
-  font-family: 'Inter', sans-serif; /* Primary font for clean typography */
-  background: var(--bg); /* Applying theme background color */
-  color: var(--text); /* Applying theme text color */
-  overflow-x: hidden; /* Preventing horizontal scroll */
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
 }
 
-/* Styling headings for consistent and futuristic appearance */
+/* Headings */
 h1, h2, h3 {
-  font-family: 'Orbitron', sans-serif; /* Futuristic font for headings */
-  font-weight: 500; /* Medium weight for balance */
-  letter-spacing: 0.8px; /* Slight spacing for readability */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Enhancing accessibility with visible focus indicators */
+/* Focus indicators */
 a:focus, button:focus, input:focus, textarea:focus {
-  outline: 2px solid var(--accent); /* Accent-colored outline on focus */
-  outline-offset: 2px; /* Spacing for clarity */
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
-/* Styling the fixed navigation bar */
+/* Navigation */
 nav {
-  position: fixed; /* Keeping nav at the top */
+  position: fixed;
   top: 0;
-  width: 100%; /* Full-width navigation */
-  padding: 15px 40px; /* Comfortable padding */
-  display: flex; /* Flex layout for alignment */
-  justify-content: space-between; /* Spacing elements evenly */
-  align-items: center; /* Centering vertically */
-  background: rgba(15, 15, 15, 0.8); /* Semi-transparent dark background */
-  border-bottom: 1px solid var(--accent); /* Accent border for style */
-  z-index: 999; /* Ensuring nav stays above other content */
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 15, 15, 0.8);
+  border-bottom: 1px solid var(--accent);
+  z-index: 999;
 }
 
-/* Styling the logo container */
+/* Logo */
 .circle-logo {
-  display: flex; /* Flex for logo and text alignment */
-  align-items: center; /* Vertical centering */
-  gap: 8px; /* Spacing between circle and text */
-  text-decoration: none; /* Removing underline */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
 }
 
-/* Styling the circular logo element */
 .circle {
-  width: 36px; /* Fixed size for consistency */
+  width: 36px;
   height: 36px;
-  background: linear-gradient(135deg, var(--primary), var(--accent)); /* Gradient background */
-  border-radius: 50%; /* Circular shape */
-  color: var(--bg); /* Background-colored text */
-  display: flex; /* Centering content */
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: 50%;
+  color: var(--bg);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600; /* Bold text */
-  font-size: 1rem; /* Readable size */
-  transition: transform 0.3s; /* Smooth hover effect */
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.3s;
 }
 
-/* Adding hover effect to the logo circle */
 .circle-logo:hover .circle {
-  transform: scale(1.05); /* Slight scale-up on hover */
+  transform: scale(1.05);
 }
 
-/* Styling the logo text with gradient effect */
 .circle-text {
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-size: 1rem; /* Readable size */
-  font-weight: 400; /* Regular weight */
-  letter-spacing: 1px; /* Slight spacing for clarity */
-  background: linear-gradient(90deg, var(--primary), var(--accent)); /* Gradient text */
-  -webkit-background-clip: text; /* Clipping gradient to text */
-  -webkit-text-fill-color: transparent; /* Transparent text for gradient */
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Styling navigation links container */
+/* Nav links */
 .nav-links {
-  display: flex; /* Horizontal layout */
-  gap: 20px; /* Spacing between links */
-  list-style: none; /* Removing bullets */
+  display: flex;
+  gap: 20px;
+  list-style: none;
 }
 
-/* Styling individual navigation links */
 .nav-links a {
-  color: var(--text); /* Theme text color */
-  text-decoration: none; /* No underline */
-  font-size: 0.9rem; /* Compact size */
-  font-weight: 400; /* Regular weight */
-  letter-spacing: 0.5px; /* Slight spacing */
-  transition: color 0.3s, transform 0.2s; /* Smooth hover effects */
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: color 0.3s, transform 0.2s;
 }
 
-/* Adding hover effects to nav links */
 .nav-links a:hover {
-  color: var(--accent); /* Accent color on hover */
-  transform: scale(1.05); /* Slight scale-up */
+  color: var(--accent);
+  transform: scale(1.05);
 }
 
-/* Hiding the mobile nav toggle checkbox */
+/* Mobile nav toggle */
 .nav-toggle {
   display: none;
 }
 
-/* Styling the mobile nav toggle label */
 .nav-toggle-label {
-  display: none; /* Hidden by default */
-  font-size: 1.4rem; /* Large icon size */
-  color: var(--text); /* Theme text color */
-  cursor: pointer; /* Pointer on hover */
+  display: none;
+  font-size: 1.4rem;
+  color: var(--text);
+  cursor: pointer;
 }
 
-/* Styling the theme controls container */
+/* Theme controls */
 .theme-controls {
-  display: flex; /* Horizontal layout */
-  gap: 12px; /* Spacing between buttons */
+  display: flex;
+  gap: 12px;
 }
 
-/* Styling theme toggle and resume download buttons */
 .toggle-theme {
-  padding: 6px 14px; /* Compact padding */
-  border: 1px solid var(--accent); /* Accent border */
-  background: transparent; /* No background */
-  color: var(--text); /* Theme text color */
-  border-radius: 6px; /* Rounded corners */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-size: 0.8rem; /* Small size */
-  font-weight: 400; /* Regular weight */
-  text-align: center; /* Centered text */
-  text-decoration: none; /* No underline */
-  cursor: pointer; /* Pointer on hover */
-  transition: background 0.3s, color 0.3s, transform 0.2s; /* Smooth transitions */
+  padding: 6px 14px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--text);
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
 }
 
-/* Adding hover effects to theme buttons */
 .toggle-theme:hover {
-  background: var(--accent); /* Accent background on hover */
-  color: var(--bg); /* Background-colored text */
-  transform: scale(1.05); /* Slight scale-up */
+  background: var(--accent);
+  color: var(--bg);
+  transform: scale(1.05);
 }
 
-/* Hiding the theme toggle checkbox */
 .theme-toggle {
   display: none;
 }
 
-/* Setting base padding for sections */
+/* Section base styles */
 section {
-  padding: 80px 20px; /* Generous padding */
-  background: var(--section-bg); /* Theme section background */
+  padding: 80px 20px;
+  background: var(--section-bg);
 }
 
-/* Styling the hero section */
+/* Hero section */
 .hero {
-  height: 100vh; /* Full viewport height */
-  display: flex; /* Flex for centering content */
-  flex-direction: column; /* Vertical stacking */
-  justify-content: center; /* Vertical centering */
-  align-items: center; /* Horizontal centering */
-  text-align: center; /* Centered text */
-  background: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('../images/8.avif') no-repeat center/cover; /* Gradient overlay with background image */
-  position: relative; /* For overlay positioning */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('../images/9.avif') no-repeat center/cover;
+  position: relative;
 }
 
-/* Adding overlay for hero contrast */
 .hero::before {
-  content: ''; /* Empty content */
-  position: absolute; /* Full coverage */
-  inset: 0; /* Shorthand for all sides */
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
-  z-index: -1; /* Behind content */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
 }
 
-/* Styling hero heading */
 .hero h2 {
-  font-size: 1.8rem; /* Moderate size */
-  letter-spacing: 1.2px; /* Slight spacing */
+  font-size: 1.8rem;
+  letter-spacing: 1.2px;
 }
 
-/* Styling hero paragraph */
 .hero p {
-  font-size: 0.9rem; /* Compact size */
-  margin-top: 12px; /* Spacing above */
-  font-weight: 300; /* Light weight */
-  letter-spacing: 0.5px; /* Slight spacing */
-  animation: fadeIn 1.5s ease forwards; /* Fade-in animation */
+  font-size: 0.9rem;
+  margin-top: 12px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  animation: fadeIn 1.5s ease forwards;
 }
 
-/* Styling hero button */
 .hero .button {
-  margin-top: 25px; /* Spacing above */
-  padding: 10px 28px; /* Comfortable padding */
-  font-size: 0.85rem; /* Small size */
-  color: var(--bg); /* Background-colored text */
-  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
-  border: none; /* No border */
-  border-radius: 6px; /* Rounded corners */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-weight: 400; /* Regular weight */
-  text-decoration: none; /* No underline */
-  transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
+  margin-top: 25px;
+  padding: 10px 28px;
+  font-size: 0.85rem;
+  color: var(--bg);
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  border: none;
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.3s;
 }
 
-/* Adding hover effects to hero button */
 .hero .button:hover {
-  transform: scale(1.05); /* Slight scale-up */
-  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow */
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3);
 }
 
-/* Styling the avatar image */
 .avatar {
-  width: 90px; /* Fixed size */
+  width: 90px;
   height: 90px;
-  background: url('../images/dube.jpg') no-repeat center/cover; /* Profile image */
-  background-color: var(--secondary); /* Fallback background */
-  border-radius: 50%; /* Circular shape */
-  border: 1px solid var(--accent); /* Accent border */
-  margin-bottom: 15px; /* Spacing below */
-  animation: pulse 2s ease-in-out infinite; /* Pulse animation */
+  background: url('../images/dube.jpg') no-repeat center/cover;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  margin-bottom: 15px;
+  animation: pulse 2s ease-in-out infinite;
 }
 
-/* Centering content in about section */
+/* About section */
 .about {
   text-align: center;
 }
 
-/* Styling about section heading */
 .about h2 {
-  font-size: 2rem; /* Large size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Slight spacing */
-  margin-bottom: 20px; /* Spacing below */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+  animation: slideIn 1s ease forwards;
 }
 
-/* Styling about section paragraph */
 .about p {
-  max-width: 600px; /* Constrained width */
-  margin: 0 auto; /* Centered */
-  font-size: 0.95rem; /* Readable size */
-  font-weight: 300; /* Light weight */
-  line-height: 1.8; /* Spacious line height */
-  background: var(--secondary); /* Card background */
-  padding: 30px; /* Generous padding */
-  border-left: 3px solid var(--accent); /* Accent border */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s; /* Smooth hover effect */
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  background: var(--secondary);
+  padding: 30px;
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
 }
 
-/* Adding hover effect to about paragraph */
 .about p:hover {
-  transform: translateY(-3px); /* Slight lift */
+  transform: translateY(-3px);
 }
 
-/* Centering content in education section */
+/* Education section */
 .education {
   text-align: center;
 }
 
-/* Styling education section heading */
 .education h2 {
-  font-size: 2rem; /* Large size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Slight spacing */
-  margin-bottom: 30px; /* Spacing below */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1.2px;
+  margin-bottom: 30px;
+  animation: slideIn 1s ease forwards;
 }
 
-/* Styling education cards container */
 .education-grid {
-  max-width: 700px; /* Constrained width */
-  margin: 0 auto; /* Centered */
-  display: flex; /* Flex layout */
-  flex-direction: column; /* Vertical stacking */
-  gap: 20px; /* Spacing between cards */
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Styling individual education cards */
 .education-card {
-  background: var(--secondary); /* Card background */
-  padding: 20px; /* Comfortable padding */
-  border-radius: 8px; /* Rounded corners */
-  border-left: 3px solid var(--accent); /* Accent border */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  text-align: left; /* Left-aligned text */
-  transition: transform 0.3s; /* Smooth hover effect */
+  background: var(--secondary);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  transition: transform 0.3s;
 }
 
-/* Adding hover effect to education cards */
 .education-card:hover {
-  transform: translateY(-3px); /* Slight lift */
+  transform: translateY(-3px);
 }
 
-/* Styling education card headings */
 .education-card h3 {
-  font-size: 1.1rem; /* Moderate size */
-  margin-bottom: 8px; /* Spacing below */
+  font-size: 1.1rem;
+  margin-bottom: 8px;
 }
 
-/* Styling education card paragraphs */
 .education-card p {
-  font-size: 0.85rem; /* Compact size */
-  font-weight: 300; /* Light weight */
-  line-height: 1.6; /* Readable line height */
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.6;
 }
 
-/* Centering content in skills section */
+/* Skills section */
 .skills {
   text-align: center;
 }
 
-/* Styling skills section heading */
 .skills h2 {
-  font-size: 2rem; /* Large size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Slight spacing */
-  margin-bottom: 20px; /* Spacing below */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+  animation: slideIn 1s ease forwards;
 }
 
-/* Styling skills grid layout */
 .skill-grid {
-  display: grid; /* Grid layout */
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive columns */
-  gap: 12px; /* Spacing between cards */
-  max-width: 800px; /* Constrained width */
-  margin: 0 auto; /* Centered */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* Styling individual skill cards */
 .skill-card {
-  background: var(--secondary); /* Card background */
-  border-left: 3px solid var(--accent); /* Accent border */
-  padding: 12px; /* Compact padding */
-  border-radius: 6px; /* Rounded corners */
-  font-size: 0.85rem; /* Compact size */
-  font-weight: 400; /* Regular weight */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s, background 0.3s; /* Smooth hover effects */
+  background: var(--secondary);
+  border-left: 3px solid var(--accent);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, background 0.3s;
 }
 
-/* Adding hover effect to skill cards */
 .skill-card:hover {
-  transform: translateY(-4px); /* Slight lift */
-  background: var(--accent); /* Accent background */
+  transform: translateY(-4px);
+  background: var(--accent);
 }
 
-/* Centering content in certifications section */
- /* Certifications Section */
+/* Certifications section */
 .certifications {
   text-align: center;
-  background: var(--section-bg);
-  padding: 80px 20px;
 }
 
 .certifications h2 {
@@ -391,811 +360,744 @@ section {
   letter-spacing: 1.2px;
   margin-bottom: 30px;
   animation: slideIn 1s ease forwards;
-  text-align: center; /* Explicitly center the heading */
-}
 }
 
-/* Styling certifications section heading */
-.certifications h2 {
-  font-size: 2rem; /* Large size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Slight spacing */
-  margin-bottom: 20px; /* Spacing below */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
-}
-
-/* Styling certifications grid layout */
 .certification-grid {
-  display: grid; /* Grid layout */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
-  gap: 12px; /* Spacing between cards */
-  max-width: 800px; /* Constrained width */
-  margin: 0 auto; /* Centered */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* Styling individual certification cards */
 .certification-card {
-  background: var(--secondary); /* Card background */
-  border-left: 3px solid var(--accent); /* Accent border */
-  padding: 12px; /* Compact padding */
-  border-radius: 6px; /* Rounded corners */
-  font-size: 0.85rem; /* Compact size */
-  font-weight: 400; /* Regular weight */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s, background 0.3s; /* Smooth hover effects */
+  background: var(--secondary);
+  border-left: 3px solid var(--accent);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, background 0.3s;
 }
 
-/* Adding hover effect to certification cards */
 .certification-card:hover {
-  transform: translateY(-4px); /* Slight lift */
-  background: var(--accent); /* Accent background */
+  transform: translateY(-4px);
+  background: var(--accent);
 }
 
-/* Styling certification card headings */
 .certification-card h3 {
-  font-size: 1rem; /* Moderate size */
-  margin-bottom: 8px; /* Spacing below */
+  font-size: 1rem;
+  margin-bottom: 8px;
 }
 
-/* Styling certification card paragraphs */
 .certification-card p {
-  font-size: 0.8rem; /* Small size */
-  font-weight: 300; /* Light weight */
+  font-size: 0.8rem;
+  font-weight: 300;
 }
 
-/* Centering content in experience section */
+/* Experience section */
 .experience {
   text-align: center;
 }
 
-/* Styling experience section heading */
 .experience h2 {
-  font-size: 2rem; /* Large size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Slight spacing */
-  margin-bottom: 30px; /* Spacing below */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1.2px;
+  margin-bottom: 30px;
+  animation: slideIn 1s ease forwards;
 }
 
-/* Styling experience cards container */
 .experience-grid {
-  max-width: 700px; /* Constrained width */
-  margin: 0 auto; /* Centered */
-  display: flex; /* Flex layout */
-  flex-direction: column; /* Vertical stacking */
-  gap: 20px; /* Spacing between cards */
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Styling individual experience cards */
 .experience-card {
-  background: var(--secondary); /* Card background */
-  padding: 20px; /* Comfortable padding */
-  border-radius: 8px; /* Rounded corners */
-  border-left: 3px solid var(--accent); /* Accent border */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  text-align: left; /* Left-aligned text */
-  transition: transform 0.3s; /* Smooth hover effect */
+  background: var(--secondary);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  transition: transform 0.3s;
 }
 
-/* Adding hover effect to experience cards */
 .experience-card:hover {
-  transform: translateY(-3px); /* Slight lift */
+  transform: translateY(-3px);
 }
 
-/* Styling experience card headings */
 .experience-card h3 {
-  font-size: 1.1rem; /* Moderate size */
-  margin-bottom: 8px; /* Spacing below */
+  font-size: 1.1rem;
+  margin-bottom: 8px;
 }
 
-/* Styling experience card paragraphs */
 .experience-card p {
-  font-size: 0.85rem; /* Compact size */
-  font-weight: 300; /* Light weight */
-  line-height: 1.6; /* Readable line height */
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.6;
 }
 
-/* Styling date badges for education and experience */
+/* Date badges */
 .date-badge {
-  font-size: 0.7rem; /* Small size */
-  background: var(--accent); /* Accent background */
-  color: var(--bg); /* Background-colored text */
-  padding: 4px 8px; /* Compact padding */
-  border-radius: 4px; /* Rounded corners */
-  display: inline-block; /* Inline-block for flow */
-  margin: 8px 0; /* Vertical spacing */
+  font-size: 0.7rem;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 8px 0;
 }
 
-/* Centering content in projects section */
+/* Projects section */
 .projects {
   text-align: center;
 }
 
-/* Styling projects section heading */
 .projects h2 {
-  font-size: 2rem; /* Large size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Slight spacing */
-  margin-bottom: 20px; /* Spacing below */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+  animation: slideIn 1s ease forwards;
 }
 
-/* Styling individual project items */
 .project-item {
-  max-width: 700px; /* Constrained width */
-  margin: 20px auto; /* Centered with spacing */
-  background: var(--secondary); /* Card background */
-  padding: 20px; /* Comfortable padding */
-  border-radius: 8px; /* Rounded corners */
-  border-left: 3px solid var(--accent); /* Accent border */
-  text-align: left; /* Left-aligned text */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s; /* Smooth hover effect */
+  max-width: 700px;
+  margin: 20px auto;
+  background: var(--secondary);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
 }
 
-/* Adding hover effect to project items */
 .project-item:hover {
-  transform: translateY(-3px); /* Slight lift */
+  transform: translateY(-3px);
 }
 
-/* Styling project images */
 .project-image {
-  width: 100%; /* Full width */
-  height: 150px; /* Fixed height */
-  background: var(--secondary) no-repeat center/cover; /* Fallback background */
-  border-radius: 6px; /* Rounded corners */
-  margin-bottom: 15px; /* Spacing below */
+  width: 100%;
+  height: 150px;
+  background: var(--secondary) no-repeat center/cover;
+  border-radius: 6px;
+  margin-bottom: 15px;
 }
 
-/* Styling project item headings */
 .project-item h3 {
-  font-size: 1.1rem; /* Moderate size */
-  margin-bottom: 8px; /* Spacing below */
+  font-size: 1.1rem;
+  margin-bottom: 8px;
 }
 
-/* Styling project item paragraphs */
 .project-item p {
-  font-size: 0.85rem; /* Compact size */
-  font-weight: 300; /* Light weight */
-  line-height: 1.6; /* Readable line height */
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.6;
 }
 
-/* Styling tech badges container */
 .tech-badges {
-  display: flex; /* Horizontal layout */
-  gap: 8px; /* Spacing between badges */
-  margin: 10px 0; /* Vertical spacing */
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
 }
 
-/* Styling individual tech badges */
 .tech-badge {
-  background: var(--accent); /* Accent background */
-  color: var(--bg); /* Background-colored text */
-  padding: 4px 8px; /* Compact padding */
-  border-radius: 4px; /* Rounded corners */
-  font-size: 0.75rem; /* Small size */
-  font-family: 'Inter', sans-serif; /* Clean font */
-  font-weight: 400; /* Regular weight */
+  background: var(--accent);
+  color: var(--bg);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
 }
 
-/* Styling project item links */
 .project-item a {
-  display: inline-block; /* Inline-block for flow */
-  margin-top: 10px; /* Spacing above */
-  padding: 8px 16px; /* Comfortable padding */
-  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
-  color: var(--bg); /* Background-colored text */
-  text-decoration: none; /* No underline */
-  border-radius: 6px; /* Rounded corners */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-size: 0.8rem; /* Small size */
-  font-weight: 400; /* Regular weight */
-  transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  color: var(--bg);
+  text-decoration: none;
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  transition: transform 0.2s, box-shadow 0.3s;
 }
 
-/* Adding hover effect to project links */
 .project-item a:hover {
-  transform: scale(1.05); /* Slight scale-up */
-  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow */
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3);
 }
 
-/* Centering content in blog section */
-.blog {
+/* Insights & Updates section */
+.insights-updates {
   text-align: center;
+  background: var(--section-bg);
+  padding: 80px 20px;
 }
 
-/* Styling blog section heading */
-.blog h2 {
-  font-size: 2rem; /* Large size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Slight spacing */
-  margin-bottom: 20px; /* Spacing below */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+.insights-updates:has(+ .articles .article-item:target) {
+  display: none;
+  opacity: 0;
 }
 
-/* Styling blog items container */
-.blog-grid {
-  max-width: 700px; /* Constrained width */
-  margin: 0 auto; /* Centered */
-  display: flex; /* Flex layout */
-  flex-direction: column; /* Vertical stacking */
-  gap: 20px; /* Spacing between items */
+.insights-updates h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1.2px;
+  margin-bottom: 30px;
+  animation: slideIn 1s ease forwards;
 }
 
-/* Styling individual blog items */
-.blog-item {
-  background: var(--secondary); /* Card background */
-  padding: 20px; /* Comfortable padding */
-  border-radius: 8px; /* Rounded corners */
-  border-left: 3px solid var(--accent); /* Accent border */
-  text-align: left; /* Left-aligned text */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s; /* Smooth hover effect */
+.insights-updates-container {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Adding hover effect to blog items */
-.blog-item:hover {
-  transform: translateY(-3px); /* Slight lift */
+.insights-card {
+  background: var(--secondary);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, opacity 0.5s ease;
 }
 
-/* Styling blog item headings */
-.blog-item h3 {
-  font-size: 1.1rem; /* Moderate size */
-  margin-bottom: 8px; /* Spacing below */
+.insights-card:hover {
+  transform: translateY(-3px);
 }
 
-/* Styling blog item paragraphs */
-.blog-item p {
-  font-size: 0.85rem; /* Compact size */
-  font-weight: 300; /* Light weight */
-  line-height: 1.6; /* Readable line height */
+.insights-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
 }
 
-/* Styling blog item links */
-.blog-item a {
-  display: inline-block; /* Inline-block for flow */
-  margin-top: 10px; /* Spacing above */
-  padding: 8px 16px; /* Comfortable padding */
-  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
-  color: var(--bg); /* Background-colored text */
-  text-decoration: none; /* No underline */
-  border-radius: 6px; /* Rounded corners */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-size: 0.8rem; /* Small size */
-  font-weight: 400; /* Regular weight */
-  transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
+.insights-card p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 
-/* Adding hover effect to blog links */
-.blog-item a:hover {
-  transform: scale(1.05); /* Slight scale-up */
-  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow */
+.insights-card .date-badge {
+  font-size: 0.7rem;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 8px 0;
 }
 
-/* Centering content in testimonials section */
+.insights-card .read-more {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 10px;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.insights-card .read-more:hover {
+  color: #f1f5f9;
+  transform: scale(1.05);
+}
+
+.insights-card .read-more:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Articles section */
+.articles {
+  text-align: center;
+  background: var(--section-bg);
+  padding: 80px 20px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.articles:has(.article-item:target) {
+  display: block;
+  opacity: 1;
+}
+
+.articles h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1.2px;
+  margin-bottom: 30px;
+  animation: slideIn 1s ease forwards;
+}
+
+.article-item {
+  max-width: 700px;
+  margin: 20px auto;
+  background: var(--secondary);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, opacity 0.5s ease;
+  display: none;
+  opacity: 0;
+  scroll-margin-top: 80px;
+}
+
+.article-item:target {
+  display: block;
+  opacity: 1;
+}
+
+.article-item:hover {
+  transform: translateY(-3px);
+}
+
+.article-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.article-item p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.article-item ul {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 10px 0 10px 20px;
+}
+
+.article-item .date-badge {
+  font-size: 0.7rem;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 8px 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  color: var(--bg);
+  text-decoration: none;
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.back-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3);
+}
+
+/* Testimonials section */
 .testimonials {
   text-align: center;
 }
 
-/* Styling testimonials section heading */
 .testimonials h2 {
-  font-size: 2rem; /* Large size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Slight spacing */
-  margin-bottom: 20px; /* Spacing below */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+  animation: slideIn 1s ease forwards;
 }
 
-/* Styling testimonials cards container */
 .testimonial-grid {
-  max-width: 700px; /* Constrained width */
-  margin: 0 auto; /* Centered */
-  display: flex; /* Flex layout */
-  flex-direction: column; /* Vertical stacking */
-  gap: 20px; /* Spacing between cards */
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Styling individual testimonial cards */
 .testimonial-card {
-  background: var(--secondary); /* Card background */
-  padding: 20px; /* Comfortable padding */
-  border-radius: 8px; /* Rounded corners */
-  border-left: 3px solid var(--accent); /* Accent border */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s; /* Smooth hover effect */
+  background: var(--secondary);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
 }
 
-/* Adding initial offset to odd testimonial cards */
 .testimonial-card:nth-child(odd) {
-  transform: translateX(20px); /* Right offset */
+  transform: translateX(20px);
 }
 
-/* Adding initial offset to even testimonial cards */
 .testimonial-card:nth-child(even) {
-  transform: translateX(-20px); /* Left offset */
+  transform: translateX(-20px);
 }
 
-/* Adding hover effect to testimonial cards */
 .testimonial-card:hover {
-  transform: translateY(-3px) translateX(0); /* Lift and reset offset */
+  transform: translateY(-3px) translateX(0);
 }
 
-/* Styling testimonial card paragraphs */
 .testimonial-card p {
-  font-size: 0.85rem; /* Compact size */
-  font-weight: 300; /* Light weight */
-  line-height: 1.6; /* Readable line height */
-  margin-bottom: 10px; /* Spacing below */
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 
-/* Styling testimonial card citations */
 .testimonial-card cite {
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-size: 0.8rem; /* Small size */
-  font-weight: 400; /* Regular weight */
-  color: var(--accent); /* Accent color */
-  font-style: normal; /* Normal style */
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--accent);
+  font-style: normal;
 }
 
-/* Centering content in contact section */
+/* Contact section */
 .contact {
   text-align: center;
 }
 
-/* Styling contact section heading */
 .contact h2 {
-  font-size: 2rem; /* Large size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Slight spacing */
-  margin-bottom: 30px; /* Spacing below */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1.2px;
+  margin-bottom: 30px;
+  animation: slideIn 1s ease forwards;
 }
 
-/* Styling contact form container */
 .contact form {
-  max-width: 400px; /* Constrained width */
-  margin: 0 auto; /* Centered */
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-/* Styling form groups */
 .form-group {
-  position: relative; /* For label positioning */
-  margin-bottom: 18px; /* Spacing below */
+  position: relative;
+  margin-bottom: 18px;
 }
 
-/* Styling form inputs and textareas */
 .contact input,
 .contact textarea {
-  width: 100%; /* Full width */
-  padding: 8px 0 4px; /* Comfortable padding */
-  background: transparent; /* No background */
-  border: none; /* No border */
-  border-bottom: 1px solid var(--primary); /* Underline border */
-  color: var(--text); /* Theme text color */
-  font-size: 0.8rem; /* Small size */
-  font-weight: 300; /* Light weight */
-  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth focus effects */
+  width: 100%;
+  padding: 8px 0 4px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--primary);
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 300;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Allowing vertical resizing for textareas */
 .contact textarea {
-  resize: vertical; /* Vertical resize only */
-  min-height: 70px; /* Minimum height */
+  resize: vertical;
+  min-height: 70px;
 }
 
-/* Styling form inputs and textareas on focus */
 .contact input:focus,
 .contact textarea:focus {
-  border-color: var(--accent); /* Accent underline */
-  box-shadow: 0 1px 6px rgba(212, 163, 115, 0.4); /* Subtle glow */
-  outline: none; /* No default outline */
+  border-color: var(--accent);
+  box-shadow: 0 1px 6px rgba(212, 163, 115, 0.4);
+  outline: none;
 }
 
-/* Styling form labels */
 .contact label {
-  position: absolute; /* Absolute positioning */
-  top: 8px; /* Initial position */
-  left: 0; /* Aligned left */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-size: 0.8rem; /* Small size */
-  font-weight: 400; /* Regular weight */
-  color: var(--text); /* Theme text color */
-  pointer-events: none; /* Non-interactable */
-  transition: all 0.3s ease; /* Smooth transition */
+  position: absolute;
+  top: 8px;
+  left: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text);
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
 
-/* Animating labels on focus or filled input */
 .contact input:focus + label,
 .contact input:not(:placeholder-shown) + label,
 .contact textarea:focus + label,
 .contact textarea:not(:placeholder-shown) + label {
-  top: -14px; /* Move above input */
-  font-size: 0.65rem; /* Smaller size */
-  color: var(--accent); /* Accent color */
+  top: -14px;
+  font-size: 0.65rem;
+  color: var(--accent);
 }
 
-/* Styling form submit button */
 .contact button {
-  width: 100%; /* Full width */
-  padding: 8px; /* Comfortable padding */
-  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
-  border: none; /* No border */
-  color: var(--bg); /* Background-colored text */
-  border-radius: 6px; /* Rounded corners */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-size: 0.85rem; /* Small size */
-  font-weight: 500; /* Medium weight */
-  letter-spacing: 0.8px; /* Slight spacing */
-  cursor: pointer; /* Pointer on hover */
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+  width: 100%;
+  padding: 8px;
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  border: none;
+  color: var(--bg);
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Adding hover effect to submit button */
 .contact button:hover {
-  transform: scale(1.05); /* Slight scale-up */
-  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.4); /* Subtle shadow */
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.4);
 }
 
-/* Styling call-to-action banner */
+/* CTA section */
 .cta {
-  text-align: center; /* Centered content */
-  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
-  padding: 60px 20px; /* Generous padding */
-  color: var(--bg); /* Background-colored text */
+  text-align: center;
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  padding: 60px 20px;
+  color: var(--bg);
 }
 
-/* Styling CTA heading */
 .cta h2 {
-  font-size: 2rem; /* Large size */
-  letter-spacing: 1.2px; /* Slight spacing */
-  margin-bottom: 15px; /* Spacing below */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem;
+  letter-spacing: 1.2px;
+  margin-bottom: 15px;
+  animation: slideIn 1s ease forwards;
 }
 
-/* Styling CTA paragraph */
 .cta p {
-  font-size: 1rem; /* Readable size */
-  font-weight: 300; /* Light weight */
-  max-width: 600px; /* Constrained width */
-  margin: 0 auto 20px; /* Centered with spacing */
+  font-size: 1rem;
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto 20px;
 }
 
-/* Styling CTA buttons container */
 .cta-buttons {
-  display: flex; /* Horizontal layout */
-  justify-content: center; /* Centered */
-  gap: 15px; /* Spacing between buttons */
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
-/* Styling CTA buttons */
 .cta .button {
-  padding: 10px 28px; /* Comfortable padding */
-  font-size: 0.85rem; /* Small size */
-  color: var(--accent); /* Accent-colored text */
-  background: var(--bg); /* Theme background */
-  border: 1px solid var(--accent); /* Accent border */
-  border-radius: 6px; /* Rounded corners */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-weight: 400; /* Regular weight */
-  text-decoration: none; /* No underline */
-  transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
+  padding: 10px 28px;
+  font-size: 0.85rem;
+  color: var(--accent);
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.3s;
 }
 
-/* Adding hover effect to CTA buttons */
 .cta .button:hover {
-  transform: scale(1.05); /* Slight scale-up */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Styling footer */
+/* Footer */
 footer {
-  padding: 30px 20px; /* Comfortable padding */
-  background: var(--bg); /* Theme background */
-  text-align: center; /* Centered content */
-  font-size: 0.8rem; /* Small size */
-  font-weight: 300; /* Light weight */
+  padding: 30px 20px;
+  background: var(--bg);
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 300;
 }
 
-/* Styling social icons container */
 .social-icons {
-  margin-bottom: 15px; /* Spacing below */
-  display: flex; /* Horizontal layout */
-  justify-content: center; /* Centered */
-  gap: 15px; /* Spacing between icons */
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
-/* Styling social media links */
 .social-icons a {
-  font-size: 1.2rem; /* Moderate size */
-  color: var(--text); /* Theme text color */
-  background: var(--secondary); /* Card background */
-  border: 1px solid var(--accent); /* Accent border */
-  border-radius: 50%; /* Circular shape */
-  width: 36px; /* Fixed size */
+  font-size: 1.2rem;
+  color: var(--text);
+  background: var(--secondary);
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  width: 36px;
   height: 36px;
-  display: flex; /* Centering content */
+  display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s, transform 0.2s; /* Smooth hover effects */
+  transition: background 0.3s, transform 0.2s;
 }
 
-/* Adding hover effect to social icons */
 .social-icons a:hover {
-  background: var(--accent); /* Accent background */
-  transform: scale(1.05); /* Slight scale-up */
+  background: var(--accent);
+  transform: scale(1.05);
 }
 
-/* Defining keyframe animations */
+/* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; } /* Start invisible */
-  to { opacity: 1; } /* End fully visible */
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideIn {
-  from { transform: translateY(20px); opacity: 0; } /* Start below and invisible */
-  to { transform: translateY(0); opacity: 1; } /* End in place and visible */
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); } /* Normal size */
-  50% { transform: scale(1.05); } /* Slightly enlarged */
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
-/* Responsive styles for screens up to 768px */
+/* Responsive styles */
 @media (max-width: 768px) {
-  /* Adjusting nav for mobile */
   nav {
-    flex-direction: column; /* Vertical stacking */
-    align-items: flex-start; /* Left-aligned */
-    padding: 12px 20px; /* Compact padding */
-  }
-  
-/* Ensure centering on mobile */
-    .certifications h2 {
-    font-size: 1.6rem;
-    text-align: center; /* Ensure centering on mobile */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 20px;
   }
 
-  /* Showing mobile nav toggle */
   .nav-toggle-label {
-    display: block; /* Visible */
-    position: absolute; /* Positioned at top-right */
+    display: block;
+    position: absolute;
     top: 15px;
     right: 20px;
   }
 
-  /* Hiding nav links by default */
   .nav-links {
-    display: none; /* Hidden */
-    flex-direction: column; /* Vertical stacking */
-    width: 100%; /* Full width */
-    margin-top: 60px; /* Spacing below logo */
-    gap: 12px; /* Compact spacing */
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 60px;
+    gap: 12px;
   }
 
-  /* Hiding theme controls by default */
   .theme-controls-wrapper {
-    display: none; /* Hidden */
-    width: 100%; /* Full width */
-    justify-content: center; /* Centered */
+    display: none;
+    width: 100%;
+    justify-content: center;
   }
 
-  /* Showing nav links and theme controls when toggled */
   #nav-toggle:checked ~ .nav-links,
   #nav-toggle:checked ~ .theme-controls-wrapper {
-    display: flex; /* Visible */
+    display: flex;
   }
 
-  /* Adjusting theme controls for mobile */
   .theme-controls {
-    flex-direction: column; /* Vertical stacking */
-    align-items: center; /* Centered */
-    gap: 10px; /* Compact spacing */
-    margin-top: 10px; /* Spacing above */
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
   }
 
-  /* Making theme buttons full-width */
   .toggle-theme {
-    width: 100%; /* Full width */
-    padding: 6px 14px; /* Compact padding */
+    width: 100%;
+    padding: 6px 14px;
   }
 
-  /* Adjusting logo circle size */
   .circle {
-    width: 32px; /* Smaller size */
+    width: 32px;
     height: 32px;
-    font-size: 0.9rem; /* Smaller text */
+    font-size: 0.9rem;
   }
 
-  /* Adjusting logo text size */
   .circle-text {
-    font-size: 0.9rem; /* Smaller size */
+    font-size: 0.9rem;
   }
 
-  /* Reducing section padding */
   section {
-    padding: 60px 15px; /* Compact padding */
+    padding: 60px 15px;
   }
 
-  /* Adjusting hero heading size */
   .hero h2 {
-    font-size: 1.5rem; /* Smaller size */
+    font-size: 1.5rem;
   }
 
-  /* Adjusting hero paragraph */
   .hero p {
-    font-size: 0.85rem; /* Smaller size */
-    padding: 0 15px; /* Side padding */
+    font-size: 0.85rem;
+    padding: 0 15px;
   }
 
-  /* Adjusting hero button */
   .hero .button {
-    padding: 8px 20px; /* Compact padding */
-    font-size: 0.8rem; /* Smaller size */
+    padding: 8px 20px;
+    font-size: 0.8rem;
   }
 
-  /* Reducing heading sizes */
-  .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .blog h2, .testimonials h2, .experience h2, .contact h2, .cta h2 {
-    font-size: 1.6rem; /* Smaller size */
+  .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .testimonials h2, .experience h2, .contact h2, .cta h2, .articles h2, .insights-updates h2 {
+    font-size: 1.6rem;
+    text-align: center;
   }
 
-  /* Reducing paragraph sizes */
-  .about p, .education-card p, .project-item p, .blog-item p, .testimonial-card p, .experience-card p {
-    font-size: 0.8rem; /* Smaller size */
+  .about p, .education-card p, .project-item p, .testimonial-card p, .experience-card p, .article-item p, .insights-card p {
+    font-size: 0.8rem;
   }
 
-  /* Reducing skill and certification card text */
   .skill-card, .certification-card {
-    font-size: 0.8rem; /* Smaller size */
+    font-size: 0.8rem;
   }
 
-  /* Reducing subheading sizes */
-  .project-item h3, .blog-item h3, .education-card h3, .experience-card h3 {
-    font-size: 1rem; /* Smaller size */
+  .project-item h3, .education-card h3, .experience-card h3, .article-item h3, .insights-card h3 {
+    font-size: 1rem;
   }
 
-  /* Reducing project image height */
   .project-image {
-    height: 120px; /* Smaller height */
+    height: 120px;
   }
 
-  /* Adjusting contact form width */
   .contact form {
-    max-width: 350px; /* Slightly smaller */
+    max-width: 350px;
   }
 
-  /* Adjusting contact button text */
   .contact button {
-    font-size: 0.8rem; /* Smaller size */
+    font-size: 0.8rem;
   }
 
-  /* Stacking CTA buttons vertically */
   .cta-buttons {
-    flex-direction: column; /* Vertical stacking */
-    gap: 10px; /* Compact spacing */
+    flex-direction: column;
+    gap: 10px;
   }
 
-  /* Removing testimonial offsets on mobile */
   .testimonial-card:nth-child(odd), .testimonial-card:nth-child(even) {
-    transform: translateX(0); /* No offset */
+    transform: translateX(0);
   }
 
-  /* Adjusting date badge spacing */
-  .experience-card .date-badge {
-    margin: 10px 0 5px; /* Compact spacing */
+  .experience-card .date-badge, .article-item .date-badge, .insights-card .date-badge {
+    margin: 10px 0 5px;
   }
 
-  /* Adjusting articles section heading */
-  .articles h2 {
-    font-size: 1.6rem; /* Smaller size */
-  }
-
-  /* Adjusting article item headings */
-  .article-item h3 {
-    font-size: 1rem; /* Smaller size */
-  }
-
-  /* Adjusting article item text */
-  .article-item p,
   .article-item ul {
-    font-size: 0.8rem; /* Smaller size */
+    font-size: 0.8rem;
   }
 
-  /* Adjusting article date badge */
-  .article-item .date-badge {
-    font-size: 0.65rem; /* Smaller size */
-  }
-
-  /* Adjusting back link text */
   .back-link {
-    font-size: 0.75rem; /* Smaller size */
+    font-size: 0.75rem;
   }
-}
 
-/* Styling articles section */
-.articles {
-  text-align: center; /* Centered content */
-  background: var(--section-bg); /* Theme section background */
-  padding: 80px 20px; /* Generous padding */
-}
+  .insights-card {
+    padding: 20px;
+  }
 
-/* Styling articles section heading */
-.articles h2 {
-  font-size: 2rem; /* Large size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Slight spacing */
-  margin-bottom: 30px; /* Spacing below */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
-}
+  .insights-card h3 {
+    font-size: 1rem;
+  }
 
-/* Styling individual article items */
-.article-item {
-  max-width: 700px; /* Constrained width */
-  margin: 20px auto; /* Centered with spacing */
-  background: var(--secondary); /* Card background */
-  padding: 20px; /* Comfortable padding */
-  border-radius: 8px; /* Rounded corners */
-  border-left: 3px solid var(--accent); /* Accent border */
-  text-align: left; /* Left-aligned text */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s; /* Smooth hover effect */
-}
+  .insights-card p {
+    font-size: 0.8rem;
+  }
 
-/* Adding hover effect to article items */
-.article-item:hover {
-  transform: translateY(-3px); /* Slight lift */
-}
+  .insights-card .date-badge {
+    font-size: 0.65rem;
+  }
 
-/* Styling article item headings */
-.article-item h3 {
-  font-size: 1.1rem; /* Moderate size */
-  margin-bottom: 8px; /* Spacing below */
-}
-
-/* Styling article item paragraphs */
-.article-item p {
-  font-size: 0.85rem; /* Compact size */
-  font-weight: 300; /* Light weight */
-  line-height: 1.6; /* Readable line height */
-  margin-bottom: 10px; /* Spacing below */
-}
-
-/* Styling article item lists */
-.article-item ul {
-  font-size: 0.85rem; /* Compact size */
-  font-weight: 300; /* Light weight */
-  line-height: 1.6; /* Readable line height */
-  margin: 10px 0 10px 20px; /* Spacing and indentation */
-}
-
-/* Styling article date badges */
-.article-item .date-badge {
-  font-size: 0.7rem; /* Small size */
-  background: var(--accent); /* Accent background */
-  color: var(--bg); /* Background-colored text */
-  padding: 4px 8px; /* Compact padding */
-  border-radius: 4px; /* Rounded corners */
-  display: inline-block; /* Inline-block for flow */
-  margin: 8px 0; /* Vertical spacing */
-}
-
-/* Styling article back links */
-.back-link {
-  display: inline-block; /* Inline-block for flow */
-  margin-top: 10px; /* Spacing above */
-  padding: 8px 16px; /* Comfortable padding */
-  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
-  color: var(--bg); /* Background-colored text */
-  text-decoration: none; /* No underline */
-  border-radius: 6px; /* Rounded corners */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-size: 0.8rem; /* Small size */
-  font-weight: 400; /* Regular weight */
-  transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
-}
-
-/* Adding hover effect to back links */
-.back-link:hover {
-  transform: scale(1.05); /* Slight scale-up */
-  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow */
+  .insights-card .read-more {
+    font-size: 0.8rem;
+  }
 }

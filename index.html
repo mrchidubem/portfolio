@@ -1,43 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Define character encoding for proper text rendering -->
   <meta charset="UTF-8">
-  <!-- Ensure responsive design with viewport settings -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <!-- Provide SEO metadata for search engine visibility -->
   <meta name="description" content="Portfolio of Joseph Chidubem Okafor, Full Stack Software Engineer and Cloud Architect.">
   <meta name="keywords" content="Joseph Chidubem Okafor, Full Stack Developer, Cloud Architect, Portfolio">
   <meta name="author" content="Joseph Chidubem Okafor">
-  <!-- Configure Open Graph tags for social media sharing -->
   <meta property="og:title" content="Joseph Chidubem Okafor | Portfolio">
   <meta property="og:description" content="Explore the portfolio of Joseph Chidubem Okafor, a Full Stack Software Engineer and Cloud Architect.">
   <meta property="og:image" content="images/og-image.jpg">
-  <!-- Set page title for browser tab -->
   <title>Joseph | Portfolio</title>
-  <!-- Link favicon for browser branding -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <!-- Preload hero background image to improve performance -->
   <link rel="preload" href="images/9.avif" as="image">
-  <!-- Import Google Fonts for consistent typography -->
+  <link rel="preload" href="images/dube.jpg" as="image">
+  <link rel="preload" href="images/carecycle.webp" as="image">
+  <link rel="preload" href="images/shell.png" as="image">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Include Font Awesome for iconography -->
   <link rel="stylesheet" href="css/all.min.css">
-  <!-- Link custom stylesheet for site-specific styling -->
   <link rel="stylesheet" href="css/everystyle.css">
 </head>
 <body>
-  <!-- Navigation bar for site navigation -->
   <nav aria-label="Main navigation">
-    <!-- Logo with gradient text for branding -->
     <a href="#" class="circle-logo">
       <div class="circle">D</div>
       <span class="circle-text gradient-name">ubicventures</span>
     </a>
-    <!-- Mobile navigation toggle for responsive menu -->
     <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
     <label for="nav-toggle" class="nav-toggle-label"><i class="fas fa-bars"></i></label>
-    <!-- Navigation links for main sections -->
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
@@ -45,11 +34,10 @@
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#blog">Blog</a></li>
+      <li><a href="#insights-updates">Insights & Updates</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <!-- Theme toggle and resume download controls -->
     <div class="theme-controls-wrapper">
       <div class="theme-controls">
         <input type="checkbox" id="theme-toggle" class="theme-toggle" hidden>
@@ -59,30 +47,31 @@
     </div>
   </nav>
 
-  <!-- Hero section to introduce the portfolio -->
-  <section class="hero" id="home">
+  <section class="hero" id="home" role="region" aria-labelledby="home-heading">
     <div class="avatar"></div>
-    <h2>Joseph Chidubem Okafor</h2>
+    <h2 id="home-heading">Joseph Chidubem Okafor</h2>
     <p>Full Stack Software Engineer | Cloud Architect</p>
     <a href="#projects" class="button" aria-label="Explore Joseph's projects">Explore My Work</a>
   </section>
 
-  <!-- About section to describe personal and professional background -->
-  <section class="about" id="about">
-    <h2>About Me</h2>
+  <section class="about" id="about" role="region" aria-labelledby="about-heading">
+    <h2 id="about-heading">About Me</h2>
     <p>
-      I’m Joseph Chidubem Okafor,  A Full Stack Software Engineer, Electronic Engineer, and Digital Strategist passionate about building impactful, people-centered solutions. 
-      I hold a B.Eng. in Electronic Engineering from the University of Nigeria Nsukka (UNN), and my journey spans both hardware and software systems.
-      With hands-on experience as an Electrical Engineer at Evergreen Technology and as a Solutions Architect at CAP Nigeria, I bring a unique blend of engineering precision and software innovation. 
-      I’ve been professionally trained through ALX, 3MTT, and IHS, specializing in Full Stack Development, DevOps, and Generative AI.
-      As the founder of Dubicventures, I lead the development of scalable digital platforms including the HIPAA-compliant CareCycle Hospital Management System, built with Django and MySQL. 
-      I’ve optimized user experience by 15% at PACUSS, managed technical infrastructure, and led strategic campaigns with a commitment to excellence, integrity, and human connection.
+      I’m Joseph Chidubem Okafor — a Full Stack Software Engineer, Electronic Engineer, and Digital Strategist driven by a passion
+      for building meaningful, people-centered solutions. With a B.Eng. in Electronic Engineering from University of Nigeria Nsukka, 
+      I combine hardware insight with software innovation to solve real-world problems.
+      My journey includes hands-on roles as an Electrical Engineer at Evergreen Technology, Solutions 
+      Architect at CAP Nigeria and Python Developer at PACUSS Global Ventures. Trained through ALX, 3MTT, and IHS, I specialize in Full Stack Development,
+      DevOps, and Generative AI.
+      Currently, I lead projects at Dubicventures, where I work on scalable digital solutions like 
+      the HIPAA-compliant CareCycle Hospital Management System, built with Django and MySQL. 
+      Whether optimizing UX at PACUSS or managing infrastructure, I’m driven by purpose, integrity, and a 
+      desire to create technology that truly makes a difference.
     </p>
   </section>
 
-  <!-- Education section to showcase academic and training background -->
-  <section class="education" id="education">
-    <h2>Education & Training</h2>
+  <section class="education" id="education" role="region" aria-labelledby="education-heading">
+    <h2 id="education-heading">Education & Training</h2>
     <div class="education-grid">
       <div class="education-card">
         <h3>B.Eng. Electrical and Electronics Engineering</h3>
@@ -97,9 +86,8 @@
     </div>
   </section>
 
-  <!-- Skills section to display technical proficiencies -->
-  <section class="skills" id="skills">
-    <h2>Skills</h2>
+  <section class="skills" id="skills" role="region" aria-labelledby="skills-heading">
+    <h2 id="skills-heading">Skills</h2>
     <div class="skill-grid">
       <div class="skill-card">Python</div>
       <div class="skill-card">Django</div>
@@ -114,14 +102,13 @@
     </div>
   </section>
 
-  <!-- Certifications section to highlight professional credentials -->
-  <section class="certifications" id="certifications">
-    <h2>Certifications</h2>
+  <section class="certifications" id="certifications" role="region" aria-labelledby="certifications-heading">
+    <h2 id="certifications-heading">Certifications</h2>
     <div class="certification-grid">
-       <div class="certification-card">
-      <h3>B.Eng. Electronic Engineering</h3>
-      <p>University of Nigeria | 2022, 2:1</p>
-    </div>
+      <div class="certification-card">
+        <h3>B.Eng. Electronic Engineering</h3>
+        <p>University of Nigeria | 2022, 2:1</p>
+      </div>
       <div class="certification-card">
         <h3>AWS Certified Solutions Architect</h3>
         <p>Amazon Web Services | 2023</p>
@@ -130,24 +117,23 @@
         <h3>ALX Software Engineering Program</h3>
         <p>ALX Africa | 2022</p>
       </div>
-       <div class="certification-card">
-      <h3>AI for Creatives</h3>
-      <p>ALX Africa | 2024</p>
-    </div>
-     <div class="certification-card">
+      <div class="certification-card">
+        <h3>AI for Creatives</h3>
+        <p>ALX Africa | 2024</p>
+      </div>
+      <div class="certification-card">
         <h3>3MTT Full Stack Development</h3>
         <p>3MTT | 2025</p>
       </div>
-       <div class="certification-card">
-      <h3>PLP Software Engineering Program</h3>
-      <p>PLP Academy | In Progress</p>
-    </div>
+      <div class="certification-card">
+        <h3>PLP Software Engineering Program</h3>
+        <p>PLP Academy | In Progress</p>
+      </div>
     </div>
   </section>
 
-  <!-- Experience section to detail professional roles -->
-  <section class="experience" id="experience">
-    <h2>Experience</h2>
+  <section class="experience" id="experience" role="region" aria-labelledby="experience-heading">
+    <h2 id="experience-heading">Experience</h2>
     <div class="experience-grid">
       <div class="experience-card">
         <h3>Software Engineer | Chemical and Allied Products (CAP)</h3>
@@ -162,9 +148,8 @@
     </div>
   </section>
 
-  <!-- Projects section to showcase key projects -->
-  <section class="projects" id="projects">
-    <h2>Projects</h2>
+  <section class="projects" id="projects" role="region" aria-labelledby="projects-heading">
+    <h2 id="projects-heading">Projects</h2>
     <div class="project-item">
       <div class="project-image" style="background-image: url('images/carecycle.webp');"></div>
       <h3>Care Cycle: Personalized Healthcare Platform</h3>
@@ -172,7 +157,7 @@
       <div class="tech-badges">
         <span class="tech-badge">Django</span>
         <span class="tech-badge">JavaScript</span>
-             <span class="tech-badge">MongoDB</span>
+        <span class="tech-badge">MongoDB</span>
       </div>
       <a href="https://hospital-management-app-web.vercel.app/" target="_blank" aria-label="View CareCycle project">View Project</a>
     </div>
@@ -183,7 +168,7 @@
       <div class="tech-badges">
         <span class="tech-badge">Django</span>
         <span class="tech-badge">JavaScript</span>
-        <span class="tech-badge">MySQL</span>
+        <div class="tech-badge">MySQL</div>
       </div>
       <a href="https://github.com/mrchidubem" target="_blank" aria-label="View Airbnb-Clone project">View Project</a>
     </div>
@@ -200,26 +185,34 @@
     </div>
   </section>
 
-  <!-- Blog section to highlight insights and articles -->
-  <section class="blog" id="blog">
-    <h2>Blog & Insights</h2>
-    <div class="blog-grid">
-      <div class="blog-item">
-        <h3>Building Scalable Web Apps with Django</h3>
-        <p>A deep dive into creating robust, scalable applications using Django, PostgreSQL and MySQL.</p>
-        <a href="#article-django" aria-label="Read more about Building Scalable Web Apps with Django">Read More</a>
+  <section class="insights-updates" id="insights-updates" role="region" aria-labelledby="insights-updates-heading">
+    <h2 id="insights-updates-heading">Insights & Updates</h2>
+    <div class="insights-updates-container">
+      <div class="insights-card">
+        <h3>My Tech Passion</h3>
+        <p>I’m captivated by the potential of Generative AI to transform industries, from intelligent chatbots to automated content creation. I thrive on building scalable web applications with Django and Python, optimizing performance and user experience. My curiosity drives me to explore cloud architecture on AWS, crafting robust, future-ready systems.</p>
       </div>
-      <div class="blog-item">
-        <h3>Exploring Generative AI for Chatbots</h3>
-        <p>How NLP and Python can power intelligent, user-friendly chatbot experiences.</p>
-        <a href="#article-chatbot" aria-label="Read more about Exploring Generative AI for Chatbots">Read More</a>
+      <div class="insights-card">
+        <h3>My Interests</h3>
+        <p>My goal is to develop innovative solutions that solve real-world problems, blending technical precision with creative design. I’m dedicated to mentoring aspiring developers through communities like ALX Africa and aim to lead projects that push the boundaries of AI and cloud technology. Beyond coding, I’m passionate about UI/UX design, creating intuitive interfaces, exploring blockchain technology for secure, decentralized systems, and engaging in tech community events to share knowledge.</p>
+      </div>
+      <div class="insights-card article-card" id="blog-django-preview">
+        <h3>Building Scalable Django Applications</h3>
+        <div class="date-badge">July 2025</div>
+        <p>Discover how I leveraged Django and PostgreSQL to build a high-performance e-commerce platform, reducing load times by 30%. Learn tips for optimizing database queries and deploying on AWS.</p>
+        <a href="#article-django" class="read-more" aria-label="Read more about Building Scalable Django Applications">Read More</a>
+      </div>
+      <div class="insights-card article-card" id="blog-ai-preview">
+        <h3>The Future of Generative AI</h3>
+        <div class="date-badge">June 2025</div>
+        <p>Explore my journey with Generative AI, from completing the AI for Creatives course to experimenting with AI-driven chatbots. See how AI is reshaping industries and what’s next.</p>
+        <a href="#article-chatbot" class="read-more" aria-label="Read more about The Future of Generative AI">Read More</a>
       </div>
     </div>
   </section>
 
-  <!-- Articles section to provide detailed blog content -->
-  <section class="articles" id="articles">
-    <h2>Articles</h2>
+  <section class="articles" id="articles" role="region" aria-labelledby="articles-heading">
+    <h2 id="articles-heading">Articles</h2>
     <article class="article-item" id="article-django">
       <h3>Building Scalable Web Apps with Django</h3>
       <div class="date-badge">Published: July 2025</div>
@@ -232,7 +225,7 @@
         </ul>
         By following these strategies, I reduced API response times by 20% in a recent project, ensuring a seamless user experience. Stay tuned for more insights on deploying Django apps with AWS!
       </p>
-      <a href="#top" class="back-link" aria-label="Back to top">Back to Top</a>
+      <a href="#insights-updates" class="back-link" aria-label="Back to Insights & Updates">Back to Insights</a>
     </article>
     <article class="article-item" id="article-chatbot">
       <h3>Exploring Generative AI for Chatbots</h3>
@@ -246,13 +239,12 @@
         </ul>
         Learn how to harness AI to create user-friendly, intelligent chatbot experiences that elevate your applications.
       </p>
-      <a href="#top" class="back-link" aria-label="Back to top">Back to Top</a>
+      <a href="#insights-updates" class="back-link" aria-label="Back to Insights & Updates">Back to Insights</a>
     </article>
   </section>
 
-  <!-- Testimonials section to display client feedback -->
-  <section class="testimonials" id="testimonials">
-    <h2>Testimonials</h2>
+  <section class="testimonials" id="testimonials" role="region" aria-labelledby="testimonials-heading">
+    <h2 id="testimonials-heading">Testimonials</h2>
     <div class="testimonial-grid">
       <div class="testimonial-card">
         <p>"Joseph's expertise in full-stack development and cloud architecture transformed our project delivery, boosting performance and user satisfaction."</p>
@@ -265,9 +257,8 @@
     </div>
   </section>
 
-  <!-- Contact section for user interaction -->
-  <section class="contact" id="contact">
-    <h2>Contact Me</h2>
+  <section class="contact" id="contact" role="region" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact Me</h2>
     <form>
       <div class="form-group">
         <input type="text" id="name" placeholder=" " required aria-label="Your name">
@@ -285,9 +276,8 @@
     </form>
   </section>
 
-  <!-- Call-to-action banner to encourage engagement -->
-  <section class="cta">
-    <h2>Let's Build Something Amazing</h2>
+  <section class="cta" role="region" aria-labelledby="cta-heading">
+    <h2 id="cta-heading">Let's Build Something Amazing</h2>
     <p>Ready to collaborate on innovative projects? Reach out or download my resume to get started!</p>
     <div class="cta-buttons">
       <a href="#contact" class="button" aria-label="Contact Joseph">Contact Me</a>
@@ -295,8 +285,7 @@
     </div>
   </section>
 
-  <!-- Footer with social media links and copyright -->
-  <footer>
+  <footer role="contentinfo">
     <div class="social-icons"> 
       <a href="https://linkedin.com/in/dubicventures" target="_blank" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://github.com/mrchidubem" target="_blank" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
