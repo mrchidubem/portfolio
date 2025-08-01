@@ -1,0 +1,1110 @@
+/* Theme variables for consistent styling across the site */
+:root {
+  --primary: #2c2c2c; /* Charcoal gray for main elements */
+  --secondary: #242424; /* Muted charcoal for card backgrounds */
+  --accent: #d4a373; /* Burnished bronze for highlights */
+  --bg: #0f0f0f; /* Near-black background for the body */
+  --section-bg: #181818; /* Subtle black for section backgrounds */
+  --text: #f1f5f9; /* Soft ivory text color */
+}
+
+/* Light theme variables for theme toggle */
+body:has(#theme-toggle:checked) {
+  --primary: #3c3c3c; /* Lighter gray for main elements */
+  --secondary: #ececec; /* Light gray for cards */
+  --accent: #b89778; /* Softer bronze for highlights */
+  --bg: #ffffff; /* White body background */
+  --section-bg: #f5f5f5; /* Light gray for sections */
+  --text: #2c2c2c; /* Dark gray text */
+}
+
+/* Reset default browser styles for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and borders are included in element size */
+}
+
+/* Enable smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base body styles */
+body {
+  font-family: 'Inter', sans-serif; /* Default font for content */
+  background: var(--bg); /* Apply background color */
+  color: var(--text); /* Apply text color */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Style for headings */
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for headings */
+  font-weight: 500; /* Medium weight for clarity */
+  letter-spacing: 0.8px; /* Slight spacing for readability */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Focus styles for accessibility */
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: 2px solid var(--accent); /* Highlight focus with accent color */
+  outline-offset: 2px; /* Space around focus outline */
+}
+
+/* Navigation bar styling */
+nav {
+  position: fixed; /* Keep nav at the top */
+  top: 0;
+  width: 100%; /* Full width */
+  padding: 15px 40px; /* Padding for spacing */
+  display: flex; /* Flex layout for alignment */
+  justify-content: space-between; /* Space out logo, links, and theme controls */
+  align-items: center; /* Vertically align items */
+  background: rgba(15, 15, 15, 0.8); /* Semi-transparent dark background */
+  border-bottom: 1px solid var(--accent); /* Accent border at bottom */
+  z-index: 999; /* Ensure nav stays on top */
+}
+
+/* Logo styling */
+.circle-logo {
+  display: flex; /* Flex for logo and text alignment */
+  align-items: center; /* Center items vertically */
+  gap: 8px; /* Space between circle and text */
+  text-decoration: none; /* Remove underline */
+}
+
+.circle {
+  width: 36px; /* Circle size */
+  height: 36px;
+  background: linear-gradient(135deg, var(--primary), var(--accent)); /* Gradient background */
+  border-radius: 50%; /* Circular shape */
+  color: var(--bg); /* Text color */
+  display: flex; /* Center content */
+  align-items: center;
+  justify-content: center;
+  font-weight: 600; /* Bold text */
+  font-size: 1rem; /* Text size */
+  transition: transform 0.3s; /* Smooth scale on hover */
+}
+
+.circle-logo:hover .circle {
+  transform: scale(1.05); /* Slight scale-up on hover */
+}
+
+.circle-text {
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-size: 1rem; /* Text size */
+  font-weight: 400; /* Normal weight */
+  letter-spacing: 1px; /* Spacing for readability */
+  background: linear-gradient(90deg, var(--primary), var(--accent)); /* Gradient text */
+  -webkit-background-clip: text; /* Clip gradient to text */
+  -webkit-text-fill-color: transparent; /* Make text transparent for gradient */
+}
+
+/* Navigation links styling */
+.nav-links {
+  display: flex; /* Horizontal layout */
+  gap: 20px; /* Space between links */
+  list-style: none; /* Remove bullet points */
+}
+
+.nav-links a {
+  color: var(--text); /* Text color */
+  text-decoration: none; /* No underline */
+  font-size: 0.9rem; /* Slightly smaller text */
+  font-weight: 400; /* Normal weight */
+  letter-spacing: 0.5px; /* Subtle spacing */
+  transition: color 0.3s, transform 0.2s; /* Smooth color and scale transitions */
+}
+
+.nav-links a:hover {
+  color: var(--accent); /* Accent color on hover */
+  transform: scale(1.05); /* Slight scale-up on hover */
+}
+
+/* Hide mobile nav toggle by default */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none; /* Hidden on desktop */
+  font-size: 1.4rem; /* Icon size */
+  color: var(--text); /* Icon color */
+  cursor: pointer; /* Pointer on hover */
+}
+
+/* Theme controls styling */
+.theme-controls {
+  display: flex; /* Horizontal layout */
+  gap: 12px; /* Space between buttons */
+}
+
+.toggle-theme {
+  padding: 6px 14px; /* Button padding */
+  border: 1px solid var(--accent); /* Accent border */
+  background: transparent; /* No background */
+  color: var(--text); /* Text color */
+  border-radius: 6px; /* Rounded corners */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-size: 0.8rem; /* Small text */
+  font-weight: 400; /* Normal weight */
+  text-align: center; /* Center text */
+  text-decoration: none; /* No underline */
+  cursor: pointer; /* Pointer on hover */
+  transition: background 0.3s, color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.toggle-theme:hover {
+  background: var(--accent); /* Accent background on hover */
+  color: var(--bg); /* Background color for text */
+  transform: scale(1.05); /* Slight scale-up */
+}
+
+.theme-toggle {
+  display: none; /* Hidden checkbox for theme toggle */
+}
+
+/* Base styles for sections */
+section {
+  padding: 80px 20px; /* Vertical and horizontal padding */
+  background: var(--section-bg); /* Section background color */
+}
+
+/* Hero section styling */
+.hero {
+  height: 100vh; /* Full viewport height */
+  display: flex; /* Flex layout for centering */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Center text */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('../images/8.avif') no-repeat center/cover; /* Gradient overlay with background image */
+  position: relative; /* For overlay positioning */
+}
+
+.hero::before {
+  content: ''; /* Empty content for overlay */
+  position: absolute; /* Cover entire section */
+  inset: 0; /* Shorthand for top, right, bottom, left */
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: -1; /* Behind content */
+}
+
+.hero h2 {
+  font-size: 1.8rem; /* Heading size */
+  letter-spacing: 1.2px; /* Spacing for readability */
+}
+
+.hero p {
+  font-size: 0.9rem; /* Smaller text */
+  margin-top: 12px; /* Space above */
+  font-weight: 300; /* Light weight */
+  letter-spacing: 0.5px; /* Subtle spacing */
+  animation: fadeIn 1.5s ease forwards; /* Fade-in animation */
+}
+
+.hero .button {
+  margin-top: 25px; /* Space above */
+  padding: 10px 28px; /* Button padding */
+  font-size: 0.85rem; /* Text size */
+  color: var(--bg); /* Text color */
+  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
+  border: none; /* No border */
+  border-radius: 6px; /* Rounded corners */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-weight: 400; /* Normal weight */
+  text-decoration: none; /* No underline */
+  transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+.hero .button:hover {
+  transform: scale(1.05); /* Slight scale-up */
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow */
+}
+
+.avatar {
+  width: 90px; /* Avatar size */
+  height: 90px;
+  background: url('../images/dube.jpg') no-repeat center/cover; /* Profile image */
+  background-color: var(--secondary); /* Fallback background */
+  border-radius: 50%; /* Circular shape */
+  border: 1px solid var(--accent); /* Accent border */
+  margin-bottom: 15px; /* Space below */
+  animation: pulse 2s ease-in-out infinite; /* Pulsing animation */
+}
+
+/* About section styling */
+.about {
+  text-align: center; /* Center content */
+}
+
+.about h2 {
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 20px; /* Space below */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.about p {
+  max-width: 600px; /* Constrain width */
+  margin: 0 auto; /* Center horizontally */
+  font-family: 'Playfair Display', serif; /* Elegant font */
+  font-size: 1.1rem; /* Slightly larger text */
+  font-weight: 400; /* Normal weight */
+  line-height: 1.8; /* Spacious line height */
+  background: var(--secondary); /* Card background */
+  padding: 25px; /* Internal padding */
+  border-left: 3px solid var(--accent); /* Accent border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.about p:hover {
+  transform: translateY(-3px); /* Lift on hover */
+}
+
+/* Education section styling */
+.education {
+  text-align: center; /* Center content */
+}
+
+.education h2 {
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 30px; /* Space below */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.education-grid {
+  max-width: 700px; /* Constrain width */
+  margin: 0 auto; /* Center horizontally */
+  display: flex; /* Flex layout */
+  flex-direction: column; /* Stack cards vertically */
+  gap: 20px; /* Space between cards */
+}
+
+.education-card {
+  background: var(--secondary); /* Card background */
+  padding: 20px; /* Internal padding */
+  border-radius: 8px; /* Rounded corners */
+  border-left: 3px solid var(--accent); /* Accent border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  text-align: left; /* Left-align text */
+  transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.education-card:hover {
+  transform: translateY(-3px); /* Lift on hover */
+}
+
+.education-card h3 {
+  font-size: 1.1rem; /* Heading size */
+  margin-bottom: 8px; /* Space below */
+}
+
+.education-card p {
+  font-size: 0.85rem; /* Smaller text */
+  font-weight: 300; /* Light weight */
+  line-height: 1.6; /* Comfortable line height */
+}
+
+/* Skills section styling */
+.skills {
+  text-align: center; /* Center content */
+}
+
+.skills h2 {
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 20px; /* Space below */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.skill-grid {
+  display: grid; /* Grid layout for skills */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive columns */
+  gap: 12px; /* Space between cards */
+  max-width: 800px; /* Constrain width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.skill-card {
+  background: var(--secondary); /* Card background */
+  border-left: 3px solid var(--accent); /* Accent border */
+  padding: 12px; /* Internal padding */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 0.85rem; /* Text size */
+  font-weight: 400; /* Normal weight */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s, background 0.3s; /* Smooth hover effects */
+}
+
+.skill-card:hover {
+  transform: translateY(-4px); /* Lift on hover */
+  background: var(--accent); /* Accent background on hover */
+}
+
+/* Certifications section styling */
+.certifications {
+  text-align: center; /* Center content */
+}
+
+.certifications h2 {
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 30px; /* Space below */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.certification-grid {
+  display: grid; /* Grid layout for certifications */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+  gap: 12px; /* Space between cards */
+  max-width: 800px; /* Constrain width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.certification-card {
+  background: var(--secondary); /* Card background */
+  border-left: 3px solid var(--accent); /* Accent border */
+  padding: 12px; /* Internal padding */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 0.85rem; /* Text size */
+  font-weight: 400; /* Normal weight */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s, background 0.3s; /* Smooth hover effects */
+}
+
+.certification-card:hover {
+  transform: translateY(-4px); /* Lift on hover */
+  background: var(--accent); /* Accent background on hover */
+}
+
+.certification-card h3 {
+  font-size: 1rem; /* Heading size */
+  margin-bottom: 8px; /* Space below */
+}
+
+.certification-card p {
+  font-size: 0.8rem; /* Smaller text */
+  font-weight: 300; /* Light weight */
+}
+
+/* Experience section styling */
+.experience {
+  text-align: center; /* Center content */
+}
+
+.experience h2 {
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 30px; /* Space below */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.experience-grid {
+  max-width: 700px; /* Constrain width */
+  margin: 0 auto; /* Center horizontally */
+  display: flex; /* Flex layout */
+  flex-direction: column; /* Stack cards vertically */
+  gap: 20px; /* Space between cards */
+}
+
+.experience-card {
+  background: var(--secondary); /* Card background */
+  padding: 20px; /* Internal padding */
+  border-radius: 8px; /* Rounded corners */
+  border-left: 3px solid var(--accent); /* Accent border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  text-align: left; /* Left-align text */
+  transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.experience-card:hover {
+  transform: translateY(-3px); /* Lift on hover */
+}
+
+.experience-card h3 {
+  font-size: 1.1rem; /* Heading size */
+  margin-bottom: 8px; /* Space below */
+}
+
+.experience-card p {
+  font-size: 0.85rem; /* Smaller text */
+  font-weight: 300; /* Light weight */
+  line-height: 1.6; /* Comfortable line height */
+}
+
+/* Date badge styling for education, experience, and articles */
+.date-badge {
+  font-size: 0.7rem; /* Small text */
+  background: var(--accent); /* Accent background */
+  color: var(--bg); /* Background color for text */
+  padding: 4px 8px; /* Padding for badge */
+  border-radius: 4px; /* Rounded corners */
+  display: inline-block; /* Inline-block for proper spacing */
+  margin: 8px 0; /* Vertical margin */
+}
+
+/* Projects section styling */
+.projects {
+  text-align: center; /* Center content */
+}
+
+.projects h2 {
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 20px; /* Space below */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.project-item {
+  max-width: 700px; /* Constrain width */
+  margin: 20px auto; /* Center with vertical spacing */
+  background: var(--secondary); /* Card background */
+  padding: 20px; /* Internal padding */
+  border-radius: 8px; /* Rounded corners */
+  border-left: 3px solid var(--accent); /* Accent border */
+  text-align: left; /* Left-align text */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.project-item:hover {
+  transform: translateY(-3px); /* Lift on hover */
+}
+
+.project-image {
+  width: 100%; /* Full width */
+  height: 150px; /* Fixed height */
+  background: var(--secondary) no-repeat center/cover; /* Image styling */
+  border-radius: 6px; /* Rounded corners */
+  margin-bottom: 15px; /* Space below */
+}
+
+.project-item h3 {
+  font-size: 1.1rem; /* Heading size */
+  margin-bottom: 8px; /* Space below */
+}
+
+.project-item p {
+  font-size: 0.85rem; /* Smaller text */
+  font-weight: 300; /* Light weight */
+  line-height: 1.6; /* Comfortable line height */
+}
+
+.tech-badges {
+  display: flex; /* Horizontal layout */
+  gap: 8px; /* Space between badges */
+  margin: 10px 0; /* Vertical margin */
+}
+
+.tech-badge {
+  background: var(--accent); /* Accent background */
+  color: var(--bg); /* Background color for text */
+  padding: 4px 8px; /* Padding for badge */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 0.75rem; /* Small text */
+  font-family: 'Inter', sans-serif; /* Default font */
+  font-weight: 400; /* Normal weight */
+}
+
+.project-item a {
+  display: inline-block; /* Inline-block for button */
+  margin-top: 10px; /* Space above */
+  padding: 8px 16px; /* Button padding */
+  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
+  color: var(--bg); /* Text color */
+  text-decoration: none; /* No underline */
+  border-radius: 6px; /* Rounded corners */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-size: 0.8rem; /* Small text */
+  font-weight: 400; /* Normal weight */
+  transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+.project-item a:hover {
+  transform: scale(1.05); /* Slight scale-up */
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow */
+}
+
+/* Insights & Updates section styling */
+.insights-updates {
+  text-align: center; /* Center content */
+  background: var(--section-bg); /* Section background */
+  padding: 80px 20px; /* Vertical and horizontal padding */
+}
+
+.insights-updates:has(+ .articles .article-item:target) {
+  display: none; /* Hide when article is targeted */
+  opacity: 0; /* Fade out */
+}
+
+.insights-updates h2 {
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 30px; /* Space below */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.insights-updates-container {
+  max-width: 700px; /* Constrain width */
+  margin: 0 auto; /* Center horizontally */
+  display: flex; /* Flex layout */
+  flex-direction: column; /* Stack cards vertically */
+  gap: 20px; /* Space between cards */
+}
+
+.insights-card {
+  background: var(--secondary); /* Card background */
+  padding: 20px; /* Internal padding */
+  border-radius: 8px; /* Rounded corners */
+  border-left: 3px solid var(--accent); /* Accent border */
+  text-align: left; /* Left-align text */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s, opacity 0.5s ease; /* Smooth hover and fade effects */
+}
+
+.insights-card:hover {
+  transform: translateY(-3px); /* Lift on hover */
+}
+
+.insights-card h3 {
+  font-size: 1.1rem; /* Heading size */
+  margin-bottom: 8px; /* Space below */
+}
+
+.insights-card p {
+  font-size: 0.85rem; /* Smaller text */
+  font-weight: 300; /* Light weight */
+  line-height: 1.6; /* Comfortable line height */
+  margin-bottom: 10px; /* Space below */
+}
+
+.insights-card .date-badge {
+  font-size: 0.7rem; /* Small text */
+  background: var(--accent); /* Accent background */
+  color: var(--bg); /* Background color for text */
+  padding: 4px 8px; /* Padding for badge */
+  border-radius: 4px; /* Rounded corners */
+  display: inline-block; /* Inline-block for spacing */
+  margin: 8px 0; /* Vertical margin */
+}
+
+.insights-card .read-more {
+  display: inline-block; /* Inline-block for link */
+  font-size: 0.85rem; /* Text size */
+  color: var(--accent); /* Accent color */
+  text-decoration: none; /* No underline */
+  margin-top: 10px; /* Space above */
+  transition: color 0.3s, transform 0.2s; /* Smooth hover effects */
+}
+
+.insights-card .read-more:hover {
+  color: #f1f5f9; /* Light text on hover */
+  transform: scale(1.05); /* Slight scale-up */
+}
+
+.insights-card .read-more:focus {
+  outline: 2px solid var(--accent); /* Focus outline */
+  outline-offset: 2px; /* Space around outline */
+}
+
+/* Articles section styling */
+.articles {
+  text-align: center; /* Center content */
+  background: var(--section-bg); /* Section background */
+  padding: 80px 20px; /* Vertical and horizontal padding */
+  display: none; /* Hidden by default */
+  opacity: 0; /* Start invisible */
+  transition: opacity 0.5s ease; /* Smooth fade transition */
+}
+
+.articles:has(.article-item:target) {
+  display: block; /* Show when article is targeted */
+  opacity: 1; /* Fade in */
+}
+
+.articles h2 {
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 30px; /* Space below */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.article-item {
+  max-width: 700px; /* Constrain width */
+  margin: 20px auto; /* Center with vertical spacing */
+  background: var(--secondary); /* Card background */
+  padding: 20px; /* Internal padding */
+  border-radius: 8px; /* Rounded corners */
+  border-left: 3px solid var(--accent); /* Accent border */
+  text-align: left; /* Left-align text */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s, opacity 0.5s ease; /* Smooth hover and fade effects */
+  display: none; /* Hidden by default */
+  opacity: 0; /* Start invisible */
+  scroll-margin-top: 80px; /* Space for fixed nav */
+}
+
+.article-item:target {
+  display: block; /* Show when targeted */
+  opacity: 1; /* Fade in */
+}
+
+.article-item:hover {
+  transform: translateY(-3px); /* Lift on hover */
+}
+
+.article-item h3 {
+  font-size: 1.1rem; /* Heading size */
+  margin-bottom: 8px; /* Space below */
+}
+
+.article-item p {
+  font-size: 0.85rem; /* Smaller text */
+  font-weight: 300; /* Light weight */
+  line-height: 1.6; /* Comfortable line height */
+  margin-bottom: 10px; /* Space below */
+}
+
+.article-item ul {
+  font-size: 0.85rem; /* List text size */
+  font-weight: 300; /* Light weight */
+  line-height: 1.6; /* Comfortable line height */
+  margin: 10px 0 10px 20px; /* Spacing with indent */
+}
+
+.article-item .date-badge {
+  font-size: 0.7rem; /* Small text */
+  background: var(--accent); /* Accent background */
+  color: var(--bg); /* Background color for text */
+  padding: 4px 8px; /* Padding for badge */
+  border-radius: 4px; /* Rounded corners */
+  display: inline-block; /* Inline-block for spacing */
+  margin: 8px 0; /* Vertical margin */
+}
+
+.back-link {
+  display: inline-block; /* Inline-block for link */
+  margin-top: 10px; /* Space above */
+  padding: 8px 16px; /* Button padding */
+  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
+  color: var(--bg); /* Text color */
+  text-decoration: none; /* No underline */
+  border-radius: 6px; /* Rounded corners */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-size: 0.8rem; /* Small text */
+  font-weight: 400; /* Normal weight */
+  transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+.back-link:hover {
+  transform: scale(1.05); /* Slight scale-up */
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow */
+}
+
+/* Testimonials section styling */
+.testimonials {
+  text-align: center; /* Center content */
+}
+
+.testimonials h2 {
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 20px; /* Space below */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.testimonial-grid {
+  max-width: 700px; /* Constrain width */
+  margin: 0 auto; /* Center horizontally */
+  display: flex; /* Flex layout */
+  flex-direction: column; /* Stack cards vertically */
+  gap: 20px; /* Space between cards */
+}
+
+.testimonial-card {
+  background: var(--secondary); /* Card background */
+  padding: 20px; /* Internal padding */
+  border-radius: 8px; /* Rounded corners */
+  border-left: 3px solid var(--accent); /* Accent border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.testimonial-card:nth-child(odd) {
+  transform: translateX(20px); /* Slight offset for visual interest */
+}
+
+.testimonial-card:nth-child(even) {
+  transform: translateX(-20px); /* Opposite offset */
+}
+
+.testimonial-card:hover {
+  transform: translateY(-3px) translateX(0); /* Lift and reset offset on hover */
+}
+
+.testimonial-card p {
+  font-size: 0.85rem; /* Smaller text */
+  font-weight: 300; /* Light weight */
+  line-height: 1.6; /* Comfortable line height */
+  margin-bottom: 10px; /* Space below */
+}
+
+.testimonial-card cite {
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-size: 0.8rem; /* Small text */
+  font-weight: 400; /* Normal weight */
+  color: var(--accent); /* Accent color */
+  font-style: normal; /* No italic */
+}
+
+/* Contact section styling */
+.contact {
+  text-align: center; /* Center content */
+}
+
+.contact h2 {
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 30px; /* Space below */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.contact form {
+  max-width: 400px; /* Constrain form width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.form-group {
+  position: relative; /* For label positioning */
+  margin-bottom: 18px; /* Space between inputs */
+}
+
+.contact input,
+.contact textarea {
+  width: 100%; /* Full width */
+  padding: 8px 0 4px; /* Padding for input */
+  background: transparent; /* No background */
+  border: none; /* No border */
+  border-bottom: 1px solid var(--primary); /* Bottom border */
+  color: var(--text); /* Text color */
+  font-size: 0.8rem; /* Small text */
+  font-weight: 300; /* Light weight */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth focus effects */
+}
+
+.contact textarea {
+  resize: vertical; /* Allow vertical resize only */
+  min-height: 70px; /* Minimum height */
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: var(--accent); /* Accent border on focus */
+  box-shadow: 0 1px 6px rgba(212, 163, 115, 0.4); /* Subtle shadow */
+  outline: none; /* Remove default outline */
+}
+
+.contact label {
+  position: absolute; /* Position over input */
+  top: 8px; /* Initial position */
+  left: 0; /* Align left */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-size: 0.8rem; /* Small text */
+  font-weight: 400; /* Normal weight */
+  color: var(--text); /* Text color */
+  pointer-events: none; /* Ignore pointer events */
+  transition: all 0.3s ease; /* Smooth transition for label movement */
+}
+
+.contact input:focus + label,
+.contact input:not(:placeholder-shown) + label,
+.contact textarea:focus + label,
+.contact textarea:not(:placeholder-shown) + label {
+  top: -14px; /* Move label up */
+  font-size: 0.65rem; /* Smaller text */
+  color: var(--accent); /* Accent color */
+}
+
+.contact button {
+  width: 100%; /* Full width */
+  padding: 8px; /* Button padding */
+  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
+  border: none; /* No border */
+  color: var(--bg); /* Text color */
+  border-radius: 6px; /* Rounded corners */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-size: 0.85rem; /* Text size */
+  font-weight: 500; /* Slightly bold */
+  letter-spacing: 0.8px; /* Spacing for readability */
+  cursor: pointer; /* Pointer on hover */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+.contact button:hover {
+  transform: scale(1.05); /* Slight scale-up */
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.4); /* Subtle shadow */
+}
+
+/* Call-to-action section styling */
+.cta {
+  text-align: center; /* Center content */
+  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
+  padding: 60px 20px; /* Vertical and horizontal padding */
+  color: var(--bg); /* Text color */
+}
+
+.cta h2 {
+  font-size: 2rem; /* Heading size */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 15px; /* Space below */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.cta p {
+  font-size: 1rem; /* Text size */
+  font-weight: 300; /* Light weight */
+  max-width: 600px; /* Constrain width */
+  margin: 0 auto 20px; /* Center with bottom margin */
+}
+
+.cta-buttons {
+  display: flex; /* Horizontal layout */
+  justify-content: center; /* Center buttons */
+  gap: 15px; /* Space between buttons */
+}
+
+.cta .button {
+  padding: 10px 28px; /* Button padding */
+  font-size: 0.85rem; /* Text size */
+  color: var(--accent); /* Accent text */
+  background: var(--bg); /* Background color */
+  border: 1px solid var(--accent); /* Accent border */
+  border-radius: 6px; /* Rounded corners */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-weight: 400; /* Normal weight */
+  text-decoration: none; /* No underline */
+  transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+.cta .button:hover {
+  transform: scale(1.05); /* Slight scale-up */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+/* Footer styling */
+footer {
+  padding: 30px 20px; /* Vertical and horizontal padding */
+  background: var(--bg); /* Body background */
+  text-align: center; /* Center content */
+  font-size: 0.8rem; /* Small text */
+  font-weight: 300; /* Light weight */
+}
+
+.social-icons {
+  margin-bottom: 15px; /* Space below */
+  display: flex; /* Horizontal layout */
+  justify-content: center; /* Center icons */
+  gap: 15px; /* Space between icons */
+}
+
+.social-icons a {
+  font-size: 1.2rem; /* Icon size */
+  color: var(--text); /* Text color */
+  background: var(--secondary); /* Card background */
+  border: 1px solid var(--accent); /* Accent border */
+  border-radius: 50%; /* Circular shape */
+  width: 36px; /* Icon size */
+  height: 36px;
+  display: flex; /* Center content */
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.2s; /* Smooth hover effects */
+}
+
+.social-icons a:hover {
+  background: var(--accent); /* Accent background on hover */
+  transform: scale(1.05); /* Slight scale-up */
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; } /* Start invisible */
+  to { opacity: 1; } /* Fade in */
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; } /* Start below and invisible */
+  to { transform: translateY(0); opacity: 1; } /* Slide up and fade in */
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); } /* Normal size */
+  50% { transform: scale(1.05); } /* Slightly larger */
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column; /* Stack nav items vertically */
+    align-items: flex-start; /* Align to left */
+    padding: 12px 20px; /* Reduced padding */
+  }
+
+  .nav-toggle-label {
+    display: block; /* Show hamburger icon */
+    position: absolute; /* Position in top-right */
+    top: 15px;
+    right: 20px;
+  }
+
+  .nav-links {
+    display: none; /* Hide links by default */
+    flex-direction: column; /* Stack links vertically */
+    width: 100%; /* Full width */
+    margin-top: 60px; /* Space below logo */
+    gap: 12px; /* Space between links */
+  }
+
+  .theme-controls-wrapper {
+    display: none; /* Hide theme controls by default */
+    width: 100%; /* Full width */
+    justify-content: center; /* Center controls */
+  }
+
+  #nav-toggle:checked ~ .nav-links,
+  #nav-toggle:checked ~ .theme-controls-wrapper {
+    display: flex; /* Show when nav toggle is checked */
+  }
+
+  .theme-controls {
+    flex-direction: column; /* Stack controls vertically */
+    align-items: center; /* Center horizontally */
+    gap: 10px; /* Space between controls */
+    margin-top: 10px; /* Space above */
+  }
+
+  .toggle-theme {
+    width: 100%; /* Full width buttons */
+    padding: 6px 14px; /* Button padding */
+  }
+
+  .circle {
+    width: 32px; /* Smaller logo circle */
+    height: 32px;
+    font-size: 0.9rem; /* Smaller text */
+  }
+
+  .circle-text {
+    font-size: 0.9rem; /* Smaller logo text */
+  }
+
+  section {
+    padding: 60px 15px; /* Reduced padding */
+  }
+
+  .hero h2 {
+    font-size: 1.5rem; /* Smaller heading */
+  }
+
+  .hero p {
+    font-size: 0.85rem; /* Smaller text */
+    padding: 0 15px; /* Horizontal padding */
+  }
+
+  .hero .button {
+    padding: 8px 20px; /* Smaller button */
+    font-size: 0.8rem; /* Smaller text */
+  }
+
+  .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .testimonials h2, .experience h2, .contact h2, .cta h2, .articles h2, .insights-updates h2 {
+    font-size: 1.6rem; /* Smaller headings */
+    text-align: center; /* Center text */
+  }
+
+  .about p, .education-card p, .project-item p, .testimonial-card p, .experience-card p, .article-item p, .insights-card p {
+    font-size: 0.85rem; /* Smaller text */
+  }
+
+  .about p {
+    font-size: 0.95rem; /* Slightly larger for readability */
+    padding: 20px; /* Reduced padding */
+    line-height: 1.7; /* Tighter line height */
+  }
+
+  .skill-card, .certification-card {
+    font-size: 0.8rem; /* Smaller text */
+  }
+
+  .project-item h3, .education-card h3, .experience-card h3, .article-item h3, .insights-card h3 {
+    font-size: 1rem; /* Smaller headings */
+  }
+
+  .project-image {
+    height: 120px; /* Smaller image height */
+  }
+
+  .contact form {
+    max-width: 350px; /* Smaller form width */
+  }
+
+  .contact button {
+    font-size: 0.8rem; /* Smaller button text */
+  }
+
+  .cta-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+  }
+
+  .testimonial-card:nth-child(odd), .testimonial-card:nth-child(even) {
+    transform: translateX(0); /* Remove offset for mobile */
+  }
+
+  .experience-card .date-badge, .article-item .date-badge, .insights-card .date-badge {
+    margin: 10px 0 5px; /* Adjusted margins */
+  }
+
+  .article-item ul {
+    font-size: 0.8rem; /* Smaller list text */
+  }
+
+  .back-link {
+    font-size: 0.75rem; /* Smaller link text */
+  }
+
+  .insights-card {
+    padding: 20px; /* Consistent padding */
+  }
+
+  .insights-card h3 {
+    font-size: 1rem; /* Smaller heading */
+  }
+
+  .insights-card p {
+    font-size: 0.8rem; /* Smaller text */
+  }
+
+  .insights-card .date-badge {
+    font-size: 0.65rem; /* Smaller badge text */
+  }
+
+  .insights-card .read-more {
+    font-size: 0.8rem; /* Smaller link text */
+  }
+}
