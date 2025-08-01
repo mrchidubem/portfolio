@@ -1,7 +1,7 @@
 <!-- README.md -->
 # Joseph Chidubem Okafor Portfolio
 
-Portfolio Preview --->  https://dubicventures.vercel.app/
+Portfolio Preview  :  https://dubicventur
 *Discover a sleek, luxurious showcase of cutting-edge web development and cloud architecture, designed with elegance and precision.*
 
 
@@ -56,7 +56,7 @@ To run this portfolio locally or deploy it, follow these steps:
 
 ### Steps
 1. **Clone or Download the Repository**
-   ```bash
+      bash
    git clone https://github.com/mrchidubem/dubic-portfolio
 
 Or download the ZIP file and extract it.Ensure Required Files
