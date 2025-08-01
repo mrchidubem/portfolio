@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Set character encoding and responsive viewport -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Meta tags for SEO and social sharing -->
   <meta name="description" content="Portfolio of Joseph Chidubem Okafor, Full Stack Software Engineer and Cloud Architect.">
   <meta name="keywords" content="Joseph Chidubem Okafor, Full Stack Developer, Cloud Architect, Portfolio">
   <meta name="author" content="Joseph Chidubem Okafor">
   <meta property="og:title" content="Joseph Chidubem Okafor | Portfolio">
   <meta property="og:description" content="Explore the portfolio of Joseph Chidubem Okafor, a Full Stack Software Engineer and Cloud Architect.">
   <meta property="og:image" content="images/og-image.jpg">
+  <!-- Page title and favicon -->
   <title>Joseph | Portfolio</title>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <!-- Preload images for faster loading -->
   <link rel="preload" href="images/9.avif" as="image">
   <link rel="preload" href="images/dube.jpg" as="image">
   <link rel="preload" href="images/carecycle.webp" as="image">
   <link rel="preload" href="images/shell.png" as="image">
+  <!-- Load Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Load Font Awesome and custom CSS -->
   <link rel="stylesheet" href="css/all.min.css">
   <link rel="stylesheet" href="css/everystyle.css">
 </head>
 <body>
+  <!-- Navigation bar -->
   <nav aria-label="Main navigation">
+    <!-- Logo with circle design -->
     <a href="#" class="circle-logo">
       <div class="circle">D</div>
       <span class="circle-text gradient-name">ubicventures</span>
     </a>
+    <!-- Checkbox for mobile menu toggle -->
     <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
     <label for="nav-toggle" class="nav-toggle-label"><i class="fas fa-bars"></i></label>
+    <!-- Navigation links -->
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
@@ -38,6 +48,7 @@
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <!-- Theme toggle and resume download -->
     <div class="theme-controls-wrapper">
       <div class="theme-controls">
         <input type="checkbox" id="theme-toggle" class="theme-toggle" hidden>
@@ -47,6 +58,7 @@
     </div>
   </nav>
 
+  <!-- Hero section with introduction -->
   <section class="hero" id="home" role="region" aria-labelledby="home-heading">
     <div class="avatar"></div>
     <h2 id="home-heading">Joseph Chidubem Okafor</h2>
@@ -54,6 +66,7 @@
     <a href="#projects" class="button" aria-label="Explore Joseph's projects">Explore My Work</a>
   </section>
 
+  <!-- About section with personal info -->
   <section class="about" id="about" role="region" aria-labelledby="about-heading">
     <h2 id="about-heading">About Me</h2>
     <p>
@@ -64,6 +77,7 @@
     </p>
   </section>
 
+  <!-- Education section with academic and training details -->
   <section class="education" id="education" role="region" aria-labelledby="education-heading">
     <h2 id="education-heading">Education & Training</h2>
     <div class="education-grid">
@@ -80,6 +94,7 @@
     </div>
   </section>
 
+  <!-- Skills section with tech stack -->
   <section class="skills" id="skills" role="region" aria-labelledby="skills-heading">
     <h2 id="skills-heading">Skills</h2>
     <div class="skill-grid">
@@ -96,6 +111,7 @@
     </div>
   </section>
 
+  <!-- Certifications section -->
   <section class="certifications" id="certifications" role="region" aria-labelledby="certifications-heading">
     <h2 id="certifications-heading">Certifications</h2>
     <div class="certification-grid">
@@ -126,6 +142,7 @@
     </div>
   </section>
 
+  <!-- Experience section with work history -->
   <section class="experience" id="experience" role="region" aria-labelledby="experience-heading">
     <h2 id="experience-heading">Experience</h2>
     <div class="experience-grid">
@@ -142,6 +159,7 @@
     </div>
   </section>
 
+  <!-- Projects section showcasing key works -->
   <section class="projects" id="projects" role="region" aria-labelledby="projects-heading">
     <h2 id="projects-heading">Projects</h2>
     <div class="project-item">
@@ -179,6 +197,7 @@
     </div>
   </section>
 
+  <!-- Insights & Updates section with blog previews -->
   <section class="insights-updates" id="insights-updates" role="region" aria-labelledby="insights-updates-heading">
     <h2 id="insights-updates-heading">Insights & Updates</h2>
     <div class="insights-updates-container">
@@ -193,7 +212,7 @@
       <div class="insights-card article-card" id="blog-django-preview">
         <h3>Building Scalable Django Applications</h3>
         <div class="date-badge">July 2025</div>
-        <p>Discover how I leveraged Django and PostgreSQL to build a high-performance e-commerce platform, reducing load times by 30%. Learn tips for optimizing database queries and deploying on AWS.</p>
+        <p>Discover how I leveraged Django and MySQL to build a high-performance e-commerce platform, reducing load times by 30%. Learn tips for optimizing database queries and deploying on AWS.</p>
         <a href="#article-django" class="read-more" aria-label="Read more about Building Scalable Django Applications">Read More</a>
       </div>
       <div class="insights-card article-card" id="blog-ai-preview">
@@ -205,6 +224,7 @@
     </div>
   </section>
 
+  <!-- Articles section with full blog posts -->
   <section class="articles" id="articles" role="region" aria-labelledby="articles-heading">
     <h2 id="articles-heading">Articles</h2>
     <article class="article-item" id="article-django">
@@ -237,6 +257,7 @@
     </article>
   </section>
 
+  <!-- Testimonials section with client feedback -->
   <section class="testimonials" id="testimonials" role="region" aria-labelledby="testimonials-heading">
     <h2 id="testimonials-heading">Testimonials</h2>
     <div class="testimonial-grid">
@@ -251,6 +272,7 @@
     </div>
   </section>
 
+  <!-- Contact section with form -->
   <section class="contact" id="contact" role="region" aria-labelledby="contact-heading">
     <h2 id="contact-heading">Contact Me</h2>
     <form>
@@ -270,6 +292,7 @@
     </form>
   </section>
 
+  <!-- Call-to-action section -->
   <section class="cta" role="region" aria-labelledby="cta-heading">
     <h2 id="cta-heading">Let's Build Something Amazing</h2>
     <p>Ready to collaborate on innovative projects? Reach out or download my resume to get started!</p>
@@ -279,6 +302,7 @@
     </div>
   </section>
 
+  <!-- Footer with social links and copyright -->
   <footer role="contentinfo">
     <div class="social-icons"> 
       <a href="https://linkedin.com/in/dubicventures" target="_blank" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
