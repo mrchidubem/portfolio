@@ -378,8 +378,21 @@ section {
 }
 
 /* Centering content in certifications section */
+ /* Certifications Section */
 .certifications {
   text-align: center;
+  background: var(--section-bg);
+  padding: 80px 20px;
+}
+
+.certifications h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1.2px;
+  margin-bottom: 30px;
+  animation: slideIn 1s ease forwards;
+  text-align: center; /* Explicitly center the heading */
+}
 }
 
 /* Styling certifications section heading */
@@ -935,6 +948,12 @@ footer {
     flex-direction: column; /* Vertical stacking */
     align-items: flex-start; /* Left-aligned */
     padding: 12px 20px; /* Compact padding */
+  }
+  
+/* Ensure centering on mobile */
+    .certifications h2 {
+    font-size: 1.6rem;
+    text-align: center; /* Ensure centering on mobile */
   }
 
   /* Showing mobile nav toggle */
