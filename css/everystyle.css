@@ -176,11 +176,6 @@ section {
   background: var(--section-bg); /* Section background from theme variable. */
 }
 
-/* Reduced margin between projects and skills sections. */
-.projects {
-  margin-bottom: 20px; /* Reduced margin to bring skills section closer. */
-}
-
 /* Hero section styling for a full-screen, centered introduction. */
 .hero {
   height: 100vh; /* Full viewport height for impact. */
@@ -340,6 +335,7 @@ section {
 /* Projects section styling for centered content. */
 .projects {
   text-align: center; /* Center-aligns all content in the section. */
+  padding: 60px 20px; /* Consistent section padding. */
 }
 
 /* Projects section heading with animation and accent color. */
@@ -433,6 +429,7 @@ section {
 /* Skills section styling for centered content. */
 .skills {
   text-align: center; /* Center-aligns all content in the section. */
+  padding: 60px 20px; /* Consistent section padding. */
 }
 
 /* Skills section heading with animation and accent color. */
@@ -534,6 +531,7 @@ body:has(#theme-toggle:checked) .skill-note {
 /* Certifications section styling for centered content. */
 .certifications {
   text-align: center; /* Center-aligns all content in the section. */
+  padding: 60px 20px; /* Consistent section padding. */
 }
 
 /* Certifications section heading with animation and accent color. */
@@ -587,6 +585,7 @@ body:has(#theme-toggle:checked) .skill-note {
 /* Education section styling for centered content. */
 .education {
   text-align: center; /* Center-aligns all content in the section. */
+  padding: 60px 20px; /* Consistent section padding. */
 }
 
 /* Education section heading with animation and accent color. */
@@ -640,6 +639,7 @@ body:has(#theme-toggle:checked) .skill-note {
 .insights-updates {
   text-align: center; /* Center-aligns all content in the section. */
   background: var(--section-bg); /* Section background for consistency. */
+  padding: 60px 20px; /* Consistent section padding. */
 }
 
 /* Hide Insights & Updates section when an article is targeted to show only the article content. */
@@ -716,6 +716,7 @@ body:has(#theme-toggle:checked) .skill-note {
 .articles {
   text-align: center; /* Center-aligns all content in the section. */
   background: var(--section-bg); /* Section background for consistency. */
+  padding: 60px 20px; /* Consistent section padding. */
   display: none; /* Hidden by default. */
   opacity: 0; /* Ensures no visibility when hidden. */
   transition: opacity 0.5s ease; /* Smooth fade-in when shown. */
@@ -909,6 +910,7 @@ body:has(#theme-toggle:checked) .skill-note {
 .cta {
   text-align: center; /* Center-aligns all content in the section. */
   background: var(--section-bg); /* Section background for consistency. */
+  padding: 60px 20px; /* Consistent section padding. */
   color: #ffffff; /* White text for high contrast. */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth. */
 }
@@ -1049,5 +1051,219 @@ footer {
     display: none; /* Hidden until toggled. */
     flex-direction: column; /* Stack links vertically. */
     width: 100%; /* Full-width for mobile menu. */
+    margin-top: 60px; /* Space below the logo and toggle. */
+    gap: 12px; /* Reduced spacing between links. */
   }
+
+  /* Hide theme controls wrapper by default on mobile. */
+  .theme-controls-wrapper {
+    display: none; /* Hidden until toggled. */
+    width: 100%; /* Full-width for mobile. */
+    justify-content: center; /* Centers theme controls. */
+  }
+
+  /* Show navigation links and theme controls when toggle is checked. */
+  #nav-toggle:checked ~ .nav-links,
+  #nav-toggle:checked ~ .theme-controls-wrapper {
+    display: flex; /* Displays the menu and controls. */
+  }
+
+  /* Adjust theme controls for mobile layout. */
+  .theme-controls {
+    flex-direction: column; /* Stack buttons vertically. */
+    align-items: center; /* Center buttons horizontally. */
+    gap: 10px; /* Reduced spacing between buttons. */
+    margin-top: 10px; /* Spacing above controls. */
+  }
+
+  /* Full-width theme toggle buttons for mobile. */
+  .toggle-theme {
+    width: 100%; /* Full-width buttons. */
+    padding: 6px 14px; /* Consistent padding. */
+  }
+
+  /* Smaller logo circle for mobile. */
+  .circle {
+    width: 32px; /* Reduced size for smaller screens. */
+    height: 32px;
+    font-size: 0.9rem; /* Smaller font for the letter. */
+  }
+
+  /* Smaller logo text for mobile. */
+  .circle-text {
+    font-size: 0.9rem; /* Reduced size for balance. */
+  }
+
+  /* Adjust section padding and width for tablets. */
+  section {
+    padding: 50px 15px; /* Reduced padding for smaller screens. */
+    max-width: 90%; /* Slightly narrower content area. */
+    margin: 0 auto; /* Centers content. */
+  }
+
+  /* Smaller hero heading for tablets. */
+  .hero h2 { font-size: 1.5rem; }
+
+  /* Smaller hero paragraph with padding for readability. */
+  .hero p { font-size: 0.85rem; padding: 0 15px; }
+
+  /* Smaller hero button for tablets. */
+  .hero .button { padding: 8px 20px; font-size: 0.8rem; }
+
+  /* Smaller section headings for tablets. */
+  .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .experience h2, .contact h2, .articles h2, .insights-updates h2 {
+    font-size: 1.6rem; /* Reduced size for balance. */
+  }
+
+  /* Smaller CTA heading for tablets. */
+  .cta h2 { font-size: 1.3rem; }
+
+  /* Smaller paragraph text for various sections. */
+  .about p, .education-card p, .project-item p, .experience-card p, .article-item p, .insights-card p {
+    font-size: 0.85rem; /* Reduced size for readability. */
+  }
+
+  /* Adjust about paragraph for tablets. */
+  .about p { font-size: 0.95rem; padding: 20px; line-height: 1.7; }
+
+  /* Two-column skill grid for tablets. */
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens. */
+    gap: 10px; /* Reduced spacing between cards. */
+    padding: 10px; /* Reduced padding for the grid. */
+  }
+
+  /* Smaller skill cards for tablets. */
+  .skill-card {
+    padding: 10px; /* Reduced padding for compact cards. */
+    min-height: 160px; /* Slightly shorter cards. */
+  }
+
+  /* Smaller skill card icons for tablets. */
+  .skill-card::before {
+    height: 70px; /* Reduced icon size. */
+  }
+
+  /* Smaller skill note for tablets. */
+  .skill-note {
+    font-size: 0.7rem; /* Smaller font for subtlety. */
+    margin-top: 75px; /* Adjusted for smaller icon. */
+  }
+
+  /* Responsive certification grid for tablets. */
+  .certification-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+
+  /* Smaller certification card text for tablets. */
+  .certification-card { font-size: 0.8rem; }
+
+  /* Smaller headings for various cards on tablets. */
+  .project-item h3, .education-card h3, .experience-card h3, .article-item h3, .insights-card h3 { font-size: 1rem; }
+
+  /* Smaller project image for tablets. */
+  .project-image { height: 120px; }
+
+  /* Narrower contact form for tablets. */
+  .contact form { max-width: 350px; }
+
+  /* Smaller contact button for tablets. */
+  .contact button { font-size: 0.8rem; }
+
+  /* Stack CTA buttons vertically for tablets. */
+  .cta-buttons { flex-direction: column; gap: 10px; }
+
+  /* Smaller CTA buttons for tablets. */
+  .cta .button { padding: 6px 16px; font-size: 0.7rem; }
+
+  /* Smaller article list items for tablets. */
+  .article-item ul { font-size: 0.8rem; }
+
+  /* Smaller back link for tablets. */
+  .back-link { font-size: 0.75rem; }
+
+  /* Smaller date badge for insights cards on tablets. */
+  .insights-card .date-badge { font-size: 0.65rem; }
+
+  /* Smaller read more link for insights cards on tablets. */
+  .insights-card .read-more { font-size: 0.8rem; }
+}
+
+/* Responsive styles for small phones (max-width: 480px) for a compact layout. */
+@media (max-width: 480px) {
+  /* Further reduce nav padding for small phones. */
+  nav { padding: 10px 15px; }
+
+  /* Adjust navigation links spacing for small phones. */
+  .nav-links { margin-top: 50px; gap: 10px; }
+
+  /* Smaller logo circle for small phones. */
+  .circle { width: 28px; height: 28px; font-size: 0.8rem; }
+
+  /* Smaller logo text for small phones. */
+  .circle-text { font-size: 0.8rem; }
+
+  /* Further reduce section padding and width for small phones. */
+  section { padding: 40px 10px; max-width: 95%; }
+
+  /* Smaller hero heading for small phones. */
+  .hero h2 { font-size: 1.3rem; }
+
+  /* Smaller hero paragraph for small phones. */
+  .hero p { font-size: 0.8rem; }
+
+  /* Smaller hero button for small phones. */
+  .hero .button { padding: 6px 16px; font-size: 0.75rem; }
+
+  /* Smaller section headings for small phones. */
+  .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .experience h2, .contact h2, .articles h2, .insights-updates h2 { font-size: 1.4rem; }
+
+  /* Smaller CTA heading for small phones. */
+  .cta h2 { font-size: 1.2rem; }
+
+  /* Smaller about paragraph for small phones. */
+  .about p { font-size: 0.9rem; padding: 15px; }
+
+  /* Two-column skill grid for small phones. */
+  .skill-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  /* Smaller skill cards for small phones. */
+  .skill-card { min-height: 140px; padding: 8px; }
+
+  /* Smaller skill card icons for small phones. */
+  .skill-card::before { height: 60px; }
+
+  /* Smaller skill note for small phones. */
+  .skill-note { font-size: 0.65rem; margin-top: 65px; }
+
+  /* Single-column certification grid for small phones. */
+  .certification-grid { grid-template-columns: 1fr; }
+
+  /* Smaller certification card text for small phones. */
+  .certification-card { font-size: 0.75rem; }
+
+  /* Smaller headings for various cards on small phones. */
+  .project-item h3, .education-card h3, .experience-card h3, .article-item h3, .insights-card h3 { font-size: 0.9rem; }
+
+  /* Smaller project image for small phones. */
+  .project-image { height: 100px; }
+
+  /* Full-width contact form for small phones. */
+  .contact form { max-width: 90%; }
+
+  /* Smaller contact form inputs and textarea for small phones. */
+  .contact input, .contact textarea { font-size: 0.75rem; }
+
+  /* Smaller contact form labels for small phones. */
+  .contact label { font-size: 0.75rem; }
+
+  /* Smaller contact button for small phones. */
+  .contact button { font-size: 0.75rem; }
+
+  /* Smaller CTA buttons for small phones. */
+  .cta .button { padding: 6px 14px; font-size: 0.65rem; }
+
+  /* Smaller footer text for small phones. */
+  footer { padding: 20px 10px; font-size: 0.75rem; }
+
+  /* Smaller social icons for small phones. */
+  .social-icons a { width: 32px; height: 32px; font-size: 1rem; }
 }

@@ -1,1353 +1,1269 @@
-/* Define CSS custom properties for consistent theming */
+/* Define CSS custom properties for consistent theming across the website. These variables allow easy maintenance and switching between dark and light themes. */
 :root {
-  --primary: #2c2c2c; /* Charcoal gray for main elements */
-  --secondary: #242424; /* Muted charcoal for card backgrounds */
-  --accent: #d4a373; /* Burnished bronze for highlights */
-  --bg: #0f0f0f; /* Near-black background for the body */
-  --section-bg: #181818; /* Subtle black for section backgrounds */
-  --text: #f1f5f9; /* Soft ivory text color */
+  --primary: #2c2c2c; /* Charcoal gray used for main elements like buttons and borders, providing a strong base color. */
+  --secondary: #242424; /* Muted charcoal for card backgrounds, offering subtle contrast against the primary color. */
+  --accent: #d4a373; /* Burnished bronze for highlights, adding warmth and visual interest to interactive elements. */
+  --bg: #0f0f0f; /* Near-black background for the body, creating a sleek, modern look in dark mode. */
+  --section-bg: #181818; /* Subtle black for section backgrounds, ensuring distinction from the main body background. */
+  --text: #f1f5f9; /* Soft ivory text color for readability against dark backgrounds. */
 }
 
-/* Light theme variables applied when theme toggle is checked */
+/* Light theme variables applied when the theme toggle checkbox is checked, overriding dark theme defaults for a brighter appearance. */
 body:has(#theme-toggle:checked) {
-  --primary: #3c3c3c; /* Lighter gray for main elements */
-  --secondary: #ececec; /* Light gray for card backgrounds */
-  --accent: #b89778; /* Softer bronze for highlights */
-  --bg: #ffffff; /* White body background */
-  --section-bg: #f5f5f5; /* Light gray for section backgrounds */
-  --text: #2c2c2c; /* Dark gray text */
+  --primary: #3c3c3c; /* Lighter gray for main elements in light mode, maintaining contrast. */
+  --secondary: #ececec; /* Light gray for card backgrounds, ensuring a clean and minimal look. */
+  --accent: #b89778; /* Softer bronze for highlights, toned down for light mode aesthetics. */
+  --bg: #ffffff; /* White body background for a bright and open feel. */
+  --section-bg: #f5f5f5; /* Light gray for section backgrounds, providing subtle separation. */
+  --text: #2c2c2c; /* Dark gray text for high contrast and readability in light mode. */
 }
 
-/* Reset default browser styles for consistent rendering */
+/* Reset default browser margins, padding, and box-sizing to ensure consistent styling across elements. */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Include padding and borders in element size */
+  box-sizing: border-box; /* Ensures padding and borders are included in element dimensions. */
 }
 
-/* Enable smooth scrolling for anchor links */
+/* Enable smooth scrolling for anchor links to enhance user experience when navigating sections. */
 html {
   scroll-behavior: smooth;
 }
 
-/* Base body styles for typography and layout */
+/* Base styles for the body, setting the font, background, text color, and preventing horizontal overflow. */
 body {
-  font-family: 'Inter', sans-serif; /* Default font for readable content */
-  background: var(--bg); /* Apply theme background color */
-  color: var(--text); /* Apply theme text color */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  font-family: 'Inter', sans-serif; /* Clean, modern sans-serif font for body text. */
+  background: var(--bg); /* Uses the defined background color variable. */
+  color: var(--text); /* Uses the defined text color variable for consistency. */
+  overflow-x: hidden; /* Prevents horizontal scrolling for a cleaner layout. */
 }
 
-/* Consistent heading styles with futuristic font */
+/* Styling for headings to ensure a consistent futuristic look with a subtle shadow for depth. */
 h1, h2, h3 {
-  font-family: 'Orbitron', sans-serif; /* Futuristic font for headings */
-  font-weight: 500; /* Medium weight for clarity */
-  letter-spacing: 0.8px; /* Slight spacing for readability */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for headings to stand out. */
+  font-weight: 500; /* Medium weight for a balanced, modern appearance. */
+  letter-spacing: 0.8px; /* Slight spacing for better readability and aesthetic. */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth, especially in dark mode. */
 }
 
-/* Accessibility-focused styles for interactive elements */
+/* Accessibility-focused styles for interactive elements to ensure clear focus indication. */
 a:focus, button:focus, input:focus, textarea:focus {
-  outline: 2px solid var(--accent); /* Highlight focus with accent color */
-  outline-offset: 2px; /* Space around focus outline */
+  outline: 2px solid var(--accent); /* Bronze outline for focus states to highlight active elements. */
+  outline-offset: 2px; /* Slight offset for better visibility of the focus outline. */
 }
 
-/* Navigation bar styling with fixed positioning */
+/* Navigation bar styling, fixed at the top for constant accessibility. */
 nav {
-  position: fixed; /* Keep nav at the top */
+  position: fixed; /* Keeps the nav bar at the top of the viewport. */
   top: 0;
-  width: 100%; /* Full viewport width */
-  padding: 15px 40px; /* Padding for spacing */
-  display: flex; /* Flex layout for logo, links, and controls */
-  justify-content: space-between; /* Space out elements */
-  align-items: center; /* Vertically align items */
-  background: rgba(15, 15, 15, 0.8); /* Semi-transparent dark background */
-  border-bottom: 1px solid var(--accent); /* Accent-colored bottom border */
-  z-index: 999; /* Ensure nav stays above other content */
+  width: 100%; /* Full-width navigation bar. */
+  padding: 15px 40px; /* Comfortable padding for desktop layouts. */
+  display: flex; /* Flexbox for aligning logo and links. */
+  justify-content: space-between; /* Spreads logo and links across the nav bar. */
+  align-items: center; /* Vertically centers content. */
+  background: rgba(15, 15, 15, 0.8); /* Semi-transparent dark background for contrast. */
+  border-bottom: 1px solid var(--accent); /* Bronze border for visual separation. */
+  z-index: 999; /* High z-index to ensure nav stays above other content. */
 }
 
-/* Logo styling with circular design */
+/* Styling for the logo container, combining a circular icon and text. */
 .circle-logo {
-  display: flex; /* Align logo circle and text */
-  align-items: center; /* Center vertically */
-  gap: 8px; /* Space between circle and text */
-  text-decoration: none; /* Remove underline from link */
+  display: flex; /* Flexbox for aligning the circle and text. */
+  align-items: center; /* Centers items vertically. */
+  gap: 8px; /* Space between circle and text for balance. */
+  text-decoration: none; /* Removes underline from the logo link. */
 }
 
+/* Circular logo element with a gradient background for visual appeal. */
 .circle {
-  width: 36px; /* Fixed circle size */
+  width: 36px; /* Fixed size for the circular logo. */
   height: 36px;
-  background: linear-gradient(135deg, var(--primary), var(--accent)); /* Gradient background */
-  border-radius: 50%; /* Circular shape */
-  color: var(--bg); /* Text color contrasts with gradient */
-  display: flex; /* Center content inside circle */
+  background: linear-gradient(135deg, var(--primary), var(--accent)); /* Gradient from primary to accent color. */
+  border-radius: 50%; /* Circular shape. */
+  color: var(--bg); /* Background color for the text inside the circle. */
+  display: flex; /* Flexbox for centering the letter inside. */
   align-items: center;
   justify-content: center;
-  font-weight: 600; /* Bold text for emphasis */
-  font-size: 1rem; /* Text size */
-  transition: transform 0.3s; /* Smooth scale on hover */
+  font-weight: 600; /* Bold text for emphasis. */
+  font-size: 1rem; /* Readable font size for the letter. */
+  transition: transform 0.3s; /* Smooth scaling on hover. */
 }
 
+/* Hover effect for the circular logo to provide subtle interactivity. */
 .circle-logo:hover .circle {
-  transform: scale(1.05); /* Slight scale-up effect on hover */
+  transform: scale(1.05); /* Slightly enlarges the circle on hover. */
 }
 
+/* Styling for the logo text with a gradient effect. */
 .circle-text {
-  font-family: 'Orbitron', sans-serif; /* Futuristic font for logo text */
-  font-size: 1rem; /* Text size */
-  font-weight: 400; /* Normal weight for readability */
-  letter-spacing: 1px; /* Spacing for clarity */
-  background: linear-gradient(90deg, var(--primary), var(--accent)); /* Gradient text effect */
-  -webkit-background-clip: text; /* Clip gradient to text */
-  -webkit-text-fill-color: transparent; /* Transparent text for gradient */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for consistency with headings. */
+  font-size: 1rem; /* Readable size for the logo text. */
+  font-weight: 400; /* Regular weight to avoid overpowering the circle. */
+  letter-spacing: 1px; /* Slight spacing for a modern look. */
+  background: linear-gradient(90deg, var(--primary), var(--accent)); /* Gradient text effect. */
+  -webkit-background-clip: text; /* Clips the gradient to the text shape (WebKit browsers). */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient. */
 }
 
-/* Navigation links styling */
+/* Navigation links container, using flexbox for horizontal alignment. */
 .nav-links {
-  display: flex; /* Horizontal layout for links */
-  gap: 20px; /* Space between links */
-  list-style: none; /* Remove bullet points */
+  display: flex; /* Horizontal layout for navigation links. */
+  gap: 20px; /* Spacing between links for clarity. */
+  list-style: none; /* Removes default list bullets. */
 }
 
+/* Individual navigation link styling. */
 .nav-links a {
-  color: var(--text); /* Theme text color */
-  text-decoration: none; /* Remove underline */
-  font-size: 0.9rem; /* Slightly smaller text */
-  font-weight: 400; /* Normal weight */
-  letter-spacing: 0.5px; /* Subtle spacing for readability */
-  transition: color 0.3s, transform 0.2s; /* Smooth color and scale transitions */
+  color: var(--text); /* Text color from the theme variable. */
+  text-decoration: none; /* Removes underlines from links. */
+  font-size: 0.9rem; /* Slightly smaller font for a clean look. */
+  font-weight: 400; /* Regular weight for readability. */
+  letter-spacing: 0.5px; /* Subtle spacing for aesthetic. */
+  transition: color 0.3s, transform 0.2s; /* Smooth color and scale transitions on hover. */
 }
 
+/* Hover effect for navigation links to enhance interactivity. */
 .nav-links a:hover {
-  color: var(--accent); /* Accent color on hover */
-  transform: scale(1.05); /* Slight scale-up effect */
+  color: var(--accent); /* Changes to bronze on hover for visual feedback. */
+  transform: scale(1.05); /* Slight enlargement for emphasis. */
 }
 
-/* Hide mobile navigation toggle checkbox by default */
-.nav-toggle {
-  display: none;
+/* Hide navigation toggle and theme toggle inputs for accessibility. */
+.nav-toggle, .theme-toggle {
+  display: none; /* Hidden inputs for checkbox-based toggles. */
 }
 
-/* Mobile menu toggle label (hamburger icon) */
+/* Navigation toggle label, hidden by default for desktop layouts. */
 .nav-toggle-label {
-  display: none; /* Hidden on desktop */
-  font-size: 1.4rem; /* Icon size for visibility */
-  color: var(--text); /* Theme text color */
-  cursor: pointer; /* Pointer cursor on hover */
+  display: none; /* Hidden on larger screens, shown on mobile. */
+  font-size: 1.4rem; /* Large icon size for easy tapping. */
+  color: var(--text); /* Matches theme text color. */
+  cursor: pointer; /* Indicates interactivity. */
 }
 
-/* Theme controls styling for toggle and resume buttons */
+/* Container for theme toggle controls. */
 .theme-controls {
-  display: flex; /* Horizontal layout */
-  gap: 12px; /* Space between buttons */
+  display: flex; /* Horizontal layout for theme buttons. */
+  gap: 12px; /* Spacing between buttons. */
 }
 
+/* Theme toggle button styling. */
 .toggle-theme {
-  padding: 6px 14px; /* Button padding */
-  border: 1px solid var(--accent); /* Accent-colored border */
-  background: transparent; /* Transparent background */
-  color: var(--text); /* Theme text color */
-  border-radius: 6px; /* Rounded corners */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-size: 0.8rem; /* Small text for buttons */
-  font-weight: 400; /* Normal weight */
-  text-align: center; /* Center text */
-  text-decoration: none; /* Remove underline */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background 0.3s, color 0.3s, transform 0.2s; /* Smooth hover transitions */
+  padding: 6px 14px; /* Comfortable padding for clickability. */
+  border: 1px solid var(--accent); /* Bronze border for visual distinction. */
+  background: transparent; /* Transparent background for a clean look. */
+  color: var(--text); /* Matches theme text color. */
+  border-radius: 6px; /* Rounded corners for a modern feel. */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for consistency. */
+  font-size: 0.8rem; /* Smaller font for subtlety. */
+  font-weight: 400; /* Regular weight for balance. */
+  text-align: center; /* Centered text for aesthetics. */
+  text-decoration: none; /* No underline for button-like appearance. */
+  cursor: pointer; /* Indicates interactivity. */
+  transition: background 0.3s, color 0.3s, transform 0.2s; /* Smooth transitions for hover effects. */
 }
 
+/* Hover effect for theme toggle button. */
 .toggle-theme:hover {
-  background: var(--accent); /* Accent background on hover */
-  color: var(--bg); /* Background color for text */
-  transform: scale(1.05); /* Slight scale-up effect */
+  background: var(--accent); /* Bronze background on hover. */
+  color: var(--bg); /* Background color for text to ensure contrast. */
+  transform: scale(1.05); /* Slight enlargement for interactivity. */
 }
 
-.theme-toggle {
-  display: none; /* Hide checkbox for theme toggle */
-}
-
-/* Base styling for sections */
+/* Base styles for sections to ensure consistent padding and background. */
 section {
-  padding: 60px 20px; /* Reduced padding for sections */
-  background: var(--section-bg); /* Theme section background */
+  padding: 60px 20px; /* Generous padding for content spacing. */
+  background: var(--section-bg); /* Section background from theme variable. */
 }
 
-/* Hero section with full-screen background and centered content */
+/* Hero section styling for a full-screen, centered introduction. */
 .hero {
-  height: 100vh; /* Full viewport height */
-  display: flex; /* Flex layout for centering */
-  flex-direction: column; /* Stack elements vertically */
-  justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
-  text-align: center; /* Center text */
-  background: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('../images/8.avif') no-repeat center/cover; /* Gradient overlay with background image */
-  position: relative; /* For overlay positioning */
+  height: 100vh; /* Full viewport height for impact. */
+  display: flex; /* Flexbox for centering content. */
+  flex-direction: column; /* Stack content vertically. */
+  justify-content: center; /* Center content vertically. */
+  align-items: center; /* Center content horizontally. */
+  text-align: center; /* Center text alignment. */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('../images/8.avif') no-repeat center/cover; /* Dark overlay with background image. */
+  position: relative; /* For positioning the overlay. */
 }
 
+/* Overlay for hero section to darken the background image for text readability. */
 .hero::before {
-  content: ''; /* Empty content for overlay */
-  position: absolute; /* Cover entire section */
-  inset: 0; /* Shorthand for top, right, bottom, left */
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
-  z-index: -1; /* Place behind content */
+  content: ''; /* Empty content for pseudo-element. */
+  position: absolute; /* Covers the entire hero section. */
+  inset: 0; /* Shorthand for top, right, bottom, left set to 0. */
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay. */
+  z-index: -1; /* Places overlay behind content. */
 }
 
+/* Hero section heading styling. */
 .hero h2 {
-  font-size: 1.8rem; /* Heading size for emphasis */
-  letter-spacing: 1.2px; /* Spacing for readability */
+  font-size: 1.8rem; /* Large font for emphasis. */
+  letter-spacing: 1.2px; /* Spaced for readability and style. */
 }
 
+/* Hero section paragraph styling with animation for a smooth entrance. */
 .hero p {
-  font-size: 0.9rem; /* Smaller text for subtitle */
-  margin-top: 12px; /* Space above */
-  font-weight: 300; /* Light weight for elegance */
-  letter-spacing: 0.5px; /* Subtle spacing */
-  animation: fadeIn 1.5s ease forwards; /* Fade-in animation for text */
+  font-size: 0.9rem; /* Smaller font for secondary text. */
+  margin-top: 12px; /* Spacing above paragraph. */
+  font-weight: 300; /* Light weight for a softer look. */
+  letter-spacing: 0.5px; /* Subtle spacing for readability. */
+  animation: fadeIn 1.5s ease forwards; /* Fade-in animation for visual effect. */
 }
 
+/* Hero section button styling with a gradient background. */
 .hero .button {
-  margin-top: 25px; /* Space above button */
-  padding: 10px 28px; /* Button padding */
-  font-size: 0.85rem; /* Text size */
-  color: var(--bg); /* Background color for text */
-  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient button background */
-  border: none; /* Remove default border */
-  border-radius: 6px; /* Rounded corners */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-weight: 400; /* Normal weight */
-  text-decoration: none; /* Remove underline */
-  transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
+  margin-top: 25px; /* Spacing above the button. */
+  padding: 10px 28px; /* Comfortable padding for clickability. */
+  font-size: 0.85rem; /* Slightly smaller font for balance. */
+  color: var(--bg); /* Background color for text contrast. */
+  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient from primary to accent. */
+  border: none; /* No border for a clean look. */
+  border-radius: 6px; /* Rounded corners for modernity. */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for consistency. */
+  font-weight: 400; /* Regular weight for readability. */
+  text-decoration: none; /* No underline for button-like appearance. */
+  transition: transform 0.2s, box-shadow 0.3s; /* Smooth transitions for hover effects. */
 }
 
+/* Hover effect for hero button to enhance interactivity. */
 .hero .button:hover {
-  transform: scale(1.05); /* Slight scale-up on hover */
-  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow for depth */
+  transform: scale(1.05); /* Slight enlargement on hover. */
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle bronze shadow for depth. */
 }
 
+/* Avatar image styling with a pulsing animation for visual interest. */
 .avatar {
-  width: 90px; /* Avatar image size */
+  width: 90px; /* Fixed size for the avatar. */
   height: 90px;
-  background: url('../images/dube.jpg') no-repeat center/cover; /* Profile image */
-  background-color: var(--secondary); /* Fallback background */
-  border-radius: 50%; /* Circular shape */
-  border: 1px solid var(--accent); /* Accent-colored border */
-  margin-bottom: 15px; /* Space below avatar */
-  animation: pulse 2s ease-in-out infinite; /* Pulsing animation for visual interest */
+  background: url('../images/dube.jpg') no-repeat center/cover; /* Avatar image with cover scaling. */
+  background-color: var(--secondary); /* Fallback background color. */
+  border-radius: 50%; /* Circular shape for the avatar. */
+  border: 1px solid var(--accent); /* Bronze border for highlight. */
+  margin-bottom: 15px; /* Spacing below the avatar. */
+  animation: pulse 2s ease-in-out infinite; /* Continuous pulsing animation. */
 }
 
-/* About section with centered content */
+/* About section styling for centered content. */
 .about {
-  text-align: center; /* Center text and content */
+  text-align: center; /* Center-aligns all content in the section. */
 }
 
+/* About section heading with animation and accent color. */
 .about h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color for emphasis */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 20px; /* Space below heading */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem; /* Large font for emphasis. */
+  color: var(--accent); /* Bronze color for visual pop. */
+  letter-spacing: 1.2px; /* Spaced for readability. */
+  margin-bottom: 20px; /* Spacing below the heading. */
+  animation: slideIn 1s ease forwards; /* Slide-in animation for entrance. */
 }
 
+/* About section paragraph with a card-like appearance and hover effect. */
 .about p {
-  max-width: 600px; /* Constrain paragraph width */
-  margin: 0 auto; /* Center horizontally */
-  font-family: 'Playfair Display', serif; /* Elegant font for narrative */
-  font-size: 1.1rem; /* Slightly larger text for readability */
-  font-weight: 400; /* Normal weight */
-  line-height: 1.8; /* Spacious line height for comfort */
-  background: var(--secondary); /* Card background */
-  padding: 25px; /* Internal padding */
-  border-left: 3px solid var(--accent); /* Accent border for style */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  transition: transform 0.3s; /* Smooth hover effect */
+  max-width: 600px; /* Limits width for readability. */
+  margin: 0 auto; /* Centers the paragraph. */
+  font-family: 'Playfair Display', serif; /* Elegant serif font for a refined look. */
+  font-size: 1.1rem; /* Slightly larger font for emphasis. */
+  font-weight: 400; /* Regular weight for balance. */
+  line-height: 1.8; /* Increased line height for readability. */
+  background: var(--secondary); /* Card background color. */
+  padding: 25px; /* Generous padding for a card-like feel. */
+  border-left: 3px solid var(--accent); /* Bronze border for visual accent. */
+  border-radius: 8px; /* Rounded corners for a modern look. */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth. */
+  transition: transform 0.3s; /* Smooth lift effect on hover. */
 }
 
+/* Hover effect for about paragraph to indicate interactivity. */
 .about p:hover {
-  transform: translateY(-3px); /* Slight lift on hover */
+  transform: translateY(-3px); /* Slight upward lift on hover. */
 }
 
-/* Experience section with card-based layout */
+/* Experience section styling for centered content. */
 .experience {
-  text-align: center; /* Center content */
+  text-align: center; /* Center-aligns all content in the section. */
 }
 
+/* Experience section heading with animation and accent color. */
 .experience h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 30px; /* Space below heading */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem; /* Large font for emphasis. */
+  color: var(--accent); /* Bronze color for visual pop. */
+  letter-spacing: 1.2px; /* Spaced for readability. */
+  margin-bottom: 30px; /* Increased spacing for content separation. */
+  animation: slideIn 1s ease forwards; /* Slide-in animation for entrance. */
 }
 
+/* Container for experience cards, centered with a flexbox layout. */
 .experience-grid {
-  max-width: 700px; /* Constrain grid width */
-  margin: 0 auto; /* Center horizontally */
-  display: flex; /* Flex layout for cards */
-  flex-direction: column; /* Stack cards vertically */
-  gap: 20px; /* Space between cards */
+  max-width: 700px; /* Limits width for readability. */
+  margin: 0 auto; /* Centers the grid. */
+  display: flex; /* Flexbox for vertical stacking of cards. */
+  flex-direction: column; /* Stacks cards vertically. */
+  gap: 20px; /* Spacing between cards. */
 }
 
+/* Individual experience card styling with a card-like appearance. */
 .experience-card {
-  background: var(--secondary); /* Card background */
-  padding: 20px; /* Internal padding */
-  border-radius: 8px; /* Rounded corners */
-  border-left: 3px solid var(--accent); /* Accent border */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  text-align: left; /* Left-align text */
-  transition: transform 0.3s; /* Smooth hover effect */
+  background: var(--secondary); /* Card background color. */
+  padding: 20px; /* Comfortable padding for content. */
+  border-radius: 8px; /* Rounded corners for a modern look. */
+  border-left: 3px solid var(--accent); /* Bronze border for visual accent. */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth. */
+  text-align: left; /* Left-align text for readability. */
+  transition: transform 0.3s; /* Smooth lift effect on hover. */
 }
 
+/* Hover effect for experience cards to indicate interactivity. */
 .experience-card:hover {
-  transform: translateY(-3px); /* Slight lift on hover */
+  transform: translateY(-3px); /* Slight upward lift on hover. */
 }
 
+/* Experience card heading styling. */
 .experience-card h3 {
-  font-size: 1.1rem; /* Heading size */
-  margin-bottom: 8px; /* Space below heading */
+  font-size: 1.1rem; /* Slightly larger font for emphasis. */
+  margin-bottom: 8px; /* Spacing below the heading. */
 }
 
+/* Experience card paragraph styling for secondary text. */
 .experience-card p {
-  font-size: 0.85rem; /* Smaller text for details */
-  font-weight: 300; /* Light weight */
-  line-height: 1.6; /* Comfortable line height */
+  font-size: 0.85rem; /* Smaller font for details. */
+  font-weight: 300; /* Light weight for a softer look. */
+  line-height: 1.6; /* Increased line height for readability. */
 }
 
-/* Projects section with card-based project showcase */
+/* Projects section styling for centered content. */
 .projects {
-  text-align: center; /* Center content */
-  padding: 60px 20px; /* Reduced padding for sections */
+  text-align: center; /* Center-aligns all content in the section. */
+  padding: 60px 20px; /* Consistent section padding. */
 }
 
+/* Projects section heading with animation and accent color. */
 .projects h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 20px; /* Space below heading */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem; /* Large font for emphasis. */
+  color: var(--accent); /* Bronze color for visual pop. */
+  letter-spacing: 1.2px; /* Spaced for readability. */
+  margin-bottom: 20px; /* Spacing below the heading. */
+  animation: slideIn 1s ease forwards; /* Slide-in animation for entrance. */
 }
 
+/* Individual project item styling with a card-like appearance. */
 .project-item {
-  max-width: 700px; /* Constrain card width */
-  margin: 20px auto; /* Center with vertical spacing */
-  background: var(--secondary); /* Card background */
-  padding: 20px; /* Internal padding */
-  border-radius: 8px; /* Rounded corners */
-  border-left: 3px solid var(--accent); /* Accent border */
-  text-align: left; /* Left-align text */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s; /* Smooth hover effect */
+  max-width: 700px; /* Limits width for readability. */
+  margin: 20px auto; /* Centers the item with spacing. */
+  background: var(--secondary); /* Card background color. */
+  padding: 20px; /* Comfortable padding for content. */
+  border-radius: 8px; /* Rounded corners for a modern look. */
+  border-left: 3px solid var(--accent); /* Bronze border for visual accent. */
+  text-align: left; /* Left-align text for readability. */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth. */
+  transition: transform 0.3s; /* Smooth lift effect on hover. */
 }
 
+/* Hover effect for project items to indicate interactivity. */
 .project-item:hover {
-  transform: translateY(-3px); /* Slight lift on hover */
+  transform: translateY(-3px); /* Slight upward lift on hover. */
 }
 
+/* Project image styling for consistent sizing and appearance. */
 .project-image {
-  width: 100%; /* Full width image */
-  height: 150px; /* Fixed height for consistency */
-  background: var(--secondary) no-repeat center/cover; /* Image styling with fallback */
-  border-radius: 6px; /* Rounded corners */
-  margin-bottom: 15px; /* Space below image */
+  width: 100%; /* Full-width image within the card. */
+  height: 150px; /* Fixed height for consistency. */
+  background: var(--secondary) no-repeat center/cover; /* Fallback background with cover scaling. */
+  border-radius: 6px; /* Rounded corners for a polished look. */
+  margin-bottom: 15px; /* Spacing below the image. */
 }
 
+/* Project item heading styling. */
 .project-item h3 {
-  font-size: 1.1rem; /* Heading size */
-  margin-bottom: 8px; /* Space below heading */
+  font-size: 1.1rem; /* Slightly larger font for emphasis. */
+  margin-bottom: 8px; /* Spacing below the heading. */
 }
 
+/* Project item paragraph styling for secondary text. */
 .project-item p {
-  font-size: 0.85rem; /* Smaller text for details */
-  font-weight: 300; /* Light weight */
-  line-height: 1.6; /* Comfortable line height */
+  font-size: 0.85rem; /* Smaller font for details. */
+  font-weight: 300; /* Light weight for a softer look. */
+  line-height: 1.6; /* Increased line height for readability. */
 }
 
+/* Container for technology badges to display tech stack. */
 .tech-badges {
-  display: flex; /* Horizontal layout for badges */
-  gap: 8px; /* Space between badges */
-  margin: 10px 0; /* Vertical margin */
+  display: flex; /* Horizontal layout for badges. */
+  gap: 8px; /* Spacing between badges. */
+  margin: 10px 0; /* Vertical spacing for separation. */
 }
 
+/* Individual technology badge styling. */
 .tech-badge {
-  background: var(--accent); /* Accent background */
-  color: var(--bg); /* Background color for text */
-  padding: 4px 8px; /* Padding for badge */
-  border-radius: 4px; /* Rounded corners */
-  font-size: 0.75rem; /* Small text */
-  font-family: 'Inter', sans-serif; /* Default font */
-  font-weight: 400; /* Normal weight */
+  background: var(--accent); /* Bronze background for visibility. */
+  color: var(--bg); /* Background color for text contrast. */
+  padding: 4px 8px; /* Compact padding for small badges. */
+  border-radius: 4px; /* Rounded corners for a polished look. */
+  font-size: 0.75rem; /* Small font for subtlety. */
+  font-family: 'Inter', sans-serif; /* Consistent font with body text. */
+  font-weight: 400; /* Regular weight for balance. */
 }
 
+/* Project item link styling for external project links. */
 .project-item a {
-  display: inline-block; /* Inline-block for button styling */
-  margin-top: 10px; /* Space above */
-  padding: 8px 16px; /* Button padding */
-  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
-  color: var(--bg); /* Text color */
-  text-decoration: none; /* Remove underline */
-  border-radius: 6px; /* Rounded corners */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-size: 0.8rem; /* Small text */
-  font-weight: 400; /* Normal weight */
-  transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
+  display: inline-block; /* Inline-block for proper spacing. */
+  margin-top: 10px; /* Spacing above the link. */
+  padding: 8px 16px; /* Comfortable padding for clickability. */
+  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background for visual appeal. */
+  color: var(--bg); /* Background color for text contrast. */
+  text-decoration: none; /* No underline for button-like appearance. */
+  border-radius: 6px; /* Rounded corners for modernity. */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for consistency. */
+  font-size: 0.8rem; /* Smaller font for balance. */
+  font-weight: 400; /* Regular weight for readability. */
+  transition: transform 0.2s, box-shadow 0.3s; /* Smooth transitions for hover effects. */
 }
 
+/* Hover effect for project links to enhance interactivity. */
 .project-item a:hover {
-  transform: scale(1.05); /* Slight scale-up on hover */
-  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow */
+  transform: scale(1.05); /* Slight enlargement on hover. */
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle bronze shadow for depth. */
 }
 
-/* Skills section with grid layout for tech stack */
+/* Skills section styling for centered content. */
 .skills {
-  text-align: center;
-  padding: 60px 20px; /* Reduced padding for sections */
+  text-align: center; /* Center-aligns all content in the section. */
+  padding: 60px 20px; /* Consistent section padding. */
 }
 
+/* Skills section heading with animation and accent color. */
 .skills h2 {
-  font-size: 2rem;
-  color: var(--accent);
-  letter-spacing: 1.2px;
-  margin-bottom: 20px;
-  animation: slideIn 1s ease forwards;
+  font-size: 2rem; /* Large font for emphasis. */
+  color: var(--accent); /* Bronze color for visual pop. */
+  letter-spacing: 1.2px; /* Spaced for readability. */
+  margin-bottom: 20px; /* Spacing below the heading. */
+  animation: slideIn 1s ease forwards; /* Slide-in animation for entrance. */
 }
 
+/* Grid container for skill cards, using CSS Grid for responsive layout. */
 .skill-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  max-width: 700px;
-  margin: 0 auto;
-  background: var(--section-bg); /* Unified with other sections */
-  padding: 15px;
-  border-radius: 8px;
+  display: grid; /* Grid layout for skill cards. */
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns for desktop. */
+  gap: 15px; /* Spacing between cards. */
+  max-width: 700px; /* Limits width for readability. */
+  margin: 0 auto; /* Centers the grid. */
+  background: var(--section-bg); /* Section background for contrast. */
+  padding: 15px; /* Padding for a card-like container. */
+  border-radius: 8px; /* Rounded corners for a polished look. */
 }
 
+/* Individual skill card styling with a card-like appearance. */
 .skill-card {
-  background: var(--secondary);
-  border: 1px solid rgba(212, 163, 115, 0.3);
-  padding: 20px;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  min-height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: var(--secondary); /* Card background color. */
+  border: 1px solid rgba(212, 163, 115, 0.3); /* Subtle bronze border for definition. */
+  padding: 15px; /* Comfortable padding for content. */
+  border-radius: 6px; /* Rounded corners for a modern look. */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth. */
+  min-height: 180px; /* Ensures consistent card height. */
+  display: flex; /* Flexbox for internal layout. */
+  flex-direction: column; /* Stack content vertically. */
+  justify-content: space-between; /* Distributes content evenly. */
+  align-items: center; /* Centers content horizontally. */
+  text-align: center; /* Centers text for readability. */
+  position: relative; /* For positioning the pseudo-element. */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions for hover effects. */
 }
 
+/* Pseudo-element for skill card icons, using background images for each skill. */
 .skill-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(24, 24, 24, 0.1), rgba(212, 163, 115, 0.03));
-  z-index: 0;
+  content: ''; /* Empty content for pseudo-element. */
+  display: block; /* Block display for sizing. */
+  width: 100%; /* Full width of the card. */
+  height: 80px; /* Fixed height for icons. */
+  background-size: contain; /* Scales icon to fit without distortion. */
+  background-position: center; /* Centers the icon. */
+  background-repeat: no-repeat; /* Prevents icon repetition. */
+  position: absolute; /* Positions icon at the top. */
+  top: 10px; /* Slight offset from the top. */
 }
 
-/* Remove overlay from Django card */
-.skill-card:nth-child(2)::before {
-  display: none !important;
-}
+/* Specific background images for each skill card to display technology logos. */
+.skill-card:nth-child(1)::before { background-image: url('../images/python.png'); } /* Python logo. */
+.skill-card:nth-child(2)::before { background-image: url('../images/django.png'); } /* Django logo. */
+.skill-card:nth-child(3)::before { background-image: url('../images/js.png'); } /* JavaScript logo. */
+.skill-card:nth-child(4)::before { background-image: url('../images/mongo.png'); } /* MongoDB logo. */
+.skill-card:nth-child(5)::before { background-image: url('../images/react.png'); } /* React logo. */
+.skill-card:nth-child(6)::before { background-image: url('../images/cicd.png'); } /* CI/CD logo. */
+.skill-card:nth-child(7)::before { background-image: url('../images/aws.png'); } /* AWS logo. */
+.skill-card:nth-child(8)::before { background-image: url('../images/docker.png'); } /* Docker logo. */
+.skill-card:nth-child(9)::before { background-image: url('../images/mysql.png'); } /* MySQL logo. */
 
-/* Skill card background images */
-.skill-card:nth-child(1) {
-  background-image: url('../images/python.png'); /* Ensure this file exists */
-}
-.skill-card:nth-child(2) {
-  background-image: url('../images/django.png'); /* ✅ This solves your issue */
-}
-.skill-card:nth-child(3) {
-  background-image: url('../images/js.png');
-}
-.skill-card:nth-child(4) {
-  background-image: url('../images/mongo.png');
-}
-.skill-card:nth-child(5) {
-  background-image: url('../images/react.png');
-}
-.skill-card:nth-child(6) {
-  background-image: url('../images/cicd.png');
-}
-.skill-card:nth-child(7) {
-  background-image: url('../images/aws.png');
-}
-.skill-card:nth-child(8) {
-  background-image: url('../images/docker.png');
-}
-.skill-card:nth-child(9) {
-  background-image: url('../images/mysql.png');
-}
-
+/* Hover effect for skill cards to enhance interactivity. */
 .skill-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(212, 163, 115, 0.2);
+  transform: translateY(-4px); /* Slight upward lift on hover. */
+  box-shadow: 0 6px 18px rgba(212, 163, 115, 0.3); /* Enhanced bronze shadow for depth. */
 }
 
-/* Hide any text if accidentally included inside the cards */
-.skill-card span {
-  display: none;
+/* Skill note styling for additional information below the icon. */
+.skill-note {
+  font-family: 'Inter', sans-serif; /* Consistent font with body text. */
+  font-size: 0.75rem; /* Small font for subtlety. */
+  font-weight: 300; /* Light weight for a softer look. */
+  color: var(--text); /* Matches theme text color. */
+  background: rgba(24, 24, 24, 0.85); /* Semi-transparent dark background for contrast. */
+  padding: 6px 8px; /* Compact padding for a badge-like feel. */
+  border-radius: 4px; /* Rounded corners for a polished look. */
+  text-align: center; /* Centers text for readability. */
+  margin-top: 85px; /* Positions below the icon. */
+  line-height: 1.4; /* Increased line height for readability. */
+  opacity: 0; /* Initially hidden for animation. */
+  animation: fadeIn 0.5s ease forwards 0.3s; /* Fade-in animation with delay. */
+  transition: transform 0.3s, opacity 0.3s; /* Smooth transitions for hover effects. */
 }
 
-/* Certifications section with responsive grid */
+/* Adjust skill note background for light theme to ensure contrast. */
+body:has(#theme-toggle:checked) .skill-note {
+  background: rgba(245, 245, 245, 0.85); /* Semi-transparent light background for light mode. */
+}
+
+/* Hover effect for skill notes to enhance visibility. */
+.skill-card:hover .skill-note {
+  transform: translateY(-2px); /* Slight upward lift on hover. */
+  opacity: 1; /* Fully visible on hover. */
+}
+
+/* Certifications section styling for centered content. */
 .certifications {
-  text-align: center; /* Center content */
-  padding: 60px 20px; /* Reduced padding for sections */
+  text-align: center; /* Center-aligns all content in the section. */
+  padding: 60px 20px; /* Consistent section padding. */
 }
 
+/* Certifications section heading with animation and accent color. */
 .certifications h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 30px; /* Space below heading */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem; /* Large font for emphasis. */
+  color: var(--accent); /* Bronze color for visual pop. */
+  letter-spacing: 1.2px; /* Spaced for readability. */
+  margin-bottom: 30px; /* Increased spacing for content separation. */
+  animation: slideIn 1s ease forwards; /* Slide-in animation for entrance. */
 }
 
+/* Grid container for certification cards, using CSS Grid for responsive layout. */
 .certification-grid {
-  display: grid; /* Grid layout for certifications */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
-  gap: 12px; /* Space between cards */
-  max-width: 800px; /* Constrain grid width */
-  margin: 0 auto; /* Center horizontally */
+  display: grid; /* Grid layout for certification cards. */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns with minimum width. */
+  gap: 12px; /* Spacing between cards. */
+  max-width: 800px; /* Limits width for readability. */
+  margin: 0 auto; /* Centers the grid. */
 }
 
+/* Individual certification card styling with a card-like appearance. */
 .certification-card {
-  background: var(--secondary); /* Card background */
-  border-left: 3px solid var(--accent); /* Accent border */
-  padding: 12px; /* Internal padding */
-  border-radius: 6px; /* Rounded corners */
-  font-size: 0.85rem; /* Text size */
-  font-weight: 400; /* Normal weight */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s, background 0.3s; /* Smooth hover effects */
+  background: var(--secondary); /* Card background color. */
+  border-left: 3px solid var(--accent); /* Bronze border for visual accent. */
+  padding: 12px; /* Compact padding for smaller cards. */
+  border-radius: 6px; /* Rounded corners for a modern look. */
+  font-size: 0.85rem; /* Smaller font for details. */
+  font-weight: 400; /* Regular weight for balance. */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth. */
+  transition: transform 0.3s, background 0.3s; /* Smooth transitions for hover effects. */
 }
 
+/* Hover effect for certification cards to indicate interactivity. */
 .certification-card:hover {
-  transform: translateY(-4px); /* Slight lift on hover */
-  background: var(--accent); /* Accent background on hover */
+  transform: translateY(-4px); /* Slight upward lift on hover. */
+  background: var(--accent); /* Bronze background on hover for emphasis. */
 }
 
+/* Certification card heading styling. */
 .certification-card h3 {
-  font-size: 1rem; /* Heading size */
-  margin-bottom: 8px; /* Space below heading */
+  font-size: 1rem; /* Slightly larger font for emphasis. */
+  margin-bottom: 8px; /* Spacing below the heading. */
 }
 
+/* Certification card paragraph styling for secondary text. */
 .certification-card p {
-  font-size: 0.8rem; /* Smaller text for details */
-  font-weight: 300; /* Light weight */
+  font-size: 0.8rem; /* Smaller font for details. */
+  font-weight: 300; /* Light weight for a softer look. */
 }
 
-/* Education section with card-based layout */
+/* Education section styling for centered content. */
 .education {
-  text-align: center; /* Center content */
-  padding: 60px 20px; /* Reduced padding for sections */
+  text-align: center; /* Center-aligns all content in the section. */
+  padding: 60px 20px; /* Consistent section padding. */
 }
 
+/* Education section heading with animation and accent color. */
 .education h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 30px; /* Space below heading */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem; /* Large font for emphasis. */
+  color: var(--accent); /* Bronze color for visual pop. */
+  letter-spacing: 1.2px; /* Spaced for readability. */
+  margin-bottom: 30px; /* Increased spacing for content separation. */
+  animation: slideIn 1s ease forwards; /* Slide-in animation for entrance. */
 }
 
+/* Container for education cards, centered with a flexbox layout. */
 .education-grid {
-  max-width: 700px; /* Constrain grid width */
-  margin: 0 auto; /* Center horizontally */
-  display: flex; /* Flex layout for cards */
-  flex-direction: column; /* Stack cards vertically */
-  gap: 20px; /* Space between cards */
+  max-width: 700px; /* Limits width for readability. */
+  margin: 0 auto; /* Centers the grid. */
+  display: flex; /* Flexbox for vertical stacking of cards. */
+  flex-direction: column; /* Stacks cards vertically. */
+  gap: 20px; /* Spacing between cards. */
 }
 
+/* Individual education card styling with a card-like appearance. */
 .education-card {
-  background: var(--secondary); /* Card background */
-  padding: 20px; /* Internal padding */
-  border-radius: 8px; /* Rounded corners */
-  border-left: 3px solid var(--accent); /* Accent border */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  text-align: left; /* Left-align text for readability */
-  transition: transform 0.3s; /* Smooth hover effect */
+  background: var(--secondary); /* Card background color. */
+  padding: 20px; /* Comfortable padding for content. */
+  border-radius: 8px; /* Rounded corners for a modern look. */
+  border-left: 3px solid var(--accent); /* Bronze border for visual accent. */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth. */
+  text-align: left; /* Left-align text for readability. */
+  transition: transform 0.3s; /* Smooth lift effect on hover. */
 }
 
+/* Hover effect for education cards to indicate interactivity. */
 .education-card:hover {
-  transform: translateY(-3px); /* Slight lift on hover */
+  transform: translateY(-3px); /* Slight upward lift on hover. */
 }
 
+/* Education card heading styling. */
 .education-card h3 {
-  font-size: 1.1rem; /* Heading size */
-  margin-bottom: 8px; /* Space below heading */
+  font-size: 1.1rem; /* Slightly larger font for emphasis. */
+  margin-bottom: 8px; /* Spacing below the heading. */
 }
 
+/* Education card paragraph styling for secondary text. */
 .education-card p {
-  font-size: 0.85rem; /* Smaller text for details */
-  font-weight: 300; /* Light weight for elegance */
-  line-height: 1.6; /* Comfortable line height */
+  font-size: 0.85rem; /* Smaller font for details. */
+  font-weight: 300; /* Light weight for a softer look. */
+  line-height: 1.6; /* Increased line height for readability. */
 }
 
-/* Testimonials section with client feedback - Commented out to hide */
-/*
-.testimonials {
-  text-align: center;
-}
-
-.testimonials h2 {
-  font-size: 2rem;
-  color: var(--accent);
-  letter-spacing: 1.2px;
-  margin-bottom: 20px;
-  animation: slideIn 1s ease forwards;
-}
-
-.testimonial-grid {
-  max-width: 700px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.testimonial-card {
-  background: var(--secondary);
-  padding: 20px;
-  border-radius: 8px;
-  border-left: 3px solid var(--accent);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
-}
-
-.testimonial-card:nth-child(odd) {
-  transform: translateX(20px);
-}
-
-.testimonial-card:nth-child(even) {
-  transform: translateX(-20px);
-}
-
-.testimonial-card:hover {
-  transform: translateY(-3px) translateX(0);
-}
-
-.testimonial-card p {
-  font-size: 0.85rem;
-  font-weight: 300;
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-.testimonial-card cite {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: var(--accent);
-  font-style: normal;
-}
-*/
-
-/* Insights & Updates section with blog previews */
+/* Insights & Updates section styling for centered content. */
 .insights-updates {
-  text-align: center; /* Center content */
-  background: var(--section-bg); /* Section background */
-  padding: 60px 20px; /* Reduced padding for sections */
+  text-align: center; /* Center-aligns all content in the section. */
+  background: var(--section-bg); /* Section background for consistency. */
+  padding: 60px 20px; /* Consistent section padding. */
 }
 
+/* Hide Insights & Updates section when an article is targeted to show only the article content. */
 .insights-updates:has(+ .articles .article-item:target) {
-  display: none; /* Hide when an article is targeted */
-  opacity: 0; /* Fade out for smooth transition */
+  display: none; /* Hides the section. */
+  opacity: 0; /* Ensures no visibility during transitions. */
 }
 
+/* Insights & Updates section heading with animation and accent color. */
 .insights-updates h2 {
-  font-size: 2rem; /* Heading size for consistency */
-  color: var(--accent); /* Accent color for visual emphasis */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 30px; /* Space below heading */
-  animation: slideIn 1s ease forwards; /* Slide-in animation for smooth entry */
+  font-size: 2rem; /* Large font for emphasis. */
+  color: var(--accent); /* Bronze color for visual pop. */
+  letter-spacing: 1.2px; /* Spaced for readability. */
+  margin-bottom: 30px; /* Increased spacing for content separation. */
+  animation: slideIn 1s ease forwards; /* Slide-in animation for entrance. */
 }
 
+/* Container for insights cards, centered with a flexbox layout. */
 .insights-updates-container {
-  max-width: 700px; /* Constrain container width for readability */
-  margin: 0 auto; /* Center horizontally */
-  display: flex; /* Flex layout for card arrangement */
-  flex-direction: column; /* Stack cards vertically */
-  gap: 20px; /* Space between cards */
+  max-width: 700px; /* Limits width for readability. */
+  margin: 0 auto; /* Centers the container. */
+  display: flex; /* Flexbox for vertical stacking of cards. */
+  flex-direction: column; /* Stacks cards vertically. */
+  gap: 20px; /* Spacing between cards. */
 }
 
+/* Individual insights card styling with a card-like appearance. */
 .insights-card {
-  background: var(--secondary); /* Card background for consistency */
-  padding: 20px; /* Internal padding for content spacing */
-  border-radius: 8px; /* Rounded corners for modern look */
-  border-left: 3px solid var(--accent); /* Accent border for visual flair */
-  text-align: left; /* Left-align text for readability */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  transition: transform 0.3s, opacity 0.5s ease; /* Smooth hover and fade effects */
+  background: var(--secondary); /* Card background color. */
+  padding: 20px; /* Comfortable padding for content. */
+  border-radius: 8px; /* Rounded corners for a modern look. */
+  border-left: 3px solid var(--accent); /* Bronze border for visual accent. */
+  text-align: left; /* Left-align text for readability. */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth. */
+  transition: transform 0.3s, opacity 0.5s ease; /* Smooth transitions for hover and visibility. */
 }
 
+/* Hover effect for insights cards to indicate interactivity. */
 .insights-card:hover {
-  transform: translateY(-3px); /* Slight lift on hover for interactivity */
+  transform: translateY(-3px); /* Slight upward lift on hover. */
 }
 
+/* Insights card heading styling. */
 .insights-card h3 {
-  font-size: 1.1rem; /* Heading size for card titles */
-  margin-bottom: 8px; /* Space below heading */
+  font-size: 1.1rem; /* Slightly larger font for emphasis. */
+  margin-bottom: 8px; /* Spacing below the heading. */
 }
 
+/* Insights card paragraph styling for secondary text. */
 .insights-card p {
-  font-size: 0.85rem; /* Smaller text for card content */
-  font-weight: 300; /* Light weight for elegance */
-  line-height: 1.6; /* Comfortable line height */
-  margin-bottom: 10px; /* Space below paragraph */
+  font-size: 0.85rem; /* Smaller font for details. */
+  font-weight: 300; /* Light weight for a softer look. */
+  line-height: 1.6; /* Increased line height for readability. */
+  margin-bottom: 10px; /* Spacing below the paragraph. */
 }
 
-.insights-card .date-badge {
-  font-size: 0.7rem; /* Small text for date badges */
-  background: var(--accent); /* Accent background for visibility */
-  color: var(--bg); /* Background color for text contrast */
-  padding: 4px 8px; /* Padding for badge styling */
-  border-radius: 4px; /* Rounded corners for modern look */
-  display: inline-block; /* Inline-block for proper spacing */
-  margin: 8px 0; /* Vertical margin for alignment */
-}
-
+/* Read more link styling for insights cards. */
 .insights-card .read-more {
-  display: inline-block; /* Inline-block for link styling */
-  font-size: 0.85rem; /* Text size for readability */
-  color: var(--accent); /* Accent color for link */
-  text-decoration: none; /* Remove underline */
-  margin-top: 10px; /* Space above link */
-  transition: color 0.3s, transform 0.2s; /* Smooth hover effects */
+  display: inline-block; /* Inline-block for proper spacing. */
+  font-size: 0.85rem; /* Smaller font for subtlety. */
+  color: var(--accent); /* Bronze color for visual pop. */
+  text-decoration: none; /* No underline for a clean look. */
+  margin-top: 10px; /* Spacing above the link. */
+  transition: color 0.3s, transform 0.2s; /* Smooth transitions for hover effects. */
 }
 
+/* Hover effect for read more links to enhance interactivity. */
 .insights-card .read-more:hover {
-  color: #f1f5f9; /* Light text color on hover for contrast */
-  transform: scale(1.05); /* Slight scale-up for interactivity */
+  color: #f1f5f9; /* Light ivory color for contrast on hover. */
+  transform: scale(1.05); /* Slight enlargement on hover. */
 }
 
-.insights-card .read-more:focus {
-  outline: 2px solid var(--accent); /* Focus outline for accessibility */
-  outline-offset: 2px; /* Space around focus outline */
-}
-
-/* Articles section with full blog posts */
+/* Articles section styling, hidden by default until an article is targeted. */
 .articles {
-  text-align: center; /* Center content */
-  background: var(--section-bg); /* Section background for consistency */
-  padding: 60px 20px; /* Reduced padding for sections */
-  display: none; /* Hidden by default until article is targeted */
-  opacity: 0; /* Start invisible for fade effect */
-  transition: opacity 0.5s ease; /* Smooth fade transition */
+  text-align: center; /* Center-aligns all content in the section. */
+  background: var(--section-bg); /* Section background for consistency. */
+  padding: 60px 20px; /* Consistent section padding. */
+  display: none; /* Hidden by default. */
+  opacity: 0; /* Ensures no visibility when hidden. */
+  transition: opacity 0.5s ease; /* Smooth fade-in when shown. */
 }
 
+/* Show articles section when an article item is targeted. */
 .articles:has(.article-item:target) {
-  display: block; /* Show when an article is targeted */
-  opacity: 1; /* Fade in for smooth transition */
+  display: block; /* Displays the section. */
+  opacity: 1; /* Fully visible when active. */
 }
 
+/* Articles section heading with animation and accent color. */
 .articles h2 {
-  font-size: 2rem; /* Heading size for consistency */
-  color: var(--accent); /* Accent color for emphasis */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 30px; /* Space below heading */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem; /* Large font for emphasis. */
+  color: var(--accent); /* Bronze color for visual pop. */
+  letter-spacing: 1.2px; /* Spaced for readability. */
+  margin-bottom: 30px; /* Increased spacing for content separation. */
+  animation: slideIn 1s ease forwards; /* Slide-in animation for entrance. */
 }
 
+/* Individual article item styling with a card-like appearance. */
 .article-item {
-  max-width: 700px; /* Constrain article width for readability */
-  margin: 20px auto; /* Center with vertical spacing */
-  background: var(--secondary); /* Card background */
-  padding: 20px; /* Internal padding */
-  border-radius: 8px; /* Rounded corners */
-  border-left: 3px solid var(--accent); /* Accent border */
-  text-align: left; /* Left-align text for readability */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s, opacity 0.5s ease; /* Smooth hover and fade effects */
-  display: none; /* Hidden by default */
-  opacity: 0; /* Start invisible */
-  scroll-margin-top: 80px; /* Space for fixed nav when scrolling */
+  max-width: 700px; /* Limits width for readability. */
+  margin: 20px auto; /* Centers the item with spacing. */
+  background: var(--secondary); /* Card background color. */
+  padding: 20px; /* Comfortable padding for content. */
+  border-radius: 8px; /* Rounded corners for a modern look. */
+  border-left: 3px solid var(--accent); /* Bronze border for visual accent. */
+  text-align: left; /* Left-align text for readability. */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth. */
+  transition: transform 0.3s, opacity 0.5s ease; /* Smooth transitions for hover and visibility. */
+  display: none; /* Hidden by default. */
+  opacity: 0; /* Ensures no visibility when hidden. */
+  scroll-margin-top: 80px; /* Offset for fixed nav bar when scrolling to article. */
 }
 
+/* Show targeted article item. */
 .article-item:target {
-  display: block; /* Show when targeted */
-  opacity: 1; /* Fade in */
+  display: block; /* Displays the targeted article. */
+  opacity: 1; /* Fully visible when active. */
 }
 
+/* Hover effect for article items to indicate interactivity. */
 .article-item:hover {
-  transform: translateY(-3px); /* Slight lift on hover */
+  transform: translateY(-3px); /* Slight upward lift on hover. */
 }
 
+/* Article item heading styling. */
 .article-item h3 {
-  font-size: 1.1rem; /* Heading size for article titles */
-  margin-bottom: 8px; /* Space below heading */
+  font-size: 1.1rem; /* Slightly larger font for emphasis. */
+  margin-bottom: 8px; /* Spacing below the heading. */
 }
 
+/* Article item paragraph styling for secondary text. */
 .article-item p {
-  font-size: 0.85rem; /* Smaller text for article content */
-  font-weight: 300; /* Light weight for elegance */
-  line-height: 1.6; /* Comfortable line height */
-  margin-bottom: 10px; /* Space below paragraph */
+  font-size: 0.85rem; /* Smaller font for details. */
+  font-weight: 300; /* Light weight for a softer look. */
+  line-height: 1.6; /* Increased line height for readability. */
+  margin-bottom: 10px; /* Spacing below the paragraph. */
 }
 
+/* Article item list styling for structured content. */
 .article-item ul {
-  font-size: 0.85rem; /* List text size */
-  font-weight: 300; /* Light weight */
-  line-height: 1.6; /* Comfortable line height */
-  margin: 10px 0 10px 20px; /* Spacing with indent for list */
+  font-size: 0.85rem; /* Smaller font for list items. */
+  font-weight: 300; /* Light weight for a softer look. */
+  line-height: 1.6; /* Increased line height for readability. */
+  margin: 10px 0 10px 20px; /* Spacing and indentation for lists. */
 }
 
-.article-item .date-badge {
-  font-size: 0.7rem; /* Small text for date badges */
-  background: var(--accent); /* Accent background */
-  color: var(--bg); /* Background color for text */
-  padding: 4px 8px; /* Padding for badge */
-  border-radius: 4px; /* Rounded corners */
-  display: inline-block; /* Inline-block for spacing */
-  margin: 8px 0; /* Vertical margin */
-}
-
+/* Back link styling for returning to the insights section. */
 .back-link {
-  display: inline-block; /* Inline-block for button styling */
-  margin-top: 10px; /* Space above */
-  padding: 8px 16px; /* Button padding */
-  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
-  color: var(--bg); /* Text color */
-  text-decoration: none; /* Remove underline */
-  border-radius: 6px; /* Rounded corners */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-size: 0.8rem; /* Small text */
-  font-weight: 400; /* Normal weight */
-  transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
+  display: inline-block; /* Inline-block for proper spacing. */
+  margin-top: 10px; /* Spacing above the link. */
+  padding: 8px 16px; /* Comfortable padding for clickability. */
+  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background for visual appeal. */
+  color: var(--bg); /* Background color for text contrast. */
+  text-decoration: none; /* No underline for button-like appearance. */
+  border-radius: 6px; /* Rounded corners for modernity. */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for consistency. */
+  font-size: 0.8rem; /* Smaller font for balance. */
+  font-weight: 400; /* Regular weight for readability. */
+  transition: transform 0.2s, box-shadow 0.3s; /* Smooth transitions for hover effects. */
 }
 
+/* Hover effect for back links to enhance interactivity. */
 .back-link:hover {
-  transform: scale(1.05); /* Slight scale-up on hover */
-  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow */
+  transform: scale(1.05); /* Slight enlargement on hover. */
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle bronze shadow for depth. */
 }
 
-/* Contact section with form styling */
+/* Contact section styling for centered content. */
 .contact {
-  text-align: center; /* Center content */
+  text-align: center; /* Center-aligns all content in the section. */
 }
 
+/* Contact section heading with animation and accent color. */
 .contact h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 30px; /* Space below heading */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem; /* Large font for emphasis. */
+  color: var(--accent); /* Bronze color for visual pop. */
+  letter-spacing: 1.2px; /* Spaced for readability. */
+  margin-bottom: 30px; /* Increased spacing for content separation. */
+  animation: slideIn 1s ease forwards; /* Slide-in animation for entrance. */
 }
 
+/* Contact form container with a constrained width for readability. */
 .contact form {
-  max-width: 400px; /* Constrain form width for readability */
-  margin: 0 auto; /* Center horizontally */
+  max-width: 400px; /* Limits width for a compact form. */
+  margin: 0 auto; /* Centers the form. */
 }
 
+/* Form group styling for input and label positioning. */
 .form-group {
-  position: relative; /* Position for floating label effect */
-  margin-bottom: 18px; /* Space between form inputs */
+  position: relative; /* For absolute positioning of labels. */
+  margin-bottom: 18px; /* Spacing between form fields. */
 }
 
+/* Styling for contact form inputs and textarea. */
 .contact input,
 .contact textarea {
-  width: 100%; /* Full width for inputs */
-  padding: 8px 0 4px; /* Padding for input fields */
-  background: transparent; /* Transparent background */
-  border: none; /* Remove default border */
-  border-bottom: 1px solid var(--primary); /* Bottom border for input */
-  color: var(--text); /* Theme text color */
-  font-size: 0.8rem; /* Small text for inputs */
-  font-weight: 300; /* Light weight for elegance */
-  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth focus effects */
+  width: 100%; /* Full-width fields. */
+  padding: 8px 0 4px; /* Padding for comfortable input space. */
+  background: transparent; /* Transparent background for a clean look. */
+  border: none; /* No border for a minimal design. */
+  border-bottom: 1px solid var(--primary); /* Underline with primary color. */
+  color: var(--text); /* Matches theme text color. */
+  font-size: 0.8rem; /* Smaller font for subtlety. */
+  font-weight: 300; /* Light weight for a softer look. */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions for focus effects. */
 }
 
+/* Textarea-specific styling for vertical resizing. */
 .contact textarea {
-  resize: vertical; /* Allow vertical resizing only */
-  min-height: 70px; /* Minimum textarea height */
+  resize: vertical; /* Allows vertical resizing only. */
+  min-height: 70px; /* Minimum height for usability. */
 }
 
+/* Focus state for inputs and textarea to indicate interactivity. */
 .contact input:focus,
 .contact textarea:focus {
-  border-color: var(--accent); /* Accent border on focus */
-  box-shadow: 0 1px 6px rgba(212, 163, 115, 0.4); /* Subtle shadow on focus */
-  outline: none; /* Remove default outline */
+  border-color: var(--accent); /* Bronze underline on focus. */
+  box-shadow: 0 1px 6px rgba(212, 163, 115, 0.4); /* Subtle bronze shadow for depth. */
+  outline: none; /* Removes default browser outline. */
 }
 
+/* Label styling for form fields with a floating effect. */
 .contact label {
-  position: absolute; /* Position label over input */
-  top: 8px; /* Initial position */
-  left: 0; /* Align left */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font for labels */
-  font-size: 0.8rem; /* Small text for labels */
-  font-weight: 400; /* Normal weight */
-  color: var(--text); /* Theme text color */
-  pointer-events: none; /* Ignore pointer events for labels */
-  transition: all 0.3s ease; /* Smooth transition for label movement */
+  position: absolute; /* Positions label over the input. */
+  top: 8px; /* Initial position within the input. */
+  left: 0; /* Aligns to the left edge. */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for consistency. */
+  font-size: 0.8rem; /* Smaller font for subtlety. */
+  font-weight: 400; /* Regular weight for balance. */
+  color: var(--text); /* Matches theme text color. */
+  pointer-events: none; /* Prevents label from being clickable. */
+  transition: all 0.3s ease; /* Smooth transition for floating effect. */
 }
 
+/* Floating label effect when input is focused or has content. */
 .contact input:focus + label,
 .contact input:not(:placeholder-shown) + label,
 .contact textarea:focus + label,
 .contact textarea:not(:placeholder-shown) + label {
-  top: -14px; /* Move label up on focus or input */
-  font-size: 0.65rem; /* Smaller text for floating label */
-  color: var(--accent); /* Accent color for active state */
+  top: -14px; /* Moves label above the input. */
+  font-size: 0.65rem; /* Smaller font for the floated state. */
+  color: var(--accent); /* Bronze color for visual pop. */
 }
 
+/* Contact form submit button styling. */
 .contact button {
-  width: 100%; /* Full width for submit button */
-  padding: 8px; /* Button padding */
-  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
-  border: none; /* Remove default border */
-  color: var(--bg); /* Background color for text */
-  border-radius: 6px; /* Rounded corners */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-size: 0.85rem; /* Text size */
-  font-weight: 500; /* Slightly bold for emphasis */
-  letter-spacing: 0.8px; /* Spacing for readability */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+  width: 100%; /* Full-width button. */
+  padding: 8px; /* Comfortable padding for clickability. */
+  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background for visual appeal. */
+  border: none; /* No border for a clean look. */
+  color: var(--bg); /* Background color for text contrast. */
+  border-radius: 6px; /* Rounded corners for modernity. */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for consistency. */
+  font-size: 0.85rem; /* Slightly smaller font for balance. */
+  font-weight: 500; /* Medium weight for emphasis. */
+  letter-spacing: 0.8px; /* Spaced for readability. */
+  cursor: pointer; /* Indicates interactivity. */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions for hover effects. */
 }
 
+/* Hover effect for contact button to enhance interactivity. */
 .contact button:hover {
-  transform: scale(1.05); /* Slight scale-up on hover */
-  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.4); /* Subtle shadow */
+  transform: scale(1.05); /* Slight enlargement on hover. */
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.4); /* Subtle bronze shadow for depth. */
 }
 
-/* Date badge styling for education, experience, and articles */
-.date-badge {
-  font-size: 0.7rem; /* Small text for badges */
-  background: var(--accent); /* Accent background */
-  color: var(--bg); /* Background color for text */
-  padding: 4px 8px; /* Padding for badge */
-  border-radius: 4px; /* Rounded corners */
-  display: inline-block; /* Inline-block for proper spacing */
-  margin: 8px 0; /* Vertical margin */
-}
-
-/* Call-to-action section with gradient background */
+/* Call-to-action section styling for a prominent closing section. */
 .cta {
-  text-align: center; /* Center content */
-  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background for emphasis */
-  padding: 60px 20px; /* Vertical and horizontal padding */
-  color: var(--bg); /* Background color for text */
+  text-align: center; /* Center-aligns all content in the section. */
+  background: var(--section-bg); /* Section background for consistency. */
+  padding: 60px 20px; /* Consistent section padding. */
+  color: #ffffff; /* White text for high contrast. */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth. */
 }
 
+/* CTA section heading with animation and white text for contrast. */
 .cta h2 {
-  font-size: 2rem; /* Heading size */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 15px; /* Space below heading */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-family: 'Inter', sans-serif; /* Consistent font with body text. */
+  font-size: 1.5rem; /* Slightly smaller font for balance. */
+  letter-spacing: 1.2px; /* Spaced for readability. */
+  margin-bottom: 15px; /* Spacing below the heading. */
+  animation: slideIn 1s ease forwards; /* Slide-in animation for entrance. */
+  color: #ffffff; /* White text for contrast. */
 }
 
+/* CTA section paragraph for additional context. */
 .cta p {
-  font-size: 1rem; /* Text size for paragraph */
-  font-weight: 300; /* Light weight for elegance */
-  max-width: 600px; /* Constrain paragraph width */
-  margin: 0 auto 20px; /* Center with bottom margin */
+  font-size: 1rem; /* Standard font size for readability. */
+  font-weight: 300; /* Light weight for a softer look. */
+  max-width: 600px; /* Limits width for readability. */
+  margin: 0 auto 20px; /* Centers with spacing below. */
+  color: #ffffff; /* White text for contrast. */
 }
 
+/* Container for CTA buttons, using flexbox for centering. */
 .cta-buttons {
-  display: flex; /* Horizontal layout for buttons */
-  justify-content: center; /* Center buttons */
-  gap: 15px; /* Space between buttons */
+  display: flex; /* Horizontal layout for buttons. */
+  justify-content: center; /* Centers buttons horizontally. */
+  gap: 15px; /* Spacing between buttons. */
 }
 
+/* CTA button styling with a gradient background. */
 .cta .button {
-  Pachyderming: 10px 28px; /* Button padding */
-  font-size: 0.85rem; /* Text size */
-  color: var(--accent); /* Accent text color */
-  background: var(--bg); /* Background color */
-  border: 1px solid var(--accent); /* Accent border */
-  border-radius: 6px; /* Rounded corners */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-weight: 400; /* Normal weight */
-  text-decoration: none; /* Remove underline */
-  transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
+  padding: 8px 20px; /* Comfortable padding for clickability. */
+  font-size: 0.75rem; /* Smaller font for subtlety. */
+  color: #ffffff; /* White text for contrast. */
+  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient from primary to accent. */
+  border: none; /* No border for a clean look. */
+  border-radius: 8px; /* Rounded corners for a modern look. */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for consistency. */
+  font-weight: 500; /* Medium weight for emphasis. */
+  letter-spacing: 1px; /* Spaced for readability. */
+  text-decoration: none; /* No underline for button-like appearance. */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions for hover effects. */
 }
 
+/* Hover effect for CTA buttons to enhance interactivity. */
 .cta .button:hover {
-  transform: scale(1.05); /* Slight scale-up on hover */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  transform: scale(1.05); /* Slight enlargement on hover. */
+  box-shadow: 0 6px 16px rgba(212, 163, 115, 0.5); /* Enhanced bronze shadow for depth. */
 }
 
-/* Footer styling with social links and copyright */
+/* Footer styling for a simple, centered closing section. */
 footer {
-  padding: 30px 20px; /* Vertical and horizontal padding */
-  background: var(--bg); /* Theme background */
-  text-align: center; /* Center content */
-  font-size: 0.8rem; /* Small text for footer */
-  font-weight: 300; /* Light weight for elegance */
+  padding: 30px 20px; /* Comfortable padding for content. */
+  background: var(--bg); /* Matches body background. */
+  text-align: center; /* Centers all content. */
+  font-size: 0.8rem; /* Smaller font for subtlety. */
+  font-weight: 300; /* Light weight for a softer look. */
 }
 
+/* Container for social media icons in the footer. */
 .social-icons {
-  margin-bottom: 15px; /* Space below social icons */
-  display: flex; /* Horizontal layout for icons */
-  justify-content: center; /* Center icons */
-  gap: 15px; /* Space between icons */
+  margin-bottom: 15px; /* Spacing below the icons. */
+  display: flex; /* Horizontal layout for icons. */
+  justify-content: center; /* Centers icons horizontally. */
+  gap: 15px; /* Spacing between icons. */
 }
 
+/* Individual social icon styling with a circular appearance. */
 .social-icons a {
-  font-size: 1.2rem; /* Icon size for visibility */
-  color: var(--text); /* Theme text color */
-  background: var(--secondary); /* Card background for icons */
-  border: 1px solid var(--accent); /* Accent border */
-  border-radius: 50%; /* Circular shape for icons */
-  width: 36px; /* Fixed icon size */
+  font-size: 1.2rem; /* Slightly larger font for visibility. */
+  color: var(--text); /* Matches theme text color. */
+  background: var(--secondary); /* Card-like background for contrast. */
+  border: 1px solid var(--accent); /* Bronze border for visual accent. */
+  border-radius: 50%; /* Circular shape for icons. */
+  width: 36px; /* Fixed size for consistency. */
   height: 36px;
-  display: flex; /* Center icon content */
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s, transform 0.2s; /* Smooth hover effects */
+  display: flex; /* Flexbox for centering the icon. */
+  align-items: center; /* Centers icon vertically. */
+  justify-content: center; /* Centers icon horizontally. */
+  transition: background 0.3s, transform 0.2s; /* Smooth transitions for hover effects. */
 }
 
+/* Hover effect for social icons to enhance interactivity. */
 .social-icons a:hover {
-  background: var(--accent); /* Accent background on hover */
-  transform: scale(1.05); /* Slight scale-up on hover */
+  background: var(--accent); /* Bronze background on hover. */
+  transform: scale(1.05); /* Slight enlargement on hover. */
 }
 
-/* Animation keyframes for visual effects */
+/* Date badge styling for displaying dates in insights or articles. */
+.date-badge {
+  font-size: 0.7rem; /* Small font for subtlety. */
+  background: var(--accent); /* Bronze background for visibility. */
+  color: var(--bg); /* Background color for text contrast. */
+  padding: 4px 8px; /* Compact padding for a badge-like feel. */
+  border-radius: 4px; /* Rounded corners for a polished look. */
+  display: inline-block; /* Inline-block for proper spacing. */
+  margin: 8px 0; /* Vertical spacing for separation. */
+}
+
+/* Fade-in animation for elements to create a smooth entrance effect. */
 @keyframes fadeIn {
-  from { opacity: 0; } /* Start invisible */
-  to { opacity: 1; } /* Fade in */
+  from { opacity: 0; } /* Starts fully transparent. */
+  to { opacity: 1; } /* Ends fully visible. */
 }
 
+/* Slide-in animation for elements to slide up into view. */
 @keyframes slideIn {
-  from { transform: translateY(20px); opacity: 0; } /* Start below and invisible */
-  to { transform: translateY(0); opacity: 1; } /* Slide up and fade in */
+  from { transform: translateY(20px); opacity: 0; } /* Starts below and transparent. */
+  to { transform: translateY(0); opacity: 1; } /* Ends at normal position and fully visible. */
 }
 
+/* Pulse animation for the avatar to create a subtle, continuous effect. */
 @keyframes pulse {
-  0%, 100% { transform: scale(1); } /* Normal size */
-  50% { transform: scale(1.05); } /* Slightly larger for pulsing effect */
+  0%, 100% { transform: scale(1); } /* Normal size at start and end. */
+  50% { transform: scale(1.05); } /* Slightly enlarged at midpoint. */
 }
 
-/* Responsive styles for tablets and smaller screens */
+/* Responsive styles for tablets (max-width: 768px) to adjust layout and typography. */
 @media (max-width: 768px) {
+  /* Adjust navigation for mobile-friendly layout. */
   nav {
-    flex-direction: column; /* Stack nav items vertically */
-    align-items: flex-start; /* Align to left for mobile */
-    padding: 12px 20px; /* Reduced padding for smaller screens */
+    flex-direction: column; /* Stack nav items vertically. */
+    align-items: flex-start; /* Align items to the left. */
+    padding: 12px 20px; /* Reduced padding for smaller screens. */
   }
 
+  /* Show navigation toggle label for mobile menu. */
   .nav-toggle-label {
-    display: block; /* Show hamburger icon for mobile */
-    position: absolute; /* Position in top-right corner */
+    display: block; /* Visible on mobile. */
+    position: absolute; /* Positioned in the top-right corner. */
     top: 15px;
     right: 20px;
   }
 
+  /* Hide navigation links by default on mobile. */
   .nav-links {
-    display: none; /* Hide links by default on mobile */
-    flex-direction: column; /* Stack links vertically */
-    width: 100%; /* Full width for links */
-    margin-top: 60px; /* Space below logo */
-    gap: 12px; /* Reduced space between links */
+    display: none; /* Hidden until toggled. */
+    flex-direction: column; /* Stack links vertically. */
+    width: 100%; /* Full-width for mobile menu. */
+    margin-top: 60px; /* Space below the logo and toggle. */
+    gap: 12px; /* Reduced spacing between links. */
   }
 
+  /* Hide theme controls wrapper by default on mobile. */
   .theme-controls-wrapper {
-    display: none; /* Hide theme controls by default */
-    width: 100%; /* Full width for controls */
-    justify-content: center; /* Center controls */
+    display: none; /* Hidden until toggled. */
+    width: 100%; /* Full-width for mobile. */
+    justify-content: center; /* Centers theme controls. */
   }
 
+  /* Show navigation links and theme controls when toggle is checked. */
   #nav-toggle:checked ~ .nav-links,
   #nav-toggle:checked ~ .theme-controls-wrapper {
-    display: flex; /* Show links and controls when nav toggle is checked */
+    display: flex; /* Displays the menu and controls. */
   }
 
+  /* Adjust theme controls for mobile layout. */
   .theme-controls {
-    flex-direction: column; /* Stack controls vertically */
-    align-items: center; /* Center horizontally */
-    gap: 10px; /* Reduced space between controls */
-    margin-top: 10px; /* Space above controls */
+    flex-direction: column; /* Stack buttons vertically. */
+    align-items: center; /* Center buttons horizontally. */
+    gap: 10px; /* Reduced spacing between buttons. */
+    margin-top: 10px; /* Spacing above controls. */
   }
 
+  /* Full-width theme toggle buttons for mobile. */
   .toggle-theme {
-    width: 100%; /* Full width for buttons */
-    padding: 6px 14px; /* Consistent button padding */
+    width: 100%; /* Full-width buttons. */
+    padding: 6px 14px; /* Consistent padding. */
   }
 
+  /* Smaller logo circle for mobile. */
   .circle {
-    width: 32px; /* Smaller logo circle for mobile */
+    width: 32px; /* Reduced size for smaller screens. */
     height: 32px;
-    font-size: 0.9rem; /* Smaller text */
+    font-size: 0.9rem; /* Smaller font for the letter. */
   }
 
+  /* Smaller logo text for mobile. */
   .circle-text {
-    font-size: 0.9rem; /* Smaller logo text */
+    font-size: 0.9rem; /* Reduced size for balance. */
   }
 
+  /* Adjust section padding and width for tablets. */
   section {
-    padding: 50px 15px; /* Reduced padding for smaller screens */
-    max-width: 90%; /* Responsive width for sections */
-    margin: 0 auto; /* Center sections */
+    padding: 50px 15px; /* Reduced padding for smaller screens. */
+    max-width: 90%; /* Slightly narrower content area. */
+    margin: 0 auto; /* Centers content. */
   }
 
-  .hero h2 {
-    font-size: 1.5rem; /* Smaller heading for mobile */
+  /* Smaller hero heading for tablets. */
+  .hero h2 { font-size: 1.5rem; }
+
+  /* Smaller hero paragraph with padding for readability. */
+  .hero p { font-size: 0.85rem; padding: 0 15px; }
+
+  /* Smaller hero button for tablets. */
+  .hero .button { padding: 8px 20px; font-size: 0.8rem; }
+
+  /* Smaller section headings for tablets. */
+  .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .experience h2, .contact h2, .articles h2, .insights-updates h2 {
+    font-size: 1.6rem; /* Reduced size for balance. */
   }
 
-  .hero p {
-    font-size: 0.85rem; /* Smaller subtitle text */
-    padding: 0 15px; /* Horizontal padding for readability */
-  }
+  /* Smaller CTA heading for tablets. */
+  .cta h2 { font-size: 1.3rem; }
 
-  .hero .button {
-    padding: 8px 20px; /* Smaller button size */
-    font-size: 0.8rem; /* Smaller button text */
-  }
-
-  .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .experience h2, .contact h2, .cta h2, .articles h2, .insights-updates h2 {
-    font-size: 1.6rem; /* Smaller headings for consistency */
-    text-align: center; /* Ensure centered text */
-  }
-
+  /* Smaller paragraph text for various sections. */
   .about p, .education-card p, .project-item p, .experience-card p, .article-item p, .insights-card p {
-    font-size: 0.85rem; /* Smaller text for mobile readability */
+    font-size: 0.85rem; /* Reduced size for readability. */
   }
 
-  .about p {
-    font-size: 0.95rem; /* Slightly larger for readability */
-    padding: 20px; /* Reduced padding */
-    line-height: 1.7; /* Tighter line height */
-  }
+  /* Adjust about paragraph for tablets. */
+  .about p { font-size: 0.95rem; padding: 20px; line-height: 1.7; }
 
+  /* Two-column skill grid for tablets. */
   .skill-grid {
-    grid-template-columns: repeat(2, 1fr); /* Two columns for side-by-side layout */
-    gap: 10px; /* Reduced gap between cards */
-    padding: 10px; /* Reduced padding */
+    grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens. */
+    gap: 10px; /* Reduced spacing between cards. */
+    padding: 10px; /* Reduced padding for the grid. */
   }
 
+  /* Smaller skill cards for tablets. */
   .skill-card {
-    padding: 15px; /* Reduced padding for smaller cards */
-    min-height: 80px; /* Smaller card height */
-    font-size: 0.8rem; /* Smaller text */
+    padding: 10px; /* Reduced padding for compact cards. */
+    min-height: 160px; /* Slightly shorter cards. */
   }
 
-  .skill-card:nth-child(2) {
-    background-image: url('../images/django.png'); /* Fallback image for Django */
-    background-color: var(--secondary); /* Consistent background */
-    background-size: contain; /* Ensure image scales properly */
+  /* Smaller skill card icons for tablets. */
+  .skill-card::before {
+    height: 70px; /* Reduced icon size. */
   }
 
-  .skill-card:nth-child(2)::before {
-    background: none; /* Remove overlay for Django */
+  /* Smaller skill note for tablets. */
+  .skill-note {
+    font-size: 0.7rem; /* Smaller font for subtlety. */
+    margin-top: 75px; /* Adjusted for smaller icon. */
   }
 
-  .certification-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns for certifications */
-  }
+  /* Responsive certification grid for tablets. */
+  .certification-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
 
-  .certification-card {
-    font-size: 0.8rem; /* Smaller text for certifications */
-  }
+  /* Smaller certification card text for tablets. */
+  .certification-card { font-size: 0.8rem; }
 
-  .project-item h3, .education-card h3, .experience-card h3, .article-item h3, .insights-card h3 {
-    font-size: 1rem; /* Smaller headings for mobile */
-  }
+  /* Smaller headings for various cards on tablets. */
+  .project-item h3, .education-card h3, .experience-card h3, .article-item h3, .insights-card h3 { font-size: 1rem; }
 
-  .project-image {
-    height: 120px; /* Smaller image height for mobile */
-  }
+  /* Smaller project image for tablets. */
+  .project-image { height: 120px; }
 
-  .contact form {
-    max-width: 350px; /* Smaller form width */
-  }
+  /* Narrower contact form for tablets. */
+  .contact form { max-width: 350px; }
 
-  .contact button {
-    font-size: 0.8rem; /* Smaller button text */
-  }
+  /* Smaller contact button for tablets. */
+  .contact button { font-size: 0.8rem; }
 
-  .cta-buttons {
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 10px; /* Reduced space between buttons */
-  }
+  /* Stack CTA buttons vertically for tablets. */
+  .cta-buttons { flex-direction: column; gap: 10px; }
 
-  .experience-card .date-badge, .article-item .date-badge, .insights-card .date-badge {
-    margin: 10px 0 5px; /* Adjusted margins for badges */
-  }
+  /* Smaller CTA buttons for tablets. */
+  .cta .button { padding: 6px 16px; font-size: 0.7rem; }
 
-  .article-item ul {
-    font-size: 0.8rem; /* Smaller list text */
-  }
+  /* Smaller article list items for tablets. */
+  .article-item ul { font-size: 0.8rem; }
 
-  .back-link {
-    font-size: 0.75rem; /* Smaller link text */
-  }
+  /* Smaller back link for tablets. */
+  .back-link { font-size: 0.75rem; }
 
-  .insights-card {
-    padding: 20px; /* Consistent padding for cards */
-  }
+  /* Smaller date badge for insights cards on tablets. */
+  .insights-card .date-badge { font-size: 0.65rem; }
 
-  .insights-card h3 {
-    font-size: 1rem; /* Smaller heading for mobile */
-  }
-
-  .insights-card p {
-    font-size: 0.8rem; /* Smaller text for content */
-  }
-
-  .insights-card .date-badge {
-    font-size: 0.65rem; /* Smaller badge text */
-  }
-
-  .insights-card .read-more {
-    font-size: 0.8rem; /* Smaller link text */
-  }
-
-  .projects {
-    padding: 50px 15px; /* Reduced padding for sections */
-  }
-
-  .skills {
-    padding: 50px 15px; /* Reduced padding for sections */
-  }
-
-  .certifications {
-    padding: 50px 15px; /* Reduced padding for sections */
-  }
-
-  .education {
-    padding: 50px 15px; /* Reduced padding for sections */
-  }
-
-  .articles {
-    padding: 50px 15px; /* Reduced padding for sections */
-  }
+  /* Smaller read more link for insights cards on tablets. */
+  .insights-card .read-more { font-size: 0.8rem; }
 }
 
-/* Responsive styles for small phones */
+/* Responsive styles for small phones (max-width: 480px) for a compact layout. */
 @media (max-width: 480px) {
-  nav {
-    padding: 10px 15px; /* Further reduced padding for small screens */
-  }
+  /* Further reduce nav padding for small phones. */
+  nav { padding: 10px 15px; }
 
-  .nav-links {
-    margin-top: 50px; /* Adjusted space below logo */
-    gap: 10px; /* Smaller gap between links */
-  }
+  /* Adjust navigation links spacing for small phones. */
+  .nav-links { margin-top: 50px; gap: 10px; }
 
-  .circle {
-    width: 28px; /* Smaller logo circle */
-    height: 28px;
-    font-size: 0.8rem; /* Smaller text */
-  }
+  /* Smaller logo circle for small phones. */
+  .circle { width: 28px; height: 28px; font-size: 0.8rem; }
 
-  .circle-text {
-    font-size: 0.8rem; /* Smaller logo text */
-  }
+  /* Smaller logo text for small phones. */
+  .circle-text { font-size: 0.8rem; }
 
-  section {
-    padding: 40px 10px; /* Further reduced padding */
-    max-width: 95%; /* Responsive width for small screens */
-  }
+  /* Further reduce section padding and width for small phones. */
+  section { padding: 40px 10px; max-width: 95%; }
 
-  .hero h2 {
-    font-size: 1.3rem; /* Smaller heading for small screens */
-  }
+  /* Smaller hero heading for small phones. */
+  .hero h2 { font-size: 1.3rem; }
 
-  .hero p {
-    font-size: 0.8rem; /* Smaller subtitle text */
-  }
+  /* Smaller hero paragraph for small phones. */
+  .hero p { font-size: 0.8rem; }
 
-  .hero .button {
-    padding: 6px 16px; /* Smaller button size */
-    font-size: 0.75rem; /* Smaller button text */
-  }
+  /* Smaller hero button for small phones. */
+  .hero .button { padding: 6px 16px; font-size: 0.75rem; }
 
-  .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .experience h2, .contact h2, .cta h2, .articles h2, .insights-updates h2 {
-    font-size: 1.4rem; /* Smaller headings for consistency */
-  }
+  /* Smaller section headings for small phones. */
+  .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .experience h2, .contact h2, .articles h2, .insights-updates h2 { font-size: 1.4rem; }
 
-  .about p {
-    font-size: 0.9rem; /* Smaller text for readability */
-    padding: 15px; /* Reduced padding */
-  }
+  /* Smaller CTA heading for small phones. */
+  .cta h2 { font-size: 1.2rem; }
 
-  .skill-grid {
-    grid-template-columns: repeat(2, 1fr); /* Two columns for side-by-side layout */
-    gap: 8px; /* Smaller gap between cards */
-  }
+  /* Smaller about paragraph for small phones. */
+  .about p { font-size: 0.9rem; padding: 15px; }
 
-  .skill-card {
-    min-height: 70px; /* Smaller card height */
-    font-size: 0.75rem; /* Smaller text */
-  }
+  /* Two-column skill grid for small phones. */
+  .skill-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
 
-  .skill-card:nth-child(2) {
-    background-image: url('../images/django.png'); /* Fallback image for Django */
-    background-color: var(--secondary); /* Consistent background */
-    background-size: contain; /* Ensure image scales properly */
-  }
+  /* Smaller skill cards for small phones. */
+  .skill-card { min-height: 140px; padding: 8px; }
 
-  .skill-card:nth-child(2)::before {
-    background: none; /* Remove overlay for Django */
-  }
+  /* Smaller skill card icons for small phones. */
+  .skill-card::before { height: 60px; }
 
-  .certification-grid {
-    grid-template-columns: 1fr; /* Single column for certifications */
-  }
+  /* Smaller skill note for small phones. */
+  .skill-note { font-size: 0.65rem; margin-top: 65px; }
 
-  .certification-card {
-    font-size: 0.75rem; /* Smaller text for certifications */
-  }
+  /* Single-column certification grid for small phones. */
+  .certification-grid { grid-template-columns: 1fr; }
 
-  .project-item h3, .education-card h3, .experience-card h3, .article-item h3, .insights-card h3 {
-    font-size: 0.9rem; /* Smaller headings for small screens */
-  }
+  /* Smaller certification card text for small phones. */
+  .certification-card { font-size: 0.75rem; }
 
-  .project-image {
-    height: 100px; /* Smaller image height for small screens */
-  }
+  /* Smaller headings for various cards on small phones. */
+  .project-item h3, .education-card h3, .experience-card h3, .article-item h3, .insights-card h3 { font-size: 0.9rem; }
 
-  .contact form {
-    max-width: 90%; /* Responsive width for form */
-  }
+  /* Smaller project image for small phones. */
+  .project-image { height: 100px; }
 
-  .contact input, .contact textarea {
-    font-size: 0.75rem; /* Smaller text for inputs */
-  }
+  /* Full-width contact form for small phones. */
+  .contact form { max-width: 90%; }
 
-  .contact label {
-    font-size: 0.75rem; /* Smaller label text */
-  }
+  /* Smaller contact form inputs and textarea for small phones. */
+  .contact input, .contact textarea { font-size: 0.75rem; }
 
-  .contact button {
-    font-size: 0.75rem; /* Smaller button text */
-  }
+  /* Smaller contact form labels for small phones. */
+  .contact label { font-size: 0.75rem; }
 
-  footer {
-    padding: 20px 10px; /* Reduced padding for footer */
-    font-size: 0.75rem; /* Smaller text for footer */
-  }
+  /* Smaller contact button for small phones. */
+  .contact button { font-size: 0.75rem; }
 
-  .social-icons a {
-    width: 32px; /* Smaller icon size */
-    height: 32px;
-    font-size: 1rem; /* Smaller icon size */
-  }
+  /* Smaller CTA buttons for small phones. */
+  .cta .button { padding: 6px 14px; font-size: 0.65rem; }
 
-  .projects {
-    padding: 40px 10px; /* Reduced padding for sections */
-  }
+  /* Smaller footer text for small phones. */
+  footer { padding: 20px 10px; font-size: 0.75rem; }
 
-  .skills {
-    padding: 40px 10px; /* Reduced padding for sections */
-  }
-
-  .certifications {
-    padding: 40px 10px; /* Reduced padding for sections */
-  }
-
-  .education {
-    padding: 40px 10px; /* Reduced padding for sections */
-  }
-
-  .articles {
-    padding: 40px 10px; /* Reduced padding for sections */
-  }
+  /* Smaller social icons for small phones. */
+  .social-icons a { width: 32px; height: 32px; font-size: 1rem; }
 }
