@@ -378,7 +378,7 @@ section {
   background-image: url('../images/python_18894.webp');
 }
 .skill-card:nth-child(2) { /* Django */
-  background-image: url('../images/django.png');
+  background-image: url('../images/django.jpg');
   background-color: var(--secondary);
 }
 .skill-card:nth-child(3) { /* JavaScript */
