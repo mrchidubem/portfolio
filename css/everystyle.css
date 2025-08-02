@@ -370,40 +370,40 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(24, 24, 24, 0.15), rgba(212, 163, 115, 0.05)); /* Very light overlay for image visibility */
+  background: linear-gradient(rgba(24, 24, 24, 0.1), rgba(212, 163, 115, 0.03)); /* Very light overlay for maximum image visibility */
   z-index: 0; /* Behind text */
 }
 
 /* Specific background images for each skill */
 .skill-card:nth-child(1) { /* Python */
-  background-image: url('../images/python_18894.webp'); /* Verify path */
+  background-image: url('/images/python_18894.webp'); /* Absolute path */
 }
 .skill-card:nth-child(2) { /* Django */
-  background-image: url('../images/django.png'); /* Verify path */
+  background-image: url('/images/django.png'); /* Absolute path */
 }
 .skill-card:nth-child(3) { /* JavaScript */
-  background-image: url('../images/js.png'); /* Verify path */
+  background-image: url('/images/js.png'); /* Absolute path */
 }
 .skill-card:nth-child(4) { /* MongoDB */
-  background-image: url('../images/mongodb.svg'); /* Verify path */
+  background-image: url('/images/mongodb.svg'); /* Absolute path */
 }
 .skill-card:nth-child(5) { /* React */
-  background-image: url('../images/react.png'); /* Verify path */
+  background-image: url('/images/react.png'); /* Absolute path */
 }
 .skill-card:nth-child(6) { /* CI/CD */
-  background-image: url('../images/cicd.jpg'); /* Verify path */
+  background-image: url('/images/cicd.jpg'); /* Absolute path */
 }
 .skill-card:nth-child(7) { /* AWS */
-  background-image: url('../images/aws.svg'); /* Verify path */
+  background-image: url('/images/aws.svg'); /* Absolute path */
 }
 .skill-card:nth-child(8) { /* Docker */
-  background-image: url('../images/docker.png'); /* Verify path */
+  background-image: url('/images/docker.png'); /* Absolute path */
 }
 .skill-card:nth-child(9) { /* MySQL */
-  background-image: url('../images/mysql.svg'); /* Verify path */
+  background-image: url('/images/mysql.svg'); /* Absolute path */
 }
 .skill-card:nth-child(10) { /* Git */
-  background-image: url('../images/git.jpg'); /* Verify path */
+  background-image: url('/images/git.jpg'); /* Absolute path */
 }
 
 /* Hover effect for skill card */
@@ -434,11 +434,12 @@ section {
     font-size: 1rem; /* Maintain readable text size */
     background-size: cover; /* Reinforce image cover on mobile */
     background-position: center; /* Reinforce centering on mobile */
+    background-repeat: no-repeat; /* Prevent image tiling */
   }
 
   /* Ensure Django image loads on mobile */
   .skill-card:nth-child(2) {
-    background-image: url('../images/django.png'); /* Explicitly set for mobile */
+    background-image: url('/images/django.png'); /* Absolute path for mobile */
   }
 }
 
