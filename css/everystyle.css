@@ -452,27 +452,26 @@ section {
   z-index: 0;
 }
 
-/* Ensure Django card has no overlay to prevent image obstruction */
-.skill-card:nth-child(2)::before {
-  background: none; /* No overlay for Django card */
-}
 
 /* Background images for skill cards */
 .skill-card:nth-child(1) {
   background-image: url('../images/python.jpg'); /* Python image */
 }
-
+/* Django skill card */
 .skill-card:nth-child(2) {
-  background-image: url('../images/jango.png'); /* Use PNG consistently across all devices */
-  background-color: var(--secondary); /* Fallback background */
-  background-size: contain; /* Ensure image scales properly */
-  background-position: center; /* Center image */
+  background-image: url('../images/django.png'); /* Corrected name */
+  background-color: var(--secondary);
+  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
+  position: relative;
 }
 
+/* Completely remove the overlay to avoid image obstruction */
 .skill-card:nth-child(2)::before {
-  background: none; /* Prevent overlay from covering image */
+  display: none !important;
 }
+
 
 .skill-card:nth-child(3) {
   background-image: url('../images/js.png'); /* JavaScript image */
