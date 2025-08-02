@@ -314,8 +314,6 @@ section {
 }
 
 /* Skills section styling */
-
-/* Skills section styling */
 .skills {
   text-align: center; /* Center content for consistent layout */
   padding: 80px 20px; /* Match padding of other sections */
@@ -351,7 +349,6 @@ section {
   border-radius: 6px; /* Minimal rounding for blocky look */
   font-size: 1.1rem; /* Larger text for readability */
   font-weight: 500; /* Medium weight for professional look */
-  /* color: var(--text); Theme-consistent text color */
   color: #ffffff; /* Pure white text for maximum clarity */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   min-height: 150px; /* Taller cards for consistent size */
@@ -373,40 +370,40 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(24, 24, 24, 0.3), rgba(212, 163, 115, 0.1)); /* Lighter gradient overlay for clarity */
+  background: linear-gradient(rgba(24, 24, 24, 0.15), rgba(212, 163, 115, 0.05)); /* Very light overlay for image visibility */
   z-index: 0; /* Behind text */
 }
 
 /* Specific background images for each skill */
 .skill-card:nth-child(1) { /* Python */
-  background-image: url('../images/python_18894.webp'); /* Placeholder */
+  background-image: url('../images/python_18894.webp'); /* Verify path */
 }
 .skill-card:nth-child(2) { /* Django */
-  background-image: url('../images/django.png'); /* Placeholder */
+  background-image: url('../images/django.png'); /* Verify path */
 }
 .skill-card:nth-child(3) { /* JavaScript */
-  background-image: url('../images/js.png'); /* Placeholder */
+  background-image: url('../images/js.png'); /* Verify path */
 }
 .skill-card:nth-child(4) { /* MongoDB */
-  background-image: url('../images/mongodb.svg'); /* Placeholder */
+  background-image: url('../images/mongodb.svg'); /* Verify path */
 }
 .skill-card:nth-child(5) { /* React */
-  background-image: url('../images/react.png'); /* Placeholder */
+  background-image: url('../images/react.png'); /* Verify path */
 }
 .skill-card:nth-child(6) { /* CI/CD */
-  background-image: url('../images/cicd.jpg'); /* Placeholder */
+  background-image: url('../images/cicd.jpg'); /* Verify path */
 }
 .skill-card:nth-child(7) { /* AWS */
-  background-image: url('../images/aws.svg'); /* Placeholder */
+  background-image: url('../images/aws.svg'); /* Verify path */
 }
 .skill-card:nth-child(8) { /* Docker */
-  background-image: url('../images/docker.png'); /* Placeholder */
+  background-image: url('../images/docker.png'); /* Verify path */
 }
 .skill-card:nth-child(9) { /* MySQL */
-  background-image: url('../images/mysql.svg'); /* Placeholder */
+  background-image: url('../images/mysql.svg'); /* Verify path */
 }
 .skill-card:nth-child(10) { /* Git */
-  background-image: url('../images/git.jpg'); /* Placeholder */
+  background-image: url('../images/git.jpg'); /* Verify path */
 }
 
 /* Hover effect for skill card */
@@ -435,20 +432,13 @@ section {
     padding: 20px; /* Slightly reduced padding for mobile */
     min-height: 120px; /* Slightly shorter but still large for mobile */
     font-size: 1rem; /* Maintain readable text size */
-  }
-}
-
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-  .skill-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on mobile */
-    gap: 10px; /* Slightly smaller gap for mobile */
+    background-size: cover; /* Reinforce image cover on mobile */
+    background-position: center; /* Reinforce centering on mobile */
   }
 
-  .skill-card {
-    padding: 20px; /* Slightly reduced padding for mobile */
-    min-height: 120px; /* Slightly shorter but still large for mobile */
-    font-size: 1rem; /* Maintain readable text size */
+  /* Ensure Django image loads on mobile */
+  .skill-card:nth-child(2) {
+    background-image: url('../images/django.png'); /* Explicitly set for mobile */
   }
 }
 
@@ -964,7 +954,6 @@ section {
 }
 
 /* Call-to-action section styling */
-/* Call-to-action section styling */
 .cta {
   text-align: center; /* Center content */
   padding: 60px 20px; /* Original padding */
@@ -1014,26 +1003,6 @@ section {
 .cta .button:hover {
   transform: scale(1.05); /* Slight scale-up */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-}
-
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-  .cta {
-    padding: 40px 15px; /* Reduced padding for mobile */
-  }
-
-  .cta h2 {
-    font-size: 1.6rem; /* Smaller heading */
-  }
-
-  .cta p {
-    font-size: 0.9rem; /* Smaller text */
-  }
-
-  .cta-buttons {
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 10px; /* Reduced gap */
-  }
 }
 
 /* Footer styling */
