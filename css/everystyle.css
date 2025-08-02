@@ -180,7 +180,7 @@ section {
   justify-content: center; /* Center vertically */
   align-items: center; /* Center horizontally */
   text-align: center; /* Center text */
-  background: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('../images/8.avif') no-repeat center/cover; /* Gradient overlay with background image */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('../images/9.avif') no-repeat center/cover; /* Updated to match HTML preload */
   position: relative; /* For overlay positioning */
 }
 
@@ -313,81 +313,73 @@ section {
   line-height: 1.6; /* Comfortable line height */
 }
 
-/* Skills section styling */
-/* Skills section styling */
+/* Skills section styling (replaced with the version you liked) */
 .skills {
-  text-align: center; /* Center content for consistent layout */
-  padding: 80px 20px; /* Match padding of other sections */
-  background: var(--section-bg); /* Default section background for consistency */
+  text-align: center; /* Center content */
+  padding: 80px 20px; /* Match other sections */
 }
 
-/* Heading for skills section */
 .skills h2 {
-  font-size: 2rem; /* Consistent heading size */
-  color: var(--accent); /* Accent color for branding */
-  letter-spacing: 1.2px; /* Readable spacing */
-  margin-bottom: 30px; /* Match spacing of other sections */
-  animation: slideIn 1s ease forwards; /* Keep slide-in animation */
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 20px; /* Space below */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
 }
 
-/* Grid layout for skill cards */
 .skill-grid {
-  display: grid; /* Grid for structured layout */
-  grid-template-columns: repeat(3, 1fr); /* Exactly 3 cards per row */
-  gap: 20px; /* Match gap of other sections like education */
-  max-width: 700px; /* Match max-width of other sections */
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+  gap: 15px; /* Space between cards */
+  max-width: 700px; /* Constrain width */
   margin: 0 auto; /* Center horizontally */
-  background: linear-gradient(135deg, var(--section-bg), rgba(212, 163, 115, 0.1)); /* Gradient applied to center grid only */
-  padding: 20px; /* Padding to frame the gradient */
-  border-radius: 8px; /* Subtle rounding for the grid container */
+  background: linear-gradient(135deg, var(--section-bg), rgba(212, 163, 115, 0.1)); /* Gradient background */
+  padding: 15px; /* Internal padding */
+  border-radius: 8px; /* Rounded corners */
 }
 
-/* Individual skill card styling */
 .skill-card {
-  background: var(--secondary); /* Theme-consistent secondary color */
-  border: 1px solid rgba(212, 163, 115, 0.3); /* Subtle bronze border */
-  padding: 25px; /* Consistent padding for larger cards */
-  border-radius: 6px; /* Minimal rounding for blocky look */
-  font-size: 1.1rem; /* Larger text for readability */
-  font-weight: 500; /* Medium weight for professional look */
-  color: #ffffff; /* Pure white text for maximum clarity */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  min-height: 150px; /* Taller cards for consistent size */
-  display: flex; /* Center text vertically and horizontally */
+  background: var(--secondary); /* Card background */
+  border: 1px solid rgba(212, 163, 115, 0.3); /* Subtle accent border */
+  padding: 20px; /* Internal padding */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 0.9rem; /* Text size */
+  font-weight: 500; /* Slightly bold */
+  color: #ffffff; /* Pure white text */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  min-height: 100px; /* Consistent height */
+  display: flex; /* Center content */
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-size: cover; /* Ensure background image covers card */
-  background-position: center; /* Center background image */
-  background-repeat: no-repeat; /* Prevent tiling */
-  position: relative; /* For overlay and text positioning */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions */
+  background-size: contain; /* Scale images properly */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative; /* For overlay */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
 }
 
-/* Overlay for better text readability */
 .skill-card::before {
-  content: ''; /* Empty content for overlay */
-  position: absolute; /* Cover card */
+  content: ''; /* Overlay */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(24, 24, 24, 0.1), rgba(212, 163, 115, 0.03)); /* Very light overlay */
-  z-index: 0; /* Behind text */
+  background: linear-gradient(rgba(24, 24, 24, 0.1), rgba(212, 163, 115, 0.03)); /* Subtle overlay */
+  z-index: 0;
 }
 
-/* Remove overlay for Django card to ensure image visibility */
 .skill-card:nth-child(2)::before {
   background: none; /* No overlay for Django */
 }
 
-/* Specific background images for each skill */
 .skill-card:nth-child(1) { /* Python */
   background-image: url('../images/python_18894.webp');
 }
 .skill-card:nth-child(2) { /* Django */
   background-image: url('../images/django.png');
-  background-color: var(--secondary); /* Fallback if image fails */
+  background-color: var(--secondary);
 }
 .skill-card:nth-child(3) { /* JavaScript */
   background-image: url('../images/js.png');
@@ -410,58 +402,17 @@ section {
 .skill-card:nth-child(9) { /* MySQL */
   background-image: url('../images/mysql.svg');
 }
-.skill-card:nth-child(10) { /* Git */
-  background-image: url('../images/git.jpg');
-}
 
-/* Hover effect for skill card */
 .skill-card:hover {
-  transform: translateY(-4px); /* Slightly stronger lift for interaction */
-  box-shadow: 0 6px 18px rgba(212, 163, 115, 0.2); /* Accent-tinted shadow on hover */
+  transform: translateY(-4px); /* Lift on hover */
+  box-shadow: 0 6px 18px rgba(212, 163, 115, 0.2); /* Stronger shadow */
 }
 
-/* Ensure text remains sharp and centered */
 .skill-card span {
-  position: relative; /* Keep text above overlay */
-  z-index: 1; /* Ensure text is not obscured */
-  text-transform: uppercase; /* Uppercase for bold, modern look */
-  letter-spacing: 0.8px; /* Subtle spacing for readability */
-}
-
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-  .skill-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on mobile */
-    gap: 15px; /* Slightly smaller gap for mobile */
-    padding: 15px; /* Slightly reduced padding for mobile */
-  }
-
-  .skill-card {
-    padding: 20px; /* Slightly reduced padding for mobile */
-    min-height: 120px; /* Slightly shorter but still large for mobile */
-    font-size: 1rem; /* Maintain readable text size
-
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-  .skill-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on mobile */
-    gap: 15px; /* Slightly smaller gap for mobile */
-    padding: 15px; /* Slightly reduced padding for mobile */
-  }
-
-  .skill-card {
-    padding: 20px; /* Slightly reduced padding for mobile */
-    min-height: 120px; /* Slightly shorter but still large for mobile */
-    font-size: 1rem; /* Maintain readable text size */
-    background-size: cover; /* Reinforce image cover on mobile */
-    background-position: center; /* Reinforce centering on mobile */
-    background-repeat: no-repeat; /* Prevent image tiling */
-  }
-
-  /* Ensure Django image loads on mobile */
-  .skill-card:nth-child(2) {
-    background-image: url('/images/django.png'); /* Absolute path for mobile */
-  }
+  position: relative; /* Above overlay */
+  z-index: 1;
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 0.8px; /* Spacing for readability */
 }
 
 /* Certifications section styling */
@@ -978,36 +929,31 @@ section {
 /* Call-to-action section styling */
 .cta {
   text-align: center; /* Center content */
-  padding: 60px 20px; /* Original padding */
-  background: var(--section-bg); /* Match surrounding section background, no color */
+  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
+  padding: 60px 20px; /* Vertical and horizontal padding */
+  color: var(--bg); /* Text color */
 }
 
-/* Heading for CTA */
 .cta h2 {
   font-size: 2rem; /* Heading size */
   letter-spacing: 1.2px; /* Spacing for readability */
   margin-bottom: 15px; /* Space below */
   animation: slideIn 1s ease forwards; /* Slide-in animation */
-  color: #ffffff; /* White text */
 }
 
-/* Paragraph styling */
 .cta p {
   font-size: 1rem; /* Text size */
   font-weight: 300; /* Light weight */
   max-width: 600px; /* Constrain width */
   margin: 0 auto 20px; /* Center with bottom margin */
-  color: #ffffff; /* White text */
 }
 
-/* Buttons container */
 .cta-buttons {
   display: flex; /* Horizontal layout */
   justify-content: center; /* Center buttons */
   gap: 15px; /* Space between buttons */
 }
 
-/* Button styling */
 .cta .button {
   padding: 10px 28px; /* Button padding */
   font-size: 0.85rem; /* Text size */
@@ -1021,7 +967,6 @@ section {
   transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
 }
 
-/* Button hover effect */
 .cta .button:hover {
   transform: scale(1.05); /* Slight scale-up */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
@@ -1136,6 +1081,8 @@ footer {
 
   section {
     padding: 60px 15px; /* Reduced padding */
+    max-width: 90%; /* Responsive width */
+    margin: 0 auto; /* Center sections */
   }
 
   .hero h2 {
@@ -1167,7 +1114,33 @@ footer {
     line-height: 1.7; /* Tighter line height */
   }
 
-  .skill-card, .certification-card {
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    gap: 10px; /* Reduced gap */
+    padding: 10px; /* Reduced padding */
+  }
+
+  .skill-card {
+    padding: 15px; /* Reduced padding */
+    min-height: 80px; /* Smaller height */
+    font-size: 0.8rem; /* Smaller text */
+  }
+
+  .skill-card:nth-child(2) {
+    background-image: url('../images/django.png');
+    background-color: var(--secondary);
+    background-size: contain;
+  }
+
+  .skill-card:nth-child(2)::before {
+    background: none; /* No overlay for Django */
+  }
+
+  .certification-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+  }
+
+  .certification-card {
     font-size: 0.8rem; /* Smaller text */
   }
 
@@ -1226,5 +1199,116 @@ footer {
 
   .insights-card .read-more {
     font-size: 0.8rem; /* Smaller link text */
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 10px 15px; /* Further reduced padding */
+  }
+
+  .nav-links {
+    margin-top: 50px; /* Adjusted space */
+    gap: 10px; /* Smaller gap */
+  }
+
+  .circle {
+    width: 28px; /* Smaller logo circle */
+    height: 28px;
+    font-size: 0.8rem; /* Smaller text */
+  }
+
+  .circle-text {
+    font-size: 0.8rem; /* Smaller logo text */
+  }
+
+  section {
+    padding: 50px 10px; /* Further reduced padding */
+    max-width: 95%; /* Responsive width */
+  }
+
+  .hero h2 {
+    font-size: 1.3rem; /* Smaller heading */
+  }
+
+  .hero p {
+    font-size: 0.8rem; /* Smaller text */
+  }
+
+  .hero .button {
+    padding: 6px 16px; /* Smaller button */
+    font-size: 0.75rem; /* Smaller text */
+  }
+
+  .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .testimonials h2, .experience h2, .contact h2, .cta h2, .articles h2, .insights-updates h2 {
+    font-size: 1.4rem; /* Smaller headings */
+  }
+
+  .about p {
+    font-size: 0.9rem; /* Smaller text */
+    padding: 15px; /* Reduced padding */
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr; /* 1 column for small phones */
+    gap: 8px; /* Smaller gap */
+  }
+
+  .skill-card {
+    min-height: 70px; /* Smaller height */
+    font-size: 0.75rem; /* Smaller text */
+  }
+
+  .skill-card:nth-child(2) {
+    background-image: url('../images/django.png');
+    background-color: var(--secondary);
+    background-size: contain;
+  }
+
+  .skill-card:nth-child(2)::before {
+    background: none; /* No overlay for Django */
+  }
+
+  .certification-grid {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+
+  .certification-card {
+    font-size: 0.75rem; /* Smaller text */
+  }
+
+  .project-item h3, .education-card h3, .experience-card h3, .article-item h3, .insights-card h3 {
+    font-size: 0.9rem; /* Smaller headings */
+  }
+
+  .project-image {
+    height: 100px; /* Smaller image height */
+  }
+
+  .contact form {
+    max-width: 90%; /* Responsive width */
+  }
+
+  .contact input, .contact textarea {
+    font-size: 0.75rem; /* Smaller text */
+  }
+
+  .contact label {
+    font-size: 0.75rem; /* Smaller label */
+  }
+
+  .contact button {
+    font-size: 0.75rem; /* Smaller button text */
+  }
+
+  footer {
+    padding: 20px 10px; /* Reduced padding */
+    font-size: 0.75rem; /* Smaller text */
+  }
+
+  .social-icons a {
+    width: 32px; /* Smaller icons */
+    height: 32px;
+    font-size: 1rem; /* Smaller icon size */
   }
 }

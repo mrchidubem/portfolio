@@ -180,7 +180,7 @@ section {
   justify-content: center; /* Center vertically */
   align-items: center; /* Center horizontally */
   text-align: center; /* Center text */
-  background: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('../images/8.avif') no-repeat center/cover; /* Gradient overlay with background image */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('../images/9.avif') no-repeat center/cover; /* Updated to match HTML preload */
   position: relative; /* For overlay positioning */
 }
 
@@ -313,9 +313,10 @@ section {
   line-height: 1.6; /* Comfortable line height */
 }
 
-/* Skills section styling */
+/* Skills section styling (replaced with the version you liked) */
 .skills {
   text-align: center; /* Center content */
+  padding: 80px 20px; /* Match other sections */
 }
 
 .skills h2 {
@@ -327,27 +328,91 @@ section {
 }
 
 .skill-grid {
-  display: grid; /* Grid layout for skills */
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive columns */
-  gap: 12px; /* Space between cards */
-  max-width: 800px; /* Constrain width */
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+  gap: 15px; /* Space between cards */
+  max-width: 700px; /* Constrain width */
   margin: 0 auto; /* Center horizontally */
+  background: linear-gradient(135deg, var(--section-bg), rgba(212, 163, 115, 0.1)); /* Gradient background */
+  padding: 15px; /* Internal padding */
+  border-radius: 8px; /* Rounded corners */
 }
 
 .skill-card {
   background: var(--secondary); /* Card background */
-  border-left: 3px solid var(--accent); /* Accent border */
-  padding: 12px; /* Internal padding */
+  border: 1px solid rgba(212, 163, 115, 0.3); /* Subtle accent border */
+  padding: 20px; /* Internal padding */
   border-radius: 6px; /* Rounded corners */
-  font-size: 0.85rem; /* Text size */
-  font-weight: 400; /* Normal weight */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s, background 0.3s; /* Smooth hover effects */
+  font-size: 0.9rem; /* Text size */
+  font-weight: 500; /* Slightly bold */
+  color: #ffffff; /* Pure white text */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  min-height: 100px; /* Consistent height */
+  display: flex; /* Center content */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: contain; /* Scale images properly */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative; /* For overlay */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
+}
+
+.skill-card::before {
+  content: ''; /* Overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(24, 24, 24, 0.1), rgba(212, 163, 115, 0.03)); /* Subtle overlay */
+  z-index: 0;
+}
+
+.skill-card:nth-child(2)::before {
+  background: none; /* No overlay for Django */
+}
+
+.skill-card:nth-child(1) { /* Python */
+  background-image: url('../images/python_18894.webp');
+}
+.skill-card:nth-child(2) { /* Django */
+  background-image: url('../images/django.png');
+  background-color: var(--secondary);
+}
+.skill-card:nth-child(3) { /* JavaScript */
+  background-image: url('../images/js.png');
+}
+.skill-card:nth-child(4) { /* MongoDB */
+  background-image: url('../images/mongodb.svg');
+}
+.skill-card:nth-child(5) { /* React */
+  background-image: url('../images/react.png');
+}
+.skill-card:nth-child(6) { /* CI/CD */
+  background-image: url('../images/cicd.jpg');
+}
+.skill-card:nth-child(7) { /* AWS */
+  background-image: url('../images/aws.svg');
+}
+.skill-card:nth-child(8) { /* Docker */
+  background-image: url('../images/docker.png');
+}
+.skill-card:nth-child(9) { /* MySQL */
+  background-image: url('../images/mysql.svg');
 }
 
 .skill-card:hover {
   transform: translateY(-4px); /* Lift on hover */
-  background: var(--accent); /* Accent background on hover */
+  box-shadow: 0 6px 18px rgba(212, 163, 115, 0.2); /* Stronger shadow */
+}
+
+.skill-card span {
+  position: relative; /* Above overlay */
+  z-index: 1;
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 0.8px; /* Spacing for readability */
 }
 
 /* Certifications section styling */
@@ -1016,6 +1081,8 @@ footer {
 
   section {
     padding: 60px 15px; /* Reduced padding */
+    max-width: 90%; /* Responsive width */
+    margin: 0 auto; /* Center sections */
   }
 
   .hero h2 {
@@ -1047,7 +1114,33 @@ footer {
     line-height: 1.7; /* Tighter line height */
   }
 
-  .skill-card, .certification-card {
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    gap: 10px; /* Reduced gap */
+    padding: 10px; /* Reduced padding */
+  }
+
+  .skill-card {
+    padding: 15px; /* Reduced padding */
+    min-height: 80px; /* Smaller height */
+    font-size: 0.8rem; /* Smaller text */
+  }
+
+  .skill-card:nth-child(2) {
+    background-image: url('../images/django.png');
+    background-color: var(--secondary);
+    background-size: contain;
+  }
+
+  .skill-card:nth-child(2)::before {
+    background: none; /* No overlay for Django */
+  }
+
+  .certification-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+  }
+
+  .certification-card {
     font-size: 0.8rem; /* Smaller text */
   }
 
@@ -1106,5 +1199,116 @@ footer {
 
   .insights-card .read-more {
     font-size: 0.8rem; /* Smaller link text */
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 10px 15px; /* Further reduced padding */
+  }
+
+  .nav-links {
+    margin-top: 50px; /* Adjusted space */
+    gap: 10px; /* Smaller gap */
+  }
+
+  .circle {
+    width: 28px; /* Smaller logo circle */
+    height: 28px;
+    font-size: 0.8rem; /* Smaller text */
+  }
+
+  .circle-text {
+    font-size: 0.8rem; /* Smaller logo text */
+  }
+
+  section {
+    padding: 50px 10px; /* Further reduced padding */
+    max-width: 95%; /* Responsive width */
+  }
+
+  .hero h2 {
+    font-size: 1.3rem; /* Smaller heading */
+  }
+
+  .hero p {
+    font-size: 0.8rem; /* Smaller text */
+  }
+
+  .hero .button {
+    padding: 6px 16px; /* Smaller button */
+    font-size: 0.75rem; /* Smaller text */
+  }
+
+  .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .testimonials h2, .experience h2, .contact h2, .cta h2, .articles h2, .insights-updates h2 {
+    font-size: 1.4rem; /* Smaller headings */
+  }
+
+  .about p {
+    font-size: 0.9rem; /* Smaller text */
+    padding: 15px; /* Reduced padding */
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr; /* 1 column for small phones */
+    gap: 8px; /* Smaller gap */
+  }
+
+  .skill-card {
+    min-height: 70px; /* Smaller height */
+    font-size: 0.75rem; /* Smaller text */
+  }
+
+  .skill-card:nth-child(2) {
+    background-image: url('../images/django.png');
+    background-color: var(--secondary);
+    background-size: contain;
+  }
+
+  .skill-card:nth-child(2)::before {
+    background: none; /* No overlay for Django */
+  }
+
+  .certification-grid {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+
+  .certification-card {
+    font-size: 0.75rem; /* Smaller text */
+  }
+
+  .project-item h3, .education-card h3, .experience-card h3, .article-item h3, .insights-card h3 {
+    font-size: 0.9rem; /* Smaller headings */
+  }
+
+  .project-image {
+    height: 100px; /* Smaller image height */
+  }
+
+  .contact form {
+    max-width: 90%; /* Responsive width */
+  }
+
+  .contact input, .contact textarea {
+    font-size: 0.75rem; /* Smaller text */
+  }
+
+  .contact label {
+    font-size: 0.75rem; /* Smaller label */
+  }
+
+  .contact button {
+    font-size: 0.75rem; /* Smaller button text */
+  }
+
+  footer {
+    padding: 20px 10px; /* Reduced padding */
+    font-size: 0.75rem; /* Smaller text */
+  }
+
+  .social-icons a {
+    width: 32px; /* Smaller icons */
+    height: 32px;
+    font-size: 1rem; /* Smaller icon size */
   }
 }
