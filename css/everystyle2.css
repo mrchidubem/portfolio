@@ -1,4 +1,4 @@
-/* Theme variables for consistent styling across the site */
+/* Define CSS custom properties for consistent theming */
 :root {
   --primary: #2c2c2c; /* Charcoal gray for main elements */
   --secondary: #242424; /* Muted charcoal for card backgrounds */
@@ -8,21 +8,21 @@
   --text: #f1f5f9; /* Soft ivory text color */
 }
 
-/* Light theme variables for theme toggle */
+/* Light theme variables applied when theme toggle is checked */
 body:has(#theme-toggle:checked) {
   --primary: #3c3c3c; /* Lighter gray for main elements */
-  --secondary: #ececec; /* Light gray for cards */
+  --secondary: #ececec; /* Light gray for card backgrounds */
   --accent: #b89778; /* Softer bronze for highlights */
   --bg: #ffffff; /* White body background */
-  --section-bg: #f5f5f5; /* Light gray for sections */
+  --section-bg: #f5f5f5; /* Light gray for section backgrounds */
   --text: #2c2c2c; /* Dark gray text */
 }
 
-/* Reset default browser styles for consistency */
+/* Reset default browser styles for consistent rendering */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Ensures padding and borders are included in element size */
+  box-sizing: border-box; /* Include padding and borders in element size */
 }
 
 /* Enable smooth scrolling for anchor links */
@@ -30,15 +30,15 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Base body styles */
+/* Base body styles for typography and layout */
 body {
-  font-family: 'Inter', sans-serif; /* Default font for content */
-  background: var(--bg); /* Apply background color */
-  color: var(--text); /* Apply text color */
+  font-family: 'Inter', sans-serif; /* Default font for readable content */
+  background: var(--bg); /* Apply theme background color */
+  color: var(--text); /* Apply theme text color */
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Style for headings */
+/* Consistent heading styles with futuristic font */
 h1, h2, h3 {
   font-family: 'Orbitron', sans-serif; /* Futuristic font for headings */
   font-weight: 500; /* Medium weight for clarity */
@@ -46,96 +46,97 @@ h1, h2, h3 {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
-/* Focus styles for accessibility */
+/* Accessibility-focused styles for interactive elements */
 a:focus, button:focus, input:focus, textarea:focus {
   outline: 2px solid var(--accent); /* Highlight focus with accent color */
   outline-offset: 2px; /* Space around focus outline */
 }
 
-/* Navigation bar styling */
+/* Navigation bar styling with fixed positioning */
 nav {
   position: fixed; /* Keep nav at the top */
   top: 0;
-  width: 100%; /* Full width */
+  width: 100%; /* Full viewport width */
   padding: 15px 40px; /* Padding for spacing */
-  display: flex; /* Flex layout for alignment */
-  justify-content: space-between; /* Space out logo, links, and theme controls */
+  display: flex; /* Flex layout for logo, links, and controls */
+  justify-content: space-between; /* Space out elements */
   align-items: center; /* Vertically align items */
   background: rgba(15, 15, 15, 0.8); /* Semi-transparent dark background */
-  border-bottom: 1px solid var(--accent); /* Accent border at bottom */
-  z-index: 999; /* Ensure nav stays on top */
+  border-bottom: 1px solid var(--accent); /* Accent-colored bottom border */
+  z-index: 999; /* Ensure nav stays above other content */
 }
 
-/* Logo styling */
+/* Logo styling with circular design */
 .circle-logo {
-  display: flex; /* Flex for logo and text alignment */
-  align-items: center; /* Center items vertically */
+  display: flex; /* Align logo circle and text */
+  align-items: center; /* Center vertically */
   gap: 8px; /* Space between circle and text */
-  text-decoration: none; /* Remove underline */
+  text-decoration: none; /* Remove underline from link */
 }
 
 .circle {
-  width: 36px; /* Circle size */
+  width: 36px; /* Fixed circle size */
   height: 36px;
   background: linear-gradient(135deg, var(--primary), var(--accent)); /* Gradient background */
   border-radius: 50%; /* Circular shape */
-  color: var(--bg); /* Text color */
-  display: flex; /* Center content */
+  color: var(--bg); /* Text color contrasts with gradient */
+  display: flex; /* Center content inside circle */
   align-items: center;
   justify-content: center;
-  font-weight: 600; /* Bold text */
+  font-weight: 600; /* Bold text for emphasis */
   font-size: 1rem; /* Text size */
   transition: transform 0.3s; /* Smooth scale on hover */
 }
 
 .circle-logo:hover .circle {
-  transform: scale(1.05); /* Slight scale-up on hover */
+  transform: scale(1.05); /* Slight scale-up effect on hover */
 }
 
 .circle-text {
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for logo text */
   font-size: 1rem; /* Text size */
-  font-weight: 400; /* Normal weight */
-  letter-spacing: 1px; /* Spacing for readability */
-  background: linear-gradient(90deg, var(--primary), var(--accent)); /* Gradient text */
+  font-weight: 400; /* Normal weight for readability */
+  letter-spacing: 1px; /* Spacing for clarity */
+  background: linear-gradient(90deg, var(--primary), var(--accent)); /* Gradient text effect */
   -webkit-background-clip: text; /* Clip gradient to text */
-  -webkit-text-fill-color: transparent; /* Make text transparent for gradient */
+  -webkit-text-fill-color: transparent; /* Transparent text for gradient */
 }
 
 /* Navigation links styling */
 .nav-links {
-  display: flex; /* Horizontal layout */
+  display: flex; /* Horizontal layout for links */
   gap: 20px; /* Space between links */
   list-style: none; /* Remove bullet points */
 }
 
 .nav-links a {
-  color: var(--text); /* Text color */
-  text-decoration: none; /* No underline */
+  color: var(--text); /* Theme text color */
+  text-decoration: none; /* Remove underline */
   font-size: 0.9rem; /* Slightly smaller text */
   font-weight: 400; /* Normal weight */
-  letter-spacing: 0.5px; /* Subtle spacing */
+  letter-spacing: 0.5px; /* Subtle spacing for readability */
   transition: color 0.3s, transform 0.2s; /* Smooth color and scale transitions */
 }
 
 .nav-links a:hover {
   color: var(--accent); /* Accent color on hover */
-  transform: scale(1.05); /* Slight scale-up on hover */
+  transform: scale(1.05); /* Slight scale-up effect */
 }
 
-/* Hide mobile nav toggle by default */
+/* Hide mobile navigation toggle checkbox by default */
 .nav-toggle {
   display: none;
 }
 
+/* Mobile menu toggle label (hamburger icon) */
 .nav-toggle-label {
   display: none; /* Hidden on desktop */
-  font-size: 1.4rem; /* Icon size */
-  color: var(--text); /* Icon color */
-  cursor: pointer; /* Pointer on hover */
+  font-size: 1.4rem; /* Icon size for visibility */
+  color: var(--text); /* Theme text color */
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
-/* Theme controls styling */
+/* Theme controls styling for toggle and resume buttons */
 .theme-controls {
   display: flex; /* Horizontal layout */
   gap: 12px; /* Space between buttons */
@@ -143,36 +144,36 @@ nav {
 
 .toggle-theme {
   padding: 6px 14px; /* Button padding */
-  border: 1px solid var(--accent); /* Accent border */
-  background: transparent; /* No background */
-  color: var(--text); /* Text color */
+  border: 1px solid var(--accent); /* Accent-colored border */
+  background: transparent; /* Transparent background */
+  color: var(--text); /* Theme text color */
   border-radius: 6px; /* Rounded corners */
   font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-size: 0.8rem; /* Small text */
+  font-size: 0.8rem; /* Small text for buttons */
   font-weight: 400; /* Normal weight */
   text-align: center; /* Center text */
-  text-decoration: none; /* No underline */
-  cursor: pointer; /* Pointer on hover */
-  transition: background 0.3s, color 0.3s, transform 0.2s; /* Smooth transitions */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s, color 0.3s, transform 0.2s; /* Smooth hover transitions */
 }
 
 .toggle-theme:hover {
   background: var(--accent); /* Accent background on hover */
   color: var(--bg); /* Background color for text */
-  transform: scale(1.05); /* Slight scale-up */
+  transform: scale(1.05); /* Slight scale-up effect */
 }
 
 .theme-toggle {
-  display: none; /* Hidden checkbox for theme toggle */
+  display: none; /* Hide checkbox for theme toggle */
 }
 
-/* Base styles for sections */
+/* Base styling for sections */
 section {
-  padding: 80px 20px; /* Vertical and horizontal padding */
-  background: var(--section-bg); /* Section background color */
+  padding: 60px 20px; /* Reduced padding for sections */
+  background: var(--section-bg); /* Theme section background */
 }
 
-/* Hero section styling */
+/* Hero section with full-screen background and centered content */
 .hero {
   height: 100vh; /* Full viewport height */
   display: flex; /* Flex layout for centering */
@@ -180,7 +181,7 @@ section {
   justify-content: center; /* Center vertically */
   align-items: center; /* Center horizontally */
   text-align: center; /* Center text */
-  background: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('../images/9.avif') no-repeat center/cover; /* Updated to match HTML preload */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('../images/8.avif') no-repeat center/cover; /* Gradient overlay with background image */
   position: relative; /* For overlay positioning */
 }
 
@@ -188,281 +189,86 @@ section {
   content: ''; /* Empty content for overlay */
   position: absolute; /* Cover entire section */
   inset: 0; /* Shorthand for top, right, bottom, left */
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
-  z-index: -1; /* Behind content */
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+  z-index: -1; /* Place behind content */
 }
 
 .hero h2 {
-  font-size: 1.8rem; /* Heading size */
+  font-size: 1.8rem; /* Heading size for emphasis */
   letter-spacing: 1.2px; /* Spacing for readability */
 }
 
 .hero p {
-  font-size: 0.9rem; /* Smaller text */
+  font-size: 0.9rem; /* Smaller text for subtitle */
   margin-top: 12px; /* Space above */
-  font-weight: 300; /* Light weight */
+  font-weight: 300; /* Light weight for elegance */
   letter-spacing: 0.5px; /* Subtle spacing */
-  animation: fadeIn 1.5s ease forwards; /* Fade-in animation */
+  animation: fadeIn 1.5s ease forwards; /* Fade-in animation for text */
 }
 
 .hero .button {
-  margin-top: 25px; /* Space above */
+  margin-top: 25px; /* Space above button */
   padding: 10px 28px; /* Button padding */
   font-size: 0.85rem; /* Text size */
-  color: var(--bg); /* Text color */
-  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
-  border: none; /* No border */
+  color: var(--bg); /* Background color for text */
+  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient button background */
+  border: none; /* Remove default border */
   border-radius: 6px; /* Rounded corners */
   font-family: 'Orbitron', sans-serif; /* Futuristic font */
   font-weight: 400; /* Normal weight */
-  text-decoration: none; /* No underline */
+  text-decoration: none; /* Remove underline */
   transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
 }
 
 .hero .button:hover {
-  transform: scale(1.05); /* Slight scale-up */
-  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow */
+  transform: scale(1.05); /* Slight scale-up on hover */
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow for depth */
 }
 
 .avatar {
-  width: 90px; /* Avatar size */
+  width: 90px; /* Avatar image size */
   height: 90px;
   background: url('../images/dube.jpg') no-repeat center/cover; /* Profile image */
   background-color: var(--secondary); /* Fallback background */
   border-radius: 50%; /* Circular shape */
-  border: 1px solid var(--accent); /* Accent border */
-  margin-bottom: 15px; /* Space below */
-  animation: pulse 2s ease-in-out infinite; /* Pulsing animation */
+  border: 1px solid var(--accent); /* Accent-colored border */
+  margin-bottom: 15px; /* Space below avatar */
+  animation: pulse 2s ease-in-out infinite; /* Pulsing animation for visual interest */
 }
 
-/* About section styling */
+/* About section with centered content */
 .about {
-  text-align: center; /* Center content */
+  text-align: center; /* Center text and content */
 }
 
 .about h2 {
   font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
+  color: var(--accent); /* Accent color for emphasis */
   letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 20px; /* Space below */
+  margin-bottom: 20px; /* Space below heading */
   animation: slideIn 1s ease forwards; /* Slide-in animation */
 }
 
 .about p {
-  max-width: 600px; /* Constrain width */
+  max-width: 600px; /* Constrain paragraph width */
   margin: 0 auto; /* Center horizontally */
-  font-family: 'Playfair Display', serif; /* Elegant font */
-  font-size: 1.1rem; /* Slightly larger text */
+  font-family: 'Playfair Display', serif; /* Elegant font for narrative */
+  font-size: 1.1rem; /* Slightly larger text for readability */
   font-weight: 400; /* Normal weight */
-  line-height: 1.8; /* Spacious line height */
+  line-height: 1.8; /* Spacious line height for comfort */
   background: var(--secondary); /* Card background */
   padding: 25px; /* Internal padding */
-  border-left: 3px solid var(--accent); /* Accent border */
+  border-left: 3px solid var(--accent); /* Accent border for style */
   border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
   transition: transform 0.3s; /* Smooth hover effect */
 }
 
 .about p:hover {
-  transform: translateY(-3px); /* Lift on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
 }
 
-/* Education section styling */
-.education {
-  text-align: center; /* Center content */
-}
-
-.education h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 30px; /* Space below */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
-}
-
-.education-grid {
-  max-width: 700px; /* Constrain width */
-  margin: 0 auto; /* Center horizontally */
-  display: flex; /* Flex layout */
-  flex-direction: column; /* Stack cards vertically */
-  gap: 20px; /* Space between cards */
-}
-
-.education-card {
-  background: var(--secondary); /* Card background */
-  padding: 20px; /* Internal padding */
-  border-radius: 8px; /* Rounded corners */
-  border-left: 3px solid var(--accent); /* Accent border */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  text-align: left; /* Left-align text */
-  transition: transform 0.3s; /* Smooth hover effect */
-}
-
-.education-card:hover {
-  transform: translateY(-3px); /* Lift on hover */
-}
-
-.education-card h3 {
-  font-size: 1.1rem; /* Heading size */
-  margin-bottom: 8px; /* Space below */
-}
-
-.education-card p {
-  font-size: 0.85rem; /* Smaller text */
-  font-weight: 300; /* Light weight */
-  line-height: 1.6; /* Comfortable line height */
-}
-
-/* Skills section styling (replaced with the version you liked) */
-.skills {
-  text-align: center; /* Center content */
-  padding: 80px 20px; /* Match other sections */
-}
-
-.skills h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 20px; /* Space below */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
-}
-
-.skill-grid {
-  display: grid; /* Grid layout */
-  grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
-  gap: 15px; /* Space between cards */
-  max-width: 700px; /* Constrain width */
-  margin: 0 auto; /* Center horizontally */
-  background: linear-gradient(135deg, var(--section-bg), rgba(212, 163, 115, 0.1)); /* Gradient background */
-  padding: 15px; /* Internal padding */
-  border-radius: 8px; /* Rounded corners */
-}
-
-.skill-card {
-  background: var(--secondary); /* Card background */
-  border: 1px solid rgba(212, 163, 115, 0.3); /* Subtle accent border */
-  padding: 20px; /* Internal padding */
-  border-radius: 6px; /* Rounded corners */
-  font-size: 0.9rem; /* Text size */
-  font-weight: 500; /* Slightly bold */
-  color: #ffffff; /* Pure white text */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  min-height: 100px; /* Consistent height */
-  display: flex; /* Center content */
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-size: contain; /* Scale images properly */
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative; /* For overlay */
-  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
-}
-
-.skill-card::before {
-  content: ''; /* Overlay */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(24, 24, 24, 0.1), rgba(212, 163, 115, 0.03)); /* Subtle overlay */
-  z-index: 0;
-}
-
-.skill-card:nth-child(2)::before {
-  background: none; /* No overlay for Django */
-}
-
-.skill-card:nth-child(1) { /* Python */
-  background-image: url('../images/python_18894.webp');
-}
-.skill-card:nth-child(2) { /* Django */
-  background-image: url('../images/django.jpg');
-  background-color: var(--secondary);
-}
-.skill-card:nth-child(3) { /* JavaScript */
-  background-image: url('../images/js.png');
-}
-.skill-card:nth-child(4) { /* MongoDB */
-  background-image: url('../images/mongo.avif');
-}
-.skill-card:nth-child(5) { /* React */
-  background-image: url('../images/react.png');
-}
-.skill-card:nth-child(6) { /* CI/CD */
-  background-image: url('../images/cicd.jpg');
-}
-.skill-card:nth-child(7) { /* AWS */
-  background-image: url('../images/aws.svg');
-}
-.skill-card:nth-child(8) { /* Docker */
-  background-image: url('../images/docker.png');
-}
-.skill-card:nth-child(9) { /* MySQL */
-  background-image: url('../images/mysql.svg');
-}
-
-.skill-card:hover {
-  transform: translateY(-4px); /* Lift on hover */
-  box-shadow: 0 6px 18px rgba(212, 163, 115, 0.2); /* Stronger shadow */
-}
-
-.skill-card span {
-  position: relative; /* Above overlay */
-  z-index: 1;
-  text-transform: uppercase; /* Uppercase text */
-  letter-spacing: 0.8px; /* Spacing for readability */
-}
-
-/* Certifications section styling */
-.certifications {
-  text-align: center; /* Center content */
-}
-
-.certifications h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 30px; /* Space below */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
-}
-
-.certification-grid {
-  display: grid; /* Grid layout for certifications */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
-  gap: 12px; /* Space between cards */
-  max-width: 800px; /* Constrain width */
-  margin: 0 auto; /* Center horizontally */
-}
-
-.certification-card {
-  background: var(--secondary); /* Card background */
-  border-left: 3px solid var(--accent); /* Accent border */
-  padding: 12px; /* Internal padding */
-  border-radius: 6px; /* Rounded corners */
-  font-size: 0.85rem; /* Text size */
-  font-weight: 400; /* Normal weight */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s, background 0.3s; /* Smooth hover effects */
-}
-
-.certification-card:hover {
-  transform: translateY(-4px); /* Lift on hover */
-  background: var(--accent); /* Accent background on hover */
-}
-
-.certification-card h3 {
-  font-size: 1rem; /* Heading size */
-  margin-bottom: 8px; /* Space below */
-}
-
-.certification-card p {
-  font-size: 0.8rem; /* Smaller text */
-  font-weight: 300; /* Light weight */
-}
-
-/* Experience section styling */
+/* Experience section with card-based layout */
 .experience {
   text-align: center; /* Center content */
 }
@@ -471,14 +277,14 @@ section {
   font-size: 2rem; /* Heading size */
   color: var(--accent); /* Accent color */
   letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 30px; /* Space below */
+  margin-bottom: 30px; /* Space below heading */
   animation: slideIn 1s ease forwards; /* Slide-in animation */
 }
 
 .experience-grid {
-  max-width: 700px; /* Constrain width */
+  max-width: 700px; /* Constrain grid width */
   margin: 0 auto; /* Center horizontally */
-  display: flex; /* Flex layout */
+  display: flex; /* Flex layout for cards */
   flex-direction: column; /* Stack cards vertically */
   gap: 20px; /* Space between cards */
 }
@@ -494,46 +300,36 @@ section {
 }
 
 .experience-card:hover {
-  transform: translateY(-3px); /* Lift on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
 }
 
 .experience-card h3 {
   font-size: 1.1rem; /* Heading size */
-  margin-bottom: 8px; /* Space below */
+  margin-bottom: 8px; /* Space below heading */
 }
 
 .experience-card p {
-  font-size: 0.85rem; /* Smaller text */
+  font-size: 0.85rem; /* Smaller text for details */
   font-weight: 300; /* Light weight */
   line-height: 1.6; /* Comfortable line height */
 }
 
-/* Date badge styling for education, experience, and articles */
-.date-badge {
-  font-size: 0.7rem; /* Small text */
-  background: var(--accent); /* Accent background */
-  color: var(--bg); /* Background color for text */
-  padding: 4px 8px; /* Padding for badge */
-  border-radius: 4px; /* Rounded corners */
-  display: inline-block; /* Inline-block for proper spacing */
-  margin: 8px 0; /* Vertical margin */
-}
-
-/* Projects section styling */
+/* Projects section with card-based project showcase */
 .projects {
   text-align: center; /* Center content */
+  padding: 60px 20px; /* Reduced padding for sections */
 }
 
 .projects h2 {
   font-size: 2rem; /* Heading size */
   color: var(--accent); /* Accent color */
   letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 20px; /* Space below */
+  margin-bottom: 20px; /* Space below heading */
   animation: slideIn 1s ease forwards; /* Slide-in animation */
 }
 
 .project-item {
-  max-width: 700px; /* Constrain width */
+  max-width: 700px; /* Constrain card width */
   margin: 20px auto; /* Center with vertical spacing */
   background: var(--secondary); /* Card background */
   padding: 20px; /* Internal padding */
@@ -545,30 +341,30 @@ section {
 }
 
 .project-item:hover {
-  transform: translateY(-3px); /* Lift on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
 }
 
 .project-image {
-  width: 100%; /* Full width */
-  height: 150px; /* Fixed height */
-  background: var(--secondary) no-repeat center/cover; /* Image styling */
+  width: 100%; /* Full width image */
+  height: 150px; /* Fixed height for consistency */
+  background: var(--secondary) no-repeat center/cover; /* Image styling with fallback */
   border-radius: 6px; /* Rounded corners */
-  margin-bottom: 15px; /* Space below */
+  margin-bottom: 15px; /* Space below image */
 }
 
 .project-item h3 {
   font-size: 1.1rem; /* Heading size */
-  margin-bottom: 8px; /* Space below */
+  margin-bottom: 8px; /* Space below heading */
 }
 
 .project-item p {
-  font-size: 0.85rem; /* Smaller text */
+  font-size: 0.85rem; /* Smaller text for details */
   font-weight: 300; /* Light weight */
   line-height: 1.6; /* Comfortable line height */
 }
 
 .tech-badges {
-  display: flex; /* Horizontal layout */
+  display: flex; /* Horizontal layout for badges */
   gap: 8px; /* Space between badges */
   margin: 10px 0; /* Vertical margin */
 }
@@ -584,12 +380,12 @@ section {
 }
 
 .project-item a {
-  display: inline-block; /* Inline-block for button */
+  display: inline-block; /* Inline-block for button styling */
   margin-top: 10px; /* Space above */
   padding: 8px 16px; /* Button padding */
   background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
   color: var(--bg); /* Text color */
-  text-decoration: none; /* No underline */
+  text-decoration: none; /* Remove underline */
   border-radius: 6px; /* Rounded corners */
   font-family: 'Orbitron', sans-serif; /* Futuristic font */
   font-size: 0.8rem; /* Small text */
@@ -598,129 +394,381 @@ section {
 }
 
 .project-item a:hover {
-  transform: scale(1.05); /* Slight scale-up */
+  transform: scale(1.05); /* Slight scale-up on hover */
   box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow */
 }
 
-/* Insights & Updates section styling */
-.insights-updates {
+/* Skills section with grid layout for tech stack */
+.skills {
+  text-align: center;
+  padding: 60px 20px; /* Reduced padding for sections */
+}
+
+.skills h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+  animation: slideIn 1s ease forwards;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--section-bg); /* Unified with other sections */
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.skill-card {
+  background: var(--secondary);
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(24, 24, 24, 0.1), rgba(212, 163, 115, 0.03));
+  z-index: 0;
+}
+
+/* Remove overlay from Django card */
+.skill-card:nth-child(2)::before {
+  display: none !important;
+}
+
+/* Skill card background images */
+.skill-card:nth-child(1) {
+  background-image: url('../images/python.png'); /* Ensure this file exists */
+}
+.skill-card:nth-child(2) {
+  background-image: url('../images/django.png'); /* ✅ This solves your issue */
+}
+.skill-card:nth-child(3) {
+  background-image: url('../images/js.png');
+}
+.skill-card:nth-child(4) {
+  background-image: url('../images/mongo.png');
+}
+.skill-card:nth-child(5) {
+  background-image: url('../images/react.png');
+}
+.skill-card:nth-child(6) {
+  background-image: url('../images/cicd.png');
+}
+.skill-card:nth-child(7) {
+  background-image: url('../images/aws.png');
+}
+.skill-card:nth-child(8) {
+  background-image: url('../images/docker.png');
+}
+.skill-card:nth-child(9) {
+  background-image: url('../images/mysql.png');
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(212, 163, 115, 0.2);
+}
+
+/* Hide any text if accidentally included inside the cards */
+.skill-card span {
+  display: none;
+}
+
+/* Certifications section with responsive grid */
+.certifications {
   text-align: center; /* Center content */
-  background: var(--section-bg); /* Section background */
-  padding: 80px 20px; /* Vertical and horizontal padding */
+  padding: 60px 20px; /* Reduced padding for sections */
 }
 
-.insights-updates:has(+ .articles .article-item:target) {
-  display: none; /* Hide when article is targeted */
-  opacity: 0; /* Fade out */
-}
-
-.insights-updates h2 {
+.certifications h2 {
   font-size: 2rem; /* Heading size */
   color: var(--accent); /* Accent color */
   letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 30px; /* Space below */
+  margin-bottom: 30px; /* Space below heading */
   animation: slideIn 1s ease forwards; /* Slide-in animation */
 }
 
-.insights-updates-container {
-  max-width: 700px; /* Constrain width */
+.certification-grid {
+  display: grid; /* Grid layout for certifications */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+  gap: 12px; /* Space between cards */
+  max-width: 800px; /* Constrain grid width */
   margin: 0 auto; /* Center horizontally */
-  display: flex; /* Flex layout */
+}
+
+.certification-card {
+  background: var(--secondary); /* Card background */
+  border-left: 3px solid var(--accent); /* Accent border */
+  padding: 12px; /* Internal padding */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 0.85rem; /* Text size */
+  font-weight: 400; /* Normal weight */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s, background 0.3s; /* Smooth hover effects */
+}
+
+.certification-card:hover {
+  transform: translateY(-4px); /* Slight lift on hover */
+  background: var(--accent); /* Accent background on hover */
+}
+
+.certification-card h3 {
+  font-size: 1rem; /* Heading size */
+  margin-bottom: 8px; /* Space below heading */
+}
+
+.certification-card p {
+  font-size: 0.8rem; /* Smaller text for details */
+  font-weight: 300; /* Light weight */
+}
+
+/* Education section with card-based layout */
+.education {
+  text-align: center; /* Center content */
+  padding: 60px 20px; /* Reduced padding for sections */
+}
+
+.education h2 {
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 30px; /* Space below heading */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.education-grid {
+  max-width: 700px; /* Constrain grid width */
+  margin: 0 auto; /* Center horizontally */
+  display: flex; /* Flex layout for cards */
+  flex-direction: column; /* Stack cards vertically */
+  gap: 20px; /* Space between cards */
+}
+
+.education-card {
+  background: var(--secondary); /* Card background */
+  padding: 20px; /* Internal padding */
+  border-radius: 8px; /* Rounded corners */
+  border-left: 3px solid var(--accent); /* Accent border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  text-align: left; /* Left-align text for readability */
+  transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.education-card:hover {
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.education-card h3 {
+  font-size: 1.1rem; /* Heading size */
+  margin-bottom: 8px; /* Space below heading */
+}
+
+.education-card p {
+  font-size: 0.85rem; /* Smaller text for details */
+  font-weight: 300; /* Light weight for elegance */
+  line-height: 1.6; /* Comfortable line height */
+}
+
+/* Testimonials section with client feedback - Commented out to hide */
+/*
+.testimonials {
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+  animation: slideIn 1s ease forwards;
+}
+
+.testimonial-grid {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: var(--secondary);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.testimonial-card:nth-child(odd) {
+  transform: translateX(20px);
+}
+
+.testimonial-card:nth-child(even) {
+  transform: translateX(-20px);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-3px) translateX(0);
+}
+
+.testimonial-card p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.testimonial-card cite {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--accent);
+  font-style: normal;
+}
+*/
+
+/* Insights & Updates section with blog previews */
+.insights-updates {
+  text-align: center; /* Center content */
+  background: var(--section-bg); /* Section background */
+  padding: 60px 20px; /* Reduced padding for sections */
+}
+
+.insights-updates:has(+ .articles .article-item:target) {
+  display: none; /* Hide when an article is targeted */
+  opacity: 0; /* Fade out for smooth transition */
+}
+
+.insights-updates h2 {
+  font-size: 2rem; /* Heading size for consistency */
+  color: var(--accent); /* Accent color for visual emphasis */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 30px; /* Space below heading */
+  animation: slideIn 1s ease forwards; /* Slide-in animation for smooth entry */
+}
+
+.insights-updates-container {
+  max-width: 700px; /* Constrain container width for readability */
+  margin: 0 auto; /* Center horizontally */
+  display: flex; /* Flex layout for card arrangement */
   flex-direction: column; /* Stack cards vertically */
   gap: 20px; /* Space between cards */
 }
 
 .insights-card {
-  background: var(--secondary); /* Card background */
-  padding: 20px; /* Internal padding */
-  border-radius: 8px; /* Rounded corners */
-  border-left: 3px solid var(--accent); /* Accent border */
-  text-align: left; /* Left-align text */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  background: var(--secondary); /* Card background for consistency */
+  padding: 20px; /* Internal padding for content spacing */
+  border-radius: 8px; /* Rounded corners for modern look */
+  border-left: 3px solid var(--accent); /* Accent border for visual flair */
+  text-align: left; /* Left-align text for readability */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
   transition: transform 0.3s, opacity 0.5s ease; /* Smooth hover and fade effects */
 }
 
 .insights-card:hover {
-  transform: translateY(-3px); /* Lift on hover */
+  transform: translateY(-3px); /* Slight lift on hover for interactivity */
 }
 
 .insights-card h3 {
-  font-size: 1.1rem; /* Heading size */
-  margin-bottom: 8px; /* Space below */
+  font-size: 1.1rem; /* Heading size for card titles */
+  margin-bottom: 8px; /* Space below heading */
 }
 
 .insights-card p {
-  font-size: 0.85rem; /* Smaller text */
-  font-weight: 300; /* Light weight */
+  font-size: 0.85rem; /* Smaller text for card content */
+  font-weight: 300; /* Light weight for elegance */
   line-height: 1.6; /* Comfortable line height */
-  margin-bottom: 10px; /* Space below */
+  margin-bottom: 10px; /* Space below paragraph */
 }
 
 .insights-card .date-badge {
-  font-size: 0.7rem; /* Small text */
-  background: var(--accent); /* Accent background */
-  color: var(--bg); /* Background color for text */
-  padding: 4px 8px; /* Padding for badge */
-  border-radius: 4px; /* Rounded corners */
-  display: inline-block; /* Inline-block for spacing */
-  margin: 8px 0; /* Vertical margin */
+  font-size: 0.7rem; /* Small text for date badges */
+  background: var(--accent); /* Accent background for visibility */
+  color: var(--bg); /* Background color for text contrast */
+  padding: 4px 8px; /* Padding for badge styling */
+  border-radius: 4px; /* Rounded corners for modern look */
+  display: inline-block; /* Inline-block for proper spacing */
+  margin: 8px 0; /* Vertical margin for alignment */
 }
 
 .insights-card .read-more {
-  display: inline-block; /* Inline-block for link */
-  font-size: 0.85rem; /* Text size */
-  color: var(--accent); /* Accent color */
-  text-decoration: none; /* No underline */
-  margin-top: 10px; /* Space above */
+  display: inline-block; /* Inline-block for link styling */
+  font-size: 0.85rem; /* Text size for readability */
+  color: var(--accent); /* Accent color for link */
+  text-decoration: none; /* Remove underline */
+  margin-top: 10px; /* Space above link */
   transition: color 0.3s, transform 0.2s; /* Smooth hover effects */
 }
 
 .insights-card .read-more:hover {
-  color: #f1f5f9; /* Light text on hover */
-  transform: scale(1.05); /* Slight scale-up */
+  color: #f1f5f9; /* Light text color on hover for contrast */
+  transform: scale(1.05); /* Slight scale-up for interactivity */
 }
 
 .insights-card .read-more:focus {
-  outline: 2px solid var(--accent); /* Focus outline */
-  outline-offset: 2px; /* Space around outline */
+  outline: 2px solid var(--accent); /* Focus outline for accessibility */
+  outline-offset: 2px; /* Space around focus outline */
 }
 
-/* Articles section styling */
+/* Articles section with full blog posts */
 .articles {
   text-align: center; /* Center content */
-  background: var(--section-bg); /* Section background */
-  padding: 80px 20px; /* Vertical and horizontal padding */
-  display: none; /* Hidden by default */
-  opacity: 0; /* Start invisible */
+  background: var(--section-bg); /* Section background for consistency */
+  padding: 60px 20px; /* Reduced padding for sections */
+  display: none; /* Hidden by default until article is targeted */
+  opacity: 0; /* Start invisible for fade effect */
   transition: opacity 0.5s ease; /* Smooth fade transition */
 }
 
 .articles:has(.article-item:target) {
-  display: block; /* Show when article is targeted */
-  opacity: 1; /* Fade in */
+  display: block; /* Show when an article is targeted */
+  opacity: 1; /* Fade in for smooth transition */
 }
 
 .articles h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
+  font-size: 2rem; /* Heading size for consistency */
+  color: var(--accent); /* Accent color for emphasis */
   letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 30px; /* Space below */
+  margin-bottom: 30px; /* Space below heading */
   animation: slideIn 1s ease forwards; /* Slide-in animation */
 }
 
 .article-item {
-  max-width: 700px; /* Constrain width */
+  max-width: 700px; /* Constrain article width for readability */
   margin: 20px auto; /* Center with vertical spacing */
   background: var(--secondary); /* Card background */
   padding: 20px; /* Internal padding */
   border-radius: 8px; /* Rounded corners */
   border-left: 3px solid var(--accent); /* Accent border */
-  text-align: left; /* Left-align text */
+  text-align: left; /* Left-align text for readability */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
   transition: transform 0.3s, opacity 0.5s ease; /* Smooth hover and fade effects */
   display: none; /* Hidden by default */
   opacity: 0; /* Start invisible */
-  scroll-margin-top: 80px; /* Space for fixed nav */
+  scroll-margin-top: 80px; /* Space for fixed nav when scrolling */
 }
 
 .article-item:target {
@@ -729,30 +777,30 @@ section {
 }
 
 .article-item:hover {
-  transform: translateY(-3px); /* Lift on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
 }
 
 .article-item h3 {
-  font-size: 1.1rem; /* Heading size */
-  margin-bottom: 8px; /* Space below */
+  font-size: 1.1rem; /* Heading size for article titles */
+  margin-bottom: 8px; /* Space below heading */
 }
 
 .article-item p {
-  font-size: 0.85rem; /* Smaller text */
-  font-weight: 300; /* Light weight */
+  font-size: 0.85rem; /* Smaller text for article content */
+  font-weight: 300; /* Light weight for elegance */
   line-height: 1.6; /* Comfortable line height */
-  margin-bottom: 10px; /* Space below */
+  margin-bottom: 10px; /* Space below paragraph */
 }
 
 .article-item ul {
   font-size: 0.85rem; /* List text size */
   font-weight: 300; /* Light weight */
   line-height: 1.6; /* Comfortable line height */
-  margin: 10px 0 10px 20px; /* Spacing with indent */
+  margin: 10px 0 10px 20px; /* Spacing with indent for list */
 }
 
 .article-item .date-badge {
-  font-size: 0.7rem; /* Small text */
+  font-size: 0.7rem; /* Small text for date badges */
   background: var(--accent); /* Accent background */
   color: var(--bg); /* Background color for text */
   padding: 4px 8px; /* Padding for badge */
@@ -762,12 +810,12 @@ section {
 }
 
 .back-link {
-  display: inline-block; /* Inline-block for link */
+  display: inline-block; /* Inline-block for button styling */
   margin-top: 10px; /* Space above */
   padding: 8px 16px; /* Button padding */
   background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
   color: var(--bg); /* Text color */
-  text-decoration: none; /* No underline */
+  text-decoration: none; /* Remove underline */
   border-radius: 6px; /* Rounded corners */
   font-family: 'Orbitron', sans-serif; /* Futuristic font */
   font-size: 0.8rem; /* Small text */
@@ -776,68 +824,11 @@ section {
 }
 
 .back-link:hover {
-  transform: scale(1.05); /* Slight scale-up */
+  transform: scale(1.05); /* Slight scale-up on hover */
   box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow */
 }
 
-/* Testimonials section styling */
-.testimonials {
-  text-align: center; /* Center content */
-}
-
-.testimonials h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 20px; /* Space below */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
-}
-
-.testimonial-grid {
-  max-width: 700px; /* Constrain width */
-  margin: 0 auto; /* Center horizontally */
-  display: flex; /* Flex layout */
-  flex-direction: column; /* Stack cards vertically */
-  gap: 20px; /* Space between cards */
-}
-
-.testimonial-card {
-  background: var(--secondary); /* Card background */
-  padding: 20px; /* Internal padding */
-  border-radius: 8px; /* Rounded corners */
-  border-left: 3px solid var(--accent); /* Accent border */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s; /* Smooth hover effect */
-}
-
-.testimonial-card:nth-child(odd) {
-  transform: translateX(20px); /* Slight offset for visual interest */
-}
-
-.testimonial-card:nth-child(even) {
-  transform: translateX(-20px); /* Opposite offset */
-}
-
-.testimonial-card:hover {
-  transform: translateY(-3px) translateX(0); /* Lift and reset offset on hover */
-}
-
-.testimonial-card p {
-  font-size: 0.85rem; /* Smaller text */
-  font-weight: 300; /* Light weight */
-  line-height: 1.6; /* Comfortable line height */
-  margin-bottom: 10px; /* Space below */
-}
-
-.testimonial-card cite {
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-size: 0.8rem; /* Small text */
-  font-weight: 400; /* Normal weight */
-  color: var(--accent); /* Accent color */
-  font-style: normal; /* No italic */
-}
-
-/* Contact section styling */
+/* Contact section with form styling */
 .contact {
   text-align: center; /* Center content */
 }
@@ -846,54 +837,54 @@ section {
   font-size: 2rem; /* Heading size */
   color: var(--accent); /* Accent color */
   letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 30px; /* Space below */
+  margin-bottom: 30px; /* Space below heading */
   animation: slideIn 1s ease forwards; /* Slide-in animation */
 }
 
 .contact form {
-  max-width: 400px; /* Constrain form width */
+  max-width: 400px; /* Constrain form width for readability */
   margin: 0 auto; /* Center horizontally */
 }
 
 .form-group {
-  position: relative; /* For label positioning */
-  margin-bottom: 18px; /* Space between inputs */
+  position: relative; /* Position for floating label effect */
+  margin-bottom: 18px; /* Space between form inputs */
 }
 
 .contact input,
 .contact textarea {
-  width: 100%; /* Full width */
-  padding: 8px 0 4px; /* Padding for input */
-  background: transparent; /* No background */
-  border: none; /* No border */
-  border-bottom: 1px solid var(--primary); /* Bottom border */
-  color: var(--text); /* Text color */
-  font-size: 0.8rem; /* Small text */
-  font-weight: 300; /* Light weight */
+  width: 100%; /* Full width for inputs */
+  padding: 8px 0 4px; /* Padding for input fields */
+  background: transparent; /* Transparent background */
+  border: none; /* Remove default border */
+  border-bottom: 1px solid var(--primary); /* Bottom border for input */
+  color: var(--text); /* Theme text color */
+  font-size: 0.8rem; /* Small text for inputs */
+  font-weight: 300; /* Light weight for elegance */
   transition: border-color 0.3s, box-shadow 0.3s; /* Smooth focus effects */
 }
 
 .contact textarea {
-  resize: vertical; /* Allow vertical resize only */
-  min-height: 70px; /* Minimum height */
+  resize: vertical; /* Allow vertical resizing only */
+  min-height: 70px; /* Minimum textarea height */
 }
 
 .contact input:focus,
 .contact textarea:focus {
   border-color: var(--accent); /* Accent border on focus */
-  box-shadow: 0 1px 6px rgba(212, 163, 115, 0.4); /* Subtle shadow */
+  box-shadow: 0 1px 6px rgba(212, 163, 115, 0.4); /* Subtle shadow on focus */
   outline: none; /* Remove default outline */
 }
 
 .contact label {
-  position: absolute; /* Position over input */
+  position: absolute; /* Position label over input */
   top: 8px; /* Initial position */
   left: 0; /* Align left */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
-  font-size: 0.8rem; /* Small text */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for labels */
+  font-size: 0.8rem; /* Small text for labels */
   font-weight: 400; /* Normal weight */
-  color: var(--text); /* Text color */
-  pointer-events: none; /* Ignore pointer events */
+  color: var(--text); /* Theme text color */
+  pointer-events: none; /* Ignore pointer events for labels */
   transition: all 0.3s ease; /* Smooth transition for label movement */
 }
 
@@ -901,102 +892,113 @@ section {
 .contact input:not(:placeholder-shown) + label,
 .contact textarea:focus + label,
 .contact textarea:not(:placeholder-shown) + label {
-  top: -14px; /* Move label up */
-  font-size: 0.65rem; /* Smaller text */
-  color: var(--accent); /* Accent color */
+  top: -14px; /* Move label up on focus or input */
+  font-size: 0.65rem; /* Smaller text for floating label */
+  color: var(--accent); /* Accent color for active state */
 }
 
 .contact button {
-  width: 100%; /* Full width */
+  width: 100%; /* Full width for submit button */
   padding: 8px; /* Button padding */
   background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
-  border: none; /* No border */
-  color: var(--bg); /* Text color */
+  border: none; /* Remove default border */
+  color: var(--bg); /* Background color for text */
   border-radius: 6px; /* Rounded corners */
   font-family: 'Orbitron', sans-serif; /* Futuristic font */
   font-size: 0.85rem; /* Text size */
-  font-weight: 500; /* Slightly bold */
+  font-weight: 500; /* Slightly bold for emphasis */
   letter-spacing: 0.8px; /* Spacing for readability */
-  cursor: pointer; /* Pointer on hover */
+  cursor: pointer; /* Pointer cursor on hover */
   transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
 }
 
 .contact button:hover {
-  transform: scale(1.05); /* Slight scale-up */
+  transform: scale(1.05); /* Slight scale-up on hover */
   box-shadow: 0 4px 12px rgba(212, 163, 115, 0.4); /* Subtle shadow */
 }
 
-/* Call-to-action section styling */
+/* Date badge styling for education, experience, and articles */
+.date-badge {
+  font-size: 0.7rem; /* Small text for badges */
+  background: var(--accent); /* Accent background */
+  color: var(--bg); /* Background color for text */
+  padding: 4px 8px; /* Padding for badge */
+  border-radius: 4px; /* Rounded corners */
+  display: inline-block; /* Inline-block for proper spacing */
+  margin: 8px 0; /* Vertical margin */
+}
+
+/* Call-to-action section with gradient background */
 .cta {
   text-align: center; /* Center content */
-  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background */
+  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background for emphasis */
   padding: 60px 20px; /* Vertical and horizontal padding */
-  color: var(--bg); /* Text color */
+  color: var(--bg); /* Background color for text */
 }
 
 .cta h2 {
   font-size: 2rem; /* Heading size */
   letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 15px; /* Space below */
+  margin-bottom: 15px; /* Space below heading */
   animation: slideIn 1s ease forwards; /* Slide-in animation */
 }
 
 .cta p {
-  font-size: 1rem; /* Text size */
-  font-weight: 300; /* Light weight */
-  max-width: 600px; /* Constrain width */
+  font-size: 1rem; /* Text size for paragraph */
+  font-weight: 300; /* Light weight for elegance */
+  max-width: 600px; /* Constrain paragraph width */
   margin: 0 auto 20px; /* Center with bottom margin */
 }
 
 .cta-buttons {
-  display: flex; /* Horizontal layout */
+  display: flex; /* Horizontal layout for buttons */
   justify-content: center; /* Center buttons */
   gap: 15px; /* Space between buttons */
 }
 
 .cta .button {
-  padding: 10px 28px; /* Button padding */
+  Pachyderming: 10px 28px; /* Button padding */
   font-size: 0.85rem; /* Text size */
-  color: var(--accent); /* Accent text */
+  color: var(--accent); /* Accent text color */
   background: var(--bg); /* Background color */
   border: 1px solid var(--accent); /* Accent border */
   border-radius: 6px; /* Rounded corners */
   font-family: 'Orbitron', sans-serif; /* Futuristic font */
   font-weight: 400; /* Normal weight */
-  text-decoration: none; /* No underline */
+  text-decoration: none; /* Remove underline */
   transition: transform 0.2s, box-shadow 0.3s; /* Smooth hover effects */
 }
 
 .cta .button:hover {
-  transform: scale(1.05); /* Slight scale-up */
+  transform: scale(1.05); /* Slight scale-up on hover */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
-/* Footer styling */
+/* Footer styling with social links and copyright */
 footer {
   padding: 30px 20px; /* Vertical and horizontal padding */
-  background: var(--bg); /* Body background */
+  background: var(--bg); /* Theme background */
   text-align: center; /* Center content */
-  font-size: 0.8rem; /* Small text */
-  font-weight: 300; /* Light weight */
+  font-size: 0.8rem; /* Small text for footer */
+  font-weight: 300; /* Light weight for elegance */
 }
 
 .social-icons {
-  margin-bottom: 15px; /* Space below */
-  display: flex; /* Horizontal layout */
+  margin-bottom: 15px; /* Space below social icons */
+  display: flex; /* Horizontal layout for icons */
   justify-content: center; /* Center icons */
   gap: 15px; /* Space between icons */
 }
 
 .social-icons a {
-  font-size: 1.2rem; /* Icon size */
-  color: var(--text); /* Text color */
-  background: var(--secondary); /* Card background */
+  font-size: 1.2rem; /* Icon size for visibility */
+  color: var(--text); /* Theme text color */
+  background: var(--secondary); /* Card background for icons */
   border: 1px solid var(--accent); /* Accent border */
-  border-radius: 50%; /* Circular shape */
-  width: 36px; /* Icon size */
+  border-radius: 50%; /* Circular shape for icons */
+  width: 36px; /* Fixed icon size */
   height: 36px;
-  display: flex; /* Center content */
+  display: flex; /* Center icon content */
   align-items: center;
   justify-content: center;
   transition: background 0.3s, transform 0.2s; /* Smooth hover effects */
@@ -1004,10 +1006,10 @@ footer {
 
 .social-icons a:hover {
   background: var(--accent); /* Accent background on hover */
-  transform: scale(1.05); /* Slight scale-up */
+  transform: scale(1.05); /* Slight scale-up on hover */
 }
 
-/* Animation keyframes */
+/* Animation keyframes for visual effects */
 @keyframes fadeIn {
   from { opacity: 0; } /* Start invisible */
   to { opacity: 1; } /* Fade in */
@@ -1020,57 +1022,57 @@ footer {
 
 @keyframes pulse {
   0%, 100% { transform: scale(1); } /* Normal size */
-  50% { transform: scale(1.05); } /* Slightly larger */
+  50% { transform: scale(1.05); } /* Slightly larger for pulsing effect */
 }
 
-/* Responsive styles for mobile devices */
+/* Responsive styles for tablets and smaller screens */
 @media (max-width: 768px) {
   nav {
     flex-direction: column; /* Stack nav items vertically */
-    align-items: flex-start; /* Align to left */
-    padding: 12px 20px; /* Reduced padding */
+    align-items: flex-start; /* Align to left for mobile */
+    padding: 12px 20px; /* Reduced padding for smaller screens */
   }
 
   .nav-toggle-label {
-    display: block; /* Show hamburger icon */
-    position: absolute; /* Position in top-right */
+    display: block; /* Show hamburger icon for mobile */
+    position: absolute; /* Position in top-right corner */
     top: 15px;
     right: 20px;
   }
 
   .nav-links {
-    display: none; /* Hide links by default */
+    display: none; /* Hide links by default on mobile */
     flex-direction: column; /* Stack links vertically */
-    width: 100%; /* Full width */
+    width: 100%; /* Full width for links */
     margin-top: 60px; /* Space below logo */
-    gap: 12px; /* Space between links */
+    gap: 12px; /* Reduced space between links */
   }
 
   .theme-controls-wrapper {
     display: none; /* Hide theme controls by default */
-    width: 100%; /* Full width */
+    width: 100%; /* Full width for controls */
     justify-content: center; /* Center controls */
   }
 
   #nav-toggle:checked ~ .nav-links,
   #nav-toggle:checked ~ .theme-controls-wrapper {
-    display: flex; /* Show when nav toggle is checked */
+    display: flex; /* Show links and controls when nav toggle is checked */
   }
 
   .theme-controls {
     flex-direction: column; /* Stack controls vertically */
     align-items: center; /* Center horizontally */
-    gap: 10px; /* Space between controls */
-    margin-top: 10px; /* Space above */
+    gap: 10px; /* Reduced space between controls */
+    margin-top: 10px; /* Space above controls */
   }
 
   .toggle-theme {
-    width: 100%; /* Full width buttons */
-    padding: 6px 14px; /* Button padding */
+    width: 100%; /* Full width for buttons */
+    padding: 6px 14px; /* Consistent button padding */
   }
 
   .circle {
-    width: 32px; /* Smaller logo circle */
+    width: 32px; /* Smaller logo circle for mobile */
     height: 32px;
     font-size: 0.9rem; /* Smaller text */
   }
@@ -1080,32 +1082,32 @@ footer {
   }
 
   section {
-    padding: 60px 15px; /* Reduced padding */
-    max-width: 90%; /* Responsive width */
+    padding: 50px 15px; /* Reduced padding for smaller screens */
+    max-width: 90%; /* Responsive width for sections */
     margin: 0 auto; /* Center sections */
   }
 
   .hero h2 {
-    font-size: 1.5rem; /* Smaller heading */
+    font-size: 1.5rem; /* Smaller heading for mobile */
   }
 
   .hero p {
-    font-size: 0.85rem; /* Smaller text */
-    padding: 0 15px; /* Horizontal padding */
+    font-size: 0.85rem; /* Smaller subtitle text */
+    padding: 0 15px; /* Horizontal padding for readability */
   }
 
   .hero .button {
-    padding: 8px 20px; /* Smaller button */
-    font-size: 0.8rem; /* Smaller text */
+    padding: 8px 20px; /* Smaller button size */
+    font-size: 0.8rem; /* Smaller button text */
   }
 
-  .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .testimonials h2, .experience h2, .contact h2, .cta h2, .articles h2, .insights-updates h2 {
-    font-size: 1.6rem; /* Smaller headings */
-    text-align: center; /* Center text */
+  .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .experience h2, .contact h2, .cta h2, .articles h2, .insights-updates h2 {
+    font-size: 1.6rem; /* Smaller headings for consistency */
+    text-align: center; /* Ensure centered text */
   }
 
-  .about p, .education-card p, .project-item p, .testimonial-card p, .experience-card p, .article-item p, .insights-card p {
-    font-size: 0.85rem; /* Smaller text */
+  .about p, .education-card p, .project-item p, .experience-card p, .article-item p, .insights-card p {
+    font-size: 0.85rem; /* Smaller text for mobile readability */
   }
 
   .about p {
@@ -1115,41 +1117,41 @@ footer {
   }
 
   .skill-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
-    gap: 10px; /* Reduced gap */
+    grid-template-columns: repeat(2, 1fr); /* Two columns for side-by-side layout */
+    gap: 10px; /* Reduced gap between cards */
     padding: 10px; /* Reduced padding */
   }
 
   .skill-card {
-    padding: 15px; /* Reduced padding */
-    min-height: 80px; /* Smaller height */
+    padding: 15px; /* Reduced padding for smaller cards */
+    min-height: 80px; /* Smaller card height */
     font-size: 0.8rem; /* Smaller text */
   }
 
   .skill-card:nth-child(2) {
-    background-image: url('../images/django.png');
-    background-color: var(--secondary);
-    background-size: contain;
+    background-image: url('../images/django.png'); /* Fallback image for Django */
+    background-color: var(--secondary); /* Consistent background */
+    background-size: contain; /* Ensure image scales properly */
   }
 
   .skill-card:nth-child(2)::before {
-    background: none; /* No overlay for Django */
+    background: none; /* Remove overlay for Django */
   }
 
   .certification-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns for certifications */
   }
 
   .certification-card {
-    font-size: 0.8rem; /* Smaller text */
+    font-size: 0.8rem; /* Smaller text for certifications */
   }
 
   .project-item h3, .education-card h3, .experience-card h3, .article-item h3, .insights-card h3 {
-    font-size: 1rem; /* Smaller headings */
+    font-size: 1rem; /* Smaller headings for mobile */
   }
 
   .project-image {
-    height: 120px; /* Smaller image height */
+    height: 120px; /* Smaller image height for mobile */
   }
 
   .contact form {
@@ -1162,15 +1164,11 @@ footer {
 
   .cta-buttons {
     flex-direction: column; /* Stack buttons vertically */
-    gap: 10px; /* Space between buttons */
-  }
-
-  .testimonial-card:nth-child(odd), .testimonial-card:nth-child(even) {
-    transform: translateX(0); /* Remove offset for mobile */
+    gap: 10px; /* Reduced space between buttons */
   }
 
   .experience-card .date-badge, .article-item .date-badge, .insights-card .date-badge {
-    margin: 10px 0 5px; /* Adjusted margins */
+    margin: 10px 0 5px; /* Adjusted margins for badges */
   }
 
   .article-item ul {
@@ -1182,15 +1180,15 @@ footer {
   }
 
   .insights-card {
-    padding: 20px; /* Consistent padding */
+    padding: 20px; /* Consistent padding for cards */
   }
 
   .insights-card h3 {
-    font-size: 1rem; /* Smaller heading */
+    font-size: 1rem; /* Smaller heading for mobile */
   }
 
   .insights-card p {
-    font-size: 0.8rem; /* Smaller text */
+    font-size: 0.8rem; /* Smaller text for content */
   }
 
   .insights-card .date-badge {
@@ -1200,16 +1198,37 @@ footer {
   .insights-card .read-more {
     font-size: 0.8rem; /* Smaller link text */
   }
+
+  .projects {
+    padding: 50px 15px; /* Reduced padding for sections */
+  }
+
+  .skills {
+    padding: 50px 15px; /* Reduced padding for sections */
+  }
+
+  .certifications {
+    padding: 50px 15px; /* Reduced padding for sections */
+  }
+
+  .education {
+    padding: 50px 15px; /* Reduced padding for sections */
+  }
+
+  .articles {
+    padding: 50px 15px; /* Reduced padding for sections */
+  }
 }
 
+/* Responsive styles for small phones */
 @media (max-width: 480px) {
   nav {
-    padding: 10px 15px; /* Further reduced padding */
+    padding: 10px 15px; /* Further reduced padding for small screens */
   }
 
   .nav-links {
-    margin-top: 50px; /* Adjusted space */
-    gap: 10px; /* Smaller gap */
+    margin-top: 50px; /* Adjusted space below logo */
+    gap: 10px; /* Smaller gap between links */
   }
 
   .circle {
@@ -1223,78 +1242,78 @@ footer {
   }
 
   section {
-    padding: 50px 10px; /* Further reduced padding */
-    max-width: 95%; /* Responsive width */
+    padding: 40px 10px; /* Further reduced padding */
+    max-width: 95%; /* Responsive width for small screens */
   }
 
   .hero h2 {
-    font-size: 1.3rem; /* Smaller heading */
+    font-size: 1.3rem; /* Smaller heading for small screens */
   }
 
   .hero p {
-    font-size: 0.8rem; /* Smaller text */
+    font-size: 0.8rem; /* Smaller subtitle text */
   }
 
   .hero .button {
-    padding: 6px 16px; /* Smaller button */
-    font-size: 0.75rem; /* Smaller text */
+    padding: 6px 16px; /* Smaller button size */
+    font-size: 0.75rem; /* Smaller button text */
   }
 
-  .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .testimonials h2, .experience h2, .contact h2, .cta h2, .articles h2, .insights-updates h2 {
-    font-size: 1.4rem; /* Smaller headings */
+  .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .experience h2, .contact h2, .cta h2, .articles h2, .insights-updates h2 {
+    font-size: 1.4rem; /* Smaller headings for consistency */
   }
 
   .about p {
-    font-size: 0.9rem; /* Smaller text */
+    font-size: 0.9rem; /* Smaller text for readability */
     padding: 15px; /* Reduced padding */
   }
 
   .skill-grid {
-    grid-template-columns: 1fr; /* 1 column for small phones */
-    gap: 8px; /* Smaller gap */
+    grid-template-columns: repeat(2, 1fr); /* Two columns for side-by-side layout */
+    gap: 8px; /* Smaller gap between cards */
   }
 
   .skill-card {
-    min-height: 70px; /* Smaller height */
+    min-height: 70px; /* Smaller card height */
     font-size: 0.75rem; /* Smaller text */
   }
 
   .skill-card:nth-child(2) {
-    background-image: url('../images/django.png');
-    background-color: var(--secondary);
-    background-size: contain;
+    background-image: url('../images/django.png'); /* Fallback image for Django */
+    background-color: var(--secondary); /* Consistent background */
+    background-size: contain; /* Ensure image scales properly */
   }
 
   .skill-card:nth-child(2)::before {
-    background: none; /* No overlay for Django */
+    background: none; /* Remove overlay for Django */
   }
 
   .certification-grid {
-    grid-template-columns: 1fr; /* 1 column */
+    grid-template-columns: 1fr; /* Single column for certifications */
   }
 
   .certification-card {
-    font-size: 0.75rem; /* Smaller text */
+    font-size: 0.75rem; /* Smaller text for certifications */
   }
 
   .project-item h3, .education-card h3, .experience-card h3, .article-item h3, .insights-card h3 {
-    font-size: 0.9rem; /* Smaller headings */
+    font-size: 0.9rem; /* Smaller headings for small screens */
   }
 
   .project-image {
-    height: 100px; /* Smaller image height */
+    height: 100px; /* Smaller image height for small screens */
   }
 
   .contact form {
-    max-width: 90%; /* Responsive width */
+    max-width: 90%; /* Responsive width for form */
   }
 
   .contact input, .contact textarea {
-    font-size: 0.75rem; /* Smaller text */
+    font-size: 0.75rem; /* Smaller text for inputs */
   }
 
   .contact label {
-    font-size: 0.75rem; /* Smaller label */
+    font-size: 0.75rem; /* Smaller label text */
   }
 
   .contact button {
@@ -1302,13 +1321,33 @@ footer {
   }
 
   footer {
-    padding: 20px 10px; /* Reduced padding */
-    font-size: 0.75rem; /* Smaller text */
+    padding: 20px 10px; /* Reduced padding for footer */
+    font-size: 0.75rem; /* Smaller text for footer */
   }
 
   .social-icons a {
-    width: 32px; /* Smaller icons */
+    width: 32px; /* Smaller icon size */
     height: 32px;
     font-size: 1rem; /* Smaller icon size */
+  }
+
+  .projects {
+    padding: 40px 10px; /* Reduced padding for sections */
+  }
+
+  .skills {
+    padding: 40px 10px; /* Reduced padding for sections */
+  }
+
+  .certifications {
+    padding: 40px 10px; /* Reduced padding for sections */
+  }
+
+  .education {
+    padding: 40px 10px; /* Reduced padding for sections */
+  }
+
+  .articles {
+    padding: 40px 10px; /* Reduced padding for sections */
   }
 }
