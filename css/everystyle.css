@@ -399,111 +399,102 @@ section {
 
 /* Skills section with grid layout for tech stack */
 .skills {
-  text-align: center; /* Center content */
-  padding: 80px 20px; /* Consistent section padding */
+  text-align: center;
+  padding: 80px 20px;
 }
 
 .skills h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 20px; /* Space below heading */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+  animation: slideIn 1s ease forwards;
 }
 
 .skill-grid {
-  display: grid; /* Grid layout for skills */
-  grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
-  gap: 15px; /* Space between cards */
-  max-width: 700px; /* Constrain grid width */
-  margin: 0 auto; /* Center horizontally */
-  background: linear-gradient(135deg, var(--section-bg), rgba(212, 163, 115, 0.1)); /* Subtle gradient background */
-  padding: 15px; /* Internal padding */
-  border-radius: 8px; /* Rounded corners */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 700px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, var(--section-bg), rgba(212, 163, 115, 0.1));
+  padding: 15px;
+  border-radius: 8px;
 }
 
 .skill-card {
-  background: var(--secondary); /* Card background */
-  border: 1px solid rgba(212, 163, 115, 0.3); /* Subtle accent border */
-  padding: 20px; /* Internal padding */
-  border-radius: 6px; /* Rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  min-height: 100px; /* Consistent card height */
-  display: flex; /* Center content (no text, just for layout) */
+  background: var(--secondary);
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-height: 100px;
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-size: contain; /* Scale background images properly */
-  background-position: center; /* Center images */
+  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
-  position: relative; /* For overlay positioning */
-  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Optional overlay for subtle effect, excluded for Django */
 .skill-card::before {
-  content: ''; /* Empty content for overlay */
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(24, 24, 24, 0.1), rgba(212, 163, 115, 0.03)); /* Subtle overlay */
+  background: linear-gradient(rgba(24, 24, 24, 0.1), rgba(212, 163, 115, 0.03));
   z-index: 0;
 }
 
-
-/* Background images for skill cards */
-.skill-card:nth-child(1) {
-  background-image: url('../images/python.jpg'); /* Python image */
-}
-/* Django skill card */
-.skill-card:nth-child(2) {
-  background-image: url('../images/django.png'); /* Corrected name */
-  background-color: var(--secondary);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
-/* Completely remove the overlay to avoid image obstruction */
+/* Remove overlay from Django card */
 .skill-card:nth-child(2)::before {
   display: none !important;
 }
 
-
+/* Skill card background images */
+.skill-card:nth-child(1) {
+  background-image: url('../images/python.png'); /* Ensure this file exists */
+}
+.skill-card:nth-child(2) {
+  background-image: url('../images/django.png'); /* ✅ This solves your issue */
+}
 .skill-card:nth-child(3) {
-  background-image: url('../images/js.png'); /* JavaScript image */
+  background-image: url('../images/js.png');
 }
 .skill-card:nth-child(4) {
-  background-image: url('../images/mongo.avif'); /* MongoDB image */
+  background-image: url('../images/mongo.png');
 }
 .skill-card:nth-child(5) {
-  background-image: url('../images/react.png'); /* React image */
+  background-image: url('../images/react.png');
 }
 .skill-card:nth-child(6) {
-  background-image: url('../images/cicd.jpg'); /* CI/CD image */
+  background-image: url('../images/cicd.png');
 }
 .skill-card:nth-child(7) {
-  background-image: url('../images/aws.avif'); /* AWS image */
+  background-image: url('../images/aws.png');
 }
 .skill-card:nth-child(8) {
-  background-image: url('../images/docker.png'); /* Docker image */
+  background-image: url('../images/docker.png');
 }
 .skill-card:nth-child(9) {
-  background-image: url('../images/mysql.svg'); /* MySQL image */
+  background-image: url('../images/mysql.png');
 }
 
 .skill-card:hover {
-  transform: translateY(-4px); /* Slight lift on hover */
-  box-shadow: 0 6px 18px rgba(212, 163, 115, 0.2); /* Stronger shadow on hover */
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(212, 163, 115, 0.2);
 }
 
-/* Remove text content for skill cards */
+/* Hide any text if accidentally included inside the cards */
 .skill-card span {
-  display: none; /* Hide text content to show only images */
+  display: none;
 }
+
 
 /* Certifications section with responsive grid */
 .certifications {
