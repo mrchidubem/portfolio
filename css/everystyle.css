@@ -169,7 +169,7 @@ nav {
 
 /* Base styling for sections */
 section {
-  padding: 80px 20px; /* Consistent padding for sections */
+  padding: 60px 20px; /* Reduced padding for sections */
   background: var(--section-bg); /* Theme section background */
 }
 
@@ -317,6 +317,7 @@ section {
 /* Projects section with card-based project showcase */
 .projects {
   text-align: center; /* Center content */
+  padding: 60px 20px; /* Reduced padding for sections */
 }
 
 .projects h2 {
@@ -400,7 +401,7 @@ section {
 /* Skills section with grid layout for tech stack */
 .skills {
   text-align: center;
-  padding: 80px 20px;
+  padding: 60px 20px; /* Reduced padding for sections */
 }
 
 .skills h2 {
@@ -417,7 +418,7 @@ section {
   gap: 15px;
   max-width: 700px;
   margin: 0 auto;
-  background: linear-gradient(135deg, var(--section-bg), rgba(212, 163, 115, 0.1));
+  background: var(--section-bg); /* Unified with other sections */
   padding: 15px;
   border-radius: 8px;
 }
@@ -498,6 +499,7 @@ section {
 /* Certifications section with responsive grid */
 .certifications {
   text-align: center; /* Center content */
+  padding: 60px 20px; /* Reduced padding for sections */
 }
 
 .certifications h2 {
@@ -545,6 +547,7 @@ section {
 /* Education section with card-based layout */
 .education {
   text-align: center; /* Center content */
+  padding: 60px 20px; /* Reduced padding for sections */
 }
 
 .education h2 {
@@ -649,7 +652,7 @@ section {
 .insights-updates {
   text-align: center; /* Center content */
   background: var(--section-bg); /* Section background */
-  padding: 80px 20px; /* Consistent padding */
+  padding: 60px 20px; /* Reduced padding for sections */
 }
 
 .insights-updates:has(+ .articles .article-item:target) {
@@ -732,7 +735,7 @@ section {
 .articles {
   text-align: center; /* Center content */
   background: var(--section-bg); /* Section background for consistency */
-  padding: 80px 20px; /* Consistent padding */
+  padding: 60px 20px; /* Reduced padding for sections */
   display: none; /* Hidden by default until article is targeted */
   opacity: 0; /* Start invisible for fade effect */
   transition: opacity 0.5s ease; /* Smooth fade transition */
@@ -1077,7 +1080,7 @@ footer {
   }
 
   section {
-    padding: 60px 15px; /* Reduced padding for smaller screens */
+    padding: 50px 15px; /* Reduced padding for smaller screens */
     max-width: 90%; /* Responsive width for sections */
     margin: 0 auto; /* Center sections */
   }
@@ -1182,6 +1185,10 @@ footer {
     padding: 20px; /* Consistent padding for cards */
   }
 
+  .insights-card h2 {
+    padding: 50px 15px; /* Reduced padding for sections */
+  }
+
   .insights-card h3 {
     font-size: 1rem; /* Smaller heading for mobile */
   }
@@ -1196,6 +1203,26 @@ footer {
 
   .insights-card .read-more {
     font-size: 0.8rem; /* Smaller link text */
+  }
+
+  .projects {
+    padding: 50px 15px; /* Reduced padding for sections */
+  }
+
+  .skills {
+    padding: 50px 15px; /* Reduced padding for sections */
+  }
+
+  .certifications {
+    padding: 50px 15px; /* Reduced padding for sections */
+  }
+
+  .education {
+    padding: 50px 15px; /* Reduced padding for sections */
+  }
+
+  .articles {
+    padding: 50px 15px; /* Reduced padding for sections */
   }
 }
 
@@ -1221,7 +1248,7 @@ footer {
   }
 
   section {
-    padding: 50px 10px; /* Further reduced padding */
+    padding: 40px 10px; /* Further reduced padding */
     max-width: 95%; /* Responsive width for small screens */
   }
 
@@ -1308,5 +1335,25 @@ footer {
     width: 32px; /* Smaller icon size */
     height: 32px;
     font-size: 1rem; /* Smaller icon size */
+  }
+
+  .projects {
+    padding: 40px 10px; /* Reduced padding for sections */
+  }
+
+  .skills {
+    padding: 40px 10px; /* Reduced padding for sections */
+  }
+
+  .certifications {
+    padding: 40px 10px; /* Reduced padding for sections */
+  }
+
+  .education {
+    padding: 40px 10px; /* Reduced padding for sections */
+  }
+
+  .articles {
+    padding: 40px 10px; /* Reduced padding for sections */
   }
 }
