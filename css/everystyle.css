@@ -1270,12 +1270,12 @@ footer {
 
 /* Reduce bottom padding of the Projects section */
 .projects {
-  padding-bottom: 30px; /* Adjust this value to reduce the space (originally 60px) */
+  padding-bottom: 40px; /* Adjust this value to reduce the space (originally 60px) */
 }
 
 /* Reduce top padding of the Skills section */
 .skills {
-  padding-top: 30px; /* Adjust this value to reduce the space (originally 60px) */
+  padding-top: 40px; /* Adjust this value to reduce the space (originally 60px) */
 }
 
 @media (max-width: 768px) {
