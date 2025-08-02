@@ -371,7 +371,7 @@ section {
   z-index: 0;
 }
 
-/* Ensure Django card has no overlay to prevent image obstruction */
+Ensure Django card has no overlay to prevent image obstruction
 .skill-card:nth-child(2)::before {
   background: none; /* No overlay for Django card */
 }
