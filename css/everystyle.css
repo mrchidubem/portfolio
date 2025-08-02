@@ -268,251 +268,6 @@ section {
   transform: translateY(-3px); /* Slight lift on hover */
 }
 
-/* Education section with card-based layout */
-.education {
-  text-align: center; /* Center content */
-}
-
-.education h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 30px; /* Space below heading */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
-}
-
-.education-grid {
-  max-width: 700px; /* Constrain grid width */
-  margin: 0 auto; /* Center horizontally */
-  display: flex; /* Flex layout for cards */
-  flex-direction: column; /* Stack cards vertically */
-  gap: 20px; /* Space between cards */
-}
-
-.education-card {
-  background: var(--secondary); /* Card background */
-  padding: 20px; /* Internal padding */
-  border-radius: 8px; /* Rounded corners */
-  border-left: 3px solid var(--accent); /* Accent border */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  text-align: left; /* Left-align text for readability */
-  transition: transform 0.3s; /* Smooth hover effect */
-}
-
-.education-card:hover {
-  transform: translateY(-3px); /* Slight lift on hover */
-}
-
-.education-card h3 {
-  font-size: 1.1rem; /* Heading size */
-  margin-bottom: 8px; /* Space below heading */
-}
-
-.education-card p {
-  font-size: 0.85rem; /* Smaller text for details */
-  font-weight: 300; /* Light weight for elegance */
-  line-height: 1.6; /* Comfortable line height */
-}
-
-/* Skills section with grid layout for tech stack */
-/* Skills section with grid layout for tech stack */
-.skills {
-  text-align: center; /* Center content */
-  padding: 80px 20px; /* Consistent section padding */
-}
-
-.skills h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 20px; /* Space below heading */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
-}
-
-.skill-grid {
-  display: grid; /* Grid layout for skills */
-  grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
-  gap: 15px; /* Space between cards */
-  max-width: 700px; /* Constrain grid width */
-  margin: 0 auto; /* Center horizontally */
-  background: linear-gradient(135deg, var(--section-bg), rgba(212, 163, 115, 0.1)); /* Subtle gradient background */
-  padding: 15px; /* Internal padding */
-  border-radius: 8px; /* Rounded corners */
-}
-
-.skill-card {
-  background: var(--secondary); /* Card background */
-  border: 1px solid rgba(212, 163, 115, 0.3); /* Subtle accent border */
-  padding: 20px; /* Internal padding */
-  border-radius: 6px; /* Rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  min-height: 100px; /* Consistent card height */
-  display: flex; /* Center content (no text, just for layout) */
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-size: contain; /* Scale background images properly */
-  background-position: center; /* Center images */
-  background-repeat: no-repeat;
-  position: relative; /* For overlay positioning */
-  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
-  /* Text removed: No span or text content displayed, only images */
-}
-
-/* Optional overlay for subtle effect, excluded for Django */
-.skill-card::before {
-  content: ''; /* Empty content for overlay */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(24, 24, 24, 0.1), rgba(212, 163, 115, 0.03)); /* Subtle overlay */
-  z-index: 0;
-}
-
-Ensure Django card has no overlay to prevent image obstruction
-.skill-card:nth-child(2)::before {
-  background: none; /* No overlay for Django card */
-}
-
-/* Background images for skill cards */
-.skill-card:nth-child(1) {
-  background-image: url('../images/python.jpg'); /* Python image */
-}
-
-.skill-card:nth-child(2) {
-  background-image: url('../images/django.png'); /* Use PNG consistently across all devices */
-  background-color: var(--secondary); /* Fallback background */
-  background-size: contain; /* Ensure image scales properly */
-  background-position: center; /* Center image */
-  background-repeat: no-repeat;
-}
-
-.skill-card:nth-child(2)::before {
-  background: none; /* Prevent overlay from covering image */
-}
-
-.skill-card:nth-child(3) {
-  background-image: url('../images/js.png'); /* JavaScript image */
-}
-.skill-card:nth-child(4) {
-  background-image: url('../images/mongo.avif'); /* MongoDB image */
-}
-.skill-card:nth-child(5) {
-  background-image: url('../images/react.png'); /* React image */
-}
-.skill-card:nth-child(6) {
-  background-image: url('../images/cicd.jpg'); /* CI/CD image */
-}
-.skill-card:nth-child(7) {
-  background-image: url('../images/aws.avif'); /* AWS image */
-}
-.skill-card:nth-child(8) {
-  background-image: url('../images/docker.png'); /* Docker image */
-}
-.skill-card:nth-child(9) {
-  background-image: url('../images/mysql.svg'); /* MySQL image */
-}
-
-.skill-card:hover {
-  transform: translateY(-4px); /* Slight lift on hover */
-  box-shadow: 0 6px 18px rgba(212, 163, 115, 0.2); /* Stronger shadow on hover */
-}
-
-/* Remove text content for skill cards */
-.skill-card span {
-  display: none; /* Hide text content to show only images */
-}
-
-/* Responsive styles for tablets and smaller screens */
-@media (max-width: 768px) {
-  .skill-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
-    gap: 10px; /* Reduced gap between cards */
-    padding: 10px; /* Reduced padding */
-  }
-
-  .skill-card {
-    padding: 15px; /* Reduced padding for smaller cards */
-    min-height: 80px; /* Smaller card height */
-    background-size: contain; /* Ensure image scales properly */
-    background-position: center; /* Center image */
-  }
-
-
-
-  .skill-card:nth-child(2)::before {
-    background: none; /* No overlay for Django card */
-  }
-}
-
-/* Responsive styles for small phones */
-@media (max-width: 480px) {
-  .skill-grid {
-    grid-template-columns: 1fr; /* Single column for small phones */
-    gap: 8px; /* Smaller gap between cards */
-  }
-
-  .skill-card {
-    min-height: 70px; /* Smaller card height */
-    background-size: contain; /* Ensure image scales properly */
-    background-position: center; /* Center image */
-  }
-
-  
-  .skill-card:nth-child(2)::before {
-    background: none; /* No overlay for Django card */
-  }
-}
-
-/* Certifications section with responsive grid */
-.certifications {
-  text-align: center; /* Center content */
-}
-
-.certifications h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 30px; /* Space below heading */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
-}
-
-.certification-grid {
-  display: grid; /* Grid layout for certifications */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
-  gap: 12px; /* Space between cards */
-  max-width: 800px; /* Constrain grid width */
-  margin: 0 auto; /* Center horizontally */
-}
-
-.certification-card {
-  background: var(--secondary); /* Card background */
-  border-left: 3px solid var(--accent); /* Accent border */
-  padding: 12px; /* Internal padding */
-  border-radius: 6px; /* Rounded corners */
-  font-size: 0.85rem; /* Text size */
-  font-weight: 400; /* Normal weight */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s, background 0.3s; /* Smooth hover effects */
-}
-
-.certification-card:hover {
-  transform: translateY(-4px); /* Slight lift on hover */
-  background: var(--accent); /* Accent background on hover */
-}
-
-.certification-card h3 {
-  font-size: 1rem; /* Heading size */
-  margin-bottom: 8px; /* Space below heading */
-}
-
-.certification-card p {
-  font-size: 0.8rem; /* Smaller text for details */
-  font-weight: 300; /* Light weight */
-}
-
 /* Experience section with card-based layout */
 .experience {
   text-align: center; /* Center content */
@@ -557,17 +312,6 @@ Ensure Django card has no overlay to prevent image obstruction
   font-size: 0.85rem; /* Smaller text for details */
   font-weight: 300; /* Light weight */
   line-height: 1.6; /* Comfortable line height */
-}
-
-/* Date badge styling for education, experience, and articles */
-.date-badge {
-  font-size: 0.7rem; /* Small text for badges */
-  background: var(--accent); /* Accent background */
-  color: var(--bg); /* Background color for text */
-  padding: 4px 8px; /* Padding for badge */
-  border-radius: 4px; /* Rounded corners */
-  display: inline-block; /* Inline-block for proper spacing */
-  margin: 8px 0; /* Vertical margin */
 }
 
 /* Projects section with card-based project showcase */
@@ -653,6 +397,265 @@ Ensure Django card has no overlay to prevent image obstruction
   box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow */
 }
 
+/* Skills section with grid layout for tech stack */
+.skills {
+  text-align: center; /* Center content */
+  padding: 80px 20px; /* Consistent section padding */
+}
+
+.skills h2 {
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 20px; /* Space below heading */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.skill-grid {
+  display: grid; /* Grid layout for skills */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+  gap: 15px; /* Space between cards */
+  max-width: 700px; /* Constrain grid width */
+  margin: 0 auto; /* Center horizontally */
+  background: linear-gradient(135deg, var(--section-bg), rgba(212, 163, 115, 0.1)); /* Subtle gradient background */
+  padding: 15px; /* Internal padding */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.skill-card {
+  background: var(--secondary); /* Card background */
+  border: 1px solid rgba(212, 163, 115, 0.3); /* Subtle accent border */
+  padding: 20px; /* Internal padding */
+  border-radius: 6px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  min-height: 100px; /* Consistent card height */
+  display: flex; /* Center content (no text, just for layout) */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: contain; /* Scale background images properly */
+  background-position: center; /* Center images */
+  background-repeat: no-repeat;
+  position: relative; /* For overlay positioning */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
+}
+
+/* Optional overlay for subtle effect, excluded for Django */
+.skill-card::before {
+  content: ''; /* Empty content for overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(24, 24, 24, 0.1), rgba(212, 163, 115, 0.03)); /* Subtle overlay */
+  z-index: 0;
+}
+
+/* Ensure Django card has no overlay to prevent image obstruction */
+.skill-card:nth-child(2)::before {
+  background: none; /* No overlay for Django card */
+}
+
+/* Background images for skill cards */
+.skill-card:nth-child(1) {
+  background-image: url('../images/python.jpg'); /* Python image */
+}
+
+.skill-card:nth-child(2) {
+  background-image: url('../images/jango.jpg'); /* Use PNG consistently across all devices */
+  background-color: var(--secondary); /* Fallback background */
+  background-size: contain; /* Ensure image scales properly */
+  background-position: center; /* Center image */
+  background-repeat: no-repeat;
+}
+
+.skill-card:nth-child(2)::before {
+  background: none; /* Prevent overlay from covering image */
+}
+
+.skill-card:nth-child(3) {
+  background-image: url('../images/js.png'); /* JavaScript image */
+}
+.skill-card:nth-child(4) {
+  background-image: url('../images/mongo.avif'); /* MongoDB image */
+}
+.skill-card:nth-child(5) {
+  background-image: url('../images/react.png'); /* React image */
+}
+.skill-card:nth-child(6) {
+  background-image: url('../images/cicd.jpg'); /* CI/CD image */
+}
+.skill-card:nth-child(7) {
+  background-image: url('../images/aws.avif'); /* AWS image */
+}
+.skill-card:nth-child(8) {
+  background-image: url('../images/docker.png'); /* Docker image */
+}
+.skill-card:nth-child(9) {
+  background-image: url('../images/mysql.svg'); /* MySQL image */
+}
+
+.skill-card:hover {
+  transform: translateY(-4px); /* Slight lift on hover */
+  box-shadow: 0 6px 18px rgba(212, 163, 115, 0.2); /* Stronger shadow on hover */
+}
+
+/* Remove text content for skill cards */
+.skill-card span {
+  display: none; /* Hide text content to show only images */
+}
+
+/* Certifications section with responsive grid */
+.certifications {
+  text-align: center; /* Center content */
+}
+
+.certifications h2 {
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 30px; /* Space below heading */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.certification-grid {
+  display: grid; /* Grid layout for certifications */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+  gap: 12px; /* Space between cards */
+  max-width: 800px; /* Constrain grid width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.certification-card {
+  background: var(--secondary); /* Card background */
+  border-left: 3px solid var(--accent); /* Accent border */
+  padding: 12px; /* Internal padding */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 0.85rem; /* Text size */
+  font-weight: 400; /* Normal weight */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s, background 0.3s; /* Smooth hover effects */
+}
+
+.certification-card:hover {
+  transform: translateY(-4px); /* Slight lift on hover */
+  background: var(--accent); /* Accent background on hover */
+}
+
+.certification-card h3 {
+  font-size: 1rem; /* Heading size */
+  margin-bottom: 8px; /* Space below heading */
+}
+
+.certification-card p {
+  font-size: 0.8rem; /* Smaller text for details */
+  font-weight: 300; /* Light weight */
+}
+
+/* Education section with card-based layout */
+.education {
+  text-align: center; /* Center content */
+}
+
+.education h2 {
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 30px; /* Space below heading */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.education-grid {
+  max-width: 700px; /* Constrain grid width */
+  margin: 0 auto; /* Center horizontally */
+  display: flex; /* Flex layout for cards */
+  flex-direction: column; /* Stack cards vertically */
+  gap: 20px; /* Space between cards */
+}
+
+.education-card {
+  background: var(--secondary); /* Card background */
+  padding: 20px; /* Internal padding */
+  border-radius: 8px; /* Rounded corners */
+  border-left: 3px solid var(--accent); /* Accent border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  text-align: left; /* Left-align text for readability */
+  transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.education-card:hover {
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.education-card h3 {
+  font-size: 1.1rem; /* Heading size */
+  margin-bottom: 8px; /* Space below heading */
+}
+
+.education-card p {
+  font-size: 0.85rem; /* Smaller text for details */
+  font-weight: 300; /* Light weight for elegance */
+  line-height: 1.6; /* Comfortable line height */
+}
+
+/* Testimonials section with client feedback */
+.testimonials {
+  text-align: center; /* Center content */
+}
+
+.testimonials h2 {
+  font-size: 2rem; /* Heading size */
+  color: var(--accent); /* Accent color */
+  letter-spacing: 1.2px; /* Spacing for readability */
+  margin-bottom: 20px; /* Space below heading */
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+}
+
+.testimonial-grid {
+  max-width: 700px; /* Constrain grid width */
+  margin: 0 auto; /* Center horizontally */
+  display: flex; /* Flex layout for cards */
+  flex-direction: column; /* Stack cards vertically */
+  gap: 20px; /* Space between cards */
+}
+
+.testimonial-card {
+  background: var(--secondary); /* Card background */
+  padding: 20px; /* Internal padding */
+  border-radius: 8px; /* Rounded corners */
+  border-left: 3px solid var(--accent); /* Accent border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.testimonial-card:nth-child(odd) {
+  transform: translateX(20px); /* Slight offset for visual interest */
+}
+
+.testimonial-card:nth-child(even) {
+  transform: translateX(-20px); /* Opposite offset for balance */
+}
+
+.testimonial-card:hover {
+  transform: translateY(-3px) translateX(0); /* Lift and reset offset on hover */
+}
+
+.testimonial-card p {
+  font-size: 0.85rem; /* Smaller text for testimonials */
+  font-weight: 300; /* Light weight for elegance */
+  line-height: 1.6; /* Comfortable line height */
+  margin-bottom: 10px; /* Space below paragraph */
+}
+
+.testimonial-card cite {
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for attribution */
+  font-size: 0.8rem; /* Small text for cites */
+  font-weight: 400; /* Normal weight */
+  color: var(--accent); /* Accent color for emphasis */
+  font-style: normal; /* Remove default italic style */
+}
+
 /* Insights & Updates section with blog previews */
 .insights-updates {
   text-align: center; /* Center content */
@@ -665,7 +668,6 @@ Ensure Django card has no overlay to prevent image obstruction
   opacity: 0; /* Fade out for smooth transition */
 }
 
-/* Insights & Updates section with blog previews (continued) */
 .insights-updates h2 {
   font-size: 2rem; /* Heading size for consistency */
   color: var(--accent); /* Accent color for visual emphasis */
@@ -704,7 +706,7 @@ Ensure Django card has no overlay to prevent image obstruction
 .insights-card p {
   font-size: 0.85rem; /* Smaller text for card content */
   font-weight: 300; /* Light weight for elegance */
-  line-height: 1.6; /* Comfortable line height for readability */
+  line-height: 1.6; /* Comfortable line height */
   margin-bottom: 10px; /* Space below paragraph */
 }
 
@@ -832,63 +834,6 @@ Ensure Django card has no overlay to prevent image obstruction
   box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle shadow */
 }
 
-/* Testimonials section with client feedback */
-.testimonials {
-  text-align: center; /* Center content */
-}
-
-.testimonials h2 {
-  font-size: 2rem; /* Heading size */
-  color: var(--accent); /* Accent color */
-  letter-spacing: 1.2px; /* Spacing for readability */
-  margin-bottom: 20px; /* Space below heading */
-  animation: slideIn 1s ease forwards; /* Slide-in animation */
-}
-
-.testimonial-grid {
-  max-width: 700px; /* Constrain grid width */
-  margin: 0 auto; /* Center horizontally */
-  display: flex; /* Flex layout for cards */
-  flex-direction: column; /* Stack cards vertically */
-  gap: 20px; /* Space between cards */
-}
-
-.testimonial-card {
-  background: var(--secondary); /* Card background */
-  padding: 20px; /* Internal padding */
-  border-radius: 8px; /* Rounded corners */
-  border-left: 3px solid var(--accent); /* Accent border */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s; /* Smooth hover effect */
-}
-
-.testimonial-card:nth-child(odd) {
-  transform: translateX(20px); /* Slight offset for visual interest */
-}
-
-.testimonial-card:nth-child(even) {
-  transform: translateX(-20px); /* Opposite offset for balance */
-}
-
-.testimonial-card:hover {
-  transform: translateY(-3px) translateX(0); /* Lift and reset offset on hover */
-}
-
-.testimonial-card p {
-  font-size: 0.85rem; /* Smaller text for testimonials */
-  font-weight: 300; /* Light weight for elegance */
-  line-height: 1.6; /* Comfortable line height */
-  margin-bottom: 10px; /* Space below paragraph */
-}
-
-.testimonial-card cite {
-  font-family: 'Orbitron', sans-serif; /* Futuristic font for attribution */
-  font-size: 0.8rem; /* Small text for cites */
-  font-weight: 400; /* Normal weight */
-  color: var(--accent); /* Accent color for emphasis */
-  font-style: normal; /* Remove default italic style */
-}
-
 /* Contact section with form styling */
 .contact {
   text-align: center; /* Center content */
@@ -976,6 +921,17 @@ Ensure Django card has no overlay to prevent image obstruction
 .contact button:hover {
   transform: scale(1.05); /* Slight scale-up on hover */
   box-shadow: 0 4px 12px rgba(212, 163, 115, 0.4); /* Subtle shadow */
+}
+
+/* Date badge styling for education, experience, and articles */
+.date-badge {
+  font-size: 0.7rem; /* Small text for badges */
+  background: var(--accent); /* Accent background */
+  color: var(--bg); /* Background color for text */
+  padding: 4px 8px; /* Padding for badge */
+  border-radius: 4px; /* Rounded corners */
+  display: inline-block; /* Inline-block for proper spacing */
+  margin: 8px 0; /* Vertical margin */
 }
 
 /* Call-to-action section with gradient background */
