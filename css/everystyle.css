@@ -181,7 +181,7 @@ section {
   justify-content: center; /* Center vertically */
   align-items: center; /* Center horizontally */
   text-align: center; /* Center text */
-  background: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('../images/9.avif') no-repeat center/cover; /* Gradient overlay with background image */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('../images/8.avif') no-repeat center/cover; /* Gradient overlay with background image */
   position: relative; /* For overlay positioning */
 }
 
@@ -378,7 +378,7 @@ Ensure Django card has no overlay to prevent image obstruction
 
 /* Background images for skill cards */
 .skill-card:nth-child(1) {
-  background-image: url('../images/python_18894.webp'); /* Python image */
+  background-image: url('../images/python.jpg'); /* Python image */
 }
 
 .skill-card:nth-child(2) {
@@ -406,7 +406,7 @@ Ensure Django card has no overlay to prevent image obstruction
   background-image: url('../images/cicd.jpg'); /* CI/CD image */
 }
 .skill-card:nth-child(7) {
-  background-image: url('../images/aws.svg'); /* AWS image */
+  background-image: url('../images/aws.avif'); /* AWS image */
 }
 .skill-card:nth-child(8) {
   background-image: url('../images/docker.png'); /* Docker image */
