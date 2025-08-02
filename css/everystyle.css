@@ -1267,3 +1267,31 @@ footer {
   /* Smaller social icons for small phones. */
   .social-icons a { width: 32px; height: 32px; font-size: 1rem; }
 }
+
+/* Reduce bottom padding of the Projects section */
+.projects {
+  padding-bottom: 30px; /* Adjust this value to reduce the space (originally 60px) */
+}
+
+/* Reduce top padding of the Skills section */
+.skills {
+  padding-top: 30px; /* Adjust this value to reduce the space (originally 60px) */
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding-bottom: 20px; /* Even less space for tablets */
+  }
+  .skills {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding-bottom: 15px; /* Minimal space for small phones */
+  }
+  .skills {
+    padding-top: 15px;
+  }
+}
