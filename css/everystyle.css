@@ -463,7 +463,7 @@ section {
 }
 
 .skill-card:nth-child(2) {
-  background-image: url('../images/jango.jpg'); /* Use PNG consistently across all devices */
+  background-image: url('../images/jango.png'); /* Use PNG consistently across all devices */
   background-color: var(--secondary); /* Fallback background */
   background-size: contain; /* Ensure image scales properly */
   background-position: center; /* Center image */
