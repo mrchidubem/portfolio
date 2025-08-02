@@ -314,6 +314,7 @@ section {
 }
 
 /* Skills section styling */
+/* Skills section styling */
 .skills {
   text-align: center; /* Center content for consistent layout */
   padding: 80px 20px; /* Match padding of other sections */
@@ -358,6 +359,7 @@ section {
   text-align: center;
   background-size: cover; /* Ensure background image covers card */
   background-position: center; /* Center background image */
+  background-repeat: no-repeat; /* Prevent tiling */
   position: relative; /* For overlay and text positioning */
   transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions */
 }
@@ -370,39 +372,47 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(24, 24, 24, 0.1), rgba(212, 163, 115, 0.03)); /* Very light overlay for maximum image visibility */
+  background: linear-gradient(rgba(24, 24, 24, 0.1), rgba(212, 163, 115, 0.03)); /* Very light overlay */
   z-index: 0; /* Behind text */
+}
+
+/* Remove overlay for Django card to ensure image visibility */
+.skill-card:nth-child(2)::before {
+  background: none; /* No overlay for Django */
 }
 
 /* Specific background images for each skill */
 .skill-card:nth-child(1) { /* Python */
-  background-image: url('/images/python_18894.webp'); /* Absolute path */
+  background-image: url('../images/python_18894.webp');
 }
 .skill-card:nth-child(2) { /* Django */
-  background-image: url('/images/django.png'); /* Absolute path */
+  background-image: url('../images/django.png');
+  background-color: var(--secondary); /* Fallback if image fails */
 }
 .skill-card:nth-child(3) { /* JavaScript */
-  background-image: url('/images/js.png'); /* Absolute path */
+  background-image: url('../images/js.png');
 }
 .skill-card:nth-child(4) { /* MongoDB */
-  background-image: url('/images/mongo.avif'); /* Absolute path */
+  background-image: url('../images/mongo.avif');
 }
 .skill-card:nth-child(5) { /* React */
-  background-image: url('/images/react.png'); /* Absolute path */
+  background-image: url('../images/react.png');
 }
 .skill-card:nth-child(6) { /* CI/CD */
-  background-image: url('/images/cicd.jpg'); /* Absolute path */
+  background-image: url('../images/cicd.jpg');
 }
 .skill-card:nth-child(7) { /* AWS */
-  background-image: url('/images/aws.svg'); /* Absolute path */
+  background-image: url('../images/aws.svg');
 }
 .skill-card:nth-child(8) { /* Docker */
-  background-image: url('/images/docker.png'); /* Absolute path */
+  background-image: url('../images/docker.png');
 }
 .skill-card:nth-child(9) { /* MySQL */
-  background-image: url('/images/mysql.svg'); /* Absolute path */
+  background-image: url('../images/mysql.svg');
 }
-
+.skill-card:nth-child(10) { /* Git */
+  background-image: url('../images/git.jpg');
+}
 
 /* Hover effect for skill card */
 .skill-card:hover {
@@ -417,6 +427,19 @@ section {
   text-transform: uppercase; /* Uppercase for bold, modern look */
   letter-spacing: 0.8px; /* Subtle spacing for readability */
 }
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on mobile */
+    gap: 15px; /* Slightly smaller gap for mobile */
+    padding: 15px; /* Slightly reduced padding for mobile */
+  }
+
+  .skill-card {
+    padding: 20px; /* Slightly reduced padding for mobile */
+    min-height: 120px; /* Slightly shorter but still large for mobile */
+    font-size: 1rem; /* Maintain readable text size
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
