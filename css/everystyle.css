@@ -385,7 +385,7 @@ section {
   background-image: url('/images/js.png'); /* Absolute path */
 }
 .skill-card:nth-child(4) { /* MongoDB */
-  background-image: url('/images/mongodb.svg'); /* Absolute path */
+  background-image: url('/images/mongo.avif'); /* Absolute path */
 }
 .skill-card:nth-child(5) { /* React */
   background-image: url('/images/react.png'); /* Absolute path */
@@ -402,9 +402,7 @@ section {
 .skill-card:nth-child(9) { /* MySQL */
   background-image: url('/images/mysql.svg'); /* Absolute path */
 }
-.skill-card:nth-child(10) { /* Git */
-  background-image: url('/images/git.jpg'); /* Absolute path */
-}
+
 
 /* Hover effect for skill card */
 .skill-card:hover {
