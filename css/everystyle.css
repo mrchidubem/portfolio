@@ -315,6 +315,7 @@ section {
 }
 
 /* Skills section with grid layout for tech stack */
+/* Skills section with grid layout for tech stack */
 .skills {
   text-align: center; /* Center content */
   padding: 80px 20px; /* Consistent section padding */
@@ -344,24 +345,23 @@ section {
   border: 1px solid rgba(212, 163, 115, 0.3); /* Subtle accent border */
   padding: 20px; /* Internal padding */
   border-radius: 6px; /* Rounded corners */
-  font-size: 0.9rem; /* Text size */
-  font-weight: 500; /* Slightly bold text */
-  color: #ffffff; /* Pure white text for contrast */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   min-height: 100px; /* Consistent card height */
-  display: flex; /* Center content */
+  display: flex; /* Center content (no text, just for layout) */
   align-items: center;
   justify-content: center;
   text-align: center;
   background-size: contain; /* Scale background images properly */
-  background-position: center;
+  background-position: center; /* Center images */
   background-repeat: no-repeat;
   position: relative; /* For overlay positioning */
   transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
+  /* Text removed: No span or text content displayed, only images */
 }
 
+/* Optional overlay for subtle effect, excluded for Django */
 .skill-card::before {
-  content: ''; /* Overlay for subtle effect */
+  content: ''; /* Empty content for overlay */
   position: absolute;
   top: 0;
   left: 0;
@@ -371,37 +371,41 @@ section {
   z-index: 0;
 }
 
+/* Ensure Django card has no overlay to prevent image obstruction */
 .skill-card:nth-child(2)::before {
-  background: none; /* Remove overlay for Django card */
+  background: none; /* No overlay for Django card */
 }
 
-.skill-card:nth-child(1) { /* Python */
-  background-image: url('../images/python_18894.webp');
+/* Background images for skill cards */
+.skill-card:nth-child(1) {
+  background-image: url('../images/python_18894.webp'); /* Python image */
 }
-.skill-card:nth-child(2) { /* Django */
-  background-image: url('../images/django.jpg');
-  background-color: var(--secondary);
+.skill-card:nth-child(2) {
+  background-image: url('../images/django.jpg'); /* Consistent Django image for all devices */
+  background-color: var(--secondary); /* Fallback background */
+  background-size: contain; /* Ensure image scales properly */
+  background-position: center; /* Center image */
 }
-.skill-card:nth-child(3) { /* JavaScript */
-  background-image: url('../images/js.png');
+.skill-card:nth-child(3) {
+  background-image: url('../images/js.png'); /* JavaScript image */
 }
-.skill-card:nth-child(4) { /* MongoDB */
-  background-image: url('../images/mongo.avif');
+.skill-card:nth-child(4) {
+  background-image: url('../images/mongo.avif'); /* MongoDB image */
 }
-.skill-card:nth-child(5) { /* React */
-  background-image: url('../images/react.png');
+.skill-card:nth-child(5) {
+  background-image: url('../images/react.png'); /* React image */
 }
-.skill-card:nth-child(6) { /* CI/CD */
-  background-image: url('../images/cicd.jpg');
+.skill-card:nth-child(6) {
+  background-image: url('../images/cicd.jpg'); /* CI/CD image */
 }
-.skill-card:nth-child(7) { /* AWS */
-  background-image: url('../images/aws.svg');
+.skill-card:nth-child(7) {
+  background-image: url('../images/aws.svg'); /* AWS image */
 }
-.skill-card:nth-child(8) { /* Docker */
-  background-image: url('../images/docker.png');
+.skill-card:nth-child(8) {
+  background-image: url('../images/docker.png'); /* Docker image */
 }
-.skill-card:nth-child(9) { /* MySQL */
-  background-image: url('../images/mysql.svg');
+.skill-card:nth-child(9) {
+  background-image: url('../images/mysql.svg'); /* MySQL image */
 }
 
 .skill-card:hover {
@@ -409,11 +413,63 @@ section {
   box-shadow: 0 6px 18px rgba(212, 163, 115, 0.2); /* Stronger shadow on hover */
 }
 
+/* Remove text content for skill cards */
 .skill-card span {
-  position: relative; /* Position text above overlay */
-  z-index: 1;
-  text-transform: uppercase; /* Uppercase for emphasis */
-  letter-spacing: 0.8px; /* Spacing for readability */
+  display: none; /* Hide text content to show only images */
+}
+
+/* Responsive styles for tablets and smaller screens */
+@media (max-width: 768px) {
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    gap: 10px; /* Reduced gap between cards */
+    padding: 10px; /* Reduced padding */
+  }
+
+  .skill-card {
+    padding: 15px; /* Reduced padding for smaller cards */
+    min-height: 80px; /* Smaller card height */
+    background-size: contain; /* Ensure image scales properly */
+    background-position: center; /* Center image */
+  }
+
+  /* Ensure Django image displays correctly on tablets */
+  .skill-card:nth-child(2) {
+    background-image: url('../images/django.png'); /* Consistent Django image */
+    background-color: var(--secondary); /* Fallback background */
+    background-size: contain; /* Ensure image scales properly */
+    background-position: center; /* Center image */
+  }
+
+  .skill-card:nth-child(2)::before {
+    background: none; /* No overlay for Django card */
+  }
+}
+
+/* Responsive styles for small phones */
+@media (max-width: 480px) {
+  .skill-grid {
+    grid-template-columns: 1fr; /* Single column for small phones */
+    gap: 8px; /* Smaller gap between cards */
+  }
+
+  .skill-card {
+    min-height: 70px; /* Smaller card height */
+    background-size: contain; /* Ensure image scales properly */
+    background-position: center; /* Center image */
+  }
+
+  /* Ensure Django image displays correctly on small phones */
+  .skill-card:nth-child(2) {
+    background-image: url('../images/django.png'); /* Consistent Django image */
+    background-color: var(--secondary); /* Fallback background */
+    background-size: contain; /* Ensure image scales properly */
+    background-position: center; /* Center image */
+  }
+
+  .skill-card:nth-child(2)::before {
+    background: none; /* No overlay for Django card */
+  }
 }
 
 /* Certifications section with responsive grid */
