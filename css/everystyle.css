@@ -1280,18 +1280,18 @@ footer {
 
 @media (max-width: 768px) {
   .projects {
-    padding-bottom: 20px; /* Even less space for tablets */
+    padding-bottom: 30px; /* Even less space for tablets */
   }
   .skills {
-    padding-top: 20px;
+    padding-top: 30px;
   }
 }
 
 @media (max-width: 480px) {
   .projects {
-    padding-bottom: 15px; /* Minimal space for small phones */
+    padding-bottom: 25px; /* Minimal space for small phones */
   }
   .skills {
-    padding-top: 15px;
+    padding-top: 25px;
   }
 }
