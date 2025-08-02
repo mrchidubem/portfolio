@@ -380,12 +380,19 @@ Ensure Django card has no overlay to prevent image obstruction
 .skill-card:nth-child(1) {
   background-image: url('../images/python_18894.webp'); /* Python image */
 }
+
 .skill-card:nth-child(2) {
-  background-image: url('../images/django.jpg'); /* Consistent Django image for all devices */
+  background-image: url('../images/django.png'); /* Use PNG consistently across all devices */
   background-color: var(--secondary); /* Fallback background */
   background-size: contain; /* Ensure image scales properly */
   background-position: center; /* Center image */
+  background-repeat: no-repeat;
 }
+
+.skill-card:nth-child(2)::before {
+  background: none; /* Prevent overlay from covering image */
+}
+
 .skill-card:nth-child(3) {
   background-image: url('../images/js.png'); /* JavaScript image */
 }
@@ -433,13 +440,7 @@ Ensure Django card has no overlay to prevent image obstruction
     background-position: center; /* Center image */
   }
 
-  /* Ensure Django image displays correctly on tablets */
-  .skill-card:nth-child(2) {
-    background-image: url('../images/django.png'); /* Consistent Django image */
-    background-color: var(--secondary); /* Fallback background */
-    background-size: contain; /* Ensure image scales properly */
-    background-position: center; /* Center image */
-  }
+
 
   .skill-card:nth-child(2)::before {
     background: none; /* No overlay for Django card */
@@ -459,14 +460,7 @@ Ensure Django card has no overlay to prevent image obstruction
     background-position: center; /* Center image */
   }
 
-  /* Ensure Django image displays correctly on small phones */
-  .skill-card:nth-child(2) {
-    background-image: url('../images/django.png'); /* Consistent Django image */
-    background-color: var(--secondary); /* Fallback background */
-    background-size: contain; /* Ensure image scales properly */
-    background-position: center; /* Center image */
-  }
-
+  
   .skill-card:nth-child(2)::before {
     background: none; /* No overlay for Django card */
   }
