@@ -495,7 +495,6 @@ section {
   display: none;
 }
 
-
 /* Certifications section with responsive grid */
 .certifications {
   text-align: center; /* Center content */
@@ -1113,7 +1112,7 @@ footer {
   }
 
   .skill-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    grid-template-columns: repeat(2, 1fr); /* Two columns for side-by-side layout */
     gap: 10px; /* Reduced gap between cards */
     padding: 10px; /* Reduced padding */
   }
@@ -1249,7 +1248,7 @@ footer {
   }
 
   .skill-grid {
-    grid-template-columns: 1fr; /* Single column for small phones */
+    grid-template-columns: repeat(2, 1fr); /* Two columns for side-by-side layout */
     gap: 8px; /* Smaller gap between cards */
   }
 
