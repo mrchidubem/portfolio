@@ -44,10 +44,10 @@ My portfolio website https://dubicventures.vercel.app/ is a reflection of my ski
 
 | **Category**       | **Technologies**                                                                 |
 |--------------------|----------------------------------------------------------------------------------|
-| **Frontend**       | HTML5, CSS3, JavaScript, Font Awesome, Google Fonts (Inter, Orbitron, Playfair)  |
+| **Frontend**       | HTML5, CSS3,Font Awesome, Google Fonts (Inter, Orbitron, Playfair)  |
 | **Backend**        | Static site (ready for Django/Javascript integration)                               |
 | **Styling**        | CSS Grid, Flexbox, Responsive Design, Custom Properties                          |
-| **Tools**          | Git, GitHub, VS Code, Vercel/Netlify                                             |
+| **Tools**          | Git, GitHub, VS Code, Vercel                                           |
 
 
 ## 🚀 Key Projects
