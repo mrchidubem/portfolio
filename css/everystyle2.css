@@ -1,21 +1,21 @@
-/* Define CSS custom properties for the default light theme with a brighter, warm, appealing aesthetic */
+/* Define CSS custom properties for the default dark theme */
 :root {
-  --primary: #3a3a3a; /* Darker gray for buttons and borders */
-  --secondary: #e8e3d8; /* Light warm beige for card backgrounds */
-  --accent: #8b6f47; /* Rich taupe/bronze for highlights */
-  --bg: #fdf6e3; /* Bright creamy off-white background */
-  --section-bg: #f4efe2; /* Warm beige for section backgrounds */
-  --text: #2a2a2a; /* Dark charcoal text for readability */
-}
-
-/* Dark theme variables applied when the theme toggle checkbox is checked */
-body:has(#theme-toggle:checked) {
   --primary: #2c2c2c; /* Charcoal gray for dark mode */
   --secondary: #242424; /* Muted charcoal for dark mode cards */
   --accent: #d4a373; /* Burnished bronze for dark mode highlights */
   --bg: #0f0f0f; /* Near-black background for dark mode */
   --section-bg: #181818; /* Subtle black for dark mode sections */
   --text: #f1f5f9; /* Soft ivory text for dark mode */
+}
+
+/* Light theme variables applied when the theme toggle checkbox is checked */
+body:has(#theme-toggle:checked) {
+  --primary: #3a3a3a; /* Darker gray for buttons and borders */
+  --secondary: #e8e3d8; /* Light warm beige for card backgrounds */
+  --accent: #8b6f47; /* Rich taupe/bronze for highlights */
+  --bg: #fdf6e3; /* Bright creamy off-white background */
+  --section-bg: #f4efe2; /* Warm beige for section backgrounds */
+  --text: #2a2a2a; /* Dark charcoal text for readability */
 }
 
 /* Reset default browser margins, padding, and box-sizing */
@@ -61,14 +61,14 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(253, 246, 227, 0.9); /* Bright off-white for light mode */
+  background: rgba(15, 15, 15, 0.8); /* Semi-transparent for dark mode */
   border-bottom: 1px solid var(--accent);
   z-index: 999;
 }
 
-/* Adjust nav background for dark mode */
+/* Adjust nav background for light mode */
 body:has(#theme-toggle:checked) nav {
-  background: rgba(15, 15, 15, 0.8); /* Semi-transparent for dark mode */
+  background: rgba(253, 246, 227, 0.9); /* Bright off-white for light mode */
 }
 
 /* Logo container */
@@ -91,19 +91,19 @@ body:has(#theme-toggle:checked) nav {
   justify-content: center;
   font-weight: 600;
   font-size: 1rem;
-  transition: transform 0.2s; /* Reduced duration */
+  transition: transform 0.2s;
 }
 
 /* Hover effect for circular logo */
 .circle-logo:hover .circle {
-  transform: scale(1.02); /* Subtler scale */
+  transform: scale(1.02);
 }
 
 /* Logo text styling */
 .circle-text {
   font-family: 'Orbitron', sans-serif;
   font-size: 1rem;
-  font-weight: 700; /* Bold as requested */
+  font-weight: 700;
   letter-spacing: 1px;
   background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
@@ -130,7 +130,7 @@ body:has(#theme-toggle:checked) nav {
 /* Hover effect for navigation links */
 .nav-links a:hover {
   color: var(--accent);
-  transform: scale(1.02); /* Subtler scale */
+  transform: scale(1.02);
 }
 
 /* Hide navigation and theme toggle inputs */
@@ -172,7 +172,7 @@ body:has(#theme-toggle:checked) nav {
 .toggle-theme:hover {
   background: var(--accent);
   color: var(--bg);
-  transform: scale(1.02); /* Subtler scale */
+  transform: scale(1.02);
 }
 
 /* Base styles for sections */
@@ -184,59 +184,64 @@ section {
 /* Hero section styling */
 .hero {
   height: 100vh;
-  width: 100vw; /* Ensure full viewport width */
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/photo.jpg') no-repeat center/cover;
-  background-size: cover; /* Explicitly set to cover */
-  background-position: center center; /* Ensure centered alignment */
+  background-size: cover;
+  background-position: center center;
   position: relative;
-  margin: 0; /* Remove any margins */
-  padding: 0; /* Remove padding to ensure full width */
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-/* Lighter overlay for hero section to improve text contrast */
+/* Dark mode hero overlay (default) */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* Increased opacity for better contrast */
+  background: rgba(0, 0, 0, 0.5);
   z-index: -1;
+}
+
+/* Light mode hero overlay */
+body:has(#theme-toggle:checked) .hero::before {
+  background: rgba(0, 0, 0, 0.7);
 }
 
 /* Hero section heading */
 .hero h2 {
   font-size: 1.8rem;
   letter-spacing: 1.2px;
-  color: #ffffff; /* Pure white for maximum contrast in light mode */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Stronger shadow for readability */
-  font-weight: 600; /* Slightly bolder for emphasis */
+  color: #f5f5f5;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  font-weight: 600;
 }
 
-/* Dark mode hero heading */
+/* Light mode hero heading */
 body:has(#theme-toggle:checked) .hero h2 {
-  color: #f5f5f5; /* Near-white for dark mode, ensuring brightness */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Enhanced shadow for dark mode */
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 /* Hero section paragraph */
 .hero p {
   font-size: 0.9rem;
   margin-top: 12px;
-  font-weight: 400; /* Slightly bolder for clarity */
+  font-weight: 400;
   letter-spacing: 0.5px;
-  color: #ffffff; /* Pure white for light mode */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Stronger shadow for readability */
+  color: #f5f5f5;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* Dark mode hero paragraph */
+/* Light mode hero paragraph */
 body:has(#theme-toggle:checked) .hero p {
-  color: #f5f5f5; /* Near-white for dark mode */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Enhanced shadow for dark mode */
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 /* Hero section button */
@@ -244,27 +249,27 @@ body:has(#theme-toggle:checked) .hero p {
   margin-top: 25px;
   padding: 10px 28px;
   font-size: 0.85rem;
-  color: #ffffff; /* White text for button */
+  color: #ffffff;
   background: linear-gradient(45deg, var(--primary), var(--accent));
   border: none;
   border-radius: 6px;
   font-family: 'Orbitron', sans-serif;
-  font-weight: 500; /* Bolder for emphasis */
+  font-weight: 500;
   text-decoration: none;
   transition: transform 0.2s, box-shadow 0.2s;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Shadow for button text */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Dark mode hero button */
+/* Light mode hero button */
 body:has(#theme-toggle:checked) .hero .button {
-  color: #ffffff; /* Ensure white text in dark mode */
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Slightly stronger shadow */
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 /* Hover effect for hero button */
 .hero .button:hover {
   transform: scale(1.02);
-  box-shadow: 0 2px 6px rgba(139, 111, 71, 0.4); /* Stronger shadow for visibility */
+  box-shadow: 0 2px 6px rgba(139, 111, 71, 0.4);
 }
 
 /* Avatar styling */
@@ -288,7 +293,7 @@ body:has(#theme-toggle:checked) .hero .button {
   color: var(--accent);
   letter-spacing: 1.2px;
   margin-bottom: 20px;
-  animation: slideIn 0.5s ease forwards; /* Reduced duration */
+  animation: slideIn 0.5s ease forwards;
 }
 
 .about p {
@@ -307,7 +312,7 @@ body:has(#theme-toggle:checked) .hero .button {
 }
 
 .about p:hover {
-  transform: translateY(-1px); /* Subtler lift */
+  transform: translateY(-1px);
 }
 
 /* Experience section styling */
@@ -342,7 +347,7 @@ body:has(#theme-toggle:checked) .hero .button {
 }
 
 .experience-card:hover {
-  transform: translateY(-1px); /* Subtler lift */
+  transform: translateY(-1px);
 }
 
 .experience-card h3 {
@@ -383,7 +388,7 @@ body:has(#theme-toggle:checked) .hero .button {
 }
 
 .project-item:hover {
-  transform: translateY(-1px); /* Subtler lift */
+  transform: translateY(-1px);
 }
 
 .project-image {
@@ -436,8 +441,8 @@ body:has(#theme-toggle:checked) .hero .button {
 }
 
 .project-item a:hover {
-  transform: scale(1.02); /* Subtler scale */
-  box-shadow: 0 2px 6px rgba(139, 111, 71, 0.2); /* Subtler shadow */
+  transform: scale(1.02);
+  box-shadow: 0 2px 6px rgba(139, 111, 71, 0.2);
 }
 
 /* Skills section styling */
@@ -504,14 +509,14 @@ body:has(#theme-toggle:checked) .hero .button {
 .skill-card:nth-child(9)::before { background-image: url('../images/mysql.png'); }
 
 .skill-card:hover {
-  transform: translateY(-1px); /* Subtler lift */
+  transform: translateY(-1px);
 }
 
 .skill-note {
   font-family: 'Inter', sans-serif;
   font-size: 0.8rem;
   font-weight: 400;
-  color: var(--text);
+  color: #e0e0e0;
   padding: 6px 8px;
   border-radius: 4px;
   text-align: center;
@@ -520,13 +525,13 @@ body:has(#theme-toggle:checked) .hero .button {
   transition: transform 0.2s;
 }
 
-/* Adjust skill-note color for dark mode */
+/* Light mode skill-note */
 body:has(#theme-toggle:checked) .skill-note {
-  color: #e0e0e0;
+  color: var(--text);
 }
 
 .skill-card:hover .skill-note {
-  transform: translateY(-1px); /* Subtler lift */
+  transform: translateY(-1px);
 }
 
 /* Certifications section styling */
@@ -578,7 +583,7 @@ body:has(#theme-toggle:checked) .skill-note {
 }
 
 .certification-card:hover {
-  transform: translateY(-1px); /* Subtler lift */
+  transform: translateY(-1px);
 }
 
 .certification-card h3 {
@@ -624,7 +629,7 @@ body:has(#theme-toggle:checked) .skill-note {
 }
 
 .education-card:hover {
-  transform: translateY(-1px); /* Subtler lift */
+  transform: translateY(-1px);
 }
 
 .education-card h3 {
@@ -653,8 +658,8 @@ body:has(#theme-toggle:checked) .skill-note {
 }
 
 .view-certifications:hover {
-  transform: scale(1.02); /* Subtler scale */
-  box-shadow: 0 2px 6px rgba(139, 111, 71, 0.2); /* Subtler shadow */
+  transform: scale(1.02);
+  box-shadow: 0 2px 6px rgba(139, 111, 71, 0.2);
 }
 
 /* Insights & Updates section styling */
@@ -696,7 +701,7 @@ body:has(#theme-toggle:checked) .skill-note {
 }
 
 .insights-card:hover {
-  transform: translateY(-1px); /* Subtler lift */
+  transform: translateY(-1px);
 }
 
 .insights-card h3 {
@@ -722,7 +727,7 @@ body:has(#theme-toggle:checked) .skill-note {
 
 .insights-card .read-more:hover {
   color: #f1f5f9;
-  transform: scale(1.02); /* Subtler scale */
+  transform: scale(1.02);
 }
 
 /* Articles section styling */
@@ -769,7 +774,7 @@ body:has(#theme-toggle:checked) .skill-note {
 }
 
 .article-item:hover {
-  transform: translateY(-1px); /* Subtler lift */
+  transform: translateY(-1px);
 }
 
 .article-item h3 {
@@ -806,8 +811,8 @@ body:has(#theme-toggle:checked) .skill-note {
 }
 
 .back-link:hover {
-  transform: scale(1.02); /* Subtler scale */
-  box-shadow: 0 2px 6px rgba(139, 111, 71, 0.2); /* Subtler shadow */
+  transform: scale(1.02);
+  box-shadow: 0 2px 6px rgba(139, 111, 71, 0.2);
 }
 
 /* Contact section styling */
@@ -896,8 +901,8 @@ body:has(#theme-toggle:checked) .skill-note {
 }
 
 .contact button:hover {
-  transform: scale(1.02); /* Subtler scale */
-  box-shadow: 0 2px 6px rgba(139, 111, 71, 0.2); /* Subtler shadow */
+  transform: scale(1.02);
+  box-shadow: 0 2px 6px rgba(139, 111, 71, 0.2);
 }
 
 /* Call-to-action section styling */
@@ -914,12 +919,12 @@ body:has(#theme-toggle:checked) .skill-note {
   letter-spacing: 1.2px;
   margin-bottom: 15px;
   animation: slideIn 0.5s ease forwards;
-  color: var(--text);
+  color: #e0e0e0;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 body:has(#theme-toggle:checked) .cta h2 {
-  color: #e0e0e0;
+  color: var(--text);
 }
 
 .cta p {
@@ -927,12 +932,12 @@ body:has(#theme-toggle:checked) .cta h2 {
   font-weight: 300;
   max-width: 600px;
   margin: 0 auto 20px;
-  color: var(--text);
+  color: #e0e0e0;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 body:has(#theme-toggle:checked) .cta p {
-  color: #e0e0e0;
+  color: var(--text);
 }
 
 .cta-buttons {
@@ -956,8 +961,8 @@ body:has(#theme-toggle:checked) .cta p {
 }
 
 .cta .button:hover {
-  transform: scale(1.02); /* Subtler scale */
-  box-shadow: 0 2px 6px rgba(139, 111, 71, 0.2); /* Subtler shadow */
+  transform: scale(1.02);
+  box-shadow: 0 2px 6px rgba(139, 111, 71, 0.2);
 }
 
 /* Footer styling */
@@ -992,7 +997,7 @@ footer {
 
 .social-icons a:hover {
   background: var(--accent);
-  transform: scale(1.02); /* Subtler scale */
+  transform: scale(1.02);
 }
 
 .date-badge {
@@ -1007,7 +1012,7 @@ footer {
 
 /* Animations */
 @keyframes slideIn {
-  from { opacity: 0; } /* Removed transform for subtler effect */
+  from { opacity: 0; }
   to { opacity: 1; }
 }
 
@@ -1065,7 +1070,7 @@ footer {
 
   .circle-text {
     font-size: 0.9rem;
-    font-weight: 700; /* Maintain bold for mobile */
+    font-weight: 700;
   }
 
   section {
@@ -1075,17 +1080,21 @@ footer {
   }
 
   .hero {
-    width: 100vw; /* Full viewport width */
-    min-width: 100vw; /* Ensure it spans at least viewport width */
-    padding: 0; /* No padding */
-    margin: 0; /* No margins */
-    left: 0; /* Align to left edge */
-    right: 0; /* Align to right edge */
+    width: 100vw;
+    min-width: 100vw;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    right: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/photo.jpg') no-repeat center/cover;
-    background-size: cover; /* Cover entire area */
-    background-position: center center; /* Center image */
-    background-attachment: scroll; /* Prevent scrolling issues */
-    overflow-x: hidden; /* Prevent horizontal overflow */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: scroll;
+    overflow-x: hidden;
+  }
+
+  body:has(#theme-toggle:checked) .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/photo.jpg') no-repeat center/cover;
   }
 
   .hero h2 { font-size: 1.5rem; }
@@ -1125,24 +1134,27 @@ footer {
   nav { padding: 10px 15px; }
   .nav-links { margin-top: 50px; gap: 10px; }
   .circle { width: 28px; height: 28px; font-size: 0.8rem; }
-  .circle-text { font-size: 0.8rem; font-weight: 700; /* Maintain bold for mobile */ }
+  .circle-text { font-size: 0.8rem; font-weight: 700; }
   section {
     padding: 40px 10px;
     max-width: 95%;
     margin: 0 auto;
   }
   .hero {
-    width: 100vw; /* Full viewport width */
-    min-width: 100vw; /* Ensure it spans at least viewport width */
-    padding: 0; /* No padding */
-    margin: 0; /* No margins */
-    left: 0; /* Align to left edge */
-    right: 0; /* Align to right edge */
+    width: 100vw;
+    min-width: 100vw;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    right: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/photo.jpg') no-repeat center/cover;
-    background-size: cover; /* Cover entire area */
-    background-position: 50% 50%; /* Explicit center positioning */
-    background-attachment: scroll; /* Prevent scrolling issues */
-    overflow-x: hidden; /* Prevent horizontal overflow */
+    background-size: cover;
+    background-position: 50% 50%;
+    background-attachment: scroll;
+    overflow-x: hidden;
+  }
+  body:has(#theme-toggle:checked) .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/photo.jpg') no-repeat center/cover;
   }
   .hero h2 { font-size: 1.3rem; }
   .hero p { font-size: 0.8rem; }

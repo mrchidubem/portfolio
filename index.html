@@ -1,37 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Character encoding and responsive viewport for cross-device compatibility -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  
-  <!-- SEO and social sharing meta tags for better visibility -->
   <meta name="description" content="Portfolio of Joseph Chidubem Okafor, Full Stack Software Engineer and Cloud Architect.">
   <meta name="keywords" content="Joseph Chidubem Okafor, Full Stack Developer, Cloud Architect, Portfolio">
   <meta name="author" content="Joseph Chidubem Okafor">
   <meta property="og:title" content="Joseph Chidubem Okafor | Portfolio">
   <meta property="og:description" content="Explore the portfolio of Joseph Chidubem Okafor, a Full Stack Software Engineer and Cloud Architect.">
   <meta property="og:image" content="images/og-image.jpg">
-  
-  <!-- Page title and favicon for branding -->
   <title>Joseph | Portfolio</title>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  
-  <!-- Preload images to improve page load performance -->
   <link rel="preload" href="images/9.avif" as="image">
   <link rel="preload" href="images/dube.jpg" as="image">
   <link rel="preload" href="images/carecycle.webp" as="image">
   <link rel="preload" href="images/shell.png" as="image">
-  
-  <!-- Google Fonts for consistent typography -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome for icons and custom CSS for styling -->
   <link rel="stylesheet" href="css/all.min.css">
   <link rel="stylesheet" href="css/everystyle.css">
 </head>
 <body>
-  <!-- Navigation bar with fixed positioning for easy access across sections -->
   <nav aria-label="Main navigation">
     <a href="#" class="circle-logo">
       <div class="circle">D</div>
@@ -44,9 +32,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
-      <!-- <li><a href="#certifications">Certifications</a></li> -->
       <li><a href="#education">Education</a></li>
-      <!-- <li><a href="#testimonials">Testimonials</a></li> -->
       <li><a href="#insights-updates">Insights & Updates</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -59,7 +45,6 @@
     </div>
   </nav>
 
-  <!-- Hero section: Introduces Joseph with a call-to-action to engage viewers -->
   <section class="hero" id="home" role="region" aria-labelledby="home-heading">
     <div class="avatar"></div>
     <h2 id="home-heading">Joseph Chidubem Okafor</h2>
@@ -67,18 +52,18 @@
     <a href="#projects" class="button" aria-label="Explore Joseph's projects">Explore My Work</a>
   </section>
 
-  <!-- About section: Provides a personal and professional overview to set context -->
   <section class="about" id="about" role="region" aria-labelledby="about-heading">
     <h2 id="about-heading">About Me</h2>
-    <p>
-      I’m Joseph Chidubem Okafor, a Full Stack Software Engineer and Cloud Architect passionate about crafting innovative, user-focused solutions.<br>
-      With a B.Eng. in Electronic Engineering from the University of Nigeria Nsukka, I blend hardware expertise with software innovation. My journey includes roles as an Electrical Engineer at Evergreen Technology, Solutions Architect at CAP Nigeria, and Python Developer at PACUSS Global Ventures.<br>
-      Trained through ALX, 3MTT, and IHS, I specialize in Full Stack Development, DevOps, and Generative AI, leading projects like the HIPAA-compliant CareCycle Hospital Management System using Django and MySQL.<br>
-      Driven by purpose, I aim to create impactful technology, optimize user experiences, and mentor aspiring developers in communities like ALX Africa.
-    </p>
+    <div class="about-container">
+      <p>
+        I’m Joseph Chidubem Okafor, a Full Stack Software Engineer and Cloud Architect passionate about crafting innovative, user-focused solutions.<br>
+        With a B.Eng. in Electronic Engineering from the University of Nigeria Nsukka, I blend hardware expertise with software innovation. My journey includes roles as an Electrical Engineer at Evergreen Technology, Solutions Architect at CAP Nigeria, and Python Developer at PACUSS Global Ventures.<br>
+        Trained through ALX, 3MTT, and IHS, I specialize in Full Stack Development, DevOps, and Generative AI, leading projects like the HIPAA-compliant CareCycle Hospital Management System using Django and MySQL.<br>
+        Driven by purpose, I aim to create impactful technology, optimize user experiences, and mentor aspiring developers in communities like ALX Africa.
+      </p>
+    </div>
   </section>
 
-  <!-- Experience section: Highlights professional roles and achievements to showcase expertise -->
   <section class="experience" id="experience" role="region" aria-labelledby="experience-heading">
     <h2 id="experience-heading">Experience</h2>
     <div class="experience-grid">
@@ -95,45 +80,45 @@
     </div>
   </section>
 
-  <!-- Projects section: Showcases key projects with visuals and tech details to demonstrate skills -->
   <section class="projects" id="projects" role="region" aria-labelledby="projects-heading">
     <h2 id="projects-heading">Projects</h2>
-    <div class="project-item">
-      <div class="project-image" style="background-image: url('images/carecycle.webp');"></div>
-      <h3>Care Cycle: Personalized Healthcare Platform</h3>
-      <p>A Django-based web app for managing patient care cycles, with real-time data integration and secure authentication.</p>
-      <div class="tech-badges">
-        <span class="tech-badge">Django</span>
-        <span class="tech-badge">JavaScript</span>
-        <span class="tech-badge">MongoDB</span>
+    <div class="project-grid">
+      <div class="project-item">
+        <div class="project-image" style="background-image: url('images/carecycle.webp');"></div>
+        <h3>Care Cycle: Personalized Healthcare Platform</h3>
+        <p>A Django-based web app for managing patient care cycles, with real-time data integration and secure authentication.</p>
+        <div class="tech-badges">
+          <span class="tech-badge">Django</span>
+          <span class="tech-badge">JavaScript</span>
+          <span class="tech-badge">MongoDB</span>
+        </div>
+        <a href="https://hospital-management-app-web.vercel.app/" target="_blank" aria-label="View CareCycle project">View Project</a>
       </div>
-      <a href="https://hospital-management-app-web.vercel.app/" target="_blank" aria-label="View CareCycle project">View Project</a>
-    </div>
-    <div class="project-item">
-      <div class="project-image" style="background-image: url('https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg');"></div>
-      <h3>Airbnb Clone (In Progress)</h3>
-      <p>A scalable web application built with Django and JavaScript, featuring user authentication, property listings, and booking functionality. Reduced load time by 20% with optimized APIs.</p>
-      <div class="tech-badges">
-        <span class="tech-badge">Django</span>
-        <span class="tech-badge">JavaScript</span>
-        <span class="tech-badge">MySQL</span>
+      <div class="project-item">
+        <div class="project-image" style="background-image: url('https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg');"></div>
+        <h3>Airbnb Clone (In Progress)</h3>
+        <p>A scalable web application built with Django and JavaScript, featuring user authentication, property listings, and booking functionality. Reduced load time by 20% with optimized APIs.</p>
+        <div class="tech-badges">
+          <span class="tech-badge">Django</span>
+          <span class="tech-badge">JavaScript</span>
+          <span class="tech-badge">MySQL</span>
+        </div>
+        <a href="https://github.com/mrchidubem" target="_blank" aria-label="View Airbnb-Clone project">View Project</a>
       </div>
-      <a href="https://github.com/mrchidubem" target="_blank" aria-label="View Airbnb-Clone project">View Project</a>
-    </div>
-    <div class="project-item">
-      <div class="project-image" style="background-image: url('images/shell.png');"></div>
-      <h3>Simple Shell</h3>
-      <p>A custom Unix command-line interpreter built from scratch as part of the ALX Software Engineering program.</p>
-      <div class="tech-badges">
-        <span class="tech-badge">C</span>
-        <span class="tech-badge">Linux System Calls</span>
-        <span class="tech-badge">GCC</span>
+      <div class="project-item">
+        <div class="project-image" style="background-image: url('images/shell.png');"></div>
+        <h3>Simple Shell</h3>
+        <p>A custom Unix command-line interpreter built from scratch as part of the ALX Software Engineering program.</p>
+        <div class="tech-badges">
+          <span class="tech-badge">C</span>
+          <span class="tech-badge">Linux System Calls</span>
+          <span class="tech-badge">GCC</span>
+        </div>
+        <a href="https://github.com/mrchidubem" target="_blank" aria-label="View Simple-Shell project">View Project</a>
       </div>
-      <a href="https://github.com/mrchidubem" target="_blank" aria-label="View Simple-Shell project">View Project</a>
     </div>
   </section>
 
-  <!-- Skills section: Lists technical skills with images on top and writeups below -->
   <section class="skills" id="skills" role="region" aria-labelledby="skills-heading">
     <h2 id="skills-heading">Skills</h2>
     <div class="skill-grid">
@@ -158,16 +143,12 @@
       <div class="skill-card" aria-label="AWS skill">
         <span class="skill-note">Certified in AWS for designing scalable cloud architectures.</span>
       </div>
-      <!-- <div class="skill-card" aria-label="Docker skill">
-        <span class="skill-note">Proficient in MySQL for optimizing relational database performance.</span>
-      </div> -->
       <div class="skill-card" aria-label="MySQL skill">
         <span class="skill-note">Experienced with Docker for containerizing applications.</span>
       </div>
     </div>
   </section>
 
-  <!-- Certifications section: Validates expertise with industry-recognized credentials -->
   <section class="certifications" id="certifications" role="region" aria-labelledby="certifications-heading">
     <h2 id="certifications-heading">Certifications</h2>
     <div class="certification-grid">
@@ -196,11 +177,9 @@
         <p>PLP Academy | In Progress</p>
       </div>
     </div>
-    <!-- Back link to return to education section -->
     <a href="#education" class="back-link" aria-label="Back to Education">Back to Education</a>
   </section>
 
-  <!-- Education section: Details academic background to provide context for skills -->
   <section class="education" id="education" role="region" aria-labelledby="education-heading">
     <h2 id="education-heading">Education & Training</h2>
     <div class="education-grid">
@@ -215,7 +194,6 @@
         <p>Completed intensive programs in Software development, cloud infrastructure (AWS), and Generative AI, mastering Python, Django, and scalable system design.</p>
       </div>
     </div>
-    <!-- Link to view certifications section -->
     <a href="#certifications" class="view-certifications" aria-label="View Certifications">View Certifications</a>
   </section>
 
@@ -245,40 +223,40 @@
     </div>
   </section>
 
-  <!-- Articles section: Expands on insights with detailed blog posts -->
   <section class="articles" id="articles" role="region" aria-labelledby="articles-heading">
     <h2 id="articles-heading">Articles</h2>
-    <article class="article-item" id="article-django">
-      <h3>Building Scalable Web Apps with Django</h3>
-      <div class="date-badge">Published: July 2025</div>
-      <p>
-        Django is a powerful Python framework for building scalable, secure web applications. In this article, we explore best practices for leveraging Django’s ORM, middleware, and PostgreSQL/MySQL integration to create robust applications. Key topics include:
-        <ul>
-          <li>Optimizing database queries with Django ORM for faster load times.</li>
-          <li>Implementing RESTful APIs with Django REST Framework.</li>
-          <li>Scaling applications with caching and load balancing.</li>
-        </ul>
-        By following these strategies, I reduced API response times by 20% in a recent project, ensuring a seamless user experience. Stay tuned for more insights on deploying Django apps with AWS!
-      </p>
-      <a href="#insights-updates" class="back-link" aria-label="Back to Insights & Updates">Back to Insights</a>
-    </article>
-    <article class="article-item" id="article-chatbot">
-      <h3>Exploring Generative AI for Chatbots</h3>
-      <div class="date-badge">Published: July 2025</div>
-      <p>
-        Generative AI is transforming how we build interactive chatbots. Using Python and NLP libraries like Hugging Face’s Transformers, I developed a chatbot that increased user engagement by 25%. This article covers:
-        <ul>
-          <li>Training models with pre-built datasets for conversational AI.</li>
-          <li>Integrating NLP pipelines into web applications.</li>
-          <li>Optimizing chatbot responses for real-time interaction.</li>
-        </ul>
-        Learn how to harness AI to create user-friendly, intelligent chatbot experiences that elevate your applications.
-      </p>
-      <a href="#insights-updates" class="back-link" aria-label="Back to Insights & Updates">Back to Insights</a>
-    </article>
+    <div class="articles-container">
+      <article class="article-item" id="article-django">
+        <h3>Building Scalable Web Apps with Django</h3>
+        <div class="date-badge">Published: July 2025</div>
+        <p>
+          Django is a powerful Python framework for building scalable, secure web applications. In this article, we explore best practices for leveraging Django’s ORM, middleware, and PostgreSQL/MySQL integration to create robust applications. Key topics include:
+          <ul>
+            <li>Optimizing database queries with Django ORM for faster load times.</li>
+            <li>Implementing RESTful APIs with Django REST Framework.</li>
+            <li>Scaling applications with caching and load balancing.</li>
+          </ul>
+          By following these strategies, I reduced API response times by 20% in a recent project, ensuring a seamless user experience. Stay tuned for more insights on deploying Django apps with AWS!
+        </p>
+        <a href="#insights-updates" class="back-link" aria-label="Back to Insights & Updates">Back to Insights</a>
+      </article>
+      <article class="article-item" id="article-chatbot">
+        <h3>Exploring Generative AI for Chatbots</h3>
+        <div class="date-badge">Published: July 2025</div>
+        <p>
+          Generative AI is transforming how we build interactive chatbots. Using Python and NLP libraries like Hugging Face’s Transformers, I developed a chatbot that increased user engagement by 25%. This article covers:
+          <ul>
+            <li>Training models with pre-built datasets for conversational AI.</li>
+            <li>Integrating NLP pipelines into web applications.</li>
+            <li>Optimizing chatbot responses for real-time interaction.</li>
+          </ul>
+          Learn how to harness AI to create user-friendly, intelligent chatbot experiences that elevate your applications.
+        </p>
+        <a href="#insights-updates" class="back-link" aria-label="Back to Insights & Updates">Back to Insights</a>
+      </article>
+    </div>
   </section>
 
-  <!-- Contact section: Provides a form for viewers to reach out easily -->
   <section class="contact" id="contact" role="region" aria-labelledby="contact-heading">
     <h2 id="contact-heading">Contact Me</h2>
     <form>
@@ -298,23 +276,20 @@
     </form>
   </section>
 
-  <!-- Call-to-action section: Encourages collaboration and resume download -->
   <section class="cta" role="region" aria-labelledby="cta-heading">
-    <h2 id="cta-heading">Let's Build Something Amazing</h2>
-    <p>Whether you're a startup seeking a dynamic full stack engineer, a company looking to scale your cloud 
-      infrastructure, or a team ready to innovate with AI—I'm excited to bring your vision to life.
-      Let’s collaborate to create powerful, user-centered digital solutions that make a difference.</p>
-      <p class=""> Interested in working together? Let's connect.
-           You can also download my resume or follow me on social platforms to learn more about my skills, experience, and recent projects.</p>
-    <div class="cta-buttons">
-      <a href="#contact" class="button" aria-label="Contact Joseph">Contact Me</a>
-      <a href="resume/lastOneResume.pdf" class="button" download aria-label="Download Joseph's resume">Download Resume</a>
+    <div class="cta-content">
+      <h2 id="cta-heading">Let's Build Something Amazing</h2>
+      <p>Whether you're a startup seeking a dynamic full stack engineer, a company looking to scale your cloud infrastructure, or a team ready to innovate with AI—I'm excited to bring your vision to life. Let’s collaborate to create powerful, user-centered digital solutions that make a difference.</p>
+      <p class="">Interested in working together? Let's connect. You can also download my resume or follow me on social platforms to learn more about my skills, experience, and recent projects.</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="button" aria-label="Contact Joseph">Contact Me</a>
+        <a href="resume/lastOneResume.pdf" class="button" download aria-label="Download Joseph's resume">Download Resume</a>
+      </div>
     </div>
   </section>
 
-  <!-- Footer: Includes social links and copyright for branding and connectivity -->
   <footer role="contentinfo">
-    <div class="social-icons"> 
+    <div class="social-icons">
       <a href="https://linkedin.com/in/dubicventures" target="_blank" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://github.com/mrchidubem" target="_blank" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
       <a href="https://x.com/ChidubemOkafo17" target="_blank" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
