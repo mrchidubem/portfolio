@@ -25,17 +25,17 @@ body:has(#theme-toggle:checked) {
   box-sizing: border-box;
 }
 
-/* Enable smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Base styles for the body */
+/* Ensure body has no horizontal overflow */
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* Enable smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
 }
 
 /* Styling for headings */
@@ -196,6 +196,7 @@ section {
   position: relative;
   margin: 0; /* Remove any margins */
   padding: 0; /* Remove padding to ensure full width */
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 /* Lighter overlay for hero section to improve text contrast */
@@ -1074,12 +1075,17 @@ footer {
   }
 
   .hero {
-    width: 100vw; /* Explicitly full viewport width for mobile */
+    width: 100vw; /* Full viewport width */
+    min-width: 100vw; /* Ensure it spans at least viewport width */
     padding: 0; /* No padding */
     margin: 0; /* No margins */
+    left: 0; /* Align to left edge */
+    right: 0; /* Align to right edge */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/photo.jpg') no-repeat center/cover;
-    background-size: cover; /* Ensure full coverage */
+    background-size: cover; /* Cover entire area */
     background-position: center center; /* Center image */
+    background-attachment: scroll; /* Prevent scrolling issues */
+    overflow-x: hidden; /* Prevent horizontal overflow */
   }
 
   .hero h2 { font-size: 1.5rem; }
@@ -1126,12 +1132,17 @@ footer {
     margin: 0 auto;
   }
   .hero {
-    width: 100vw; /* Explicitly full viewport width for mobile */
+    width: 100vw; /* Full viewport width */
+    min-width: 100vw; /* Ensure it spans at least viewport width */
     padding: 0; /* No padding */
     margin: 0; /* No margins */
+    left: 0; /* Align to left edge */
+    right: 0; /* Align to right edge */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/photo.jpg') no-repeat center/cover;
-    background-size: cover; /* Ensure full coverage */
-    background-position: center center; /* Center image */
+    background-size: cover; /* Cover entire area */
+    background-position: 50% 50%; /* Explicit center positioning */
+    background-attachment: scroll; /* Prevent scrolling issues */
+    overflow-x: hidden; /* Prevent horizontal overflow */
   }
   .hero h2 { font-size: 1.3rem; }
   .hero p { font-size: 0.8rem; }
