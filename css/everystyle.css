@@ -103,7 +103,7 @@ body:has(#theme-toggle:checked) nav {
 .circle-text {
   font-family: 'Orbitron', sans-serif;
   font-size: 1rem;
-  font-weight: 700; /* Changed to bold */
+  font-weight: 700; /* Bold as requested */
   letter-spacing: 1px;
   background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
@@ -1074,25 +1074,25 @@ footer {
   }
 
   .about {
-    max-width: 90%; /* Ensure centered layout */
+    max-width: 92%; /* Slightly increased width for better alignment */
     margin: 0 auto;
     padding: 50px 15px;
   }
 
   .about p {
-    max-width: 600px; /* Maintain content constraint */
+    max-width: 92%; /* Match section width */
     margin: 0 auto;
     padding: 20px;
   }
 
   .experience {
-    max-width: 90%; /* Ensure centered layout */
+    max-width: 92%; /* Slightly increased width for better alignment */
     margin: 0 auto;
     padding: 50px 15px;
   }
 
   .experience-grid {
-    max-width: 600px; /* Constrain grid width */
+    max-width: 92%; /* Match section width */
     margin: 0 auto;
   }
 
@@ -1148,22 +1148,22 @@ footer {
     margin: 0 auto; /* Original margin */
   }
   .about {
-    max-width: 95%; /* Ensure centered layout */
+    max-width: 97%; /* Slightly increased width for better alignment */
     margin: 0 auto;
     padding: 40px 10px;
   }
   .about p {
-    max-width: 95%; /* Constrain content width */
+    max-width: 97%; /* Match section width */
     margin: 0 auto;
     padding: 15px;
   }
   .experience {
-    max-width: 95%; /* Ensure centered layout */
+    max-width: 97%; /* Slightly increased width for better alignment */
     margin: 0 auto;
     padding: 40px 10px;
   }
   .experience-grid {
-    max-width: 95%; /* Constrain grid width */
+    max-width: 97%; /* Match section width */
     margin: 0 auto;
   }
   .hero {
