@@ -103,7 +103,7 @@ body:has(#theme-toggle:checked) nav {
 .circle-text {
   font-family: 'Orbitron', sans-serif;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 700; /* Bold as requested */
   letter-spacing: 1px;
   background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
@@ -184,13 +184,18 @@ section {
 /* Hero section styling */
 .hero {
   height: 100vh;
+  width: 100vw; /* Ensure full viewport width */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/photo.jpg') no-repeat center/cover;
+  background-size: cover; /* Explicitly set to cover */
+  background-position: center center; /* Ensure centered alignment */
   position: relative;
+  margin: 0; /* Remove any margins */
+  padding: 0; /* Remove padding to ensure full width */
 }
 
 /* Lighter overlay for hero section to improve text contrast */
@@ -275,6 +280,7 @@ body:has(#theme-toggle:checked) .hero .button {
 /* About section styling */
 .about {
   text-align: center;
+  box-sizing: border-box; /* Ensure padding/margins are included */
 }
 
 .about h2 {
@@ -298,6 +304,7 @@ body:has(#theme-toggle:checked) .hero .button {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
+  box-sizing: border-box; /* Ensure padding is included */
 }
 
 .about p:hover {
@@ -307,6 +314,7 @@ body:has(#theme-toggle:checked) .hero .button {
 /* Experience section styling */
 .experience {
   text-align: center;
+  box-sizing: border-box; /* Ensure padding/margins are included */
 }
 
 .experience h2 {
@@ -323,6 +331,7 @@ body:has(#theme-toggle:checked) .hero .button {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  box-sizing: border-box; /* Ensure padding/margins are included */
 }
 
 .experience-card {
@@ -1059,12 +1068,49 @@ footer {
 
   .circle-text {
     font-size: 0.9rem;
+    font-weight: 700; /* Maintain bold for mobile */
   }
 
   section {
-    padding: 50px 15px;
-    max-width: 90%;
+    padding: 50px 15px; /* Original padding */
+    max-width: 90%; /* Original max-width */
+    margin: 0 auto; /* Original margin */
+  }
+
+  .about {
+    max-width: 90%; /* Reverted to original */
     margin: 0 auto;
+    padding: 50px 20px; /* Increased horizontal padding for alignment */
+    box-sizing: border-box;
+  }
+
+  .about p {
+    max-width: 90%; /* Match section width */
+    margin: 0 auto;
+    padding: 20px 15px; /* Adjusted for tighter alignment */
+    box-sizing: border-box;
+  }
+
+  .experience {
+    max-width: 90%; /* Reverted to original */
+    margin: 0 auto;
+    padding: 50px 20px; /* Increased horizontal padding for alignment */
+    box-sizing: border-box;
+  }
+
+  .experience-grid {
+    max-width: 90%; /* Match section width */
+    margin: 0 auto;
+    padding: 0 15px; /* Added padding for alignment */
+    box-sizing: border-box;
+  }
+
+  .hero {
+    width: 100vw; /* Full viewport width */
+    padding: 0; /* No padding */
+    margin: 0; /* No margins */
+    background-size: cover; /* Ensure full coverage */
+    background-position: center center; /* Center image */
   }
 
   .hero h2 { font-size: 1.5rem; }
@@ -1079,7 +1125,7 @@ footer {
     font-size: 0.85rem;
   }
 
-  .about p { font-size: 0.95rem; padding: 20px; line-height: 1.7; }
+  .about p { font-size: 0.95rem; line-height: 1.7; }
   .skill-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px; }
   .skill-card { padding: 10px; min-height: 160px; }
   .skill-card::before { height: 70px; }
@@ -1104,14 +1150,49 @@ footer {
   nav { padding: 10px 15px; }
   .nav-links { margin-top: 50px; gap: 10px; }
   .circle { width: 28px; height: 28px; font-size: 0.8rem; }
-  .circle-text { font-size: 0.8rem; }
-  section { padding: 40px 10px; max-width: 95%; }
+  .circle-text { font-size: 0.8rem; font-weight: 700; /* Maintain bold for mobile */ }
+  section {
+    padding: 40px 10px; /* Original padding */
+    max-width: 95%; /* Original max-width */
+    margin: 0 auto; /* Original margin */
+  }
+  .about {
+    max-width: 95%; /* Reverted to original */
+    margin: 0 auto;
+    padding: 40px 15px; /* Increased horizontal padding for alignment */
+    box-sizing: border-box;
+  }
+  .about p {
+    max-width: 95%; /* Match section width */
+    margin: 0 auto;
+    padding: 15px 10px; /* Adjusted for tighter alignment */
+    box-sizing: border-box;
+  }
+  .experience {
+    max-width: 95%; /* Reverted to original */
+    margin: 0 auto;
+    padding: 40px 15px; /* Increased horizontal padding for alignment */
+    box-sizing: border-box;
+  }
+  .experience-grid {
+    max-width: 95%; /* Match section width */
+    margin: 0 auto;
+    padding: 0 10px; /* Added padding for alignment */
+    box-sizing: border-box;
+  }
+  .hero {
+    width: 100vw; /* Full viewport width */
+    padding: 0; /* No padding */
+    margin: 0; /* No margins */
+    background-size: cover; /* Ensure full coverage */
+    background-position: center center; /* Center image */
+  }
   .hero h2 { font-size: 1.3rem; }
   .hero p { font-size: 0.8rem; }
   .hero .button { padding: 6px 16px; font-size: 0.75rem; }
   .about h2, .education h2, .skills h2, .certifications h2, .projects h2, .experience h2, .contact h2, .articles h2, .insights-updates h2 { font-size: 1.4rem; }
   .cta h2 { font-size: 1.2rem; }
-  .about p { font-size: 0.9rem; padding: 15px; }
+  .about p { font-size: 0.9rem; }
   .skill-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   .skill-card { min-height: 140px; padding: 8px; }
   .skill-card::before { height: 60px; }
