@@ -199,13 +199,18 @@ section {
   overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
-/* Lighter overlay for hero section to improve text contrast */
+/* Darker overlay for hero section in light mode */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* Increased opacity for better contrast */
+  background: rgba(0, 0, 0, 0.7); /* Darker overlay for light mode */
   z-index: -1;
+}
+
+/* Dark mode hero overlay (unchanged) */
+body:has(#theme-toggle:checked) .hero::before {
+  background: rgba(0, 0, 0, 0.5); /* Original overlay for dark mode */
 }
 
 /* Hero section heading */
@@ -1081,11 +1086,16 @@ footer {
     margin: 0; /* No margins */
     left: 0; /* Align to left edge */
     right: 0; /* Align to right edge */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/photo.jpg') no-repeat center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/photo.jpg') no-repeat center/cover;
     background-size: cover; /* Cover entire area */
     background-position: center center; /* Center image */
     background-attachment: scroll; /* Prevent scrolling issues */
     overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+
+  /* Dark mode hero overlay for mobile */
+  body:has(#theme-toggle:checked) .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/photo.jpg') no-repeat center/cover;
   }
 
   .hero h2 { font-size: 1.5rem; }
@@ -1138,11 +1148,15 @@ footer {
     margin: 0; /* No margins */
     left: 0; /* Align to left edge */
     right: 0; /* Align to right edge */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/photo.jpg') no-repeat center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/photo.jpg') no-repeat center/cover;
     background-size: cover; /* Cover entire area */
     background-position: 50% 50%; /* Explicit center positioning */
     background-attachment: scroll; /* Prevent scrolling issues */
     overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+  /* Dark mode hero overlay for mobile */
+  body:has(#theme-toggle:checked) .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/photo.jpg') no-repeat center/cover;
   }
   .hero h2 { font-size: 1.3rem; }
   .hero p { font-size: 0.8rem; }
