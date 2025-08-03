@@ -103,7 +103,7 @@ body:has(#theme-toggle:checked) nav {
 .circle-text {
   font-family: 'Orbitron', sans-serif;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 700; /* Changed to bold */
   letter-spacing: 1px;
   background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
@@ -1064,12 +1064,36 @@ footer {
 
   .circle-text {
     font-size: 0.9rem;
+    font-weight: 700; /* Maintain bold for mobile */
   }
 
   section {
     padding: 50px 15px; /* Original padding */
     max-width: 90%; /* Original max-width */
     margin: 0 auto; /* Original margin */
+  }
+
+  .about {
+    max-width: 90%; /* Ensure centered layout */
+    margin: 0 auto;
+    padding: 50px 15px;
+  }
+
+  .about p {
+    max-width: 600px; /* Maintain content constraint */
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .experience {
+    max-width: 90%; /* Ensure centered layout */
+    margin: 0 auto;
+    padding: 50px 15px;
+  }
+
+  .experience-grid {
+    max-width: 600px; /* Constrain grid width */
+    margin: 0 auto;
   }
 
   .hero {
@@ -1117,11 +1141,30 @@ footer {
   nav { padding: 10px 15px; }
   .nav-links { margin-top: 50px; gap: 10px; }
   .circle { width: 28px; height: 28px; font-size: 0.8rem; }
-  .circle-text { font-size: 0.8rem; }
+  .circle-text { font-size: 0.8rem; font-weight: 700; /* Maintain bold for mobile */ }
   section {
     padding: 40px 10px; /* Original padding */
     max-width: 95%; /* Original max-width */
     margin: 0 auto; /* Original margin */
+  }
+  .about {
+    max-width: 95%; /* Ensure centered layout */
+    margin: 0 auto;
+    padding: 40px 10px;
+  }
+  .about p {
+    max-width: 95%; /* Constrain content width */
+    margin: 0 auto;
+    padding: 15px;
+  }
+  .experience {
+    max-width: 95%; /* Ensure centered layout */
+    margin: 0 auto;
+    padding: 40px 10px;
+  }
+  .experience-grid {
+    max-width: 95%; /* Constrain grid width */
+    margin: 0 auto;
   }
   .hero {
     width: 100vw; /* Full viewport width */
