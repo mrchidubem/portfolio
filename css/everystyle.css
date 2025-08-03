@@ -1067,9 +1067,9 @@ footer {
   }
 
   section {
-    padding: 50px 0; /* Remove horizontal padding for full-width */
-    max-width: 100%; /* Ensure full width */
-    margin: 0; /* Remove margins */
+    padding: 50px 15px; /* Original padding */
+    max-width: 90%; /* Original max-width */
+    margin: 0 auto; /* Original margin */
   }
 
   .hero {
@@ -1118,7 +1118,11 @@ footer {
   .nav-links { margin-top: 50px; gap: 10px; }
   .circle { width: 28px; height: 28px; font-size: 0.8rem; }
   .circle-text { font-size: 0.8rem; }
-  section { padding: 40px 0; max-width: 100%; margin: 0; } /* Full width, no padding */
+  section {
+    padding: 40px 10px; /* Original padding */
+    max-width: 95%; /* Original max-width */
+    margin: 0 auto; /* Original margin */
+  }
   .hero {
     width: 100vw; /* Full viewport width */
     padding: 0; /* No padding */
