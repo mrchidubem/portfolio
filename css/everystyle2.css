@@ -172,7 +172,7 @@ nav {
 
 /* Base styles for sections to ensure consistent padding and background. */
 section {
-  padding: 60px 20px; /* Generous padding for content spacing. */
+  padding: 60px 20px; /* Uniform padding for consistent spacing. */
   background: var(--section-bg); /* Section background from theme variable. */
 }
 
@@ -335,7 +335,7 @@ section {
 /* Projects section styling for centered content. */
 .projects {
   text-align: center; /* Center-aligns all content in the section. */
-  padding: 60px 20px; /* Consistent section padding. */
+  padding: 60px 20px; /* Uniform padding for consistent spacing. */
 }
 
 /* Projects section heading with animation and accent color. */
@@ -429,7 +429,7 @@ section {
 /* Skills section styling for centered content. */
 .skills {
   text-align: center; /* Center-aligns all content in the section. */
-  padding: 60px 20px; /* Consistent section padding. */
+  padding: 60px 20px; /* Uniform padding for consistent spacing. */
 }
 
 /* Skills section heading with animation and accent color. */
@@ -528,10 +528,27 @@ body:has(#theme-toggle:checked) .skill-note {
   opacity: 1; /* Fully visible on hover. */
 }
 
-/* Certifications section styling for centered content. */
+/* Certifications section styling for centered content, hidden by default. */
 .certifications {
   text-align: center; /* Center-aligns all content in the section. */
-  padding: 60px 20px; /* Consistent section padding. */
+  padding: 60px 20px; /* Uniform padding for consistent spacing. */
+  background: var(--section-bg); /* Section background for consistency. */
+  display: none; /* Hidden by default. */
+  opacity: 0; /* Ensures no visibility when hidden. */
+  transition: opacity 0.5s ease; /* Smooth fade-in when shown. */
+}
+
+/* Show certifications section when targeted or when the education section has certifications targeted. */
+.certifications:target,
+.education:has(+ .certifications:target) {
+  display: block; /* Displays the section. */
+  opacity: 1; /* Fully visible when active. */
+}
+
+/* Hide education section when certifications is targeted to focus on certifications. */
+.education:has(+ .certifications:target) {
+  display: none; /* Hides education section when certifications is shown. */
+  opacity: 0; /* Ensures no visibility during transitions. */
 }
 
 /* Certifications section heading with animation and accent color. */
@@ -582,10 +599,31 @@ body:has(#theme-toggle:checked) .skill-note {
   font-weight: 300; /* Light weight for a softer look. */
 }
 
+/* View certifications link styling in the education section. */
+.view-certifications {
+  display: inline-block; /* Inline-block for proper spacing. */
+  margin-top: 20px; /* Spacing above the link. */
+  padding: 8px 16px; /* Comfortable padding for clickability. */
+  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Gradient background for visual appeal. */
+  color: var(--bg); /* Background color for text contrast. */
+  text-decoration: none; /* No underline for button-like appearance. */
+  border-radius: 6px; /* Rounded corners for modernity. */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for consistency. */
+  font-size: 0.8rem; /* Smaller font for balance. */
+  font-weight: 400; /* Regular weight for readability. */
+  transition: transform 0.2s, box-shadow 0.3s; /* Smooth transitions for hover effects. */
+}
+
+/* Hover effect for view certifications link to enhance interactivity. */
+.view-certifications:hover {
+  transform: scale(1.05); /* Slight enlargement on hover. */
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3); /* Subtle bronze shadow for depth. */
+}
+
 /* Education section styling for centered content. */
 .education {
   text-align: center; /* Center-aligns all content in the section. */
-  padding: 60px 20px; /* Consistent section padding. */
+  padding: 60px 20px; /* Uniform padding for consistent spacing. */
 }
 
 /* Education section heading with animation and accent color. */
@@ -639,7 +677,7 @@ body:has(#theme-toggle:checked) .skill-note {
 .insights-updates {
   text-align: center; /* Center-aligns all content in the section. */
   background: var(--section-bg); /* Section background for consistency. */
-  padding: 60px 20px; /* Consistent section padding. */
+  padding: 60px 20px; /* Uniform padding for consistent spacing. */
 }
 
 /* Hide Insights & Updates section when an article is targeted to show only the article content. */
@@ -716,7 +754,7 @@ body:has(#theme-toggle:checked) .skill-note {
 .articles {
   text-align: center; /* Center-aligns all content in the section. */
   background: var(--section-bg); /* Section background for consistency. */
-  padding: 60px 20px; /* Consistent section padding. */
+  padding: 60px 20px; /* Uniform padding for consistent spacing. */
   display: none; /* Hidden by default. */
   opacity: 0; /* Ensures no visibility when hidden. */
   transition: opacity 0.5s ease; /* Smooth fade-in when shown. */
@@ -786,7 +824,7 @@ body:has(#theme-toggle:checked) .skill-note {
   margin: 10px 0 10px 20px; /* Spacing and indentation for lists. */
 }
 
-/* Back link styling for returning to the insights section. */
+/* Back link styling for returning to previous sections. */
 .back-link {
   display: inline-block; /* Inline-block for proper spacing. */
   margin-top: 10px; /* Spacing above the link. */
@@ -810,6 +848,7 @@ body:has(#theme-toggle:checked) .skill-note {
 /* Contact section styling for centered content. */
 .contact {
   text-align: center; /* Center-aligns all content in the section. */
+  padding: 60px 20px; /* Uniform padding for consistent spacing. */
 }
 
 /* Contact section heading with animation and accent color. */
@@ -910,7 +949,7 @@ body:has(#theme-toggle:checked) .skill-note {
 .cta {
   text-align: center; /* Center-aligns all content in the section. */
   background: var(--section-bg); /* Section background for consistency. */
-  padding: 60px 20px; /* Consistent section padding. */
+  padding: 60px 20px; /* Uniform padding for consistent spacing. */
   color: #ffffff; /* White text for high contrast. */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth. */
 }
@@ -1180,6 +1219,9 @@ footer {
   /* Smaller back link for tablets. */
   .back-link { font-size: 0.75rem; }
 
+  /* Smaller view certifications link for tablets. */
+  .view-certifications { font-size: 0.75rem; padding: 6px 12px; }
+
   /* Smaller date badge for insights cards on tablets. */
   .insights-card .date-badge { font-size: 0.65rem; }
 
@@ -1266,4 +1308,10 @@ footer {
 
   /* Smaller social icons for small phones. */
   .social-icons a { width: 32px; height: 32px; font-size: 1rem; }
+
+  /* Smaller view certifications link for small phones. */
+  .view-certifications { font-size: 0.7rem; padding: 6px 10px; }
+
+  /* Smaller back link for small phones. */
+  .back-link { font-size: 0.7rem; padding: 6px 10px; }
 }
