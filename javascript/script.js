@@ -24,6 +24,7 @@ class PortfolioApp {
     this.initializeMobileMenu();
     this.initializeContactForm();
     this.initializeScrollEffects();
+    this.initializeNewFeatures();
   }
 
   // ===== LOADING SCREEN =====
@@ -222,7 +223,7 @@ class PortfolioApp {
     if (!particlesContainer) return;
 
     // Create floating particles
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 30; i++) {
       this.createParticle(particlesContainer);
     }
   }
@@ -232,7 +233,7 @@ class PortfolioApp {
     particle.className = 'particle';
     
     // Random properties
-    const size = Math.random() * 4 + 2;
+    const size = Math.random() * 3 + 1;
     const x = Math.random() * 100;
     const y = Math.random() * 100;
     const duration = Math.random() * 20 + 10;
@@ -242,7 +243,7 @@ class PortfolioApp {
       position: absolute;
       width: ${size}px;
       height: ${size}px;
-      background: rgba(0, 212, 255, 0.3);
+      background: rgba(0, 212, 255, 0.2);
       border-radius: 50%;
       left: ${x}%;
       top: ${y}%;
@@ -400,7 +401,7 @@ class PortfolioApp {
       const parallaxElements = document.querySelectorAll('.hero-particles, .avatar-glow');
       
       parallaxElements.forEach(element => {
-        const speed = element.classList.contains('hero-particles') ? 0.5 : 0.3;
+        const speed = element.classList.contains('hero-particles') ? 0.3 : 0.2;
         element.style.transform = `translateY(${scrolled * speed}px)`;
       });
     });
@@ -417,6 +418,151 @@ class PortfolioApp {
         }
       });
     }
+  }
+
+  // ===== NEW FEATURES =====
+  initializeNewFeatures() {
+    // Add typing effect to hero title
+    this.initializeTypingEffect();
+    
+    // Add magnetic effect to buttons
+    this.initializeMagneticEffect();
+    
+    // Add scroll-triggered animations
+    this.initializeScrollAnimations();
+    
+    // Add hover effects
+    this.initializeHoverEffects();
+    
+    // Add performance optimization
+    this.optimizePerformance();
+  }
+
+  // ===== TYPING EFFECT =====
+  initializeTypingEffect() {
+    const heroTitle = document.querySelector('.hero-title');
+    if (!heroTitle) return;
+
+    const text = heroTitle.textContent;
+    heroTitle.textContent = '';
+    
+    let i = 0;
+    const typeWriter = () => {
+      if (i < text.length) {
+        heroTitle.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 80);
+      }
+    };
+    
+    // Start typing effect after loading
+    setTimeout(typeWriter, 1000);
+  }
+
+  // ===== MAGNETIC EFFECT =====
+  initializeMagneticEffect() {
+    const magneticElements = document.querySelectorAll('.btn, .nav-link, .project-card');
+    
+    magneticElements.forEach(element => {
+      element.addEventListener('mousemove', (e) => {
+        const rect = element.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        element.style.transform = `translate(${x * 0.05}px, ${y * 0.05}px)`;
+      });
+      
+      element.addEventListener('mouseleave', () => {
+        element.style.transform = 'translate(0, 0)';
+      });
+    });
+  }
+
+  // ===== SCROLL ANIMATIONS =====
+  initializeScrollAnimations() {
+    const elements = document.querySelectorAll('.skill-item, .project-card, .timeline-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    elements.forEach(element => observer.observe(element));
+  }
+
+  // ===== HOVER EFFECTS =====
+  initializeHoverEffects() {
+    // Add ripple effect to buttons
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        this.createRippleEffect(e, button);
+      });
+    });
+    
+    // Add glow effect to cards
+    const cards = document.querySelectorAll('.project-card, .skill-item, .timeline-content');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.boxShadow = '0 8px 30px rgba(0, 212, 255, 0.2)';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.boxShadow = '';
+      });
+    });
+  }
+
+  createRippleEffect(event, element) {
+    const ripple = document.createElement('span');
+    const rect = element.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+    
+    ripple.style.cssText = `
+      position: absolute;
+      width: ${size}px;
+      height: ${size}px;
+      left: ${x}px;
+      top: ${y}px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    `;
+    
+    element.style.position = 'relative';
+    element.style.overflow = 'hidden';
+    element.appendChild(ripple);
+    
+    setTimeout(() => {
+      ripple.remove();
+    }, 600);
+  }
+
+  // ===== PERFORMANCE OPTIMIZATION =====
+  optimizePerformance() {
+    // Debounce scroll events
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+      scrollTimeout = setTimeout(() => {
+        this.handleScrollOptimized();
+      }, 16); // 60fps
+    });
+  }
+
+  handleScrollOptimized() {
+    // Optimized scroll handling
+    this.handleScrollToTop();
+    this.handleNavbarBackground();
   }
 
   // ===== SCROLL HANDLERS =====
@@ -441,10 +587,10 @@ class PortfolioApp {
     const navbar = document.getElementById('navbar');
     if (navbar) {
       if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(10, 10, 26, 0.98)';
+        navbar.style.background = 'rgba(5, 5, 7, 0.98)';
         navbar.style.backdropFilter = 'blur(20px)';
       } else {
-        navbar.style.background = 'rgba(10, 10, 26, 0.95)';
+        navbar.style.background = 'rgba(5, 5, 7, 0.95)';
         navbar.style.backdropFilter = 'blur(20px)';
       }
     }
@@ -496,110 +642,106 @@ class PortfolioApp {
   }
 
   initializeAdditionalFeatures() {
-    // Add typing effect to hero title
-    this.initializeTypingEffect();
+    // Add smooth reveal animations
+    this.initializeRevealAnimations();
     
-    // Add cursor effect
-    this.initializeCursorEffect();
-    
-    // Add magnetic effect to buttons
-    this.initializeMagneticEffect();
+    // Add interactive elements
+    this.initializeInteractiveElements();
   }
 
-  // ===== TYPING EFFECT =====
-  initializeTypingEffect() {
-    const heroTitle = document.querySelector('.hero-title');
-    if (!heroTitle) return;
-
-    const text = heroTitle.textContent;
-    heroTitle.textContent = '';
+  // ===== REVEAL ANIMATIONS =====
+  initializeRevealAnimations() {
+    const revealElements = document.querySelectorAll('.section-title, .project-card, .skill-item');
     
-    let i = 0;
-    const typeWriter = () => {
-      if (i < text.length) {
-        heroTitle.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 100);
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    revealElements.forEach(element => revealObserver.observe(element));
+  }
+
+  // ===== INTERACTIVE ELEMENTS =====
+  initializeInteractiveElements() {
+    // Add tilt effect to project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+      });
+    });
+  }
+
+  // ===== EASTER EGGS =====
+  addEasterEggs() {
+    // Konami code
+    let konamiCode = [];
+    const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+    
+    document.addEventListener('keydown', (e) => {
+      konamiCode.push(e.keyCode);
+      
+      if (konamiCode.length > konamiSequence.length) {
+        konamiCode.shift();
       }
-    };
-    
-    // Start typing effect after loading
-    setTimeout(typeWriter, 1000);
+      
+      if (konamiCode.join(',') === konamiSequence.join(',')) {
+        this.activateEasterEgg();
+      }
+    });
   }
 
-  // ===== CURSOR EFFECT =====
-  initializeCursorEffect() {
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor';
-    cursor.style.cssText = `
+  activateEasterEgg() {
+    // Create a fun particle explosion
+    const colors = ['#00d4ff', '#4ecdc4', '#ff6b6b', '#feca57', '#48dbfb'];
+    
+    for (let i = 0; i < 100; i++) {
+      setTimeout(() => {
+        this.createExplosionParticle(colors[Math.floor(Math.random() * colors.length)]);
+      }, i * 20);
+    }
+    
+    // Show secret message
+    this.showNotification('🎉 You found the secret! You\'re awesome! 🎉', 'success');
+  }
+
+  createExplosionParticle(color) {
+    const particle = document.createElement('div');
+    particle.style.cssText = `
       position: fixed;
-      width: 20px;
-      height: 20px;
-      background: var(--accent);
+      width: 10px;
+      height: 10px;
+      background: ${color};
       border-radius: 50%;
       pointer-events: none;
-      z-index: 9999;
-      transition: transform 0.1s ease;
-      mix-blend-mode: difference;
+      z-index: 10000;
+      left: ${Math.random() * window.innerWidth}px;
+      top: ${Math.random() * window.innerHeight}px;
+      animation: explode 1s ease-out forwards;
     `;
     
-    document.body.appendChild(cursor);
+    document.body.appendChild(particle);
     
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX - 10 + 'px';
-      cursor.style.top = e.clientY - 10 + 'px';
-    });
-    
-    // Add hover effect
-    const interactiveElements = document.querySelectorAll('a, button, .btn, .nav-link');
-    interactiveElements.forEach(element => {
-      element.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(2)';
-      });
-      
-      element.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'scale(1)';
-      });
-    });
-  }
-
-  // ===== MAGNETIC EFFECT =====
-  initializeMagneticEffect() {
-    const magneticElements = document.querySelectorAll('.btn, .nav-link, .project-card');
-    
-    magneticElements.forEach(element => {
-      element.addEventListener('mousemove', (e) => {
-        const rect = element.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        
-        element.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
-      });
-      
-      element.addEventListener('mouseleave', () => {
-        element.style.transform = 'translate(0, 0)';
-      });
-    });
-  }
-
-  // ===== PERFORMANCE OPTIMIZATION =====
-  optimizePerformance() {
-    // Debounce scroll events
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-      if (scrollTimeout) {
-        clearTimeout(scrollTimeout);
-      }
-      scrollTimeout = setTimeout(() => {
-        this.handleScrollOptimized();
-      }, 16); // 60fps
-    });
-  }
-
-  handleScrollOptimized() {
-    // Optimized scroll handling
-    this.handleScrollToTop();
-    this.handleNavbarBackground();
+    setTimeout(() => {
+      document.body.removeChild(particle);
+    }, 1000);
   }
 }
 
@@ -615,61 +757,6 @@ document.addEventListener('DOMContentLoaded', () => {
   portfolioApp.addEasterEggs();
 });
 
-// ===== EASTER EGGS =====
-PortfolioApp.prototype.addEasterEggs = function() {
-  // Konami code
-  let konamiCode = [];
-  const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
-  
-  document.addEventListener('keydown', (e) => {
-    konamiCode.push(e.keyCode);
-    
-    if (konamiCode.length > konamiSequence.length) {
-      konamiCode.shift();
-    }
-    
-    if (konamiCode.join(',') === konamiSequence.join(',')) {
-      this.activateEasterEgg();
-    }
-  });
-};
-
-PortfolioApp.prototype.activateEasterEgg = function() {
-  // Create a fun particle explosion
-  const colors = ['#00d4ff', '#4ecdc4', '#ff6b6b', '#feca57', '#48dbfb'];
-  
-  for (let i = 0; i < 100; i++) {
-    setTimeout(() => {
-      this.createExplosionParticle(colors[Math.floor(Math.random() * colors.length)]);
-    }, i * 20);
-  }
-  
-  // Show secret message
-  this.showNotification('🎉 You found the secret! You\'re awesome! 🎉', 'success');
-};
-
-PortfolioApp.prototype.createExplosionParticle = function(color) {
-  const particle = document.createElement('div');
-  particle.style.cssText = `
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    background: ${color};
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 10000;
-    left: ${Math.random() * window.innerWidth}px;
-    top: ${Math.random() * window.innerHeight}px;
-    animation: explode 1s ease-out forwards;
-  `;
-  
-  document.body.appendChild(particle);
-  
-  setTimeout(() => {
-    document.body.removeChild(particle);
-  }, 1000);
-};
-
 // ===== CSS ANIMATIONS FOR JAVASCRIPT =====
 const style = document.createElement('style');
 style.textContent = `
@@ -680,6 +767,17 @@ style.textContent = `
     }
     100% {
       transform: scale(1) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
       opacity: 0;
     }
   }
@@ -722,10 +820,6 @@ style.textContent = `
     transform: rotate(-45deg) translate(7px, -6px);
   }
   
-  .custom-cursor {
-    mix-blend-mode: difference;
-  }
-  
   .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
@@ -759,6 +853,36 @@ style.textContent = `
   
   .aos-fade-right.visible {
     transform: translateX(0);
+  }
+  
+  .revealed {
+    animation: reveal 0.8s ease forwards;
+  }
+  
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-in {
+    animation: slideInUp 0.6s ease forwards;
+  }
+  
+  @keyframes slideInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 `;
 
