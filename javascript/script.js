@@ -9,6 +9,9 @@ class PortfolioApp {
       rootMargin: '0px 0px -50px 0px'
     };
     
+    // Theme: load saved or system preference before init
+    this.bootstrapTheme();
+    
     this.init();
   }
 
@@ -17,14 +20,14 @@ class PortfolioApp {
     this.initializeAnimations();
     this.setupIntersectionObserver();
     this.handleLoadingScreen();
-    this.initializeParticles();
+    // this.initializeParticles(); // disabled for performance
     this.initializeSkillBars();
     this.initializeCounterAnimation();
     this.initializeSmoothScrolling();
     this.initializeMobileMenu();
     this.initializeContactForm();
-    this.initializeScrollEffects();
-    this.initializeNewFeatures();
+    // this.initializeScrollEffects(); // disabled for performance
+    // this.initializeNewFeatures(); // disabled novelty effects
   }
 
   // ===== LOADING SCREEN =====
@@ -321,22 +324,40 @@ class PortfolioApp {
     }
   }
 
-  handleFormSubmit(e) {
+  async handleFormSubmit(e) {
     e.preventDefault();
     
     const formData = new FormData(e.target);
     const name = formData.get('name');
     const email = formData.get('email');
     const message = formData.get('message');
-    
-    // Show success message
-    this.showNotification('Message sent successfully!', 'success');
-    
-    // Reset form
+
+    // Try EmailJS first if available and configured
+    const emailjsAvailable = typeof emailjs !== 'undefined' && emailjs && 'send' in emailjs;
+    const publicKeySet = true; // user should replace key in index.html
+
+    if (emailjsAvailable && publicKeySet) {
+      try {
+        await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+          from_name: name,
+          from_email: email,
+          message: message
+        });
+        this.showNotification('Message sent successfully via EmailJS!', 'success');
+        e.target.reset();
+        return;
+      } catch (err) {
+        console.warn('EmailJS failed, falling back to mailto:', err);
+      }
+    }
+
+    // Fallback: mailto
+    const subject = `Portfolio contact from ${name}`;
+    const body = `${message}\n\nFrom: ${name} <${email}>`;
+    const mailto = `mailto:mrchidubem8@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+    this.showNotification('Opening your email app to send the message...', 'success');
     e.target.reset();
-    
-    // Simulate form submission
-    this.simulateFormSubmission(name, email, message);
   }
 
   showNotification(message, type = 'info') {
@@ -569,7 +590,6 @@ class PortfolioApp {
   handleScroll() {
     this.handleScrollToTop();
     this.handleNavbarBackground();
-    this.handleParallaxEffects();
   }
 
   handleScrollToTop() {
@@ -742,6 +762,17 @@ class PortfolioApp {
     setTimeout(() => {
       document.body.removeChild(particle);
     }, 1000);
+  }
+
+  bootstrapTheme() {
+    const saved = localStorage.getItem('portfolio-theme');
+    if (saved === 'light' || saved === 'dark') {
+      this.currentTheme = saved;
+    } else {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      this.currentTheme = prefersDark ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', this.currentTheme);
   }
 }
 
