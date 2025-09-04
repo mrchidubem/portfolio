@@ -3,7 +3,7 @@
 
 Welcome to my GitHub portfolio! I'm a **Stack Software Engineer** and **Cloud Architect** passionate about building scalable, user-focused solutions. This profile serves as my digital resume, showcasing my skills, projects, and insights. Explore my work and let's connect to build something amazing! 🎉
 
-🔗 **Portfolio Website**:  https://dubicventures.vercel.app/
+🔗 **Portfolio Website**:  https://portfolio-iota-fawn-75.vercel.app/
 ⭐ **Star this repo**: If you find my work inspiring, give it a star! 🌟
 
 
@@ -93,7 +93,7 @@ To run this portfolio locally:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/mrchidubem/dubic-portfolio.git
+   git clone https://github.com/mrchidubem/portfolio.git
    cd mrchidubem
 
 Serve Locally:bash
